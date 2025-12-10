@@ -1,45 +1,15 @@
 ---
 permalink: /
-title: "Home"
+title: "About me"
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-Welcome! This site highlights my work and research while keeping navigation simple. Explore my background below or head to the blog for updates and longer reflections.
+I am Xinyao Liao, a third-year Master’s student in Computer Science at Huazhong University of Science and Technology (HUST), supervised by Prof. Wei Wei. I am currently a research intern at the CVML Lab at the National University of Singapore, advised by Prof. Angela Yao. I previously completed a B.E. in Information Security and a B.A. in Philosophy at HUST.
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
-
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+My recent research focuses on visual generative models and reinforcement learning. I am also interested in broader questions related to AGI, including the design of general training objectives and learning paradigms that may guide us toward more general intelligence, such as VLA models and world models.
 
 Publications
 ======
