@@ -7,7 +7,7 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-us"
+locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
 title                    : "Xinyao Liao / Lil Shake"
 title_separator          : "-"
