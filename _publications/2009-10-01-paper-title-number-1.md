@@ -1,3 +1,6 @@
+header:
+  teaser: teaser-uniq.jpg   # stored under images/, or use a full https:// URL
+  
 ---
 title: "UniQ: Unified Decoder with Task-specific Queries for Efficient Scene Graph Generation"
 collection: publications
