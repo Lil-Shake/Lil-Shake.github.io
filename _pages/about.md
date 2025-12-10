@@ -14,7 +14,7 @@ My recent research focuses on visual generative models and reinforcement learnin
 Publications
 ======
 {% if site.author.googlescholar %}
-<div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+<!-- <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div> -->
 {% endif %}
 
 {% include base_path %}
@@ -41,4 +41,4 @@ Publications
 
 More
 ======
-I love literature, movies, music, and all forms of . 
+Other than research, let's read, watch movies, listen to music and create fun things!
