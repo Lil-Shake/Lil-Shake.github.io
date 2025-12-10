@@ -41,4 +41,4 @@ Publications
 
 More
 ======
-Other than research, let's read, watch movies, listen to music and create fun things together!
+Other than research, let's read, watch movies, listen to music and create fun things!
