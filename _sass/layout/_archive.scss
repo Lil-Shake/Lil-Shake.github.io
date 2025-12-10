@@ -84,6 +84,30 @@
   }
 }
 
+/*
+   Publication list layout
+   ========================================================================== */
+
+.archive__item-publication {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: flex-start;
+
+  .archive__item-publication-body {
+    flex: 1 1 auto;
+  }
+}
+
+.archive__item-teaser--side {
+  width: 140px;
+  flex: 0 0 140px;
+
+  img {
+    display: block;
+  }
+}
+
 
 /*
    List view
