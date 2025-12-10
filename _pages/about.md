@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am Xinyao Liao, a third-year Master’s student in Computer Science at Huazhong University of Science and Technology (HUST), supervised by Prof. Wei Wei. I am currently a research intern at the CVML Lab at the National University of Singapore, advised by Prof. Angela Yao. I previously completed a B.E. in Information Security and a B.A. in Philosophy at HUST.
+I am Xinyao Liao, a third-year Master’s student in Computer Science at Huazhong University of Science and Technology (HUST), supervised by [Prof. Wei Wei](https://www.eric-weiwei.com/). I am currently a research intern at the CVML Lab at the National University of Singapore, advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). I previously completed a B.E. in Information Security and a B.A. in Philosophy at HUST.
 
-My recent research focuses on visual generative models and reinforcement learning. I am also interested in broader questions related to AGI, including the design of general training objectives and learning paradigms that may guide us toward more general intelligence, such as VLA models and world models.
+My recent research focuses on visual generative models and reinforcement learning. I am also interested in broader questions related to AGI, including the design of general training objectives and learning paradigms.
 
 Publications
 ======
@@ -39,6 +39,6 @@ Publications
 {% endfor %}
 {% endif %}
 
-Service and leadership
+More
 ======
-* Currently signed in to 43 different slack teams
+I love literature, movies, music, and all forms of . 
