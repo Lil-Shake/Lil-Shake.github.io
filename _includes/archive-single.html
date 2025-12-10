@@ -10,46 +10,81 @@
 {% endif %}
 
 {% assign title = post.title %}
+
 {% assign show_publication_teaser = post.collection == 'publications' and teaser %}
 
+{%- comment -%}
+===========================
+   AUTHOR NAME BOLDING
+===========================
+{%- endcomment -%}
+{% capture authors_list %}
+  {% for a in post.authors %}
+    {% assign name = a | strip %}
+    {% if name == "Xinyao Liao" %}
+      <strong>{{ name }}</strong>
+    {% else %}
+      {{ name }}
+    {% endif %}
+    {% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+{% endcapture %}
+
+{%- comment -%}
+===========================
+   PUBLICATION LINKS
+===========================
+{%- endcomment -%}
 {% capture publication_links %}
-  <p>
+  <p class="pub-links">
+    {% assign has_prev = false %}
+    
     {% if post.website %}
-      <a href="{{ post.website }}">Website</a>
+      <a class="pub-link" href="{{ post.website }}">Website</a>
       {% assign has_prev = true %}
     {% endif %}
-
+    
     {% if post.paperurl %}
       {% if has_prev %} / {% endif %}
-      <a href="{{ post.paperurl }}">Paper</a>
+      <a class="pub-link" href="{{ post.paperurl }}">Paper</a>
       {% assign has_prev = true %}
     {% endif %}
-
+    
     {% if post.code or post.codeurl %}
       {% assign code_link = post.code | default: post.codeurl %}
       {% if has_prev %} / {% endif %}
-      <a href="{{ code_link }}">Code</a>
+      <a class="pub-link" href="{{ code_link }}">Code</a>
       {% assign has_prev = true %}
     {% endif %}
   </p>
 {% endcapture %}
 
-{% capture archive_item_content %}
-
-  <!-- Title -->
-  <h2 class="archive__item-title" itemprop="headline">
-    <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-  </h2>
-
-  <!-- Venue + Year -->
+{%- comment -%}
+===========================
+   VENUE BADGE
+===========================
+{%- endcomment -%}
+{% capture venue_badge %}
   {% if post.venue %}
-    <p>
-      {{ post.venue }},
-      {{ post.date | date: "%Y" }}.
-    </p>
+    <span class="venue-badge">
+      {{ post.venue }} {{ post.date | date: "%Y" }}
+    </span>
   {% endif %}
+{% endcapture %}
 
-  <!-- Website / Paper / Code -->
+{%- comment -%}
+===========================
+   MAIN BLOCK
+===========================
+{%- endcomment -%}
+{% capture archive_item_content %}
+  <!-- Title -->
+  <h2 class="archive__item-title">{{ title }}</h2>
+
+  <!-- Venue Badge -->
+  {{ venue_badge }}
+
+  <!-- Links -->
   {{ publication_links }}
 
   <!-- Excerpt -->
@@ -58,27 +93,16 @@
   {% endif %}
 
   <!-- Authors at bottom -->
-  {% if post.authors %}
-    <p>
-      {% for a in post.authors %}
-        {% if forloop.last %}
-          {{ a }}
-        {% else %}
-          {{ a }},
-        {% endif %}
-      {% endfor %}
-    </p>
-  {% endif %}
-
+  <p class="pub-authors">{{ authors_list }}</p>
 {% endcapture %}
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item">
     
     {% if show_publication_teaser %}
       <div class="archive__item-publication">
         
-        <!-- Left teaser image -->
+        <!-- Left Teaser -->
         <div class="archive__item-teaser archive__item-teaser--side">
           <img src=
             {% if teaser contains "://" %}
@@ -86,10 +110,10 @@
             {% else %}
               "{{ teaser | prepend: "/images/" | prepend: base_path }}"
             {% endif %}
-          alt="">
+          alt="publication teaser">
         </div>
 
-        <!-- Right content -->
+        <!-- Right Content -->
         <div class="archive__item-publication-body">
           {{ archive_item_content }}
         </div>
