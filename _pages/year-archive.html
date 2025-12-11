@@ -15,18 +15,34 @@ redirect_from:
     Please wait while the invisible city is being built...
   </p>
 
-  <details class="blog-coming-soon__details">
-    <summary class="btn btn--primary blog-coming-soon__button" role="button">
-      Build a small piece
-    </summary>
-
-    <div class="blog-coming-soon__fragment-list">
-      <p>Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.</p>
-      <p>In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.</p>
-      <p>Each city receives its form from the desert it opposes.</p>
-      <p>There is no language without deceit.</p>
-      <p>The bridge is not supported by one stone or another, but by the line of the arch that they form.</p>
-      <p>Without stones there is no arch.</p>
-    </div>
-  </details>
+  <p class="blog-coming-soon__fragment" id="city-fragment-text">
+    Listening for a fragment from the invisible city...
+  </p>
 </div>
+
+<script>
+  (function () {
+    function setRandomFragment() {
+      var text = document.getElementById("city-fragment-text");
+      if (!text) return;
+
+      var fragments = [
+        `Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.`,
+        `In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.`,
+        `Each city receives its form from the desert it opposes.`,
+        `There is no language without deceit.`,
+        `The bridge is not supported by one stone or another, but by the line of the arch that they form.`,
+        `Without stones there is no arch.`
+      ];
+
+      var index = Math.floor(Math.random() * fragments.length);
+      text.textContent = fragments[index];
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setRandomFragment);
+    } else {
+      setRandomFragment();
+    }
+  })();
+</script>
