@@ -15,43 +15,18 @@ redirect_from:
     Please wait while the invisible city is being built...
   </p>
 
-  <button type="button" class="btn btn--primary blog-coming-soon__button" id="city-fragment-button">
-    Build a small piece
-  </button>
+  <details class="blog-coming-soon__details">
+    <summary class="btn btn--primary blog-coming-soon__button" role="button">
+      Build a small piece
+    </summary>
 
-  <p class="blog-coming-soon__fragment" id="city-fragment-text">
-    Click the button to reveal a fragment of the invisible city.
-  </p>
+    <div class="blog-coming-soon__fragment-list">
+      <p>Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.</p>
+      <p>In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.</p>
+      <p>Each city receives its form from the desert it opposes.</p>
+      <p>There is no language without deceit.</p>
+      <p>The bridge is not supported by one stone or another, but by the line of the arch that they form.</p>
+      <p>Without stones there is no arch.</p>
+    </div>
+  </details>
 </div>
-
-<script>
-  (function () {
-    function initCityButton() {
-      var button = document.getElementById("city-fragment-button");
-      var text = document.getElementById("city-fragment-text");
-
-      if (!button || !text) return;
-
-      // Calvino-inspired lines (use template literals to avoid quote issues)
-      var fragments = [
-        `Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.`,
-        `In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.`,
-        `Each city receives its form from the desert it opposes.`,
-        `There is no language without deceit.`,
-        `The bridge is not supported by one stone or another, but by the line of the arch that they form.`,
-        `Without stones there is no arch.`,
-      ];
-
-      button.addEventListener("click", function () {
-        var index = Math.floor(Math.random() * fragments.length);
-        text.textContent = fragments[index];
-      });
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initCityButton);
-    } else {
-      initCityButton();
-    }
-  })();
-</script>

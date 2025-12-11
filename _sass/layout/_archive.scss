@@ -116,6 +116,30 @@
     font-size: $type-size-6;
     color: var(--global-text-color-light);
   }
+
+  &__details {
+    margin-top: 0.75rem;
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__fragment-list {
+    margin-top: 0.75rem;
+    text-align: left;
+
+    p {
+      margin: 0 0 0.35rem;
+      font-size: $type-size-6;
+      color: var(--global-text-color-light);
+    }
+  }
 }
 
 /*
