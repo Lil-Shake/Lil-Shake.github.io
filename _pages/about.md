@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Xinyao Liao | Computer Science & AI Research"
+# title: "Xinyao Liao | Computer Science & AI Research"
 description: "Homepage of Xinyao Liao, a computer science master's student at HUST, focusing on visual generative models and reinforcement learning."
 author_profile: true
 redirect_from:
@@ -26,4 +26,4 @@ My recent research focuses on visual generative models and reinforcement learnin
 
 ## More
 
-Other than research, I enjoy reading, watching movies, listening to music, and creating fun things.
+Other than research, let's read, watch movies, listen to music, and create fun things!
