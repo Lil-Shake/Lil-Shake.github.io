@@ -97,6 +97,32 @@
 
   .archive__item-publication-body {
     flex: 1 1 auto;
+
+    // Tighter vertical rhythm inside publication block
+    .archive__item-title {
+      margin-bottom: 0.1rem;
+    }
+
+    .venue-badge {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+    }
+
+    .pub-links {
+      margin-top: 0.1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .pub-authors {
+      margin-top: 0.1rem;
+    }
+  }
+
+  // Ensure the teaser column always matches the full height
+  .archive__item-teaser--side {
+    align-self: stretch;
+    display: flex;
   }
 }
 
