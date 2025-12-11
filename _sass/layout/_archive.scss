@@ -151,7 +151,7 @@
   flex-direction: row;
   gap: 1.5rem;
   padding: 1rem 0;
-  margin-bottom: 2rem; // add vertical space between publication blocks
+  margin-bottom: 1rem; // add vertical space between publication blocks
   // Stretch both sides to the same height so image and text align vertically
   align-items: stretch;
 
@@ -162,7 +162,7 @@
     // Title closer to the top, but with clear separation
     .archive__item-title {
       margin-top: 0;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     // Venue, links, excerpt and authors share a consistent vertical rhythm
@@ -179,8 +179,10 @@
       margin: 0.25rem 0 0.5rem;
     }
 
+    // margin 有 3 个值分别对应：上、左右、下的间距
+    // 也就是 margin-top: 0.5rem; margin-right: 0; margin-bottom: 0; margin-left: 0;
     .pub-authors {
-      margin: 0.5rem 0 0;
+      margin: 0 0 0;
     }
   }
 
