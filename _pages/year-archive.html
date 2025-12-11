@@ -1,19 +1,49 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "Blog posts"
+title: "Blog"
 author_profile: true
 redirect_from:
   - /wordpress/blog-posts/
 ---
 
 {% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+
+<div class="blog-coming-soon">
+  <h2 class="blog-coming-soon__title">Coming soon</h2>
+  <p class="blog-coming-soon__text">
+    Please wait while the invisible city is being built...
+  </p>
+
+  <button type="button" class="btn btn--primary blog-coming-soon__button" id="city-fragment-button">
+    Build a small piece
+  </button>
+
+  <p class="blog-coming-soon__fragment" id="city-fragment-text">
+    Click the button to reveal a fragment of the invisible city.
+  </p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var button = document.getElementById("city-fragment-button");
+    var text = document.getElementById("city-fragment-text");
+
+    if (!button || !text) return;
+
+    // Calvino-inspired, but not direct quotes from "Invisible Cities"
+    var fragments = [
+      "Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.",
+      "In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.",
+      "Each city receives its form from the desert it opposes.",
+      "There is no language without deceit.",
+      "The bridge is not supported by one stone or another, but by the line of the arch that they form.",
+      "Without stones there is no arch.",
+    ];
+
+    button.addEventListener("click", function() {
+      var index = Math.floor(Math.random() * fragments.length);
+      text.textContent = fragments[index];
+    });
+  });
+</script>

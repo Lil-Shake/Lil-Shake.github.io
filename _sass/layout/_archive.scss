@@ -85,6 +85,40 @@
 }
 
 /*
+   Blog "coming soon" block
+   ========================================================================== */
+
+.blog-coming-soon {
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
+  border-radius: $border-radius;
+  border: 1px dashed var(--global-border-color);
+  background-color: var(--global-bg-color);
+  text-align: center;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  &__button {
+    margin-bottom: 0.75rem;
+  }
+
+  &__fragment {
+    margin: 0;
+    font-size: $type-size-6;
+    color: var(--global-text-color-light);
+  }
+}
+
+/*
    Publication list layout
    ========================================================================== */
 
