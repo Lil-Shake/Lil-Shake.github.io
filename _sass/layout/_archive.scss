@@ -97,25 +97,26 @@
 
   .archive__item-publication-body {
     flex: 1 1 auto;
+    // line-height: 1.2; // slightly tighter line spacing for the whole block
 
     // Tighter vertical rhythm inside publication block
     .archive__item-title {
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.05rem;
     }
 
     .venue-badge {
       display: inline-block;
       margin-top: 0;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.05rem;
     }
 
     .pub-links {
-      margin-top: 0.1rem;
-      margin-bottom: 0.15rem;
+      margin-top: 0;
+      margin-bottom: 0.05rem;
     }
 
     .pub-authors {
-      margin-top: 0.1rem;
+      margin-top: 0;
     }
   }
 
