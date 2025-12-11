@@ -100,8 +100,9 @@
 }
 
 .archive__item-teaser--side {
-  width: 140px;
-  flex: 0 0 140px;
+  // Wider teaser for publications list
+  width: 220px;
+  flex: 0 0 220px;
 
   img {
     display: block;
