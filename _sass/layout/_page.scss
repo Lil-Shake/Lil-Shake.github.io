@@ -37,6 +37,9 @@
 .page__title {
   margin-top: 0;
   line-height: 1;
+  // Match section heading size so "About me" and in-page titles (e.g., "Publications", "More")
+  // appear visually consistent on content pages.
+  font-size: $type-size-4;
 
   & + .page__meta {
     margin-top: -0.5em;
