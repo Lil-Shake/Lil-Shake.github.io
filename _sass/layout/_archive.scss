@@ -92,7 +92,8 @@
   display: flex;
   flex-direction: row;
   gap: 0.75rem;
-  align-items: flex-start;
+  // Stretch both sides to the same height so image and text align vertically
+  align-items: stretch;
 
   .archive__item-publication-body {
     flex: 1 1 auto;
@@ -106,6 +107,9 @@
 
   img {
     display: block;
+    // Make teaser image match the full height of the publication block
+    height: 100%;
+    object-fit: cover;
   }
 }
 
