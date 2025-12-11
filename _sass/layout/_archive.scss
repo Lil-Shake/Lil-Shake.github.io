@@ -128,14 +128,16 @@
 
 .archive__item-teaser--side {
   // Wider teaser for publications list
-  width: 220px;
-  flex: 0 0 220px;
+  width: 300px;
+  flex: 0 0 300px;
 
   img {
     display: block;
     // Make teaser image match the full height of the publication block
     height: 100%;
-    object-fit: cover;
+    // Show the full image without cropping while preserving aspect ratio
+    object-fit: contain;
+    background-color: #fff;
   }
 }
 
