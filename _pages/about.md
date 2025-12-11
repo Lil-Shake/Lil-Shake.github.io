@@ -1,6 +1,6 @@
 ---
 permalink: /
-# title: "Xinyao Liao | Computer Science & AI Research"
+title: "About me"
 description: "Homepage of Xinyao Liao, a computer science master's student at HUST, focusing on visual generative models and reinforcement learning."
 author_profile: true
 redirect_from:
