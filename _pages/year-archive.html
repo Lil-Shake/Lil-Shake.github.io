@@ -31,14 +31,14 @@ redirect_from:
 
     if (!button || !text) return;
 
-    // Calvino-inspired, but not direct quotes from "Invisible Cities"
+    // Calvino-inspired lines (use template literals to avoid quote issues)
     var fragments = [
-      "Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.",
-      "In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.",
-      "Each city receives its form from the desert it opposes.",
-      "There is no language without deceit.",
-      "The bridge is not supported by one stone or another, but by the line of the arch that they form.",
-      "Without stones there is no arch.",
+      `Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.`,
+      `In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.`,
+      `Each city receives its form from the desert it opposes.`,
+      `There is no language without deceit.`,
+      `The bridge is not supported by one stone or another, but by the line of the arch that they form.`,
+      `Without stones there is no arch.`,
     ];
 
     button.addEventListener("click", function() {

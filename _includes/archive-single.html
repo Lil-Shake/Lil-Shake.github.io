@@ -21,7 +21,8 @@
 {% capture authors_list %}
   {% for a in post.authors %}
     {% assign name = a | strip %}
-    {% if name == "Xinyao Liao" %}
+    {% assign clean_name = name | remove: "*" | strip %}
+    {% if clean_name == "Xinyao Liao" %}
       <strong>{{ name }}</strong>
     {% else %}
       {{ name }}
