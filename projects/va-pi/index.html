@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1 class="title">VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation</h1>
+      <div class="authors">
+        <a href="https://lil-shake.github.io/">Xinyao Liao*</a>
+        <span>•</span>
+        <a href="https://qy-h00.github.io/">Qiyuan He*&#8224;</a>
+        <span>•</span>
+        <a href="https://kai422.github.io/">Kai Xu</a>
+        <span>•</span>
+        <a href="https://scholar.google.com/citations?user=rT3hqdcAAAAJ&hl=zh-CN">Xiaoye Qu</a>
+        <span>•</span>
+        <a href="https://yl3800.github.io/">Yicong Li</a>
+        <span>•</span>
+        <a href="https://www.eric-weiwei.com/">Wei Wei</a>
+        <span>•</span>
+        <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
+      </div>
+      <div class="affiliations">Huazhong University of Science &amp; Technology &nbsp; | &nbsp; National University of Singapore</div>
+      <div class="notes">* Equal contribution &nbsp;&nbsp; &#8224; Project lead</div>
+      <div class="buttons">
+        <a class="btn" href="VA-Pi.pdf">Paper</a>
+        <a class="btn" href="#">arXiv</a>
+        <a class="btn" href="https://github.com/Lil-Shake/VA-Pi">Code</a>
+      </div>
+      <div class="teaser">
+        <img src="static/img/teaser.png" alt="Teaser for VA-π project" />
+      </div>
+    </header>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        We present <strong>VA-π</strong>, a variational policy alignment framework for pixel-aware autoregressive generation. Modern image and video generators often struggle with aligning discrete token policies with continuous pixel fidelity, leading to artifacts and mode collapse. VA-π bridges this gap by jointly optimizing a variational objective that harmonizes policy learning with pixel-level reconstruction. Our approach integrates lightweight guidance priors, stable entropy regularization, and a curriculum schedule that balances exploration and fidelity. Comprehensive experiments across challenging class-to-image and text-to-image tasks demonstrate that VA-π yields sharper details, improved compositionality, and better human preference scores while remaining sample-efficient.
+      </p>
+    </section>
+
+    <section>
+      <h2>Method Overview</h2>
+      <p>
+        VA-π formulates autoregressive generation as a variational inference problem where the policy network is trained to approximate a pixel-grounded posterior. We introduce a pixel-aware reward that captures local structural cues and a global perceptual alignment loss to encourage semantic coherence. The training objective combines a variational lower bound with policy gradient updates, stabilized through entropy annealing and clipped importance weights. A lightweight alignment head distills feedback from teacher models, enabling VA-π to refine token sequences without sacrificing speed. Together, these components deliver a practical recipe for high-fidelity, instruction-following generation in discrete token spaces.
+      </p>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="card">
+          <h3>Class-to-Image (C2I)</h3>
+          <p>
+            VA-π achieves state-of-the-art FID on long-tailed class prompts, producing vivid textures and accurate object boundaries. The policy alignment strategy reduces repetitive tokens and improves coverage of rare categories without additional sampling cost.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Text-to-Image (T2I)</h3>
+          <p>
+            For text-guided synthesis, VA-π enhances grounding between textual cues and pixel outputs. Qualitative examples show better attribute binding, faithful spatial arrangements, and reduced hallucination compared to strong baselines, underscoring the benefits of pixel-aware policy refinement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>BibTeX</h2>
+      <pre class="bibtex">
+@article{liao2024vapi,
+  title   = {VA-\pi: Variational Policy Alignment for Pixel-Aware Autoregressive Generation},
+  author  = {Liao, Xinyao and He, Qiyuan and Xu, Kai and Qu, Xiaoye and Li, Yicong and Wei, Wei and Yao, Angela},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2024}
+}
+      </pre>
+    </section>
+  </div>
+</body>
+</html>
