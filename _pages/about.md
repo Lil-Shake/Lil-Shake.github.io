@@ -16,7 +16,7 @@ My recent research focuses on visual generative models and reinforcement learnin
 
 - **[Feb 2026]** [VA-π](https://lil-shake.github.io/va-pi.github.io/) accepted to **CVPR 2026**!
 - **[Jan 2026]** [reAR](https://qy-h00.github.io/reAR/) accepted to **ICLR 2026**!
-- **[Jul 2025]** Joined [CVML Lab](https://www.comp.nus.edu.sg/~ayao/) at NUS as a research intern, advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/).
+- **[Jul 2025]** Joined CVML Lab at NUS as a research intern, advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/).
 - **[Jul 2024]** [UniQ](/publication/uniq) accepted to **ACM MM 2024**!
 - **[Sep 2023]** Started my master's degree at HUST.
 
