@@ -12,7 +12,7 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Xinyao Liao / Lil Shake"
 title_separator          : "-"
 name                     : &name "Xinyao Liao"
-description              : &description "Xinyao's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Xinyao Liao — PhD student at NUS CVML working on visual generative models, reinforcement learning, and adaptive learning systems."
 url                      : https://Lil-Shake.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,9 +26,9 @@ author:
   avatar           : "academic_profile_2.jpg"
   name             : "Xinyao Liao"
   pronouns         : "they/them"  
-  bio              : "A being trying to bridge the gap between dreams & reality, theory & practice, AI & real world."
-  location         : "Earth"
-  employer         : "HUST"
+  bio              : "PhD student at NUS CVML · visual generative models, reinforcement learning, and adaptive learning systems."
+  location         : "Singapore"
+  employer         : "NUS"
   uri              : # URL
   email            : "xinyao@hust.edu.cn" 
 
@@ -63,7 +63,7 @@ author:
   foursquare       : # Username
   goodreads        : # Username
   google_plus      : # Username
-  keybase          : # Username
+  keybase           : # Username
   instagram        : # Username
   lastfm           : # Username
   linkedin         : # Username
@@ -103,20 +103,20 @@ comments:
   disqus:
     shortname            :
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments via javascript/31963 , e.g.: meta.discourse.org
   facebook:
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    appid                 :
+    num_posts             : # 5 (default)
+    colorscheme           : # "light" (default), "dark"
 staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
+  allowedFields: ['name', 'email', 'url', 'message']
   branch                 : "gh-pages" # "master", "gh-pages"
   commitMessage          : "New comment."
   filename               : comment-{@timestamp}
   format                 : "yml"
   moderation             : true
   path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
+  requiredFields: ['name', 'email', 'message']
   transforms:
     email                : "md5"
   generatedFields:
