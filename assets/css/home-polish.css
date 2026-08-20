@@ -1,0 +1,41 @@
+/* Small refinements layered on top of home.css. */
+
+.home-hero {
+  grid-template-columns: minmax(0, 1.7fr) minmax(190px, .38fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  min-height: 455px;
+}
+
+.home-profile-card {
+  width: min(100%, 225px);
+  padding: .55rem;
+  border-radius: 22px;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, .07);
+}
+
+.home-profile-card img {
+  aspect-ratio: 4 / 5;
+  border-radius: 17px;
+}
+
+.home-profile-meta {
+  padding: .65rem .32rem .12rem;
+  gap: .5rem;
+  font-size: .7rem;
+}
+
+.home-profile-meta strong {
+  font-size: .8rem;
+}
+
+@media (max-width: 900px) {
+  .home-profile-card {
+    width: min(54vw, 210px);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-profile-card {
+    width: min(48vw, 185px);
+  }
+}
