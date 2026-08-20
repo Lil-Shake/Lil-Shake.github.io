@@ -35,17 +35,24 @@
 <div class="panel"><h3>Multi scale</h3><div class="formula">16 px → 8 px → 4 px → 2 px</div>The same motion is smaller after downsampling. LK estimates a coarse displacement first, upsamples it, and refines the residual motion at progressively finer scales.</div>
 </section>
 <div class="callout"><b>Try this in class:</b> set <b>Temporal gap = 1</b>, then increase it toward <b>7–9</b>. The gap deliberately increases motion between the compared frames. Watch the red missed points on the single-scale view and the yellow recovered vectors on the pyramidal view.</div>
-<div class="refs">Video assets are loaded from the public <a href="https://github.com/open-mmlab/mmflow/tree/master/demo" target="_blank" rel="noopener">MMFlow Sintel demo</a>. The sparse Lucas–Kanade implementation and image pyramid on this page run locally in the browser.</div>
+<div class="refs">Video assets are loaded from the public <a href="https://github.com/open-mmlab/mmflow/tree/master/demo" target="_blank" rel="noopener">MMFlow Sintel demo</a>. The page first uses jsDelivr's GitHub CDN and automatically falls back to GitHub media URLs if needed. The sparse Lucas–Kanade implementation and image pyramid run locally in the browser.</div>
 </main>
 <script>
-const VIDEO='https://raw.githubusercontent.com/open-mmlab/mmflow/master/demo/demo.mp4';
-const GT_VIDEO='https://raw.githubusercontent.com/open-mmlab/mmflow/master/demo/demo_gt.mp4';
+const VIDEO_SOURCES=[
+  'https://cdn.jsdelivr.net/gh/open-mmlab/mmflow@master/demo/demo.mp4',
+  'https://media.githubusercontent.com/media/open-mmlab/mmflow/master/demo/demo.mp4',
+  'https://raw.githubusercontent.com/open-mmlab/mmflow/master/demo/demo.mp4'
+];
+const GT_VIDEO_SOURCES=[
+  'https://cdn.jsdelivr.net/gh/open-mmlab/mmflow@master/demo/demo_gt.mp4',
+  'https://media.githubusercontent.com/media/open-mmlab/mmflow/master/demo/demo_gt.mp4',
+  'https://raw.githubusercontent.com/open-mmlab/mmflow/master/demo/demo_gt.mp4'
+];
 const $=id=>document.getElementById(id),video=$('video'),gtVideo=$('gtVideo');
-video.src=VIDEO;gtVideo.src=GT_VIDEO;
 const PROC_W=420,history=[],MAX_HISTORY=12;let processing=false,lastCompute=0,flowUpdates=0,lastFpsStamp=performance.now();
 const capture=document.createElement('canvas'),captureCtx=capture.getContext('2d',{willReadFrequently:true});
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}function median(a){if(!a.length)return 0;const s=[...a].sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2}
-function waitMedia(v){return new Promise((ok,fail)=>{if(v.readyState>=2)return ok();v.addEventListener('loadeddata',ok,{once:true});v.addEventListener('error',()=>fail(new Error('video failed to load')),{once:true})})}
+async function loadVideoWithFallback(v,sources,label){let lastError=null;for(let i=0;i<sources.length;i++){const src=sources[i];$('status').textContent=`Loading ${label} (${i+1}/${sources.length})…`;try{await new Promise((resolve,reject)=>{let done=false;const cleanup=()=>{v.removeEventListener('loadeddata',onReady);v.removeEventListener('canplay',onReady);v.removeEventListener('error',onError)};const onReady=()=>{if(done)return;done=true;cleanup();resolve()};const onError=()=>{if(done)return;done=true;cleanup();reject(new Error('media load error'))};v.addEventListener('loadeddata',onReady);v.addEventListener('canplay',onReady);v.addEventListener('error',onError);v.src=src;v.load();setTimeout(()=>{if(done)return;done=true;cleanup();reject(new Error('media load timeout'))},12000)});v.dataset.source=src;return src}catch(e){lastError=e;console.warn(label,'failed at',src,e)}}throw new Error(`${label} failed from all sources: ${lastError?.message||'unknown error'}`)}
 function syncGT(){if(!Number.isFinite(video.currentTime))return;if(Math.abs(gtVideo.currentTime-video.currentTime)>.07)gtVideo.currentTime=video.currentTime}
 video.addEventListener('play',()=>{syncGT();gtVideo.play().catch(()=>{})});video.addEventListener('pause',()=>gtVideo.pause());video.addEventListener('seeking',()=>{history.length=0;syncGT()});video.addEventListener('ratechange',()=>gtVideo.playbackRate=video.playbackRate);video.addEventListener('ended',()=>{history.length=0});
 function grayFrame(){const w=PROC_W,h=Math.max(2,Math.round(video.videoHeight*PROC_W/video.videoWidth));capture.width=w;capture.height=h;captureCtx.drawImage(video,0,0,w,h);const d=captureCtx.getImageData(0,0,w,h).data,g=new Float32Array(w*h);for(let i=0,j=0;i<d.length;i+=4,j++)g[j]=(.299*d[i]+.587*d[i+1]+.114*d[i+2])/255;return{g,w,h,time:video.currentTime}}
@@ -66,7 +73,7 @@ async function compute(){if(processing||history.length<2)return;const gap=+$('ga
 function updateLabels(){$('gapOut').textContent=$('gap').value+' frames';$('levelsOut').textContent=$('levels').value;$('windowOut').textContent=$('window').value+' px';$('cornersOut').textContent=$('corners').value}
 ['gap','levels','window','corners'].forEach(id=>$(id).addEventListener('input',()=>{updateLabels();if(id==='gap')history.length=0}));
 function onVideoFrame(){if(video.readyState>=2&&!video.paused){syncGT();history.push(grayFrame());while(history.length>MAX_HISTORY)history.shift();compute()}video.requestVideoFrameCallback(onVideoFrame)}
-async function init(){try{await Promise.all([waitMedia(video),waitMedia(gtVideo)]);capture.width=PROC_W;capture.height=Math.round(video.videoHeight*PROC_W/video.videoWidth);$('status').textContent='Videos ready. Press play; flow updates will follow the presented frames.';updateLabels();video.requestVideoFrameCallback(onVideoFrame);video.play().catch(()=>{})}catch(e){$('status').classList.add('error');$('status').textContent='Video initialization failed: '+(e?.message||e)}}
+async function init(){try{$('status').classList.remove('error');await loadVideoWithFallback(video,VIDEO_SOURCES,'original video');await loadVideoWithFallback(gtVideo,GT_VIDEO_SOURCES,'ground-truth video');capture.width=PROC_W;capture.height=Math.round(video.videoHeight*PROC_W/video.videoWidth);$('status').textContent=`Videos ready (${video.duration.toFixed(1)} s). Press play; flow updates will follow the presented frames.`;updateLabels();if(typeof video.requestVideoFrameCallback==='function')video.requestVideoFrameCallback(onVideoFrame);else{const fallback=()=>{if(video.readyState>=2&&!video.paused){syncGT();history.push(grayFrame());while(history.length>MAX_HISTORY)history.shift();compute()}requestAnimationFrame(fallback)};requestAnimationFrame(fallback)}video.play().catch(()=>{})}catch(e){$('status').classList.add('error');$('status').textContent='Video initialization failed: '+(e?.message||e);console.error(e)}}
 init();
 </script>
 </body>
