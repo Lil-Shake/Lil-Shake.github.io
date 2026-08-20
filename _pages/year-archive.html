@@ -1,48 +1,114 @@
 ---
-layout: archive
+layout: single
 permalink: /year-archive/
 title: "Blog"
-author_profile: true
+description: "Research notes, reading, experiments, and ideas from Xinyao Liao."
+author_profile: false
+classes: wide
 redirect_from:
   - /wordpress/blog-posts/
 ---
 
-{% include base_path %}
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/blog.css">
 
-<div class="blog-coming-soon">
-  <h2 class="blog-coming-soon__title">Coming soon</h2>
-  <p class="blog-coming-soon__text">
-    Please wait while the invisible city is being built...
-  </p>
+<div class="blog-shell">
+  <section class="blog-hero reveal">
+    <div class="blog-status">Notebook · under construction</div>
+    <h1>Notes from the <span>invisible city.</span></h1>
+    <p>
+      A place for research notes, half-formed ideas, things I learned the hard way,
+      and connections I want to remember. Less polished than papers; hopefully more alive.
+    </p>
+    <div class="home-actions">
+      <a class="home-button home-button--primary" href="/">Back to research</a>
+      <a class="home-button" href="https://github.com/Lil-Shake">GitHub ↗</a>
+    </div>
+  </section>
 
-  <p class="blog-coming-soon__fragment" id="city-fragment-text">
-    Listening for a fragment from the invisible city...
-  </p>
+  <section class="blog-feature reveal" aria-label="Blog preview">
+    <div class="blog-card blog-card--note">
+      <div>
+        <p class="home-kicker">A fragment</p>
+        <h2>The city is still being built.</h2>
+        <p>
+          I am setting this space up as a lightweight research notebook rather than a formal publication feed.
+          New notes will appear here when they are worth keeping.
+        </p>
+      </div>
+
+      <div>
+        <p class="blog-fragment" id="city-fragment-text">
+          Some ideas arrive as maps; others only become visible while walking.
+        </p>
+        <button class="blog-shuffle" id="city-fragment-shuffle" type="button">Shuffle fragment</button>
+      </div>
+    </div>
+
+    <div class="blog-card blog-card--city" aria-hidden="true">
+      <div class="blog-city-moon"></div>
+      <div class="blog-city-line"></div>
+      <div class="blog-building blog-building--1"></div>
+      <div class="blog-building blog-building--2"></div>
+      <div class="blog-building blog-building--3"></div>
+      <div class="blog-city-label">Invisible City · SG</div>
+    </div>
+  </section>
+
+  <section class="home-section reveal">
+    <div class="home-section-heading">
+      <div>
+        <p class="home-kicker">What will live here</p>
+        <h2>Working notes, not another CV.</h2>
+      </div>
+    </div>
+
+    <div class="blog-topics">
+      <article class="blog-topic">
+        <span>Research</span>
+        <h3>Generative models &amp; learning</h3>
+        <p>Ideas, derivations, failed experiments, and intuitions around generation, RL, adaptation, and self-improving systems.</p>
+      </article>
+      <article class="blog-topic">
+        <span>Reading</span>
+        <h3>Papers &amp; conceptual links</h3>
+        <p>Short notes on papers, connections between fields, and explanations I wish I had when first learning something.</p>
+      </article>
+      <article class="blog-topic">
+        <span>Elsewhere</span>
+        <h3>Philosophy &amp; side quests</h3>
+        <p>Occasional writing about philosophy, building things, climbing, films, and whatever does not fit cleanly into research.</p>
+      </article>
+    </div>
+  </section>
 </div>
 
+<script src="/assets/js/home.js" defer></script>
 <script>
   (function () {
-    function setRandomFragment() {
-      var text = document.getElementById("city-fragment-text");
+    var fragments = [
+      "Some ideas arrive as maps; others only become visible while walking.",
+      "Research is a city built from questions that survived contact with reality.",
+      "A useful note does not need to be finished; it needs to make the next thought easier.",
+      "The shortest path to clarity is often through a failed experiment.",
+      "Keep the strange connection. It may become obvious six months later.",
+      "A model can optimize an objective; a researcher still has to choose what is worth optimizing."
+    ];
+
+    var text = document.getElementById("city-fragment-text");
+    var button = document.getElementById("city-fragment-shuffle");
+    var current = 0;
+
+    function showNextFragment() {
       if (!text) return;
-
-      var fragments = [
-        `Seek and learn to recognize who and what, in the midst of the inferno, are not inferno, then make them endure, give them space.`,
-        `In order to be more easily remembered, Zora has languished, disintegrated, disappeared. The earth has forgotten her.`,
-        `Each city receives its form from the desert it opposes.`,
-        `There is no language without deceit.`,
-        `The bridge is not supported by one stone or another, but by the line of the arch that they form.`,
-        `Without stones there is no arch.`
-      ];
-
-      var index = Math.floor(Math.random() * fragments.length);
-      text.textContent = fragments[index];
+      var next = current;
+      while (fragments.length > 1 && next === current) {
+        next = Math.floor(Math.random() * fragments.length);
+      }
+      current = next;
+      text.textContent = fragments[current];
     }
 
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", setRandomFragment);
-    } else {
-      setRandomFragment();
-    }
+    if (button) button.addEventListener("click", showNextFragment);
   })();
 </script>
