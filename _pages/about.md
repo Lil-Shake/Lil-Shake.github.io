@@ -10,6 +10,7 @@ redirect_from:
 ---
 
 <link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/home-polish.css">
 
 <div class="home-shell">
   <section class="home-hero reveal" aria-labelledby="home-title">
