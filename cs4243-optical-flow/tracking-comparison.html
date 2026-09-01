@@ -52,8 +52,8 @@ button{height:40px;padding:0 18px;border:0;border-radius:9px;background:#202124;
   <div class="section-title"><h2>2 · Three ways to locate the reference patch</h2><p>The background image stays fixed in all three panels so that only the <b>search process</b> moves. The same target location is used throughout.</p></div>
   <div class="grid3">
     <article class="card"><div class="card-head"><h3>Global template matching</h3><p>Evaluate candidate locations across the whole image.</p></div><div class="stage"><canvas id="global" width="640" height="408"></canvas><span class="badge" id="globalBadge">zig-zag scan</span></div><div class="caption"><b>Global search:</b> the candidate window scans the full image in a zig-zag pattern. This makes few assumptions about target motion, but requires many comparisons.</div></article>
-    <article class="card"><div class="card-head"><h3>Multi-scale template matching</h3><p>Search broadly at a coarse level, then narrow the search region.</p></div><div class="stage"><canvas id="multi" width="640" height="408"></canvas><span class="badge" id="multiBadge">coarse search</span></div><div class="caption"><b>Coarse → fine:</b> evaluate fewer, larger candidate regions first; then refine only around the promising area at finer scales.</div></article>
-    <article class="card"><div class="card-head"><h3>Local refinement / LK alignment</h3><p>Start from the previous-frame position and refine it iteratively.</p></div><div class="stage"><canvas id="lk" width="640" height="408"></canvas><span class="badge" id="lkBadge">initial guess p₀</span></div><div class="caption"><b>Local refinement:</b> the dashed box is the initial guess from frame <i>t</i>. LK makes a sequence of small updates until the patch aligns in frame <i>t+1</i>.</div></article>
+    <article class="card"><div class="card-head"><h3>Multi-scale template matching</h3><p>Use an image pyramid: search at low resolution, then propagate the best location to finer levels.</p></div><div class="stage"><canvas id="multi" width="640" height="408"></canvas><span class="badge" id="multiBadge">L2 · 1/4 resolution</span></div><div class="caption"><b>Coarse → fine:</b> the template footprint stays the same in original-image coordinates; lower-resolution levels simply evaluate fewer candidate positions. The best coarse location is mapped upward and refined with a denser search.</div></article>
+    <article class="card"><div class="card-head"><h3>Local refinement / LK alignment</h3><p>Start from an initial guess and refine the alignment iteratively.</p></div><div class="stage"><canvas id="lk" width="640" height="408"></canvas><span class="badge" id="lkBadge">initial guess p₀</span></div><div class="caption"><b>Local refinement:</b> the orange dashed box is the initial guess. The offset is exaggerated here so the iterations are visible; in practice LK assumes the residual motion is small. Each update moves the patch closer to the final alignment.</div></article>
   </div>
   <div class="legend"><span><i class="sw" style="background:#ff9f2f"></i>current candidate / initial guess</span><span><i class="sw" style="background:#ffd84d"></i>intermediate refinement</span><span><i class="sw" style="background:#22b573"></i>final match</span></div>
   <div class="takeaway"><b>Why LK here?</b> Feature tracking gives a reference patch and a good initialization from the previous frame. That makes local refinement much cheaper than searching the whole image.</div>
@@ -77,8 +77,86 @@ function drawStaticNextFrame(ctx){drawBackground(ctx,state.dx,state.dy,.17)}
 const globalPositions=(()=>{const out=[],xs=[];for(let x=26;x<=W-patch.w-24;x+=58)xs.push(x);const ys=[];for(let y=34;y<=H-patch.h-28;y+=48)ys.push(y);ys.forEach((y,row)=>{const rowXs=row%2?xs.slice().reverse():xs;rowXs.forEach(x=>out.push([x,y]))});return out})();
 function drawGlobal(t){const ctx=$('global').getContext('2d');drawStaticNextFrame(ctx);const cycle=7200,phase=(t%cycle)/cycle,scanPart=.82,target=targetPoint();if(phase<scanPart){const p=phase/scanPart,idx=Math.min(globalPositions.length-1,Math.floor(p*globalPositions.length));for(let i=Math.max(0,idx-12);i<idx;i++){const q=globalPositions[i];rect(ctx,q[0],q[1],patch.w,patch.h,'rgba(255,255,255,.16)',1)}const q=globalPositions[idx];rect(ctx,q[0],q[1],patch.w,patch.h,'#ff9f2f',3);label(ctx,`candidate ${idx+1} / ${globalPositions.length}`,12,H-34);$('globalBadge').textContent='zig-zag scan across full image'}else{rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'best match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');$('globalBadge').textContent='best response selected'}}
 function serpentinePositions(bounds,stepX,stepY,boxW,boxH){const[x0,y0,x1,y1]=bounds,out=[],xs=[];for(let x=x0;x<=x1-boxW;x+=stepX)xs.push(x);let row=0;for(let y=y0;y<=y1-boxH;y+=stepY,row++){const a=row%2?xs.slice().reverse():xs;a.forEach(x=>out.push([x,y]))}return out}
-function drawMulti(t){const ctx=$('multi').getContext('2d');drawStaticNextFrame(ctx);const target=targetPoint(),cycle=7200,p=(t%cycle)/cycle;let stage,localP,positions,boxW,boxH,color,bounds;if(p<.40){stage='coarse';localP=p/.40;boxW=128;boxH=96;bounds=[18,34,W-18,H-30];positions=serpentinePositions(bounds,132,100,boxW,boxH);color='#4dd8ff';$('multiBadge').textContent='level 2 · coarse search'}else if(p<.72){stage='medium';localP=(p-.40)/.32;boxW=94;boxH=72;bounds=[Math.max(20,target.x-150),Math.max(28,target.y-115),Math.min(W-20,target.x+150),Math.min(H-28,target.y+115)];positions=serpentinePositions(bounds,62,54,boxW,boxH);color='#ffd84d';rect(ctx,bounds[0],bounds[1],bounds[2]-bounds[0],bounds[3]-bounds[1],'rgba(77,216,255,.6)',2,[8,6]);$('multiBadge').textContent='level 1 · refine promising region'}else if(p<.92){stage='fine';localP=(p-.72)/.20;boxW=74;boxH=58;bounds=[target.x-70,target.y-58,target.x+90,target.y+74];positions=serpentinePositions(bounds,24,20,boxW,boxH);color='#ff9f2f';rect(ctx,target.x-118,target.y-90,236,180,'rgba(255,216,77,.65)',2,[8,6]);$('multiBadge').textContent='level 0 · fine local search'}else{rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'final match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');$('multiBadge').textContent='final match at full resolution';return}const idx=Math.min(positions.length-1,Math.floor(localP*positions.length));for(let i=Math.max(0,idx-5);i<idx;i++){const q=positions[i];rect(ctx,q[0],q[1],boxW,boxH,'rgba(255,255,255,.13)',1)}const q=positions[idx];rect(ctx,q[0],q[1],boxW,boxH,color,3);label(ctx,`${stage} candidate ${idx+1} / ${positions.length}`,12,H-34)}
-function drawLK(t){const ctx=$('lk').getContext('2d');drawStaticNextFrame(ctx);const start={x:feature.x,y:feature.y},target=targetPoint(),cycle=6200,p=(t%cycle)/cycle,residual=[1,.58,.30,.12,0],labels=['p₀ initial guess','p₁','p₂','p₃','aligned'];let active=Math.min(residual.length-1,Math.floor(p*residual.length));if(p>.92)active=residual.length-1;const pts=residual.map(r=>({x:target.x-(target.x-start.x)*r,y:target.y-(target.y-start.y)*r}));for(let i=0;i<pts.length;i++){const q=pts[i];if(i<active)rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'rgba(255,216,77,.30)',1.5);if(i>0&&i<=active)arrow(ctx,pts[i-1].x,pts[i-1].y,q.x,q.y,'rgba(255,216,77,.72)',2)}const q=pts[active];if(active===0){rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ff9f2f',3,[8,6]);label(ctx,'initial guess from frame t',q.x-patch.w/2,q.y-patch.h/2-27);$('lkBadge').textContent='initial guess p₀'}else if(active===pts.length-1){rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'aligned patch',q.x-patch.w/2,q.y-patch.h/2-27,'rgba(34,181,115,.9)');$('lkBadge').textContent='converged'}else{rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ffd84d',3);label(ctx,`iteration ${active}`,q.x-patch.w/2,q.y-patch.h/2-27);$('lkBadge').textContent=`refinement iteration ${active}`}label(ctx,labels[active],12,H-34)}
+function drawMulti(t){
+  const ctx=$('multi').getContext('2d');
+  drawStaticNextFrame(ctx);
+  const target=targetPoint(),cycle=7200,p=(t%cycle)/cycle;
+  const levels=[
+    {name:'L2 · 1/4 resolution',start:0,end:.40,strideX:116,strideY:88,region:[24,38,W-24,H-32],color:'#4dd8ff',ghost:'#4dd8ff',pixel:8},
+    {name:'L1 · 1/2 resolution',start:.40,end:.72,strideX:48,strideY:40,region:[target.x-130,target.y-102,target.x+130,target.y+102],color:'#ffd84d',ghost:'#4dd8ff',pixel:4},
+    {name:'L0 · full resolution',start:.72,end:.94,strideX:18,strideY:16,region:[target.x-72,target.y-58,target.x+72,target.y+58],color:'#ff9f2f',ghost:'#ffd84d',pixel:1}
+  ];
+  if(p>=.94){
+    rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);
+    label(ctx,'final match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');
+    $('multiBadge').textContent='L0 · final match';
+    return;
+  }
+  const lv=levels.find(v=>p>=v.start&&p<v.end) || levels[0];
+  const localP=(p-lv.start)/(lv.end-lv.start);
+  $('multiBadge').textContent=lv.name;
+
+  ctx.save();
+  ctx.fillStyle='rgba(0,0,0,.34)';ctx.fillRect(12,12,148,42);
+  ctx.fillStyle='#fff';ctx.font='bold 12px Arial';ctx.fillText(lv.name,22,30);
+  ctx.font='11px Arial';ctx.fillStyle='rgba(255,255,255,.78)';
+  ctx.fillText(lv.pixel===1?'original image':'downsampled pyramid level',22,46);
+  ctx.restore();
+
+  const [x0,y0,x1,y1]=lv.region;
+  if(lv!==levels[0]){
+    rect(ctx,x0,y0,x1-x0,y1-y0,lv.ghost,2,[8,6]);
+    label(ctx,'search only near coarse winner',Math.max(12,x0),Math.max(60,y0-26),'rgba(0,0,0,.66)');
+  }
+
+  const positions=serpentinePositions([x0,y0,x1,y1],lv.strideX,lv.strideY,patch.w,patch.h);
+  const idx=Math.min(positions.length-1,Math.floor(localP*positions.length));
+  for(let i=Math.max(0,idx-8);i<idx;i++){
+    const q=positions[i];rect(ctx,q[0],q[1],patch.w,patch.h,'rgba(255,255,255,.12)',1);
+  }
+  const q=positions[idx];
+  rect(ctx,q[0],q[1],patch.w,patch.h,lv.color,3);
+  label(ctx,`candidate ${idx+1} / ${positions.length}`,12,H-34);
+}
+function drawLK(t){
+  const ctx=$('lk').getContext('2d');
+  drawStaticNextFrame(ctx);
+  const target=targetPoint(),cycle=6200,p=(t%cycle)/cycle;
+
+  const start={x:target.x-52,y:target.y+32};
+  const fractions=[0,.42,.70,.88,1.0];
+  const labels=['p₀ initial guess','p₁','p₂','p₃','aligned'];
+  const pts=fractions.map(a=>({x:start.x+(target.x-start.x)*a,y:start.y+(target.y-start.y)*a}));
+  let active=Math.min(pts.length-1,Math.floor(p*pts.length));
+  if(p>.92)active=pts.length-1;
+
+  const localX=Math.min(start.x,target.x)-48,localY=Math.min(start.y,target.y)-44;
+  const localW=Math.abs(target.x-start.x)+patch.w+96,localH=Math.abs(target.y-start.y)+patch.h+88;
+  rect(ctx,localX-patch.w/2,localY-patch.h/2,localW,localH,'rgba(255,255,255,.24)',1.5,[7,6]);
+  label(ctx,'local search neighborhood',Math.max(12,localX-patch.w/2),Math.max(58,localY-patch.h/2-25),'rgba(0,0,0,.62)');
+
+  for(let i=0;i<pts.length;i++){
+    const q=pts[i];
+    if(i<active) rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'rgba(255,216,77,.24)',1.4);
+    if(i>0&&i<=active) arrow(ctx,pts[i-1].x,pts[i-1].y,q.x,q.y,'rgba(255,216,77,.82)',2.2);
+  }
+
+  const q=pts[active];
+  if(active===0){
+    rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ff9f2f',3,[8,6]);
+    label(ctx,'p₀ · initial guess',q.x-patch.w/2,q.y-patch.h/2-27,'rgba(255,159,47,.88)');
+    $('lkBadge').textContent='p₀ · initial guess (exaggerated)';
+  }else if(active===pts.length-1){
+    rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#22b573',4);
+    label(ctx,'aligned patch',q.x-patch.w/2,q.y-patch.h/2-27,'rgba(34,181,115,.9)');
+    $('lkBadge').textContent='converged';
+  }else{
+    rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ffd84d',3);
+    label(ctx,`p${active} · refine`,q.x-patch.w/2,q.y-patch.h/2-27,'rgba(0,0,0,.72)');
+    $('lkBadge').textContent=`refinement step ${active} / 3`;
+  }
+  label(ctx,labels[active],12,H-34);
+}
 let baseTime=performance.now(),pausedAt=0;
 function render(now){const t=state.paused?pausedAt:now-baseTime;if(!state.paused&&now-state.lastFrameStep>850){state.frame=(state.frame+1)%state.total;$('frame').value=state.frame;state.lastFrameStep=now}$('dxOut').textContent=state.dx+' px / frame';$('dyOut').textContent=state.dy+' px / frame';$('frameOut').textContent=(state.frame+1)+' / '+state.total;drawFlow();drawTrack();drawGlobal(t);drawMulti(t);drawLK(t);requestAnimationFrame(render)}
 $('dx').addEventListener('input',e=>{state.dx=+e.target.value});$('dy').addEventListener('input',e=>{state.dy=+e.target.value});$('frame').addEventListener('input',e=>{state.frame=+e.target.value;state.lastFrameStep=performance.now()});$('pauseBtn').addEventListener('click',()=>{state.paused=!state.paused;if(state.paused){pausedAt=performance.now()-baseTime;$('pauseBtn').textContent='Resume demo'}else{baseTime=performance.now()-pausedAt;state.lastFrameStep=performance.now();$('pauseBtn').textContent='Pause demo'}});
