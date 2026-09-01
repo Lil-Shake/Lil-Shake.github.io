@@ -5,91 +5,83 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>CS4243 · Optical Flow vs Feature Tracking</title>
 <style>
-:root{--bg:#f5f7fa;--card:#fff;--text:#17191d;--muted:#667085;--border:#d9dee7;--blue:#2878ff;--green:#22b573;--orange:#ff9f2f;--cyan:#4dd8ff;--dark:#111318}
+:root{--bg:#f5f7fa;--card:#fff;--text:#17191d;--muted:#667085;--border:#d9dee7;--blue:#2878ff;--green:#22b573;--orange:#ff9f2f;--cyan:#4dd8ff;--yellow:#ffd84d;--red:#ff6b6b;--dark:#111318}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:14px Arial,Helvetica,sans-serif}
 header{display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:#fff;border-bottom:1px solid var(--border)}
 header a{color:var(--blue);font-weight:700;text-decoration:none}
 main{max-width:1440px;margin:auto;padding:24px}
 h1{font-size:32px;line-height:1.1;margin:0 0 8px}.lead{max-width:1120px;margin:0;color:var(--muted);font-size:15px;line-height:1.55}
-.controls{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:18px;align-items:end;margin:18px 0;padding:15px 18px;background:#fff;border:1px solid var(--border);border-radius:14px}
+.section{margin-top:26px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:12px}.section-title h2{font-size:24px;margin:0}.section-title p{max-width:880px;margin:0;color:var(--muted);line-height:1.5}
+.controls{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:18px;align-items:end;margin:14px 0 18px;padding:15px 18px;background:#fff;border:1px solid var(--border);border-radius:14px}
 .control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:700;margin-bottom:7px}.control output{font-family:ui-monospace,monospace;color:var(--blue)}input[type=range]{width:100%;accent-color:var(--blue)}
 button{height:40px;padding:0 18px;border:0;border-radius:9px;background:#202124;color:#fff;font-weight:700;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}.card{display:flex;flex-direction:column;min-width:0;background:var(--card);border:1px solid var(--border);border-radius:15px;overflow:hidden}
-.card-head{min-height:112px;padding:17px 18px 13px;border-bottom:1px solid #edf0f4}.card h2{font-size:21px;margin:0 0 7px}.card-head p{margin:0;color:var(--muted);line-height:1.45}
-.template-chip{display:flex;align-items:center;gap:9px;margin-top:8px;font-size:12px;color:#4d5663}.template-chip img{width:54px;height:42px;object-fit:cover;border:1px solid var(--border);border-radius:6px}
-.stage{position:relative;background:var(--dark);aspect-ratio:320/204;overflow:hidden}.stage svg{display:block;width:100%;height:100%}
-.caption{min-height:82px;padding:12px 17px 14px;background:#fafbfc;border-top:1px solid #edf0f4;line-height:1.45;color:#4d5663}.caption b{color:var(--text)}
-.relation{margin-top:17px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.callout,.definition{background:#fff;border:1px solid var(--border);border-radius:13px;padding:15px 17px;line-height:1.55}.callout{border-color:#b9d8ff;background:#eef7ff}.definition{color:#4d5663}
-.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:9px;font-weight:700}.pill{padding:7px 9px;border:1px solid #cfd6e0;background:#fff;border-radius:999px}.arrow{color:#6b7280;font-size:18px}
-@media(max-width:1000px){.grid{grid-template-columns:1fr}.card-head{min-height:0}.controls{grid-template-columns:1fr 1fr}.relation{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.card{display:flex;flex-direction:column;min-width:0;background:var(--card);border:1px solid var(--border);border-radius:15px;overflow:hidden}
+.card-head{padding:16px 18px 13px;border-bottom:1px solid #edf0f4}.card h3{font-size:20px;margin:0 0 6px}.card-head p{margin:0;color:var(--muted);line-height:1.45}
+.stage{position:relative;background:var(--dark);aspect-ratio:320/204;overflow:hidden}canvas{display:block;width:100%;height:100%}
+.badge{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.72);color:#fff;border-radius:999px;padding:5px 8px;font-size:10px;pointer-events:none}
+.caption{min-height:80px;padding:12px 17px 14px;background:#fafbfc;border-top:1px solid #edf0f4;line-height:1.45;color:#4d5663}.caption b{color:var(--text)}
+.note{margin-top:16px;padding:13px 15px;background:#fff8df;border:1px solid #efcc70;border-radius:12px;line-height:1.5}
+.takeaway{margin-top:16px;padding:13px 15px;background:#eef7ff;border:1px solid #b9d8ff;border-radius:12px;line-height:1.5}
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--muted)}.legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+@media(max-width:1000px){.grid2,.grid3{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}.section-title{align-items:flex-start;flex-direction:column}}
 @media(max-width:620px){main{padding:16px}.controls{grid-template-columns:1fr}header{padding:12px 16px}}
 </style>
 </head>
 <body>
 <header><a href="index.html">← CS4243 Interactive</a><b>Tracking · Concept Demo</b></header>
 <main>
-<h1>Optical Flow, Feature Tracking, and Lucas–Kanade</h1>
-<p class="lead">All three panels use the same synthetic translation of the same face. The demo separates <b>what is estimated</b> (optical flow vs. a feature trajectory) from <b>how a local displacement can be estimated</b> (Lucas–Kanade alignment).</p>
-
-<section class="controls">
-  <div class="control"><label>Horizontal motion <output id="dxOut">6 px / frame</output></label><input id="dx" type="range" min="-10" max="14" step="1" value="6"></div>
-  <div class="control"><label>Vertical motion <output id="dyOut">2 px / frame</output></label><input id="dy" type="range" min="-8" max="8" step="1" value="2"></div>
-  <div class="control"><label>Current frame <output id="frameOut">1 / 8</output></label><input id="frame" type="range" min="0" max="7" step="1" value="0"></div>
-  <button id="play">Play sequence</button>
+<h1>Optical Flow vs Feature Tracking</h1>
+<p class="lead">First distinguish the two tasks. Then, once a reference feature patch is known, compare three ways to locate the corresponding patch in the next frame.</p>
+<section class="section">
+  <div class="section-title"><h2>1 · Optical flow vs. feature tracking</h2><p><b>Optical flow</b> estimates frame-to-frame motion at many image locations. <b>Feature tracking</b> follows selected distinctive image features across multiple frames to form trajectories.</p></div>
+  <section class="controls">
+    <div class="control"><label>Horizontal motion <output id="dxOut">6 px / frame</output></label><input id="dx" type="range" min="-10" max="14" step="1" value="6"></div>
+    <div class="control"><label>Vertical motion <output id="dyOut">2 px / frame</output></label><input id="dy" type="range" min="-8" max="8" step="1" value="2"></div>
+    <div class="control"><label>Current frame <output id="frameOut">1 / 8</output></label><input id="frame" type="range" min="0" max="7" step="1" value="0"></div>
+    <button id="pauseBtn">Pause demo</button>
+  </section>
+  <div class="grid2">
+    <article class="card"><div class="card-head"><h3>Optical flow</h3><p>Many locations, one nearby frame pair.</p></div><div class="stage"><canvas id="flow" width="640" height="408"></canvas><span class="badge" id="flowBadge">frame 1 → frame 2</span></div><div class="caption"><b>Output:</b> a motion field over many image locations. Here the dense idea is shown sparsely with arrows.</div></article>
+    <article class="card"><div class="card-head"><h3>Feature tracking</h3><p>One selected feature, followed repeatedly over time.</p></div><div class="stage"><canvas id="track" width="640" height="408"></canvas><span class="badge" id="trackBadge">trajectory through frame 1</span></div><div class="caption"><b>Output:</b> a trajectory with persistent identity. Feature tracking is a common form of point tracking where the points are selected for distinctive local appearance.</div></article>
+  </div>
+  <div class="note"><b>Transition:</b> once a reference feature patch is selected in frame <i>t</i>, how do we locate the corresponding patch in frame <i>t+1</i>?</div>
 </section>
-
-<section class="grid">
-  <article class="card">
-    <div class="card-head"><h2>1 · Optical flow</h2><p>Estimate motion at <b>many image locations</b> between a pair of nearby frames.</p></div>
-    <div class="stage">
-      <svg viewBox="0 0 320 204" aria-label="Optical flow visualization">
-        <defs><marker id="flowArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#4dd8ff"/></marker></defs>
-        <rect width="320" height="204" fill="#111318"/><image id="flowFace" href="tracking-face.svg" x="0" y="0" width="320" height="204" preserveAspectRatio="none"/><g id="flowVectors"></g>
-      </svg>
-    </div>
-    <div class="caption"><b>Output:</b> a field of frame-to-frame motion vectors. Persistent identity across a long sequence is not the main output.</div>
-  </article>
-
-  <article class="card">
-    <div class="card-head"><h2>2 · Feature tracking</h2><p>Choose a distinctive image feature and <b>follow the same feature</b> over multiple frames.</p></div>
-    <div class="stage">
-      <svg viewBox="0 0 320 204" aria-label="Feature tracking visualization">
-        <rect width="320" height="204" fill="#111318"/><image id="trackFace" href="tracking-face.svg" x="0" y="0" width="320" height="204" preserveAspectRatio="none"/><polyline id="trackPath" fill="none" stroke="#22b573" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><g id="trackDots"></g>
-      </svg>
-    </div>
-    <div class="caption"><b>Output:</b> a trajectory with persistent feature identity. The selected point is represented by the local image patch around it.</div>
-  </article>
-
-  <article class="card">
-    <div class="card-head"><h2>3 · Lucas–Kanade alignment</h2><p>A <b>local alignment method</b>: start near the previous position and estimate a small displacement Δp.</p><div class="template-chip"><span>Template patch</span><img src="tracking-eye.svg" alt="eye template patch"></div></div>
-    <div class="stage">
-      <svg viewBox="0 0 320 204" aria-label="Lucas Kanade local alignment visualization">
-        <defs><marker id="lkArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff9f2f"/></marker></defs>
-        <rect width="320" height="204" fill="#111318"/><image id="lkFace" href="tracking-face.svg" x="0" y="0" width="320" height="204" preserveAspectRatio="none"/>
-        <rect id="prevPatch" width="54" height="42" rx="3" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/><rect id="nextPatch" width="54" height="42" rx="3" fill="none" stroke="#22b573" stroke-width="2.5"/><line id="lkMotion" stroke="#ff9f2f" stroke-width="3" marker-end="url(#lkArrow)"/><text id="lkLabel" x="12" y="190" fill="#fff" font-size="12" font-family="Arial, sans-serif"></text>
-      </svg>
-    </div>
-    <div class="caption" id="lkCaption"><b>Method:</b> local patch alignment from frame <i>t</i> to <i>t+1</i>.</div>
-  </article>
-</section>
-
-<section class="relation">
-  <div class="callout"><b>Key relationship</b><div class="pipeline"><span class="pill">LK at many selected locations</span><span class="arrow">→</span><span class="pill">sparse optical flow</span></div><div class="pipeline"><span class="pill">repeat LK on the same selected feature</span><span class="arrow">→</span><span class="pill">feature trajectory</span></div></div>
-  <div class="definition"><b>Feature tracking vs. point tracking.</b> Feature tracking is a common form of point tracking in which the tracked points are chosen because their local image appearance is distinctive—for example corners or textured patches. Here, “feature” means an image-space feature, not a neural-network latent feature.</div>
+<section class="section">
+  <div class="section-title"><h2>2 · Three ways to locate the reference patch</h2><p>The background image stays fixed in all three panels so that only the <b>search process</b> moves. The same target location is used throughout.</p></div>
+  <div class="grid3">
+    <article class="card"><div class="card-head"><h3>Global template matching</h3><p>Evaluate candidate locations across the whole image.</p></div><div class="stage"><canvas id="global" width="640" height="408"></canvas><span class="badge" id="globalBadge">zig-zag scan</span></div><div class="caption"><b>Global search:</b> the candidate window scans the full image in a zig-zag pattern. This makes few assumptions about target motion, but requires many comparisons.</div></article>
+    <article class="card"><div class="card-head"><h3>Multi-scale template matching</h3><p>Search broadly at a coarse level, then narrow the search region.</p></div><div class="stage"><canvas id="multi" width="640" height="408"></canvas><span class="badge" id="multiBadge">coarse search</span></div><div class="caption"><b>Coarse → fine:</b> evaluate fewer, larger candidate regions first; then refine only around the promising area at finer scales.</div></article>
+    <article class="card"><div class="card-head"><h3>Local refinement / LK alignment</h3><p>Start from the previous-frame position and refine it iteratively.</p></div><div class="stage"><canvas id="lk" width="640" height="408"></canvas><span class="badge" id="lkBadge">initial guess p₀</span></div><div class="caption"><b>Local refinement:</b> the dashed box is the initial guess from frame <i>t</i>. LK makes a sequence of small updates until the patch aligns in frame <i>t+1</i>.</div></article>
+  </div>
+  <div class="legend"><span><i class="sw" style="background:#ff9f2f"></i>current candidate / initial guess</span><span><i class="sw" style="background:#ffd84d"></i>intermediate refinement</span><span><i class="sw" style="background:#22b573"></i>final match</span></div>
+  <div class="takeaway"><b>Why LK here?</b> Feature tracking gives a reference patch and a good initialization from the previous frame. That makes local refinement much cheaper than searching the whole image.</div>
 </section>
 </main>
 <script>
-const state={dx:6,dy:2,frame:0,total:8,playing:false,timer:null};
-const feature={x:128,y:90};
-const $=id=>document.getElementById(id);
-function setFacePosition(id,k){const el=$(id);el.setAttribute('x',k*state.dx);el.setAttribute('y',k*state.dy)}
-function svgEl(name,attrs={}){const el=document.createElementNS('http://www.w3.org/2000/svg',name);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));return el}
-function renderFlow(k){setFacePosition('flowFace',k);const group=$('flowVectors');group.replaceChildren();for(let y=30;y<=174;y+=36)for(let x=34;x<=286;x+=42)group.appendChild(svgEl('line',{x1:x,y1:y,x2:x+state.dx*2.1,y2:y+state.dy*2.1,stroke:'#4dd8ff','stroke-width':2,'marker-end':'url(#flowArrow)',opacity:.95}))}
-function renderTrack(k){setFacePosition('trackFace',k);const pts=[];for(let i=0;i<=k;i++)pts.push([feature.x+i*state.dx,feature.y+i*state.dy]);$('trackPath').setAttribute('points',pts.map(p=>p.join(',')).join(' '));const group=$('trackDots');group.replaceChildren();pts.forEach((p,i)=>group.appendChild(svgEl('circle',{cx:p[0],cy:p[1],r:i===pts.length-1?6:3.5,fill:'#22b573',stroke:'#fff','stroke-width':1.5})))}
-function renderLK(k){const next=Math.min(k+1,state.total-1);setFacePosition('lkFace',next);const x0=feature.x+k*state.dx,y0=feature.y+k*state.dy,x1=feature.x+next*state.dx,y1=feature.y+next*state.dy;$('prevPatch').setAttribute('x',x0-27);$('prevPatch').setAttribute('y',y0-21);$('nextPatch').setAttribute('x',x1-27);$('nextPatch').setAttribute('y',y1-21);$('lkMotion').setAttribute('x1',x0);$('lkMotion').setAttribute('y1',y0);$('lkMotion').setAttribute('x2',x1);$('lkMotion').setAttribute('y2',y1);$('lkLabel').textContent=`local update Δp = (${state.dx}, ${state.dy}) px`;$('lkCaption').innerHTML=`<b>Method:</b> use the previous location as initialization and estimate Δp = <b>(${state.dx}, ${state.dy}) px</b>. Because the search is local, LK assumes a good initialization and small inter-frame motion.`}
-function render(){$('dxOut').textContent=state.dx+' px / frame';$('dyOut').textContent=state.dy+' px / frame';$('frameOut').textContent=(state.frame+1)+' / '+state.total;const pairFrame=Math.min(state.frame,state.total-2);renderFlow(pairFrame);renderTrack(state.frame);renderLK(pairFrame)}
-$('dx').addEventListener('input',e=>{state.dx=+e.target.value;render()});$('dy').addEventListener('input',e=>{state.dy=+e.target.value;render()});$('frame').addEventListener('input',e=>{state.frame=+e.target.value;render()});$('play').addEventListener('click',()=>{state.playing=!state.playing;$('play').textContent=state.playing?'Pause':'Play sequence';clearInterval(state.timer);if(state.playing)state.timer=setInterval(()=>{state.frame=(state.frame+1)%state.total;$('frame').value=state.frame;render()},700)});render();
+const FACE_SRC='tracking-face.svg';
+const W=640,H=408,feature={x:255,y:178},patch={w:74,h:58};
+const state={dx:6,dy:2,frame:0,total:8,paused:false,lastFrameStep:0};
+const $=id=>document.getElementById(id);const img=new Image();
+function drawBackground(ctx,offsetX=0,offsetY=0,dim=.14){ctx.clearRect(0,0,W,H);ctx.fillStyle='#111318';ctx.fillRect(0,0,W,H);ctx.drawImage(img,offsetX,offsetY,W,H);if(dim){ctx.fillStyle=`rgba(0,0,0,${dim})`;ctx.fillRect(0,0,W,H)}}
+function rect(ctx,x,y,w,h,color,lw=3,dash=[]){ctx.save();ctx.strokeStyle=color;ctx.lineWidth=lw;ctx.setLineDash(dash);ctx.strokeRect(x,y,w,h);ctx.restore()}
+function dot(ctx,x,y,r,color){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke()}
+function arrow(ctx,x0,y0,x1,y1,color,lw=2.5){const a=Math.atan2(y1-y0,x1-x0);ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=lw;ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke();ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x1-8*Math.cos(a-.55),y1-8*Math.sin(a-.55));ctx.lineTo(x1-8*Math.cos(a+.55),y1-8*Math.sin(a+.55));ctx.closePath();ctx.fill()}
+function label(ctx,text,x,y,bg='rgba(0,0,0,.72)'){ctx.font='12px Arial';const m=ctx.measureText(text).width;ctx.fillStyle=bg;ctx.fillRect(x,y,m+12,22);ctx.fillStyle='#fff';ctx.fillText(text,x+6,y+15)}
+function currentPoint(k){return{x:feature.x+k*state.dx,y:feature.y+k*state.dy}}
+function drawFlow(){const ctx=$('flow').getContext('2d'),k=Math.min(state.frame,state.total-2);drawBackground(ctx,k*state.dx,k*state.dy,.2);for(let y=48;y<H-30;y+=56)for(let x=50;x<W-35;x+=70)arrow(ctx,x,y,x+state.dx*2.4,y+state.dy*2.4,'#4dd8ff',2);const p=currentPoint(k);dot(ctx,p.x,p.y,6,'#fff');rect(ctx,p.x-patch.w/2,p.y-patch.h/2,patch.w,patch.h,'#ffd84d',2);$('flowBadge').textContent=`frame ${k+1} → frame ${k+2}`}
+function drawTrack(){const ctx=$('track').getContext('2d');drawBackground(ctx,state.frame*state.dx,state.frame*state.dy,0);ctx.strokeStyle='#22b573';ctx.lineWidth=4;ctx.beginPath();for(let i=0;i<=state.frame;i++){const p=currentPoint(i);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}ctx.stroke();for(let i=0;i<=state.frame;i++){const p=currentPoint(i);dot(ctx,p.x,p.y,i===state.frame?7:4,'#22b573')}const p=currentPoint(state.frame);rect(ctx,p.x-patch.w/2,p.y-patch.h/2,patch.w,patch.h,'#ffd84d',2.5);$('trackBadge').textContent=`trajectory through frame ${state.frame+1}`}
+function targetPoint(){return{x:feature.x+state.dx,y:feature.y+state.dy}}
+function drawStaticNextFrame(ctx){drawBackground(ctx,state.dx,state.dy,.17)}
+const globalPositions=(()=>{const out=[],xs=[];for(let x=26;x<=W-patch.w-24;x+=58)xs.push(x);const ys=[];for(let y=34;y<=H-patch.h-28;y+=48)ys.push(y);ys.forEach((y,row)=>{const rowXs=row%2?xs.slice().reverse():xs;rowXs.forEach(x=>out.push([x,y]))});return out})();
+function drawGlobal(t){const ctx=$('global').getContext('2d');drawStaticNextFrame(ctx);const cycle=7200,phase=(t%cycle)/cycle,scanPart=.82,target=targetPoint();if(phase<scanPart){const p=phase/scanPart,idx=Math.min(globalPositions.length-1,Math.floor(p*globalPositions.length));for(let i=Math.max(0,idx-12);i<idx;i++){const q=globalPositions[i];rect(ctx,q[0],q[1],patch.w,patch.h,'rgba(255,255,255,.16)',1)}const q=globalPositions[idx];rect(ctx,q[0],q[1],patch.w,patch.h,'#ff9f2f',3);label(ctx,`candidate ${idx+1} / ${globalPositions.length}`,12,H-34);$('globalBadge').textContent='zig-zag scan across full image'}else{rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'best match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');$('globalBadge').textContent='best response selected'}}
+function serpentinePositions(bounds,stepX,stepY,boxW,boxH){const[x0,y0,x1,y1]=bounds,out=[],xs=[];for(let x=x0;x<=x1-boxW;x+=stepX)xs.push(x);let row=0;for(let y=y0;y<=y1-boxH;y+=stepY,row++){const a=row%2?xs.slice().reverse():xs;a.forEach(x=>out.push([x,y]))}return out}
+function drawMulti(t){const ctx=$('multi').getContext('2d');drawStaticNextFrame(ctx);const target=targetPoint(),cycle=7200,p=(t%cycle)/cycle;let stage,localP,positions,boxW,boxH,color,bounds;if(p<.40){stage='coarse';localP=p/.40;boxW=128;boxH=96;bounds=[18,34,W-18,H-30];positions=serpentinePositions(bounds,132,100,boxW,boxH);color='#4dd8ff';$('multiBadge').textContent='level 2 · coarse search'}else if(p<.72){stage='medium';localP=(p-.40)/.32;boxW=94;boxH=72;bounds=[Math.max(20,target.x-150),Math.max(28,target.y-115),Math.min(W-20,target.x+150),Math.min(H-28,target.y+115)];positions=serpentinePositions(bounds,62,54,boxW,boxH);color='#ffd84d';rect(ctx,bounds[0],bounds[1],bounds[2]-bounds[0],bounds[3]-bounds[1],'rgba(77,216,255,.6)',2,[8,6]);$('multiBadge').textContent='level 1 · refine promising region'}else if(p<.92){stage='fine';localP=(p-.72)/.20;boxW=74;boxH=58;bounds=[target.x-70,target.y-58,target.x+90,target.y+74];positions=serpentinePositions(bounds,24,20,boxW,boxH);color='#ff9f2f';rect(ctx,target.x-118,target.y-90,236,180,'rgba(255,216,77,.65)',2,[8,6]);$('multiBadge').textContent='level 0 · fine local search'}else{rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'final match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');$('multiBadge').textContent='final match at full resolution';return}const idx=Math.min(positions.length-1,Math.floor(localP*positions.length));for(let i=Math.max(0,idx-5);i<idx;i++){const q=positions[i];rect(ctx,q[0],q[1],boxW,boxH,'rgba(255,255,255,.13)',1)}const q=positions[idx];rect(ctx,q[0],q[1],boxW,boxH,color,3);label(ctx,`${stage} candidate ${idx+1} / ${positions.length}`,12,H-34)}
+function drawLK(t){const ctx=$('lk').getContext('2d');drawStaticNextFrame(ctx);const start={x:feature.x,y:feature.y},target=targetPoint(),cycle=6200,p=(t%cycle)/cycle,residual=[1,.58,.30,.12,0],labels=['p₀ initial guess','p₁','p₂','p₃','aligned'];let active=Math.min(residual.length-1,Math.floor(p*residual.length));if(p>.92)active=residual.length-1;const pts=residual.map(r=>({x:target.x-(target.x-start.x)*r,y:target.y-(target.y-start.y)*r}));for(let i=0;i<pts.length;i++){const q=pts[i];if(i<active)rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'rgba(255,216,77,.30)',1.5);if(i>0&&i<=active)arrow(ctx,pts[i-1].x,pts[i-1].y,q.x,q.y,'rgba(255,216,77,.72)',2)}const q=pts[active];if(active===0){rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ff9f2f',3,[8,6]);label(ctx,'initial guess from frame t',q.x-patch.w/2,q.y-patch.h/2-27);$('lkBadge').textContent='initial guess p₀'}else if(active===pts.length-1){rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'aligned patch',q.x-patch.w/2,q.y-patch.h/2-27,'rgba(34,181,115,.9)');$('lkBadge').textContent='converged'}else{rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ffd84d',3);label(ctx,`iteration ${active}`,q.x-patch.w/2,q.y-patch.h/2-27);$('lkBadge').textContent=`refinement iteration ${active}`}label(ctx,labels[active],12,H-34)}
+let baseTime=performance.now(),pausedAt=0;
+function render(now){const t=state.paused?pausedAt:now-baseTime;if(!state.paused&&now-state.lastFrameStep>850){state.frame=(state.frame+1)%state.total;$('frame').value=state.frame;state.lastFrameStep=now}$('dxOut').textContent=state.dx+' px / frame';$('dyOut').textContent=state.dy+' px / frame';$('frameOut').textContent=(state.frame+1)+' / '+state.total;drawFlow();drawTrack();drawGlobal(t);drawMulti(t);drawLK(t);requestAnimationFrame(render)}
+$('dx').addEventListener('input',e=>{state.dx=+e.target.value});$('dy').addEventListener('input',e=>{state.dy=+e.target.value});$('frame').addEventListener('input',e=>{state.frame=+e.target.value;state.lastFrameStep=performance.now()});$('pauseBtn').addEventListener('click',()=>{state.paused=!state.paused;if(state.paused){pausedAt=performance.now()-baseTime;$('pauseBtn').textContent='Resume demo'}else{baseTime=performance.now()-pausedAt;state.lastFrameStep=performance.now();$('pauseBtn').textContent='Pause demo'}});
+img.onload=()=>requestAnimationFrame(render);img.src=FACE_SRC;
 </script>
-</body>
-</html>
+</body></html>
