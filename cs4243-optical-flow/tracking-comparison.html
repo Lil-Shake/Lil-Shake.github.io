@@ -1,42 +1,95 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tracking comparison · CS4243</title><link rel="stylesheet" href="styles.css?v=12">
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CS4243 · Optical Flow vs Feature Tracking</title>
 <style>
-body{margin:0;background:#f6f7f9;color:#181818;font-family:Inter,system-ui,sans-serif}main{max-width:1400px;margin:auto;padding:24px}
-.top{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:white;border-bottom:1px solid #ddd}.top a{color:#315ee7;font-weight:700;text-decoration:none}
-h1{font-size:24px;margin:0}.lead{color:#666;max-width:950px;line-height:1.5}.ctrl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:white;border:1px solid #ddd;border-radius:14px;padding:14px;margin:18px 0}
-label{display:flex;justify-content:space-between;font-size:13px;font-weight:700}input{width:100%}button{padding:10px 14px;border:0;border-radius:8px;background:#222;color:white;font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}article{background:white;border:1px solid #ddd;border-radius:14px;overflow:hidden}article header{padding:14px}article h2{font-size:18px;margin:0 0 5px}article p{font-size:13px;color:#666;margin:0;line-height:1.4}canvas{display:block;width:100%;background:#111;aspect-ratio:454/290}.meta{padding:10px 14px;font-size:12px;color:#555;background:#fafafa}.note{margin-top:16px;padding:13px;border:1px solid #f1d49d;background:#fff7e7;border-radius:12px;line-height:1.5}.legend{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}.legend div{background:white;border:1px solid #ddd;border-radius:10px;padding:12px;font-size:13px;line-height:1.4}.eye{width:52px;vertical-align:middle;border-radius:5px}
-@media(max-width:900px){.grid,.ctrl,.legend{grid-template-columns:1fr}}
-</style></head><body>
-<div class="top"><div><a href="index.html">← CV Lab</a><h1>Optical Flow vs Feature Tracking vs Lucas–Kanade</h1></div><b>CS4243 · Tracking</b></div>
+:root{--bg:#f5f7fa;--card:#fff;--text:#17191d;--muted:#667085;--border:#d9dee7;--blue:#2878ff;--green:#22b573;--orange:#ff9f2f;--cyan:#4dd8ff;--dark:#111318}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px Arial,Helvetica,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:#fff;border-bottom:1px solid var(--border)}
+header a{color:var(--blue);font-weight:700;text-decoration:none}
+main{max-width:1440px;margin:auto;padding:24px}
+h1{font-size:32px;line-height:1.1;margin:0 0 8px}.lead{max-width:1120px;margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+.controls{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:18px;align-items:end;margin:18px 0;padding:15px 18px;background:#fff;border:1px solid var(--border);border-radius:14px}
+.control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:700;margin-bottom:7px}.control output{font-family:ui-monospace,monospace;color:var(--blue)}input[type=range]{width:100%;accent-color:var(--blue)}
+button{height:40px;padding:0 18px;border:0;border-radius:9px;background:#202124;color:#fff;font-weight:700;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}.card{display:flex;flex-direction:column;min-width:0;background:var(--card);border:1px solid var(--border);border-radius:15px;overflow:hidden}
+.card-head{min-height:112px;padding:17px 18px 13px;border-bottom:1px solid #edf0f4}.card h2{font-size:21px;margin:0 0 7px}.card-head p{margin:0;color:var(--muted);line-height:1.45}
+.template-chip{display:flex;align-items:center;gap:9px;margin-top:8px;font-size:12px;color:#4d5663}.template-chip img{width:54px;height:42px;object-fit:cover;border:1px solid var(--border);border-radius:6px}
+.stage{position:relative;background:var(--dark);aspect-ratio:320/204;overflow:hidden}.stage svg{display:block;width:100%;height:100%}
+.caption{min-height:82px;padding:12px 17px 14px;background:#fafbfc;border-top:1px solid #edf0f4;line-height:1.45;color:#4d5663}.caption b{color:var(--text)}
+.relation{margin-top:17px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.callout,.definition{background:#fff;border:1px solid var(--border);border-radius:13px;padding:15px 17px;line-height:1.55}.callout{border-color:#b9d8ff;background:#eef7ff}.definition{color:#4d5663}
+.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:9px;font-weight:700}.pill{padding:7px 9px;border:1px solid #cfd6e0;background:#fff;border-radius:999px}.arrow{color:#6b7280;font-size:18px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.card-head{min-height:0}.controls{grid-template-columns:1fr 1fr}.relation{grid-template-columns:1fr}}
+@media(max-width:620px){main{padding:16px}.controls{grid-template-columns:1fr}header{padding:12px 16px}}
+</style>
+</head>
+<body>
+<header><a href="index.html">← CS4243 Interactive</a><b>Tracking · Concept Demo</b></header>
 <main>
-<p class="lead">The same synthetic motion is used in all three panels. <b>Optical flow</b> describes motion at many image locations between nearby frames; <b>feature tracking</b> follows selected, distinctive image features across many frames; <b>Lucas–Kanade (LK)</b> is a local patch-alignment algorithm that can provide the frame-to-frame displacement used by either task.</p>
-<div class="ctrl">
-<div><label>Horizontal motion <output id="xo">6 px</output></label><input id="x" type="range" min="-12" max="18" value="6"></div>
-<div><label>Vertical motion <output id="yo">2 px</output></label><input id="y" type="range" min="-10" max="10" value="2"></div>
-<div><label>Current frame <output id="fo">1 / 8</output></label><input id="f" type="range" min="0" max="7" value="0"></div>
-<div style="display:flex;align-items:end"><button id="play">Play sequence</button></div>
-</div>
-<div class="grid">
-<article><header><h2>1 · Optical flow</h2><p>Many locations, one pair of nearby frames.</p></header><canvas id="flow" width="454" height="290"></canvas><div class="meta">Output: a motion vector at each sampled location.</div></article>
-<article><header><h2>2 · Feature tracking</h2><p>One selected image feature, repeatedly followed across frames.</p></header><canvas id="track" width="454" height="290"></canvas><div class="meta">Output: a trajectory with persistent feature identity.</div></article>
-<article><header><h2>3 · Lucas–Kanade alignment</h2><p>Local method: align the eye patch <img class="eye" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA8LDA0MCg8NDA0REA8SFyYZFxUVFy8iJBwmODE7OjcxNjU9RVhLPUFUQjU2TWlOVFteY2RjPEpsdGxgc1hhY1//2wBDARARERcUFy0ZGS1fPzY/X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX1//wAARCAAtADADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAgMEBQAB/8QAKBAAAgIBBAECBgMAAAAAAAAAAQIAAxESITFBBAVRE2FxcoGxIjPR/8QAFwEBAQEBAAAAAAAAAAAAAAAAAgMAAf/EABkRAQEBAQEBAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8AQ9qUJrsOPYdmRP6o3Fa4jbihbLb/AFkdjp0oEiBXViHqjZ/kB+Iwepo3JImdYEJ6iwik8mLyR9NsL5auNm5nrWZrb7TMtFwQRKwx0MPkZxJHWy/IuxneTHjVa+ke3cZYjl8jGfnGeL46Mxa062HH+xFNWkNle6qGYke3cEMrbqdtsZheRRdVYcKwBYsGXO8p8Oj4dbmwY1DAU9zfI6yqyScSxASjfQ7xdVGG1DGj2MrrTKsPkf1AtTkjatTwJO9LAkhTNFgMcQGHc2zebMauxj2PzCXx2Y7kmWYBMcigDibbnmQlIXAHUdpC02MOcH9QjtOf+lvtMOzy/9k="> near its previous location.</p></header><canvas id="lk" width="454" height="290"></canvas><div class="meta" id="lkmeta">LK estimates a small displacement Δp.</div></article>
-</div>
-<div class="note"><b>Key distinction:</b> LK is not a third tracking task. It is a local solver. Apply it at many locations → sparse optical flow. Reapply it to the same selected feature over time → feature tracking.</div>
-<div class="legend"><div><b>Optical flow</b><br>many locations · usually two nearby frames · no persistent identity is required.</div><div><b>Feature tracking</b><br>selected image features · multiple frames · identity is maintained to form trajectories.<br><span style="color:var(--muted)">Relation: feature tracking is a common form of point tracking, where the tracked points are chosen for distinctive local appearance (e.g. corners or textured patches).</span></div><div><b>Lucas–Kanade</b><br>one local patch update · assumes small motion and a good initialization.</div></div>
+<h1>Optical Flow, Feature Tracking, and Lucas–Kanade</h1>
+<p class="lead">All three panels use the same synthetic translation of the same face. The demo separates <b>what is estimated</b> (optical flow vs. a feature trajectory) from <b>how a local displacement can be estimated</b> (Lucas–Kanade alignment).</p>
+
+<section class="controls">
+  <div class="control"><label>Horizontal motion <output id="dxOut">6 px / frame</output></label><input id="dx" type="range" min="-10" max="14" step="1" value="6"></div>
+  <div class="control"><label>Vertical motion <output id="dyOut">2 px / frame</output></label><input id="dy" type="range" min="-8" max="8" step="1" value="2"></div>
+  <div class="control"><label>Current frame <output id="frameOut">1 / 8</output></label><input id="frame" type="range" min="0" max="7" step="1" value="0"></div>
+  <button id="play">Play sequence</button>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <div class="card-head"><h2>1 · Optical flow</h2><p>Estimate motion at <b>many image locations</b> between a pair of nearby frames.</p></div>
+    <div class="stage">
+      <svg viewBox="0 0 320 204" aria-label="Optical flow visualization">
+        <defs><marker id="flowArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#4dd8ff"/></marker></defs>
+        <rect width="320" height="204" fill="#111318"/><image id="flowFace" href="tracking-face.svg" x="0" y="0" width="320" height="204" preserveAspectRatio="none"/><g id="flowVectors"></g>
+      </svg>
+    </div>
+    <div class="caption"><b>Output:</b> a field of frame-to-frame motion vectors. Persistent identity across a long sequence is not the main output.</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><h2>2 · Feature tracking</h2><p>Choose a distinctive image feature and <b>follow the same feature</b> over multiple frames.</p></div>
+    <div class="stage">
+      <svg viewBox="0 0 320 204" aria-label="Feature tracking visualization">
+        <rect width="320" height="204" fill="#111318"/><image id="trackFace" href="tracking-face.svg" x="0" y="0" width="320" height="204" preserveAspectRatio="none"/><polyline id="trackPath" fill="none" stroke="#22b573" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><g id="trackDots"></g>
+      </svg>
+    </div>
+    <div class="caption"><b>Output:</b> a trajectory with persistent feature identity. The selected point is represented by the local image patch around it.</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><h2>3 · Lucas–Kanade alignment</h2><p>A <b>local alignment method</b>: start near the previous position and estimate a small displacement Δp.</p><div class="template-chip"><span>Template patch</span><img src="tracking-eye.svg" alt="eye template patch"></div></div>
+    <div class="stage">
+      <svg viewBox="0 0 320 204" aria-label="Lucas Kanade local alignment visualization">
+        <defs><marker id="lkArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff9f2f"/></marker></defs>
+        <rect width="320" height="204" fill="#111318"/><image id="lkFace" href="tracking-face.svg" x="0" y="0" width="320" height="204" preserveAspectRatio="none"/>
+        <rect id="prevPatch" width="54" height="42" rx="3" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/><rect id="nextPatch" width="54" height="42" rx="3" fill="none" stroke="#22b573" stroke-width="2.5"/><line id="lkMotion" stroke="#ff9f2f" stroke-width="3" marker-end="url(#lkArrow)"/><text id="lkLabel" x="12" y="190" fill="#fff" font-size="12" font-family="Arial, sans-serif"></text>
+      </svg>
+    </div>
+    <div class="caption" id="lkCaption"><b>Method:</b> local patch alignment from frame <i>t</i> to <i>t+1</i>.</div>
+  </article>
+</section>
+
+<section class="relation">
+  <div class="callout"><b>Key relationship</b><div class="pipeline"><span class="pill">LK at many selected locations</span><span class="arrow">→</span><span class="pill">sparse optical flow</span></div><div class="pipeline"><span class="pill">repeat LK on the same selected feature</span><span class="arrow">→</span><span class="pill">feature trajectory</span></div></div>
+  <div class="definition"><b>Feature tracking vs. point tracking.</b> Feature tracking is a common form of point tracking in which the tracked points are chosen because their local image appearance is distinctive—for example corners or textured patches. Here, “feature” means an image-space feature, not a neural-network latent feature.</div>
+</section>
 </main>
 <script>
-const SRC='data:image/jpeg;base64,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',W=454,H=290,E={x:181,y:128},$=s=>document.querySelector(s),S={dx:6,dy:2,f:0,n:8,run:false,t:0},im=new Image();
-function frame(k){let c=document.createElement('canvas');c.width=W;c.height=H;let g=c.getContext('2d',{willReadFrequently:true});g.fillStyle='#16191e';g.fillRect(0,0,W,H);g.drawImage(im,k*S.dx,k*S.dy,W,H);return c}
-function gray(c){let d=c.getContext('2d').getImageData(0,0,W,H).data,a=new Float32Array(W*H);for(let i=0,j=0;i<d.length;i+=4,j++)a[j]=.299*d[i]+.587*d[i+1]+.114*d[i+2];return a}
-function sm(a,x,y){if(x<1||y<1||x>=W-2||y>=H-2)return 0;let X=x|0,Y=y|0,p=x-X,q=y-Y,i=Y*W+X;return a[i]*(1-p)*(1-q)+a[i+1]*p*(1-q)+a[i+W]*(1-p)*q+a[i+W+1]*p*q}
-function LK(a,b,x,y){let u=0,v=0,path=[[0,0]];for(let it=0;it<12;it++){let A=0,B=0,C=0,D=0,F=0;for(let j=-10;j<=10;j++)for(let i=-10;i<=10;i++){let px=x+i,py=y+j,qx=px+u,qy=py+v,I=sm(a,px,py),J=sm(b,qx,qy),ix=(sm(b,qx+1,qy)-sm(b,qx-1,qy))/2,iy=(sm(b,qx,qy+1)-sm(b,qx,qy-1))/2,e=I-J;A+=ix*ix;B+=ix*iy;C+=iy*iy;D+=ix*e;F+=iy*e}let z=A*C-B*B;if(Math.abs(z)<1e-4)break;let du=(C*D-B*F)/z,dv=(-B*D+A*F)/z;u+=Math.max(-4,Math.min(4,du));v+=Math.max(-4,Math.min(4,dv));path.push([u,v]);if(du*du+dv*dv<1e-3)break}return{u,v,path}}
-function ar(g,x,y,u,v,col='#7095ff'){let X=x+u*2,Y=y+v*2,a=Math.atan2(Y-y,X-x);g.strokeStyle=g.fillStyle=col;g.lineWidth=2;g.beginPath();g.moveTo(x,y);g.lineTo(X,Y);g.stroke();g.beginPath();g.moveTo(X,Y);g.lineTo(X-6*Math.cos(a-.55),Y-6*Math.sin(a-.55));g.lineTo(X-6*Math.cos(a+.55),Y-6*Math.sin(a+.55));g.fill()}
-function dot(g,x,y,r,c){g.beginPath();g.arc(x,y,r,0,7);g.fillStyle=c;g.fill();g.strokeStyle='white';g.lineWidth=1.5;g.stroke()}
-function draw(){$('#xo').textContent=S.dx+' px';$('#yo').textContent=S.dy+' px';$('#fo').textContent=(S.f+1)+' / '+S.n;let k=Math.min(S.f,S.n-2),a=frame(k),b=frame(k+1);
-let c=$('#flow'),g=c.getContext('2d');g.drawImage(a,0,0);g.fillStyle='#0003';g.fillRect(0,0,W,H);for(let y=35;y<H-25;y+=45)for(let x=35;x<W-25;x+=55)ar(g,x,y,S.dx,S.dy);
-c=$('#track');g=c.getContext('2d');g.drawImage(frame(S.f),0,0);g.strokeStyle='#26d17f';g.lineWidth=4;g.beginPath();for(let i=0;i<=S.f;i++){let x=E.x+i*S.dx,y=E.y+i*S.dy;i?g.lineTo(x,y):g.moveTo(x,y)}g.stroke();for(let i=0;i<=S.f;i++)dot(g,E.x+i*S.dx,E.y+i*S.dy,i==S.f?7:4,'#26d17f');
-let ga=gray(a),gb=gray(b),x=E.x+k*S.dx,y=E.y+k*S.dy,r=LK(ga,gb,x,y),tx=x+S.dx,ty=y+S.dy;c=$('#lk');g=c.getContext('2d');g.drawImage(b,0,0);g.fillStyle='#0006';g.fillRect(0,0,W,H);g.strokeStyle='#f0a13a';g.lineWidth=3;g.strokeRect(tx-42,ty-35,84,70);dot(g,x,y,7,'white');g.strokeStyle='#ffb347';g.beginPath();g.moveTo(x,y);r.path.slice(1).forEach(p=>g.lineTo(x+p[0],y+p[1]));g.stroke();r.path.forEach((p,i)=>dot(g,x+p[0],y+p[1],i==r.path.length-1?6:3,i==r.path.length-1?'#ff991f':'#ffd18a'));dot(g,tx,ty,4,'#26d17f');let er=Math.hypot(x+r.u-tx,y+r.v-ty);$('#lkmeta').innerHTML='LK estimate Δp = <b>('+r.u.toFixed(2)+', '+r.v.toFixed(2)+') px</b> · known motion = ('+S.dx+', '+S.dy+') · endpoint error = '+er.toFixed(2)+' px'}
-['x','y','f'].forEach(id=>$('#'+id).oninput=e=>{S[id=='x'?'dx':id=='y'?'dy':'f']=+e.target.value;draw()});$('#play').onclick=()=>{S.run=!S.run;$('#play').textContent=S.run?'Pause':'Play sequence';clearInterval(S.t);if(S.run)S.t=setInterval(()=>{S.f=(S.f+1)%S.n;$('#f').value=S.f;draw()},650)};im.onload=draw;im.src=SRC;
-</script></body></html>
+const state={dx:6,dy:2,frame:0,total:8,playing:false,timer:null};
+const feature={x:128,y:90};
+const $=id=>document.getElementById(id);
+function setFacePosition(id,k){const el=$(id);el.setAttribute('x',k*state.dx);el.setAttribute('y',k*state.dy)}
+function svgEl(name,attrs={}){const el=document.createElementNS('http://www.w3.org/2000/svg',name);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));return el}
+function renderFlow(k){setFacePosition('flowFace',k);const group=$('flowVectors');group.replaceChildren();for(let y=30;y<=174;y+=36)for(let x=34;x<=286;x+=42)group.appendChild(svgEl('line',{x1:x,y1:y,x2:x+state.dx*2.1,y2:y+state.dy*2.1,stroke:'#4dd8ff','stroke-width':2,'marker-end':'url(#flowArrow)',opacity:.95}))}
+function renderTrack(k){setFacePosition('trackFace',k);const pts=[];for(let i=0;i<=k;i++)pts.push([feature.x+i*state.dx,feature.y+i*state.dy]);$('trackPath').setAttribute('points',pts.map(p=>p.join(',')).join(' '));const group=$('trackDots');group.replaceChildren();pts.forEach((p,i)=>group.appendChild(svgEl('circle',{cx:p[0],cy:p[1],r:i===pts.length-1?6:3.5,fill:'#22b573',stroke:'#fff','stroke-width':1.5})))}
+function renderLK(k){const next=Math.min(k+1,state.total-1);setFacePosition('lkFace',next);const x0=feature.x+k*state.dx,y0=feature.y+k*state.dy,x1=feature.x+next*state.dx,y1=feature.y+next*state.dy;$('prevPatch').setAttribute('x',x0-27);$('prevPatch').setAttribute('y',y0-21);$('nextPatch').setAttribute('x',x1-27);$('nextPatch').setAttribute('y',y1-21);$('lkMotion').setAttribute('x1',x0);$('lkMotion').setAttribute('y1',y0);$('lkMotion').setAttribute('x2',x1);$('lkMotion').setAttribute('y2',y1);$('lkLabel').textContent=`local update Δp = (${state.dx}, ${state.dy}) px`;$('lkCaption').innerHTML=`<b>Method:</b> use the previous location as initialization and estimate Δp = <b>(${state.dx}, ${state.dy}) px</b>. Because the search is local, LK assumes a good initialization and small inter-frame motion.`}
+function render(){$('dxOut').textContent=state.dx+' px / frame';$('dyOut').textContent=state.dy+' px / frame';$('frameOut').textContent=(state.frame+1)+' / '+state.total;const pairFrame=Math.min(state.frame,state.total-2);renderFlow(pairFrame);renderTrack(state.frame);renderLK(pairFrame)}
+$('dx').addEventListener('input',e=>{state.dx=+e.target.value;render()});$('dy').addEventListener('input',e=>{state.dy=+e.target.value;render()});$('frame').addEventListener('input',e=>{state.frame=+e.target.value;render()});$('play').addEventListener('click',()=>{state.playing=!state.playing;$('play').textContent=state.playing?'Pause':'Play sequence';clearInterval(state.timer);if(state.playing)state.timer=setInterval(()=>{state.frame=(state.frame+1)%state.total;$('frame').value=state.frame;render()},700)});render();
+</script>
+</body>
+</html>
