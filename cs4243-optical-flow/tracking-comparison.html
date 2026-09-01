@@ -21,7 +21,7 @@ button{height:40px;padding:0 18px;border:0;border-radius:9px;background:#202124;
 .card-head{padding:16px 18px 13px;border-bottom:1px solid #edf0f4}.card h3{font-size:20px;margin:0 0 6px}.card-head p{margin:0;color:var(--muted);line-height:1.45}
 .stage{position:relative;background:var(--dark);aspect-ratio:320/204;overflow:hidden}canvas{display:block;width:100%;height:100%}
 .badge{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.72);color:#fff;border-radius:999px;padding:5px 8px;font-size:10px;pointer-events:none}
-.caption{min-height:80px;padding:12px 17px 14px;background:#fafbfc;border-top:1px solid #edf0f4;line-height:1.45;color:#4d5663}.caption b{color:var(--text)}
+.caption{min-height:88px;padding:12px 17px 14px;background:#fafbfc;border-top:1px solid #edf0f4;line-height:1.45;color:#4d5663}.caption b{color:var(--text)}
 .note{margin-top:16px;padding:13px 15px;background:#fff8df;border:1px solid #efcc70;border-radius:12px;line-height:1.5}
 .takeaway{margin-top:16px;padding:13px 15px;background:#eef7ff;border:1px solid #b9d8ff;border-radius:12px;line-height:1.5}
 .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--muted)}.legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
@@ -49,13 +49,13 @@ button{height:40px;padding:0 18px;border:0;border-radius:9px;background:#202124;
   <div class="note"><b>Transition:</b> once a reference feature patch is selected in frame <i>t</i>, how do we locate the corresponding patch in frame <i>t+1</i>?</div>
 </section>
 <section class="section">
-  <div class="section-title"><h2>2 · Three ways to locate the reference patch</h2><p>The background image stays fixed in all three panels so that only the <b>search process</b> moves. The same target location is used throughout.</p></div>
+  <div class="section-title"><h2>2 · Three ways to locate the reference patch</h2><p>The background image stays fixed in all three panels so that only the <b>search process</b> moves. In the multi-scale panel, each pyramid level is shown at its actual image size inside the same 640 × 408 canvas.</p></div>
   <div class="grid3">
     <article class="card"><div class="card-head"><h3>Global template matching</h3><p>Evaluate candidate locations across the whole image.</p></div><div class="stage"><canvas id="global" width="640" height="408"></canvas><span class="badge" id="globalBadge">zig-zag scan</span></div><div class="caption"><b>Global search:</b> the candidate window scans the full image in a zig-zag pattern. This makes few assumptions about target motion, but requires many comparisons.</div></article>
-    <article class="card"><div class="card-head"><h3>Multi-scale template matching</h3><p>Search an actual image pyramid: low resolution first, then propagate the winner to finer levels.</p></div><div class="stage"><canvas id="multi" width="640" height="408"></canvas><span class="badge" id="multiBadge">L2 · 160×102 · 1/4 res</span></div><div class="caption"><b>Coarse → fine:</b> the active pyramid level is shown at its true sampling density (enlarged without smoothing so the lower resolution is visible). A coarse winner is mapped to the next level and refined only nearby.</div></article>
+    <article class="card"><div class="card-head"><h3>Multi-scale template matching</h3><p>Use an image pyramid: coarse, low-resolution search first; then refine only nearby at finer levels.</p></div><div class="stage"><canvas id="multi" width="640" height="408"></canvas><span class="badge" id="multiBadge">L2 · 160 × 102</span></div><div class="caption"><b>Coarse → fine:</b> the actual pyramid image size changes across levels. Both the image and the template window are smaller at low resolution, then grow as the search moves to finer levels.</div></article>
     <article class="card"><div class="card-head"><h3>Local refinement / LK alignment</h3><p>Start from an initial guess and refine the alignment iteratively.</p></div><div class="stage"><canvas id="lk" width="640" height="408"></canvas><span class="badge" id="lkBadge">initial guess p₀</span></div><div class="caption"><b>Local refinement:</b> the orange dashed box is the initial guess. The offset is exaggerated here so the iterations are visible; in practice LK assumes the residual motion is small. Each update moves the patch closer to the final alignment.</div></article>
   </div>
-  <div class="legend"><span><i class="sw" style="background:#ff9f2f"></i>current candidate / initial guess</span><span><i class="sw" style="background:#ffd84d"></i>intermediate refinement</span><span><i class="sw" style="background:#22b573"></i>final match</span></div>
+  <div class="legend"><span><i class="sw" style="background:#ff9f2f"></i>current candidate / initial guess</span><span><i class="sw" style="background:#ffd84d"></i>intermediate refinement</span><span><i class="sw" style="background:#22b573"></i>final match</span><span><i class="sw" style="background:#4dd8ff"></i>coarse-level search region</span></div>
   <div class="takeaway"><b>Why LK here?</b> Feature tracking gives a reference patch and a good initialization from the previous frame. That makes local refinement much cheaper than searching the whole image.</div>
 </section>
 </main>
@@ -63,119 +63,209 @@ button{height:40px;padding:0 18px;border:0;border-radius:9px;background:#202124;
 const FACE_SRC='tracking-face.svg';
 const W=640,H=408,feature={x:255,y:178},patch={w:74,h:58};
 const state={dx:6,dy:2,frame:0,total:8,paused:false,lastFrameStep:0};
-const $=id=>document.getElementById(id);const img=new Image();
+const $=id=>document.getElementById(id);
+const img=new Image();
+const offscreen = new Map();
+
 function drawBackground(ctx,offsetX=0,offsetY=0,dim=.14){ctx.clearRect(0,0,W,H);ctx.fillStyle='#111318';ctx.fillRect(0,0,W,H);ctx.drawImage(img,offsetX,offsetY,W,H);if(dim){ctx.fillStyle=`rgba(0,0,0,${dim})`;ctx.fillRect(0,0,W,H)}}
 function rect(ctx,x,y,w,h,color,lw=3,dash=[]){ctx.save();ctx.strokeStyle=color;ctx.lineWidth=lw;ctx.setLineDash(dash);ctx.strokeRect(x,y,w,h);ctx.restore()}
 function dot(ctx,x,y,r,color){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke()}
 function arrow(ctx,x0,y0,x1,y1,color,lw=2.5){const a=Math.atan2(y1-y0,x1-x0);ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=lw;ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke();ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x1-8*Math.cos(a-.55),y1-8*Math.sin(a-.55));ctx.lineTo(x1-8*Math.cos(a+.55),y1-8*Math.sin(a+.55));ctx.closePath();ctx.fill()}
 function label(ctx,text,x,y,bg='rgba(0,0,0,.72)'){ctx.font='12px Arial';const m=ctx.measureText(text).width;ctx.fillStyle=bg;ctx.fillRect(x,y,m+12,22);ctx.fillStyle='#fff';ctx.fillText(text,x+6,y+15)}
 function currentPoint(k){return{x:feature.x+k*state.dx,y:feature.y+k*state.dy}}
-function drawFlow(){const ctx=$('flow').getContext('2d'),k=Math.min(state.frame,state.total-2);drawBackground(ctx,k*state.dx,k*state.dy,.2);for(let y=48;y<H-30;y+=56)for(let x=50;x<W-35;x+=70)arrow(ctx,x,y,x+state.dx*2.4,y+state.dy*2.4,'#4dd8ff',2);const p=currentPoint(k);dot(ctx,p.x,p.y,6,'#fff');rect(ctx,p.x-patch.w/2,p.y-patch.h/2,patch.w,patch.h,'#ffd84d',2);$('flowBadge').textContent=`frame ${k+1} → frame ${k+2}`}
-function drawTrack(){const ctx=$('track').getContext('2d');drawBackground(ctx,state.frame*state.dx,state.frame*state.dy,0);ctx.strokeStyle='#22b573';ctx.lineWidth=4;ctx.beginPath();for(let i=0;i<=state.frame;i++){const p=currentPoint(i);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}ctx.stroke();for(let i=0;i<=state.frame;i++){const p=currentPoint(i);dot(ctx,p.x,p.y,i===state.frame?7:4,'#22b573')}const p=currentPoint(state.frame);rect(ctx,p.x-patch.w/2,p.y-patch.h/2,patch.w,patch.h,'#ffd84d',2.5);$('trackBadge').textContent=`trajectory through frame ${state.frame+1}`}
 function targetPoint(){return{x:feature.x+state.dx,y:feature.y+state.dy}}
 function drawStaticNextFrame(ctx){drawBackground(ctx,state.dx,state.dy,.17)}
-function drawPyramidBackground(ctx,scale,dim=.17){
-  if(scale===1){drawStaticNextFrame(ctx);return;}
-  const lw=Math.max(1,Math.round(W*scale)),lh=Math.max(1,Math.round(H*scale));
-  const low=document.createElement('canvas');low.width=lw;low.height=lh;
-  const lg=low.getContext('2d');
-  lg.imageSmoothingEnabled=true;
-  lg.fillStyle='#111318';lg.fillRect(0,0,lw,lh);
-  lg.drawImage(img,state.dx*scale,state.dy*scale,W*scale,H*scale);
-  ctx.clearRect(0,0,W,H);ctx.fillStyle='#111318';ctx.fillRect(0,0,W,H);
-  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(low,0,0,W,H);ctx.restore();
-  if(dim){ctx.fillStyle=`rgba(0,0,0,${dim})`;ctx.fillRect(0,0,W,H)}
+
+function drawFlow(){
+  const ctx=$('flow').getContext('2d'),k=Math.min(state.frame,state.total-2);
+  drawBackground(ctx,k*state.dx,k*state.dy,.2);
+  for(let y=48;y<H-30;y+=56)for(let x=50;x<W-35;x+=70)arrow(ctx,x,y,x+state.dx*2.4,y+state.dy*2.4,'#4dd8ff',2);
+  const p=currentPoint(k);dot(ctx,p.x,p.y,6,'#fff');rect(ctx,p.x-patch.w/2,p.y-patch.h/2,patch.w,patch.h,'#ffd84d',2);
+  $('flowBadge').textContent=`frame ${k+1} → frame ${k+2}`;
 }
-function drawPyramidLegend(ctx,active){
+
+function drawTrack(){
+  const ctx=$('track').getContext('2d');
+  drawBackground(ctx,state.frame*state.dx,state.frame*state.dy,0);
+  ctx.strokeStyle='#22b573';ctx.lineWidth=4;ctx.beginPath();
+  for(let i=0;i<=state.frame;i++){const p=currentPoint(i);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}
+  ctx.stroke();
+  for(let i=0;i<=state.frame;i++){const p=currentPoint(i);dot(ctx,p.x,p.y,i===state.frame?7:4,'#22b573')}
+  const p=currentPoint(state.frame);rect(ctx,p.x-patch.w/2,p.y-patch.h/2,patch.w,patch.h,'#ffd84d',2.5);
+  $('trackBadge').textContent=`trajectory through frame ${state.frame+1}`;
+}
+
+const globalPositions=(()=>{const out=[],xs=[];for(let x=26;x<=W-patch.w-24;x+=58)xs.push(x);const ys=[];for(let y=34;y<=H-patch.h-28;y+=48)ys.push(y);ys.forEach((y,row)=>{const rowXs=row%2?xs.slice().reverse():xs;rowXs.forEach(x=>out.push([x,y]))});return out})();
+function drawGlobal(t){
+  const ctx=$('global').getContext('2d');drawStaticNextFrame(ctx);
+  const cycle=7200,phase=(t%cycle)/cycle,scanPart=.82,target=targetPoint();
+  if(phase<scanPart){
+    const p=phase/scanPart,idx=Math.min(globalPositions.length-1,Math.floor(p*globalPositions.length));
+    for(let i=Math.max(0,idx-14);i<idx;i++){const q=globalPositions[i];rect(ctx,q[0],q[1],patch.w,patch.h,'rgba(255,255,255,.16)',1)}
+    const q=globalPositions[idx];rect(ctx,q[0],q[1],patch.w,patch.h,'#ff9f2f',3);
+    label(ctx,`candidate ${idx+1} / ${globalPositions.length}`,12,H-34);
+    $('globalBadge').textContent='zig-zag scan across full image';
+  }else{
+    rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);
+    label(ctx,'best match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');
+    $('globalBadge').textContent='best response selected';
+  }
+}
+
+function getLowImage(scale){
+  const key=`${scale}_${state.dx}_${state.dy}`;
+  if(offscreen.has(key)) return offscreen.get(key);
+  const c=document.createElement('canvas');
+  c.width=Math.round(W*scale); c.height=Math.round(H*scale);
+  const g=c.getContext('2d');
+  g.imageSmoothingEnabled=true;
+  g.drawImage(img,state.dx*scale,state.dy*scale,W*scale,H*scale);
+  offscreen.set(key,c);
+  return c;
+}
+function levelSpec(){
+  const target=targetPoint();
+  return [
+    {name:'L2 · 160 × 102 · 1/4 width & height', scale:0.25, color:'#4dd8ff', region:[0,0,W,H], step:[22,18], start:0.00, end:0.42},
+    {name:'L1 · 320 × 204 · 1/2 width & height', scale:0.50, color:'#ffd84d', region:[target.x-120,target.y-88, target.x+120, target.y+88], step:[18,14], start:0.42, end:0.74},
+    {name:'L0 · 640 × 408 · full resolution', scale:1.00, color:'#ff9f2f', region:[target.x-58,target.y-44, target.x+58, target.y+44], step:[14,12], start:0.74, end:0.94}
+  ];
+}
+function serpentinePositions(bounds,stepX,stepY,boxW,boxH){
+  const [x0,y0,x1,y1]=bounds,out=[],xs=[];
+  for(let x=x0;x<=x1-boxW;x+=stepX) xs.push(x);
+  let row=0;
+  for(let y=y0;y<=y1-boxH;y+=stepY,row++){
+    const rowXs=row%2?xs.slice().reverse():xs;
+    rowXs.forEach(x=>out.push([x,y]));
+  }
+  return out;
+}
+function mapToLevel(fullX, fullY, scale, disp){ return {x:disp.x+fullX*scale, y:disp.y+fullY*scale}; }
+function drawLevelImage(ctx, lev, active){
+  const dispW=Math.round(W*lev.scale), dispH=Math.round(H*lev.scale);
+  const disp={x:Math.round((W-dispW)/2), y:Math.round((H-dispH)/2), w:dispW, h:dispH};
+  const low=getLowImage(lev.scale);
+  ctx.fillStyle='#111318';ctx.fillRect(0,0,W,H);
+  ctx.drawImage(low, disp.x, disp.y, dispW, dispH);
+  ctx.fillStyle='rgba(0,0,0,.12)';ctx.fillRect(disp.x,disp.y,dispW,dispH);
+  ctx.strokeStyle='rgba(255,255,255,.18)'; ctx.lineWidth=1; ctx.strokeRect(disp.x,disp.y,dispW,dispH);
+  drawPyramidLegend(ctx, active);
+  return disp;
+}
+function drawPyramidLegend(ctx, active){
   const labels=['L2  160×102','L1  320×204','L0  640×408'];
-  const x=W-132,y=14,w=116,h=20;
+  const x=W-136,y=12,w=120,h=20;
   labels.forEach((txt,i)=>{
-    ctx.fillStyle=i===active?'rgba(40,120,255,.92)':'rgba(0,0,0,.60)';
+    ctx.fillStyle=i===active?'rgba(40,120,255,.95)':'rgba(0,0,0,.60)';
     ctx.fillRect(x,y+i*24,w,h);
-    ctx.fillStyle='#fff';ctx.font=i===active?'bold 11px Arial':'11px Arial';
+    ctx.fillStyle='#fff'; ctx.font=i===active?'bold 11px Arial':'11px Arial';
     ctx.fillText(txt,x+7,y+14+i*24);
   });
 }
-const globalPositions=(()=>{const out=[],xs=[];for(let x=26;x<=W-patch.w-24;x+=58)xs.push(x);const ys=[];for(let y=34;y<=H-patch.h-28;y+=48)ys.push(y);ys.forEach((y,row)=>{const rowXs=row%2?xs.slice().reverse():xs;rowXs.forEach(x=>out.push([x,y]))});return out})();
-function drawGlobal(t){const ctx=$('global').getContext('2d');drawStaticNextFrame(ctx);const cycle=7200,phase=(t%cycle)/cycle,scanPart=.82,target=targetPoint();if(phase<scanPart){const p=phase/scanPart,idx=Math.min(globalPositions.length-1,Math.floor(p*globalPositions.length));for(let i=Math.max(0,idx-12);i<idx;i++){const q=globalPositions[i];rect(ctx,q[0],q[1],patch.w,patch.h,'rgba(255,255,255,.16)',1)}const q=globalPositions[idx];rect(ctx,q[0],q[1],patch.w,patch.h,'#ff9f2f',3);label(ctx,`candidate ${idx+1} / ${globalPositions.length}`,12,H-34);$('globalBadge').textContent='zig-zag scan across full image'}else{rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);label(ctx,'best match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');$('globalBadge').textContent='best response selected'}}
-function serpentinePositions(bounds,stepX,stepY,boxW,boxH){const[x0,y0,x1,y1]=bounds,out=[],xs=[];for(let x=x0;x<=x1-boxW;x+=stepX)xs.push(x);let row=0;for(let y=y0;y<=y1-boxH;y+=stepY,row++){const a=row%2?xs.slice().reverse():xs;a.forEach(x=>out.push([x,y]))}return out}
 function drawMulti(t){
   const ctx=$('multi').getContext('2d');
-  const target=targetPoint(),cycle=7600,p=(t%cycle)/cycle;
-  const levels=[
-    {name:'L2 · 160×102 · 1/4 res',scale:.25,start:0,end:.40,strideX:72,strideY:60,region:[24,38,W-24,H-32],color:'#4dd8ff',ghost:'#4dd8ff',legend:0},
-    {name:'L1 · 320×204 · 1/2 res',scale:.50,start:.40,end:.72,strideX:32,strideY:28,region:[target.x-130,target.y-102,target.x+130,target.y+102],color:'#ffd84d',ghost:'#4dd8ff',legend:1},
-    {name:'L0 · 640×408 · full res',scale:1.00,start:.72,end:.94,strideX:14,strideY:12,region:[target.x-72,target.y-58,target.x+72,target.y+58],color:'#ff9f2f',ghost:'#ffd84d',legend:2}
-  ];
-  if(p>=.94){
-    drawPyramidBackground(ctx,1,.17);drawPyramidLegend(ctx,2);
-    rect(ctx,target.x-patch.w/2,target.y-patch.h/2,patch.w,patch.h,'#22b573',4);
-    label(ctx,'final match',target.x-patch.w/2,target.y-patch.h/2-27,'rgba(34,181,115,.9)');
-    $('multiBadge').textContent='L0 · final match';
+  const cycle=7200,p=(t%cycle)/cycle,levels=levelSpec(), target=targetPoint();
+  if(p>=0.94){
+    const lev=levels[2], disp=drawLevelImage(ctx, lev, 2);
+    const tw=Math.round(patch.w*lev.scale), th=Math.round(patch.h*lev.scale);
+    const tp=mapToLevel(target.x,target.y,lev.scale,disp);
+    rect(ctx,tp.x-tw/2,tp.y-th/2,tw,th,'#22b573',4);
+    label(ctx,'final match',tp.x-tw/2,tp.y-th/2-27,'rgba(34,181,115,.9)');
+    $('multiBadge').textContent='final match at L0';
     return;
   }
-  const lv=levels.find(v=>p>=v.start&&p<v.end) || levels[0];
-  const localP=(p-lv.start)/(lv.end-lv.start);
-  drawPyramidBackground(ctx,lv.scale,.17);
-  drawPyramidLegend(ctx,lv.legend);
-  $('multiBadge').textContent=lv.name;
-
-  const [x0,y0,x1,y1]=lv.region;
-  if(lv!==levels[0]){
-    rect(ctx,x0,y0,x1-x0,y1-y0,lv.ghost,2,[8,6]);
-    label(ctx,lv.legend===1?'mapped coarse winner → local region':'mapped L1 winner → finer region',Math.max(12,x0),Math.max(92,y0-26),'rgba(0,0,0,.68)');
+  let active=0;
+  if(p>=levels[1].start) active=1;
+  if(p>=levels[2].start) active=2;
+  const lev=levels[active];
+  const disp=drawLevelImage(ctx, lev, active);
+  const localP=(p-lev.start)/(lev.end-lev.start);
+  const tw=Math.max(8,Math.round(patch.w*lev.scale)), th=Math.max(6,Math.round(patch.h*lev.scale));
+  const reg=[
+    Math.max(0,lev.region[0]), Math.max(0,lev.region[1]),
+    Math.min(W,lev.region[2]), Math.min(H,lev.region[3])
+  ];
+  const pos=serpentinePositions(reg, lev.step[0], lev.step[1], patch.w, patch.h);
+  const idx=Math.min(pos.length-1, Math.floor(localP*pos.length));
+  const tl=mapToLevel(reg[0],reg[1],lev.scale,disp), br=mapToLevel(reg[2],reg[3],lev.scale,disp);
+  rect(ctx,tl.x,tl.y,br.x-tl.x,br.y-tl.y,active===0?'rgba(77,216,255,.75)':active===1?'rgba(255,216,77,.75)':'rgba(255,159,47,.75)',2,[8,6]);
+  label(ctx, active===0?'search full L2 image':active===1?'search near L2 winner':'search near L1 winner', 14, H-34);
+  for(let i=Math.max(0,idx-10);i<idx;i++){
+    const q=pos[i]; const qp=mapToLevel(q[0],q[1],lev.scale,disp); rect(ctx,qp.x,qp.y,tw,th,'rgba(255,255,255,.18)',1);
   }
-
-  const positions=serpentinePositions([x0,y0,x1,y1],lv.strideX,lv.strideY,patch.w,patch.h);
-  const idx=Math.min(positions.length-1,Math.floor(localP*positions.length));
-  for(let i=Math.max(0,idx-7);i<idx;i++){
-    const q=positions[i];rect(ctx,q[0],q[1],patch.w,patch.h,'rgba(255,255,255,.12)',1);
-  }
-  const q=positions[idx];
-  rect(ctx,q[0],q[1],patch.w,patch.h,lv.color,3);
-  label(ctx,`candidate ${idx+1} / ${positions.length}`,12,H-34);
+  const q=pos[idx], qp=mapToLevel(q[0],q[1],lev.scale,disp);
+  rect(ctx,qp.x,qp.y,tw,th,lev.color,3);
+  const tp=mapToLevel(target.x,target.y,lev.scale,disp);
+  rect(ctx,tp.x-tw/2,tp.y-th/2,tw,th,'rgba(34,181,115,.9)',2,[5,5]);
+  $('multiBadge').textContent=lev.name;
 }
+
 function drawLK(t){
-  const ctx=$('lk').getContext('2d');
-  drawStaticNextFrame(ctx);
-  const target=targetPoint(),cycle=6200,p=(t%cycle)/cycle;
-  const start={x:target.x-92,y:target.y+56};
-  const fractions=[0,.42,.70,.88,1.0];
-  const labels=['p₀ initial guess','p₁','p₂','p₃','aligned'];
-  const pts=fractions.map(a=>({x:start.x+(target.x-start.x)*a,y:start.y+(target.y-start.y)*a}));
-  let active=Math.min(pts.length-1,Math.floor(p*pts.length));
-  if(p>.92)active=pts.length-1;
-
-  const localX=Math.min(start.x,target.x)-48,localY=Math.min(start.y,target.y)-44;
-  const localW=Math.abs(target.x-start.x)+patch.w+96,localH=Math.abs(target.y-start.y)+patch.h+88;
-  rect(ctx,localX-patch.w/2,localY-patch.h/2,localW,localH,'rgba(255,255,255,.24)',1.5,[7,6]);
-  label(ctx,'local search neighborhood',Math.max(12,localX-patch.w/2),Math.max(58,localY-patch.h/2-25),'rgba(0,0,0,.62)');
-
-  for(let i=0;i<pts.length;i++){
-    const q=pts[i];
-    if(i<active) rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'rgba(255,216,77,.24)',1.4);
-    if(i>0&&i<=active) arrow(ctx,pts[i-1].x,pts[i-1].y,q.x,q.y,'rgba(255,216,77,.82)',2.2);
+  const ctx=$('lk').getContext('2d'); drawStaticNextFrame(ctx);
+  const target=targetPoint();
+  const init={x:target.x-96,y:target.y+60};
+  const steps=[init,
+    {x:init.x+28,y:init.y-18},
+    {x:init.x+56,y:init.y-34},
+    {x:init.x+78,y:init.y-48},
+    {x:target.x,y:target.y}
+  ];
+  const cycle=7200, p=(t%cycle)/cycle;
+  const stepProg=Math.min(steps.length-1, Math.floor(p*steps.length));
+  rect(ctx, init.x-patch.w/2, init.y-patch.h/2, patch.w, patch.h, '#ff9f2f', 3, [8,6]);
+  label(ctx, 'initial guess p₀', init.x-patch.w/2, init.y-patch.h/2-27);
+  ctx.strokeStyle='#ffd84d'; ctx.lineWidth=2.5; ctx.beginPath(); ctx.moveTo(init.x,init.y);
+  for(let i=1;i<=stepProg;i++) ctx.lineTo(steps[i].x,steps[i].y);
+  ctx.stroke();
+  for(let i=1;i<stepProg;i++){
+    rect(ctx, steps[i].x-patch.w/2, steps[i].y-patch.h/2, patch.w, patch.h, '#ffd84d', 2);
+    dot(ctx, steps[i].x, steps[i].y, 3.5, '#ffd84d');
+    label(ctx, `p${i}`, steps[i].x+10, steps[i].y+8, 'rgba(255,216,77,.88)');
   }
-
-  const q=pts[active];
-  if(active===0){
-    rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ff9f2f',3,[8,6]);
-    label(ctx,'p₀ · initial guess',q.x-patch.w/2,q.y-patch.h/2-27,'rgba(255,159,47,.88)');
-    $('lkBadge').textContent='p₀ · initial guess (exaggerated)';
-  }else if(active===pts.length-1){
-    rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#22b573',4);
-    label(ctx,'aligned patch',q.x-patch.w/2,q.y-patch.h/2-27,'rgba(34,181,115,.9)');
-    $('lkBadge').textContent='converged';
-  }else{
-    rect(ctx,q.x-patch.w/2,q.y-patch.h/2,patch.w,patch.h,'#ffd84d',3);
-    label(ctx,`p${active} · refine`,q.x-patch.w/2,q.y-patch.h/2-27,'rgba(0,0,0,.72)');
-    $('lkBadge').textContent=`refinement step ${active} / 3`;
+  if(stepProg>0){
+    const curr=steps[stepProg];
+    if(stepProg===steps.length-1){
+      rect(ctx, curr.x-patch.w/2, curr.y-patch.h/2, patch.w, patch.h, '#22b573', 4);
+      label(ctx, 'aligned', curr.x-patch.w/2, curr.y+patch.h/2+8, 'rgba(34,181,115,.9)');
+      $('lkBadge').textContent='aligned after iterative updates';
+    }else{
+      rect(ctx, curr.x-patch.w/2, curr.y-patch.h/2, patch.w, patch.h, '#ffd84d', 3);
+      label(ctx, `current estimate p${stepProg}`, curr.x-patch.w/2, curr.y+patch.h/2+8, 'rgba(255,216,77,.88)');
+      $('lkBadge').textContent=`iterative refinement: p${stepProg}`;
+    }
+  } else {
+    $('lkBadge').textContent='initial guess p₀';
   }
-  label(ctx,labels[active],12,H-34);
+  rect(ctx, target.x-patch.w/2, target.y-patch.h/2, patch.w, patch.h, 'rgba(34,181,115,.85)', 2, [5,5]);
 }
-let baseTime=performance.now(),pausedAt=0;
-function render(now){const t=state.paused?pausedAt:now-baseTime;if(!state.paused&&now-state.lastFrameStep>850){state.frame=(state.frame+1)%state.total;$('frame').value=state.frame;state.lastFrameStep=now}$('dxOut').textContent=state.dx+' px / frame';$('dyOut').textContent=state.dy+' px / frame';$('frameOut').textContent=(state.frame+1)+' / '+state.total;drawFlow();drawTrack();drawGlobal(t);drawMulti(t);drawLK(t);requestAnimationFrame(render)}
-$('dx').addEventListener('input',e=>{state.dx=+e.target.value});$('dy').addEventListener('input',e=>{state.dy=+e.target.value});$('frame').addEventListener('input',e=>{state.frame=+e.target.value;state.lastFrameStep=performance.now()});$('pauseBtn').addEventListener('click',()=>{state.paused=!state.paused;if(state.paused){pausedAt=performance.now()-baseTime;$('pauseBtn').textContent='Resume demo'}else{baseTime=performance.now()-pausedAt;state.lastFrameStep=performance.now();$('pauseBtn').textContent='Pause demo'}});
-img.onload=()=>requestAnimationFrame(render);img.src=FACE_SRC;
+
+function render(){
+  $('dxOut').textContent=state.dx+' px / frame';
+  $('dyOut').textContent=state.dy+' px / frame';
+  $('frameOut').textContent=(state.frame+1)+' / '+state.total;
+  offscreen.clear();
+  drawFlow(); drawTrack();
+}
+
+$('dx').addEventListener('input',e=>{state.dx=+e.target.value;render()});
+$('dy').addEventListener('input',e=>{state.dy=+e.target.value;render()});
+$('frame').addEventListener('input',e=>{state.frame=+e.target.value;render()});
+$('pauseBtn').addEventListener('click',()=>{state.paused=!state.paused; $('pauseBtn').textContent=state.paused?'Resume demo':'Pause demo';});
+
+function loop(ts){
+  if(!state.paused && img.complete){
+    if(!state.lastFrameStep) state.lastFrameStep=ts;
+    if(ts-state.lastFrameStep>820){
+      state.frame=(state.frame+1)%state.total; $('frame').value=state.frame; state.lastFrameStep=ts; render();
+    }
+  }
+  if(img.complete){ drawGlobal(ts); drawMulti(ts); drawLK(ts); }
+  requestAnimationFrame(loop);
+}
+
+img.onload=()=>{render(); requestAnimationFrame(loop);};
+img.src=FACE_SRC;
 </script>
-</body></html>
+</body>
+</html>
