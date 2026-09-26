@@ -1,0 +1,17 @@
+<aside class="film-review-card">
+  {% if page.poster %}<img src="{{ page.poster }}" alt="{{ page.film }} poster" width="84" height="124">{% endif %}
+  <div>
+    <p class="home-kicker">Film review</p>
+    <p class="film-review-card-title">
+      {% if page.film_url %}<a href="{{ page.film_url }}">{{ page.film }}</a>{% else %}{{ page.film }}{% endif %}
+    </p>
+    {% if page.rating and page.rating > 0 %}
+    <span class="films-stars" aria-label="Rated {{ page.rating }} out of 5">{% for i in (1..5) %}{% if i <= page.rating %}★{% else %}<i>★</i>{% endif %}{% endfor %}</span>
+    {% endif %}
+    <p class="film-review-card-links">
+      <a href="/films/">← All films</a>
+      {% if page.douban_url %} · <a href="{{ page.douban_url }}">Original on Douban ↗</a>{% endif %}
+    </p>
+  </div>
+</aside>
+{% if page.spoiler %}<p class="film-review-spoiler">⚠︎ 这篇影评可能有剧透。</p>{% endif %}

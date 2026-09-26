@@ -1,0 +1,176 @@
+---
+layout: single
+permalink: /films/
+title: "Films"
+description: "Films I have watched and short reviews I wrote on Douban, by Xinyao Liao."
+author_profile: false
+classes: wide
+---
+
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/blog.css">
+<link rel="stylesheet" href="/assets/css/films.css">
+
+{% assign movies = site.data.movies %}
+{% assign reviewed = movies | where_exp: "m", "m.comment != ''" %}
+{% assign latest = movies | first %}
+{% assign long_reviews = site.film_reviews | sort: "date" | reverse %}
+
+<div class="blog-shell films-shell">
+  <section class="blog-hero reveal">
+    <div class="blog-status">Films · synced from Douban</div>
+    <h1>Light in the <span>dark room.</span></h1>
+    <p>
+      在黑暗里看别人的光。这里是我在豆瓣写下的观影短评——多半是走出影院时的第一反应，
+      不求准确，只求当时的心情还在。
+    </p>
+    <div class="home-actions">
+      <a class="home-button home-button--primary" href="#reviews">Read reviews</a>
+      <a class="home-button" href="https://movie.douban.com/people/204381462/collect">Douban ↗</a>
+    </div>
+  </section>
+
+  <section class="films-stats reveal" aria-label="Viewing statistics">
+    <div class="films-stat"><span>Watched</span><strong>{{ movies | size }}</strong><em>films &amp; series</em></div>
+    <div class="films-stat"><span>Short reviews</span><strong>{{ reviewed | size }}</strong><em>{{ long_reviews | size }} long review{% if long_reviews.size != 1 %}s{% endif %} too</em></div>
+    <div class="films-stat"><span>Avg rating</span><strong id="films-avg">–</strong><em>out of 5 stars</em></div>
+    <div class="films-stat"><span>Last watched</span><strong class="films-stat-small">{{ latest.date }}</strong><em>{{ latest.title }}</em></div>
+  </section>
+
+  <section class="films-charts reveal" aria-label="Viewing charts">
+    <figure class="films-chart">
+      <figcaption>How I rate <span>films per star rating</span></figcaption>
+      <div class="films-bars" id="chart-rating" role="img" aria-label="Number of films per star rating"></div>
+    </figure>
+    <figure class="films-chart">
+      <figcaption>When I watched <span>films logged per year</span></figcaption>
+      <div class="films-bars" id="chart-year" role="img" aria-label="Number of films logged per year"></div>
+    </figure>
+  </section>
+
+  {% if long_reviews.size > 0 %}
+  <section class="home-section reveal" id="long-reviews">
+    <div class="home-section-heading">
+      <div>
+        <p class="home-kicker">Long reviews</p>
+        <h2>Written at length.</h2>
+      </div>
+      <p class="home-section-note">长一点的影评，每篇有独立页面。</p>
+    </div>
+    <div class="films-longreviews">
+      {% for r in long_reviews %}
+      <a class="films-longreview" href="{{ r.url }}">
+        <img src="{{ r.poster | default: '/images/movies/placeholder.svg' }}" alt="" loading="lazy" width="72" height="107">
+        <div>
+          <h3>{{ r.title }}</h3>
+          <div class="films-meta">
+            <span>《{{ r.film }}》</span>
+            {% if r.rating > 0 %}<span class="films-stars" aria-label="Rated {{ r.rating }} out of 5">{% for i in (1..5) %}{% if i <= r.rating %}★{% else %}<i>★</i>{% endif %}{% endfor %}</span>{% endif %}
+            <time datetime="{{ r.date | date: '%Y-%m-%d' }}">{{ r.date | date: "%Y-%m-%d" }}</time>
+          </div>
+          <p>{{ r.content | strip_html | strip_newlines | truncate: 90 }}</p>
+          <span class="films-longreview-link">Read →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% assign favorites = reviewed | where: "rating", 5 %}
+  {% if favorites.size > 0 %}
+  <section class="home-section reveal">
+    <div class="home-section-heading">
+      <div>
+        <p class="home-kicker">Five stars</p>
+        <h2>The ones that stayed.</h2>
+      </div>
+      <p class="home-section-note">满分短评。滑动浏览，点击海报跳到对应短评。</p>
+    </div>
+    <div class="films-shelf">
+      {% for m in favorites limit: 24 %}
+      <a class="films-shelf-item" href="#review-{{ m.cid }}" title="{{ m.title }}">
+        <img src="{{ m.poster | default: '/images/movies/placeholder.svg' }}" alt="{{ m.title }} poster" loading="lazy" width="150" height="222">
+        <span>{{ m.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="home-section" id="reviews">
+    <div class="home-section-heading">
+      <div>
+        <p class="home-kicker">Archive</p>
+        <h2>Short reviews</h2>
+      </div>
+      <p class="home-section-note" id="films-count">{{ reviewed | size }} reviews</p>
+    </div>
+
+    <div class="films-controls" role="search">
+      <input type="search" id="films-search" placeholder="搜索片名 / 短评 / 导演…" aria-label="Search films">
+      <div class="films-chips" role="group" aria-label="Filter by rating">
+        <button type="button" data-rating="all" aria-pressed="true">All</button>
+        <button type="button" data-rating="5" aria-pressed="false">★5</button>
+        <button type="button" data-rating="4" aria-pressed="false">★4</button>
+        <button type="button" data-rating="3" aria-pressed="false">★3</button>
+        <button type="button" data-rating="low" aria-pressed="false">★1–2</button>
+      </div>
+      <select id="films-year" aria-label="Filter by year watched">
+        <option value="all">All years</option>
+      </select>
+      <div class="films-chips films-view" role="group" aria-label="View">
+        <button type="button" data-view="list" aria-pressed="true">Reviews</button>
+        <button type="button" data-view="wall" aria-pressed="false">Poster wall</button>
+      </div>
+    </div>
+
+    <div class="films-list" id="films-list">
+      {% for m in reviewed %}
+      <article class="films-review" id="review-{{ m.cid }}" data-rating="{{ m.rating }}" data-year="{{ m.date | slice: 0, 4 }}"
+               data-search="{{ m.title | append: ' ' | append: m.original | append: ' ' | append: m.intro | downcase | escape }}">
+        <a class="films-poster" href="{{ m.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ m.poster | default: '/images/movies/placeholder.svg' }}" alt="" loading="lazy" width="96" height="142">
+        </a>
+        <div class="films-review-body">
+          <header>
+            <h3><a href="{{ m.url }}">{{ m.title }}</a>{% if m.year != '' %} <small>({{ m.year }})</small>{% endif %}</h3>
+            {% if m.original != '' %}<p class="films-original">{{ m.original }}</p>{% endif %}
+          </header>
+          <div class="films-meta">
+            {% if m.rating > 0 %}
+            <span class="films-stars" aria-label="Rated {{ m.rating }} out of 5">{% for i in (1..5) %}{% if i <= m.rating %}★{% else %}<i>★</i>{% endif %}{% endfor %}</span>
+            {% endif %}
+            <time datetime="{{ m.date }}">{{ m.date }}</time>
+          </div>
+          <p class="films-comment">{{ m.comment }}</p>
+          {% assign lr = long_reviews | where: "film_id", m.id | first %}
+          {% if lr %}<a class="films-longreview-link" href="{{ lr.url }}">长评：{{ lr.title }} →</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="films-wall" id="films-wall" hidden>
+      {% for m in movies %}
+      <a class="films-wall-item" href="{{ m.url }}" data-rating="{{ m.rating }}" data-year="{{ m.date | slice: 0, 4 }}"
+         data-search="{{ m.title | append: ' ' | append: m.original | append: ' ' | append: m.intro | downcase | escape }}"
+         title="{{ m.title }}{% if m.rating > 0 %} · ★{{ m.rating }}{% endif %} · {{ m.date }}">
+        <img src="{{ m.poster | default: '/images/movies/placeholder.svg' }}" alt="{{ m.title }}" loading="lazy" width="150" height="222">
+        <span class="films-wall-caption">{{ m.title }}{% if m.rating > 0 %}<b>★{{ m.rating }}</b>{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <p class="films-empty" id="films-empty" hidden>没有符合条件的影片。</p>
+    <div class="films-more-wrap"><button type="button" class="blog-shuffle" id="films-more" hidden>Load more</button></div>
+  </section>
+
+  <p class="films-footnote">
+    Data synced from my public <a href="https://movie.douban.com/people/204381462/collect">Douban</a> profile with
+    <code>scripts/douban_sync.py</code>. Posters © their respective rights holders.
+  </p>
+</div>
+
+<script src="/assets/js/home.js" defer></script>
+<script src="/assets/js/films.js" defer></script>
