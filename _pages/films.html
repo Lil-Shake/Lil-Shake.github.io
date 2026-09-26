@@ -68,7 +68,7 @@ classes: wide
             {% if r.rating > 0 %}<span class="films-stars" aria-label="Rated {{ r.rating }} out of 5">{% for i in (1..5) %}{% if i <= r.rating %}★{% else %}<i>★</i>{% endif %}{% endfor %}</span>{% endif %}
             <time datetime="{{ r.date | date: '%Y-%m-%d' }}">{{ r.date | date: "%Y-%m-%d" }}</time>
           </div>
-          <p>{{ r.content | strip_html | strip_newlines | truncate: 90 }}</p>
+          <p>{{ r.content | strip_html | normalize_whitespace | truncate: 90 }}</p>
           <span class="films-longreview-link">Read →</span>
         </div>
       </a>
