@@ -8,19 +8,17 @@ redirect_from:
   - /about.html
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap">
+{% include site-style.html %}
 <link rel="stylesheet" href="/assets/css/homepage.css">
 
-<div class="hp">
+<div class="site hp">
   <aside class="hp-id" aria-label="Profile">
     <img class="hp-id__photo" src="/images/profile-600.jpg" alt="Portrait of Xinyao Liao" width="600" height="600" fetchpriority="high">
     <div class="hp-id__text">
       <h1 class="hp-id__name">Xinyao Liao</h1>
       <p class="hp-id__role">PhD Student<br>National University of Singapore</p>
       <ul class="hp-id__links">
-        <li><a href="mailto:liaoxinyao@u.nus.edu">liaoxinyao@u.nus.edu</a></li>
+        <li><a href="mailto:liaoxinyao@u.nus.edu" title="liaoxinyao@u.nus.edu">Email</a></li>
         <li><a href="https://scholar.google.com/citations?user=HvNNX7sAAAAJ&hl=en">Google Scholar</a></li>
         <li><a href="https://github.com/Lil-Shake">GitHub</a></li>
         <li><a href="https://orcid.org/0009-0003-2613-6088">ORCID</a></li>
@@ -29,7 +27,7 @@ redirect_from:
   </aside>
 
   <div class="hp-main">
-    <section class="hp-sec hp-bio" aria-label="About">
+    <section class="sec hp-bio" aria-label="About">
       <p>
         I am a PhD student in Computer Science at the National University of Singapore,
         working with <a href="https://www.comp.nus.edu.sg/~ayao/">Prof. Angela Yao</a> in the
@@ -53,7 +51,7 @@ redirect_from:
       </div>
     </section>
 
-    <section class="hp-sec" aria-labelledby="hp-news">
+    <section class="sec" aria-labelledby="hp-news">
       <h2 id="hp-news">News</h2>
       <ol class="hp-news">
         <li><time datetime="2026-08">Aug 2026</time><p>Started my PhD at NUS in Angela Yao's CVML group.</p></li>
@@ -63,7 +61,7 @@ redirect_from:
       </ol>
     </section>
 
-    <section class="hp-sec" aria-labelledby="hp-pubs">
+    <section class="sec" aria-labelledby="hp-pubs">
       <h2 id="hp-pubs">Publications</h2>
       <ol class="hp-pubs">
         {% assign pubs = site.publications | sort: "date" | reverse %}
@@ -96,10 +94,10 @@ redirect_from:
           </li>
         {% endfor %}
       </ol>
-      <p class="hp-note">* Equal contribution.</p>
+      <p class="note">* Equal contribution.</p>
     </section>
 
-    <section class="hp-sec" aria-labelledby="hp-misc">
+    <section class="sec" aria-labelledby="hp-misc">
       <h2 id="hp-misc">Elsewhere</h2>
       <p>
         Outside research I read, listen to music, climb, and build small things.

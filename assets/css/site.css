@@ -1,0 +1,194 @@
+/* Shared base for the homepage, blog, films and their detail pages.
+   Loaded via _includes/site-style.html. Page-specific rules live in
+   homepage.css, blog.css and films.css. */
+
+:root {
+  --ink: #1d2126;
+  --ink-soft: #5a6169;
+  --ink-faint: #8a9097;
+  --rule: #e3e2dd;
+  --wash: #f6f5f1;
+  --accent: #1f4e8c;
+  --star: #b7791f;
+  --thumb-bg: #ffffff;
+
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", "Songti SC", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+
+  --fs-text: 17px;
+  --fs-small: 14px;
+  --fs-tiny: 12.5px;
+  --sec-gap: 56px;
+}
+
+html[data-theme="dark"] {
+  --ink: #f1f1ef;
+  --ink-soft: #cfd0cd;
+  --ink-faint: #a7a9a6;
+  --rule: rgba(255, 255, 255, 0.16);
+  --wash: rgba(255, 255, 255, 0.05);
+  --accent: #a9cbf5;
+  --star: #e2b25c;
+  --thumb-bg: #f4f4f2;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --fs-text: 16px;
+    --sec-gap: 44px;
+  }
+}
+
+/* ---- Release the theme's narrow article column ---- */
+
+.page {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page__content { font-size: var(--fs-text); }
+
+/* Pages that render their own heading hide the theme's title block. */
+.page__inner-wrap:has(.pg-head, .hp) > header { display: none; }
+
+/* ---- Base ---- */
+
+.site {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--fs-text);
+  line-height: 1.65;
+}
+
+.site a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.site a:hover,
+.site a:focus-visible { text-decoration: underline; }
+
+.site a:focus-visible,
+.site button:focus-visible,
+.site input:focus-visible,
+.site select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.site p { margin: 0 0 1em; font-size: inherit; }
+.site li { font-size: inherit; }
+
+/* ---- Page heading (blog, films) ---- */
+
+.pg-head {
+  max-width: 70ch;
+  padding: 40px 0 8px;
+  margin-bottom: var(--sec-gap);
+}
+
+.pg-head h1 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pg-head p { font-size: 19px; line-height: 1.6; }
+
+.pg-head__links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 18px;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+}
+
+@media (max-width: 639px) {
+  .pg-head { padding-top: 8px; }
+  .pg-head h1 { font-size: 28px; }
+  .pg-head p { font-size: 17px; }
+}
+
+/* ---- Sections ---- */
+
+.sec + .sec { margin-top: var(--sec-gap); }
+
+.sec > h2,
+.sec-head h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.sec > h2::after,
+.sec-head h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  transform: translateY(-3px);
+}
+
+/* A section heading with a short note on the right. */
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.sec-head h2 { flex: 1; margin: 0; }
+
+.sec-head p {
+  margin: 0 !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.prose { max-width: 70ch; }
+
+.note {
+  font-family: var(--sans);
+  font-size: var(--fs-tiny) !important;
+  color: var(--ink-faint);
+}
+
+/* Plain text button (e.g. "Load more"). */
+.text-btn {
+  appearance: none;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fs-small);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.text-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .text-btn { transition: none; }
+}

@@ -4,11 +4,9 @@ permalink: /films/
 title: "Films"
 description: "Films I have watched and short reviews I wrote on Douban, by Xinyao Liao."
 author_profile: false
-classes: wide
 ---
 
-<link rel="stylesheet" href="/assets/css/home.css">
-<link rel="stylesheet" href="/assets/css/blog.css">
+{% include site-style.html %}
 <link rel="stylesheet" href="/assets/css/films.css">
 
 {% assign movies = site.data.movies %}
@@ -16,46 +14,42 @@ classes: wide
 {% assign latest = movies | first %}
 {% assign long_reviews = site.film_reviews | sort: "date" | reverse %}
 
-<div class="blog-shell films-shell">
-  <section class="blog-hero reveal">
-    <div class="blog-status">Films · synced from Douban</div>
-    <h1>Light in the <span>dark room.</span></h1>
+<div class="site films">
+  <header class="pg-head">
+    <h1>Films</h1>
     <p>
-      在黑暗里看别人的光。这里是我在豆瓣写下的观影短评——多半是走出影院时的第一反应，
-      不求准确，只求当时的心情还在。
+      在黑暗里看别人的光。这里是我在豆瓣写下的观影短评——多半是走出影院时的第一反应，不求准确，只求当时的心情还在。
     </p>
-    <div class="home-actions">
-      <a class="home-button home-button--primary" href="#reviews">Read reviews</a>
-      <a class="home-button" href="https://movie.douban.com/people/204381462/collect">Douban ↗</a>
-    </div>
-  </section>
+    <p class="pg-head__links">
+      <a href="#reviews">Short reviews</a>
+      <a href="https://movie.douban.com/people/204381462/collect">Douban profile</a>
+    </p>
+  </header>
 
-  <section class="films-stats reveal" aria-label="Viewing statistics">
+  <section class="sec films-overview" aria-label="Viewing statistics">
+  <div class="films-stats">
     <div class="films-stat"><span>Watched</span><strong>{{ movies | size }}</strong><em>films &amp; series</em></div>
     <div class="films-stat"><span>Short reviews</span><strong>{{ reviewed | size }}</strong><em>{{ long_reviews | size }} long review{% if long_reviews.size != 1 %}s{% endif %} too</em></div>
     <div class="films-stat"><span>Avg rating</span><strong id="films-avg">–</strong><em>out of 5 stars</em></div>
     <div class="films-stat"><span>Last watched</span><strong class="films-stat-small">{{ latest.date }}</strong><em>{{ latest.title }}</em></div>
-  </section>
+  </div>
 
-  <section class="films-charts reveal" aria-label="Viewing charts">
+  <div class="films-charts">
     <figure class="films-chart">
-      <figcaption>How I rate <span>films per star rating</span></figcaption>
+      <figcaption>Ratings <span>films per star</span></figcaption>
       <div class="films-bars" id="chart-rating" role="img" aria-label="Number of films per star rating"></div>
     </figure>
     <figure class="films-chart">
-      <figcaption>When I watched <span>films logged per year</span></figcaption>
+      <figcaption>By year <span>films logged</span></figcaption>
       <div class="films-bars" id="chart-year" role="img" aria-label="Number of films logged per year"></div>
     </figure>
+  </div>
   </section>
 
   {% if long_reviews.size > 0 %}
-  <section class="home-section reveal" id="long-reviews">
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">Long reviews</p>
-        <h2>Written at length.</h2>
-      </div>
-      <p class="home-section-note">长一点的影评，每篇有独立页面。</p>
+  <section class="sec" id="long-reviews">
+    <div class="sec-head">
+      <h2>Long reviews</h2>
     </div>
     <div class="films-longreviews">
       {% for r in long_reviews %}
@@ -69,7 +63,7 @@ classes: wide
             <time datetime="{{ r.date | date: '%Y-%m-%d' }}">{{ r.date | date: "%Y-%m-%d" }}</time>
           </div>
           <p>{{ r.content | strip_html | normalize_whitespace | truncate: 90 }}</p>
-          <span class="films-longreview-link">Read →</span>
+          
         </div>
       </a>
       {% endfor %}
@@ -79,13 +73,10 @@ classes: wide
 
   {% assign favorites = reviewed | where: "rating", 5 %}
   {% if favorites.size > 0 %}
-  <section class="home-section reveal">
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">Five stars</p>
-        <h2>The ones that stayed.</h2>
-      </div>
-      <p class="home-section-note">满分短评。滑动浏览，点击海报跳到对应短评。</p>
+  <section class="sec">
+    <div class="sec-head">
+      <h2>Five stars</h2>
+      <p>点击海报跳到对应短评</p>
     </div>
     <div class="films-shelf">
       {% for m in favorites limit: 24 %}
@@ -98,13 +89,10 @@ classes: wide
   </section>
   {% endif %}
 
-  <section class="home-section" id="reviews">
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">Archive</p>
-        <h2>Short reviews</h2>
-      </div>
-      <p class="home-section-note" id="films-count">{{ reviewed | size }} reviews</p>
+  <section class="sec" id="reviews">
+    <div class="sec-head">
+      <h2>Short reviews</h2>
+      <p id="films-count">{{ reviewed | size }} reviews</p>
     </div>
 
     <div class="films-controls" role="search">
@@ -145,7 +133,7 @@ classes: wide
           </div>
           <p class="films-comment">{{ m.comment }}</p>
           {% assign lr = long_reviews | where: "film_id", m.id | first %}
-          {% if lr %}<a class="films-longreview-link" href="{{ lr.url }}">长评：{{ lr.title }} →</a>{% endif %}
+          {% if lr %}<a class="films-longreview-link" href="{{ lr.url }}">长评：{{ lr.title }}</a>{% endif %}
         </div>
       </article>
       {% endfor %}
@@ -163,14 +151,13 @@ classes: wide
     </div>
 
     <p class="films-empty" id="films-empty" hidden>没有符合条件的影片。</p>
-    <div class="films-more-wrap"><button type="button" class="blog-shuffle" id="films-more" hidden>Load more</button></div>
+    <div class="films-more-wrap"><button type="button" class="text-btn" id="films-more" hidden>Load more</button></div>
   </section>
 
-  <p class="films-footnote">
+  <p class="note films-footnote">
     Data synced from my public <a href="https://movie.douban.com/people/204381462/collect">Douban</a> profile with
     <code>scripts/douban_sync.py</code>. Posters © their respective rights holders.
   </p>
 </div>
 
-<script src="/assets/js/home.js" defer></script>
 <script src="/assets/js/films.js" defer></script>
