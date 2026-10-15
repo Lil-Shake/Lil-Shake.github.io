@@ -11,7 +11,10 @@
 
 {% assign title = post.title %}
 
-{% assign show_publication_teaser = post.collection == 'publications' and teaser %}
+{% assign show_publication_teaser = false %}
+{% if post.collection == 'publications' and teaser and teaser != "" %}
+  {% assign show_publication_teaser = true %}
+{% endif %}
 
 {%- comment -%}
 ===========================

@@ -3,156 +3,109 @@ permalink: /
 title: "Xinyao Liao"
 description: "Xinyao Liao is a PhD student in Computer Science at the National University of Singapore, working on visual generative models, reinforcement learning, and adaptive learning systems."
 author_profile: false
-classes: wide
 redirect_from:
   - /about/
   - /about.html
 ---
 
-<link rel="stylesheet" href="/assets/css/home.css">
-<link rel="stylesheet" href="/assets/css/home-polish.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/css/homepage.css">
 
-<div class="home-shell">
-  <section class="home-hero reveal" aria-labelledby="home-title">
-    <div>
-      <div class="home-eyebrow">PhD Student · NUS CVML · Fall 2026</div>
-      <h1 id="home-title">Hi, I'm <span>Xinyao Liao</span>.</h1>
-      <p class="home-lede">
-        I am a PhD student in Computer Science at the <strong>National University of Singapore</strong>,
+<div class="hp">
+  <aside class="hp-id" aria-label="Profile">
+    <img class="hp-id__photo" src="/images/profile-600.jpg" alt="Portrait of Xinyao Liao" width="600" height="600" fetchpriority="high">
+    <div class="hp-id__text">
+      <h1 class="hp-id__name">Xinyao Liao</h1>
+      <p class="hp-id__role">PhD Student<br>National University of Singapore</p>
+      <ul class="hp-id__links">
+        <li><a href="mailto:liaoxinyao@u.nus.edu">liaoxinyao@u.nus.edu</a></li>
+        <li><a href="https://scholar.google.com/citations?user=HvNNX7sAAAAJ&hl=en">Google Scholar</a></li>
+        <li><a href="https://github.com/Lil-Shake">GitHub</a></li>
+        <li><a href="https://orcid.org/0009-0003-2613-6088">ORCID</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="hp-main">
+    <section class="hp-sec hp-bio" aria-label="About">
+      <p>
+        I am a PhD student in Computer Science at the National University of Singapore,
         working with <a href="https://www.comp.nus.edu.sg/~ayao/">Prof. Angela Yao</a> in the
-        <strong>Computer Vision &amp; Machine Learning (CVML) Group</strong>. My research explores
-        visual generative models, reinforcement learning, and learning systems that can improve at
-        inference time and through experience.
+        Computer Vision and Machine Learning (CVML) group. My research is on visual generative
+        models and reinforcement learning — in particular autoregressive image and video
+        generation, and methods that let models improve at inference time and through experience.
       </p>
-      <div class="home-tags" aria-label="Research interests">
-        <span class="home-tag">Visual Generative Models</span>
-        <span class="home-tag">Autoregressive Generation</span>
-        <span class="home-tag">Reinforcement Learning</span>
-        <span class="home-tag">Test-Time Adaptation</span>
-        <span class="home-tag">Continual / Self-Improving Systems</span>
+      <p>
+        Before NUS, I studied Computer Science (Information Security) and Philosophy at
+        Huazhong University of Science and Technology.
+      </p>
+      <div class="hp-bio__interests">
+        <span>Interests</span>
+        <ul>
+          <li>Visual generative models</li>
+          <li>Autoregressive generation</li>
+          <li>Reinforcement learning</li>
+          <li>Test-time adaptation</li>
+          <li>Continual and self-improving systems</li>
+        </ul>
       </div>
-      <div class="home-actions">
-        <a class="home-button home-button--primary" href="#research">Explore research</a>
-        <a class="home-button" href="https://scholar.google.com/citations?user=HvNNX7sAAAAJ&hl=en">Google Scholar ↗</a>
-        <a class="home-button" href="https://github.com/Lil-Shake">GitHub ↗</a>
-      </div>
-    </div>
+    </section>
 
-    <aside class="home-profile-card" aria-label="Profile">
-      <img src="/images/academic_profile_2.jpg" alt="Portrait of Xinyao Liao.">
-      <div class="home-profile-meta">
-        <div><strong>Xinyao Liao</strong>Singapore · NUS</div>
-        <div>CVML</div>
-      </div>
-    </aside>
-  </section>
+    <section class="hp-sec" aria-labelledby="hp-news">
+      <h2 id="hp-news">News</h2>
+      <ol class="hp-news">
+        <li><time datetime="2026-08">Aug 2026</time><p>Started my PhD at NUS in Angela Yao's CVML group.</p></li>
+        <li><time datetime="2026-05">May 2026</time><p>Released <a href="https://arxiv.org/abs/2605.30317">VPG</a>, a training-free guidance method for autoregressive image and video generation.</p></li>
+        <li><time datetime="2026-02">Feb 2026</time><p><a href="https://lil-shake.github.io/va-pi.github.io/">VA-π</a> accepted to CVPR 2026.</p></li>
+        <li><time datetime="2026-01">Jan 2026</time><p><a href="https://qy-h00.github.io/reAR/">reAR</a> accepted to ICLR 2026.</p></li>
+      </ol>
+    </section>
 
-  <section class="home-section reveal" id="updates">
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">Now</p>
-        <h2>Recent updates</h2>
-      </div>
-      <p class="home-section-note">A compact timeline of research and academic milestones.</p>
-    </div>
+    <section class="hp-sec" aria-labelledby="hp-pubs">
+      <h2 id="hp-pubs">Publications</h2>
+      <ol class="hp-pubs">
+        {% assign pubs = site.publications | sort: "date" | reverse %}
+        {% for pub in pubs %}
+          {% assign teaser = pub.header.teaser | default: pub.teaser %}
+          {% assign primary_url = pub.website | default: pub.paperurl %}
+          {% assign code_url = pub.code | default: pub.codeurl %}
+          <li class="hp-pub">
+            {% if teaser and teaser != "" %}
+              <a class="hp-pub__thumb" href="{{ primary_url }}" tabindex="-1" aria-hidden="true">
+                <img src="/images/{{ teaser }}" alt="" width="480" height="240" loading="lazy" decoding="async">
+              </a>
+            {% endif %}
+            <div class="hp-pub__body">
+              <h3 class="hp-pub__title"><a href="{{ primary_url }}">{{ pub.title }}</a></h3>
+              <p class="hp-pub__authors">
+                {%- for a in pub.authors -%}
+                  {%- assign clean = a | remove: "*" | strip -%}
+                  {%- if clean == "Xinyao Liao" -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}
+                  {%- unless forloop.last -%}, {% endunless -%}
+                {%- endfor -%}
+              </p>
+              <p class="hp-pub__meta">
+                <em>{{ pub.venue }} {{ pub.date | date: "%Y" }}</em>
+                {% if pub.paperurl %}<a href="{{ pub.paperurl }}">paper</a>{% endif %}
+                {% if pub.website %}<a href="{{ pub.website }}">project</a>{% endif %}
+                {% if code_url %}<a href="{{ code_url }}">code</a>{% endif %}
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+      <p class="hp-note">* Equal contribution.</p>
+    </section>
 
-    <div class="home-news">
-      <div class="home-news-item">
-        <div class="home-news-date">Aug 2026</div>
-        <p>Started my PhD in Computer Science at <strong>NUS</strong>, joining Angela Yao's CVML group.</p>
-      </div>
-      <div class="home-news-item">
-        <div class="home-news-date">May 2026</div>
-        <p>Released <a href="https://arxiv.org/abs/2605.30317"><strong>VPG</strong></a>, a training-free guidance method for autoregressive image and video generation.</p>
-      </div>
-      <div class="home-news-item">
-        <div class="home-news-date">Feb 2026</div>
-        <p><a href="https://lil-shake.github.io/va-pi.github.io/"><strong>VA-π</strong></a> was accepted to <strong>CVPR 2026</strong>.</p>
-      </div>
-      <div class="home-news-item">
-        <div class="home-news-date">Jan 2026</div>
-        <p><a href="https://qy-h00.github.io/reAR/"><strong>reAR</strong></a> was accepted to <strong>ICLR 2026</strong>.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-section reveal" id="research">
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">Featured research</p>
-        <h2>Learning to generate — and improve.</h2>
-        <p class="home-section-note">I am especially interested in objectives and inference procedures that make generative models more reliable, adaptive, and efficient.</p>
-      </div>
-    </div>
-
-    <div class="home-project-grid">
-      <article class="home-project">
-        <div class="home-project-visual home-project-visual--vpg" aria-hidden="true">VPG</div>
-        <span class="home-project-badge">2026 · Visual AR</span>
-        <h3>Visual Prefix Guidance</h3>
-        <p>Training-free inference-time guidance that contrasts generated and corrupted prefixes to reduce autoregressive prefix drift.</p>
-        <div class="home-project-links">
-          <a href="https://arxiv.org/abs/2605.30317">Paper</a>
-          <a href="https://vpg-interactive-talk.lilshake66.chatgpt.site">Interactive</a>
-        </div>
-      </article>
-
-      <article class="home-project">
-        <div class="home-project-visual home-project-visual--vapi" aria-hidden="true">VA-π</div>
-        <span class="home-project-badge">CVPR 2026</span>
-        <h3>Variational Policy Alignment</h3>
-        <p>Pixel-aware reinforcement learning for autoregressive image generation, aligning token policies with image-space quality.</p>
-        <div class="home-project-links">
-          <a href="https://lil-shake.github.io/va-pi.github.io/">Project</a>
-          <a href="https://github.com/Lil-Shake/VA-Pi">Code</a>
-        </div>
-      </article>
-
-      <article class="home-project">
-        <div class="home-project-visual home-project-visual--coca" aria-hidden="true">CoCA</div>
-        <span class="home-project-badge">Diffusion RL</span>
-        <h3>Step-Level Reward for T2I RL</h3>
-        <p>Turning trajectory-level supervision into step-level learning signals for more effective reinforcement learning of diffusion models.</p>
-        <div class="home-project-links">
-          <a href="https://github.com/Lil-Shake/CoCA">Code</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="home-section reveal" id="publications">
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">Publications</p>
-        <h2>Research archive</h2>
-      </div>
-      <span class="home-section-note" id="pub-count" aria-live="polite"></span>
-    </div>
-
-    <div class="home-filterbar" role="group" aria-label="Filter publications">
-      <button class="home-filter" type="button" data-pub-filter="all" aria-pressed="true">All</button>
-      <button class="home-filter" type="button" data-pub-filter="2026" aria-pressed="false">2026</button>
-      <button class="home-filter" type="button" data-pub-filter="earlier" aria-pressed="false">Earlier</button>
-    </div>
-
-    <div id="publication-list" class="home-publications">
-      {% include base_path %}
-      {% for post in site.publications reversed %}
-        {% include archive-single.html %}
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="home-section reveal" id="about">
-    <div class="home-about-card">
-      <div>
-        <p class="home-kicker">Beyond research</p>
-        <h2>Curious about systems, ideas, and the world around them.</h2>
-        <p>Before my PhD, I studied Computer Science / Information Security and Philosophy at HUST. Outside research, I enjoy reading, films, music, climbing, and building small things for fun.</p>
-      </div>
-      <a class="home-button" href="mailto:xinyao@hust.edu.cn">Email me</a>
-    </div>
-  </section>
+    <section class="hp-sec" aria-labelledby="hp-misc">
+      <h2 id="hp-misc">Elsewhere</h2>
+      <p>
+        Outside research I read, listen to music, climb, and build small things.
+        I write occasionally on the <a href="/year-archive/">blog</a> and keep notes on
+        <a href="/films/">films</a> I've watched.
+      </p>
+    </section>
+  </div>
 </div>
-
-<script src="/assets/js/home.js" defer></script>
