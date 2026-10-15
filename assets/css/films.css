@@ -3,8 +3,6 @@
 
 .films { padding-bottom: 24px; }
 
-.films .pg-head p:first-of-type { font-size: 18px; }
-
 /* ---- Overview: stats + charts ---- */
 
 .films-stats {
@@ -310,7 +308,7 @@
   scroll-margin-top: 140px;
 }
 
-.films-review:target .films-review-body { box-shadow: -10px 0 0 -8px var(--accent); }
+.films-review:target { box-shadow: -12px 0 0 -10px var(--accent); }
 
 .films-review h3 {
   margin: 0;
@@ -375,6 +373,34 @@
   margin-top: 8px;
   font-family: var(--sans);
   font-size: var(--fs-small);
+}
+
+/* Wide screens: poster | title + meta | comment, so the comment uses the full width. */
+@media (min-width: 1024px) {
+  .films-review {
+    grid-template-columns: 64px 240px minmax(0, 1fr);
+    grid-template-areas:
+      "poster head comment"
+      "poster meta comment"
+      "poster .    comment"
+      "poster .    link";
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 28px;
+    row-gap: 0;
+  }
+
+  .films-review-body { display: contents; }
+  .films-poster { grid-area: poster; }
+  .films-review header { grid-area: head; min-width: 0; }
+  .films-review .films-meta { grid-area: meta; align-self: start; margin-bottom: 0; }
+
+  .films-review .films-comment {
+    grid-area: comment;
+    max-width: none;
+    padding-top: 1px;
+  }
+
+  .films-review .films-longreview-link { grid-area: link; }
 }
 
 /* ---- Poster wall ---- */
@@ -505,7 +531,6 @@
 /* ---- Phone ---- */
 
 @media (max-width: 639px) {
-  .films .pg-head p:first-of-type { font-size: 16px; }
   .films-stat { padding: 0 14px; }
   .films-stat strong { font-size: 26px; }
   .films-stat strong.films-stat-small { font-size: 17px; }
