@@ -85,7 +85,8 @@ redirect_from:
                 {%- endfor -%}
               </p>
               <p class="hp-pub__meta">
-                <em>{{ pub.venue }} {{ pub.date | date: "%Y" }}</em>
+                {% assign pub_year = pub.date | date: "%Y" %}
+                <em>{{ pub.venue }} {{ pub.venue_year | default: pub_year }}</em>
                 {% if pub.paperurl %}<a href="{{ pub.paperurl }}">paper</a>{% endif %}
                 {% if pub.website %}<a href="{{ pub.website }}">project</a>{% endif %}
                 {% if code_url %}<a href="{{ code_url }}">code</a>{% endif %}

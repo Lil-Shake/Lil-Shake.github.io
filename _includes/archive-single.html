@@ -71,7 +71,7 @@
 {% capture venue_badge %}
   {% if post.venue %}
     <span class="venue-badge">
-      {{ post.venue }} {{ post.date | date: "%Y" }}
+      {% assign post_year = post.date | date: "%Y" %}{{ post.venue }} {{ post.venue_year | default: post_year }}
     </span>
   {% endif %}
 {% endcapture %}
