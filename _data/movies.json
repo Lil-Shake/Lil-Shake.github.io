@@ -1,5 +1,21 @@
 [
  {
+  "cid": "4972529719",
+  "id": "37342630",
+  "title": "突如其来",
+  "original": "Soudain",
+  "url": "https://movie.douban.com/subject/37342630/",
+  "poster_src": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2931445409.jpg",
+  "year": "2026",
+  "intro": "2026-05-15(戛纳电影节) / 2026-06-19(日本) / 2026-08-12(法国) / 2026(中国大陆) / 维尔日妮·埃菲拉 / 冈本多绪 / 玛丽·布奈尔 / 让-路易斯·盖松 / 让-查理·克里切特 / 拉扎尔·古索 / 热罗姆·夏帕特 / 玛戈·马里科 / 伊夫琳·伊斯特里亚 / Prescilia Follin / 法国 / 日本 / 德国 / 比利时 / 滨口龙介 / 196分钟 / 突如其来 / 剧情 / 滨口龙介 Ryûsuke Hamaguchi / 蕾雅·德米娜 Léa Le Dimna / 法语 / 日语 / 英语",
+  "rating": 5,
+  "date": "2026-10-23",
+  "comment": "滨口龙介 yasashii！",
+  "tags": [],
+  "playable": false,
+  "poster": "/images/movies/37342630.webp"
+ },
+ {
   "cid": "4809725651",
   "id": "2361085",
   "title": "青空娘",
@@ -92,7 +108,7 @@
   "date": "2026-09-19",
   "comment": "阿克曼镜头下的纽约，像迷雾中的人造沙漠。开头差点睡着了，我在重复的街景中闭上眼睛、紧接着被轰鸣的地铁惊醒。妈妈从比利时寄来的信作为念白，信里诉说对女儿思念、想要了解女儿赴美生活的愿望、分享远方亲人的近况以及寄去几十美金。阿克曼回应以沉默的影像，我猜那是她异国生活常常经过的场所，影像也是回信，是一场无声的在场与陪伴。结尾的那一幕真好，今晚梦这集。",
   "tags": [],
-  "playable": false,
+  "playable": true,
   "poster": "/images/movies/1902009.webp"
  },
  {
@@ -172,7 +188,7 @@
   "date": "2026-08-21",
   "comment": "蔡明亮太好…后悔没看不散",
   "tags": [],
-  "playable": false,
+  "playable": true,
   "poster": "/images/movies/25742284.webp"
  },
  {
