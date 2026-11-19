@@ -1,18 +1,18 @@
 {
  "synced": "2026-11-19",
  "stats": {
-  "bands": 6,
-  "liked": 6,
-  "releases": 84,
-  "heard": 10,
+  "bands": 7,
+  "liked": 7,
+  "releases": 89,
+  "heard": 12,
   "countries": [
    "日本",
    "法国",
    "美国"
   ],
   "newest": {
-   "name": "Air",
-   "id": "air",
+   "name": "maya ongaku",
+   "id": "maya-ongaku",
    "added": "2026-11-19"
   }
  },
@@ -592,6 +592,14 @@
     {
      "id": "ogre-you-asshole",
      "name": "Ogre You Asshole",
+     "score": 2,
+     "reasons": [
+      "都是 迷幻摇滚"
+     ]
+    },
+    {
+     "id": "maya-ongaku",
+     "name": "maya ongaku",
      "score": 2,
      "reasons": [
       "都是 迷幻摇滚"
@@ -1483,6 +1491,18 @@
       "坂本慎太郎 把两边连在一起",
       "同在东京",
       "声音上都有 极简留白",
+      "都用日语演唱"
+     ]
+    },
+    {
+     "id": "maya-ongaku",
+     "name": "maya ongaku",
+     "score": 5.5,
+     "reasons": [
+      "同样来自日本",
+      "都是 迷幻摇滚",
+      "声音上都有 重复律动",
+      "气质都偏 松弛",
       "都用日语演唱"
      ]
     },
@@ -3314,6 +3334,16 @@
    "shows_source": "Stereoboard、Hypebot，目前没有公布新的场次",
    "links": [
     {
+     "id": "maya-ongaku",
+     "name": "maya ongaku",
+     "score": 7,
+     "reasons": [
+      "Beats Per Minute 的乐评说《Nothing Space Music》里有 Air 的影子",
+      "声音上都有 模拟合成器",
+      "气质都偏 松弛、梦幻"
+     ]
+    },
+    {
      "id": "ogre-you-asshole",
      "name": "Ogre You Asshole",
      "score": 4,
@@ -4353,6 +4383,18 @@
      ]
     },
     {
+     "id": "maya-ongaku",
+     "name": "maya ongaku",
+     "score": 6.5,
+     "reasons": [
+      "同样来自日本",
+      "都是 迷幻摇滚",
+      "声音上都有 重复律动、模拟合成器",
+      "气质都偏 松弛",
+      "都用日语演唱"
+     ]
+    },
+    {
      "id": "boy-harsher",
      "name": "Boy Harsher",
      "score": 5,
@@ -5227,6 +5269,14 @@
       "声音上都有 极简留白、重复律动",
       "都通向 Suicide"
      ]
+    },
+    {
+     "id": "maya-ongaku",
+     "name": "maya ongaku",
+     "score": 2,
+     "reasons": [
+      "声音上都有 鼓机、重复律动"
+     ]
     }
    ],
    "leads": [
@@ -5297,6 +5347,829 @@
       "at": 98.25,
       "year": 2026,
       "title": "《Get Mean》：一张分手之后的公路专辑"
+     }
+    ]
+   }
+  },
+  {
+   "id": "maya-ongaku",
+   "name": "maya ongaku",
+   "aliases": [
+    "Maya Ongaku",
+    "マヤオンガク"
+   ],
+   "country": "日本",
+   "city": "藤泽",
+   "where": "藤泽，日本",
+   "formed": 2021,
+   "ended": null,
+   "years": "2021 至今",
+   "status": "like",
+   "status_label": "喜欢",
+   "note": "听过《Electronic Phantoms》和《Nothing Space Music》。\n2021 年在江之岛一带的海边小镇结成的三人组：園田努、高野諒大、池田抄英。没有鼓手，吉他、贝斯加上萨克斯和长笛，做一种松弛的迷幻民谣。\n《Electronic Phantoms》请进了合成器和鼓机，想让人跳舞；《Nothing Space Music》又退回到安静里，在自己盖的录音室里录成。",
+   "added": "2026-11-19",
+   "genres": [
+    "迷幻民谣",
+    "迷幻摇滚",
+    "氛围"
+   ],
+   "dims": [
+    {
+     "key": "genres",
+     "label": "类型",
+     "values": [
+      "迷幻民谣",
+      "迷幻摇滚",
+      "氛围"
+     ]
+    },
+    {
+     "key": "scenes",
+     "label": "场景与运动",
+     "values": [
+      "湘南·江之岛"
+     ]
+    },
+    {
+     "key": "labels",
+     "label": "厂牌",
+     "values": [
+      "Guruguru Brain",
+      "Bayon Production"
+     ]
+    },
+    {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "園田努",
+      "高野諒大",
+      "池田抄英"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "園田努"
+     ]
+    },
+    {
+     "key": "sound",
+     "label": "声音",
+     "values": [
+      "模拟合成器",
+      "鼓机",
+      "重复律动",
+      "木管",
+      "田野录音"
+     ]
+    },
+    {
+     "key": "moods",
+     "label": "气质",
+     "values": [
+      "松弛",
+      "冥想",
+      "梦幻"
+     ]
+    },
+    {
+     "key": "themes",
+     "label": "主题与文化关联",
+     "values": [
+      "自然发生",
+      "寂静",
+      "电子幽灵"
+     ]
+    },
+    {
+     "key": "languages",
+     "label": "语言",
+     "values": [
+      "日语"
+     ]
+    }
+   ],
+   "photo": {
+    "src": "/images/music/3de584264c83f1ca00759b313e20c303.webp",
+    "width": 1000,
+    "height": 1000
+   },
+   "photo_credit": "官方宣传照，摄影者与年份不详，取自 Deezer 艺人页；非自由授权",
+   "heard": 2,
+   "strip": {
+    "first": 2021,
+    "last": 2026,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 258.8,
+      "y": 37,
+      "year": 2023,
+      "title": "Approach to Anima",
+      "heard": false
+     },
+     {
+      "x": 381.2,
+      "y": 37,
+      "year": 2024,
+      "title": "Electronic Phantoms",
+      "heard": true
+     },
+     {
+      "x": 503.6,
+      "y": 37,
+      "year": 2025,
+      "title": "Live on KEXP",
+      "heard": false
+     },
+     {
+      "x": 503.6,
+      "y": 27,
+      "year": 2025,
+      "title": "Maybe Psychic",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2026,
+      "title": "Nothing Space Music",
+      "heard": true
+     }
+    ]
+   },
+   "releases": [
+    {
+     "title": "Approach to Anima",
+     "year": 2023,
+     "kind": "专辑",
+     "note": "首张专辑，Guruguru Brain 发行。指弹吉他、萨克斯和长笛为主，配一点原声打击乐。先行单曲是〈Nuska〉和〈Something in Morning Rain〉。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/bcae78311b5b4b2ac5fa26086fb42c8c.webp",
+      "width": 400,
+      "height": 396
+     },
+     "tracks": [
+      "Approach",
+      "Nuska",
+      "Description of a Certain Sound",
+      "Melting",
+      "Something in Morning Rain",
+      "Rakusui",
+      "Water Dreams",
+      "Pillow Song"
+     ],
+     "stories": [
+      {
+       "index": 2,
+       "title": "第一张专辑"
+      }
+     ]
+    },
+    {
+     "title": "Electronic Phantoms",
+     "year": 2024,
+     "kind": "EP",
+     "note": "六首歌的 EP。把合成器和鼓机请了进来，乐队说想让听到的人站起来跳舞。后三首是〈Meiso Ongaku〉的三个部分。",
+     "heard": true,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/9fdfff720a632da0690c664e7a91b7b5.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "Iyo no Hito",
+      "Anoyo Drive",
+      "Love with Phantom",
+      "Meiso Ongaku 1",
+      "Meiso Ongaku 2",
+      "Meiso Ongaku 3"
+     ],
+     "stories": [
+      {
+       "index": 4,
+       "title": "没有鼓手，就和机器一起即兴"
+      },
+      {
+       "index": 5,
+       "title": "“电子幽灵”指的是什么"
+      }
+     ]
+    },
+    {
+     "title": "Live on KEXP",
+     "year": 2025,
+     "kind": "现场",
+     "note": "西雅图电台 KEXP 的棚内现场，演了〈Anoyo Drive〉〈Melting〉〈Iyo no Hito〉三首。封面用的是节目画面，裁成了方形。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/4052dc9e8bd9894a19a9ca329add8f1c.webp",
+      "width": 280,
+      "height": 280
+     },
+     "tracks": [
+      "Anoyo Drive",
+      "Melting",
+      "Iyo no Hito"
+     ],
+     "stories": [
+      {
+       "index": 6,
+       "title": "在 KEXP 录了一场"
+      }
+     ]
+    },
+    {
+     "title": "Maybe Psychic",
+     "year": 2025,
+     "kind": "单曲",
+     "note": "两张作品之间的单曲，同名的日本巡演跑了六座城市。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/5e375f1fe005b78f675638bae4a87f19.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 8,
+       "title": "《Maybe Psychic》巡演在草月会馆收尾"
+      }
+     ]
+    },
+    {
+     "title": "Nothing Space Music",
+     "year": 2026,
+     "kind": "专辑",
+     "note": "第二张专辑，在自己盖的 Nothing Space Studio 里录成，八首歌连成一整段。8 月先出数字版，黑胶 9 月发行。",
+     "heard": true,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/093657fe307a0850f2a8aa49f6aacda5.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "Vanishing Waves",
+      "Astral Echoes",
+      "Thinkingscape",
+      "Flowing",
+      "Hisoku Blue",
+      "In Nothing Space",
+      "You are Silence",
+      "Permanent Waves"
+     ],
+     "stories": [
+      {
+       "index": 10,
+       "title": "在神社旁边盖了一间录音室"
+      },
+      {
+       "index": 11,
+       "title": "〈Astral Echoes〉：等灵感自己来"
+      },
+      {
+       "index": 12,
+       "title": "录音、混音、封面都是園田"
+      },
+      {
+       "index": 13,
+       "title": "乐评拿它和谁比"
+      }
+     ]
+    }
+   ],
+   "people": [
+    {
+     "name": "園田努",
+     "role": "主唱、吉他",
+     "years": "2021 至今",
+     "note": "Tsutomu Sonoda。全部歌词出自他手，《Nothing Space Music》的录音、混音和封面设计也都是他做的。2025 年在 NiEW 上连载过海外巡演的账目和行程。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 7,
+       "title": "第一次自己跑欧洲"
+      },
+      {
+       "index": 12,
+       "title": "录音、混音、封面都是園田"
+      }
+     ]
+    },
+    {
+     "name": "高野諒大",
+     "role": "贝斯",
+     "years": "2021 至今",
+     "note": "Ryota Takano。除了贝斯，新专辑里的鼓机 TR-8S 也由他负责，署名里还有几样名字带 Sei 的乐器。",
+     "projects": [],
+     "stories": []
+    },
+    {
+     "name": "池田抄英",
+     "role": "萨克斯、长笛、键盘",
+     "years": "2021 至今",
+     "note": "Shoei Ikeda。乐队里的木管声都来自他，新专辑里还弹了 Rhodes、立式钢琴和 Moog 合成器，吹了单簧管。",
+     "projects": [],
+     "stories": []
+    },
+    {
+     "name": "Tomo Katsurada",
+     "role": "厂牌主理人",
+     "years": "2023 起",
+     "note": "幾何学模様的成员，和 Go Kurosawa 一起经营 Guruguru Brain，maya ongaku 的专辑和 EP 都由这个厂牌发行。2025 年日本巡演的终场，他带着自己的三人组来做了开场嘉宾。",
+     "projects": [
+      {
+       "name": "幾何学模様",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 8,
+       "title": "《Maybe Psychic》巡演在草月会馆收尾"
+      }
+     ]
+    }
+   ],
+   "stories": [
+    {
+     "title": "古着店后面的录音室",
+     "text": "乐队出自江之岛周边的海边小镇，离东京西南大约五十公里。三个人常待在一家叫 Ace General Store 的古着店里，它藏在游客很多的すばな通り背后。他们在店里聊音乐和艺术、整理唱片区、看收银台，空下来就到店后面的录音室里即兴、录音。園田把乐队的来历叫作“自然発生”，意思是没有谁刻意去组，它是自己长出来的。",
+     "year": 2021,
+     "source": "Guruguru Brain（Bandcamp）",
+     "person": "",
+     "release": "",
+     "url": "https://mayaongakuggb.bandcamp.com/album/approach-to-anima"
+    },
+    {
+     "title": "名字和玛雅文明无关",
+     "text": "按厂牌的介绍，maya 不是指古代文明，而是乐队自己造的词，意思是视野之外、靠想象看到的景色。ongaku 就是日语的“音乐”。",
+     "year": 2021,
+     "source": "Guruguru Brain（Bandcamp）",
+     "person": "",
+     "release": "",
+     "url": "https://mayaongakuggb.bandcamp.com/album/approach-to-anima"
+    },
+    {
+     "title": "第一张专辑",
+     "text": "《Approach to Anima》2023 年 5 月由 Guruguru Brain 发行。厂牌的描述是：園田的吉他和人声、高野蜿蜒的贝斯、池田飘着的木管，加上一点点打击乐。开场的〈Approach〉由萨克斯慢慢铺开，十一分钟的〈Water Dreams〉之后，以〈Pillow Song〉轻轻收尾。",
+     "year": 2023,
+     "source": "Guruguru Brain（Bandcamp）",
+     "person": "",
+     "release": "Approach to Anima",
+     "url": "https://mayaongakuggb.bandcamp.com/album/approach-to-anima"
+    },
+    {
+     "title": "和 Mong Tong 一起第一次去欧洲",
+     "text": "2023 年 11 月，乐队和同厂牌的台湾兄弟二人组 Mong Tong 联合巡演欧洲，六个国家十三场，其中一站是乌得勒支的 Le Guess Who? 音乐节。这是他们第一次去欧洲演出。",
+     "year": 2023,
+     "source": "AVO Magazine",
+     "person": "",
+     "release": "",
+     "url": "https://avo-magazine.com/en/2023/08/maya-ongaku-and-mong-tong-combine-forces-for-joint-european-tour/"
+    },
+    {
+     "title": "没有鼓手，就和机器一起即兴",
+     "text": "2023 年乐队在欧洲和日本演了很多场。他们没有鼓手，现场就用合成器和鼓机，跟着机器即兴，把首专里的歌一首首改了样子。乐队说，在观众面前演出让音乐慢慢起了变化，也让他们想叫更多人跳起舞来，这就是做这张 EP 的起因，也是第一张专辑里没有的东西。",
+     "year": 2024,
+     "source": "Guruguru Brain（Bandcamp）",
+     "person": "",
+     "release": "Electronic Phantoms",
+     "url": "https://mayaongakuggb.bandcamp.com/album/electronic-phantoms"
+    },
+    {
+     "title": "“电子幽灵”指的是什么",
+     "text": "乐队对标题的解释是：我们的生活越来越受电子设备摆布，AI 这类技术出现之后，真实的和机器生成的越来越难分清，这种处境就像幽灵显形，虚拟现实的世界也可以叫作电子幽灵。他们想试试看，用和灵性正相反的电子手段去表现一个住着灵体的世界，会得到什么样的音乐。",
+     "year": 2024,
+     "source": "Guruguru Brain（Bandcamp）",
+     "person": "",
+     "release": "Electronic Phantoms",
+     "url": "https://mayaongakuggb.bandcamp.com/album/electronic-phantoms"
+    },
+    {
+     "title": "在 KEXP 录了一场",
+     "text": "2025 年 4 月 8 日，乐队在西雅图的电台 KEXP 录了一场棚内现场。节目的介绍是“来自日本海边的 motorik 迷幻摇滚”。同一个春天，他们给尼日尔乐队 Etran de L'Aïr 的北美巡演做了暖场。",
+     "year": 2025,
+     "source": "KEXP",
+     "person": "",
+     "release": "Live on KEXP",
+     "url": "https://omny.fm/shows/kexp-live-performances-podcast/maya-ongaku-performance-interview-only"
+    },
+    {
+     "title": "第一次自己跑欧洲",
+     "text": "2025 年 5 月到 6 月，乐队第一次以自己的名义巡演欧洲，公布时有十三场，从伦敦一路演到马尔默。同一年他们也完成了第一次美国巡演。園田后来在 NiEW 上写了连载，把巡演的收支和赶路的辛苦摊开来讲，引起不少关注。",
+     "year": 2025,
+     "source": "AVO Magazine",
+     "person": "園田努",
+     "release": "",
+     "url": "https://avo-magazine.com/en/2025/04/maya-ongaku-announce-first-solo-tour-through-europe/"
+    },
+    {
+     "title": "《Maybe Psychic》巡演在草月会馆收尾",
+     "text": "秋天的日本巡演 10 月 12 日从大阪出发，经过爱知、北海道、熊本、福冈，11 月 14 日在东京的草月会馆结束，一共六座城市。札幌是乐队在北海道的第一场专场，九州也是头一回去。终场的开场嘉宾是幾何学模様的 Tomo Katsurada，他和 Jonny Nash、Kotsuguy 组成三人组演出。",
+     "year": 2025,
+     "source": "NiEW",
+     "person": "Tomo Katsurada",
+     "release": "Maybe Psychic",
+     "url": "https://niewmedia.com/en/news/079657/"
+    },
+    {
+     "title": "第一次在 LIQUIDROOM 开专场",
+     "text": "2026 年 7 月 4 日，乐队第一次在东京的 LIQUIDROOM 开专场。在这之前，他们在 WWW X 的专场“rhythm echo noise”门票售罄，也登上过 FUJI ROCK FESTIVAL。",
+     "year": 2026,
+     "source": "NiEW",
+     "person": "",
+     "release": "",
+     "url": "https://niewmedia.com/en/news/2601mayaongaku"
+    },
+    {
+     "title": "在神社旁边盖了一间录音室",
+     "text": "连着几年在国外巡演之后，乐队想重新回到安静里。为了做第二张专辑，他们在家乡一座海边神社附近，花了几个月把一栋很大的隔音建筑改成 Nothing Space Studio，然后几乎与外界隔绝，在里面完成了录音、演奏、混音和设计。专辑听起来是连贯的一整段。",
+     "year": 2026,
+     "source": "The Line of Best Fit",
+     "person": "",
+     "release": "Nothing Space Music",
+     "url": "https://www.thelineofbestfit.com/news/maya-ongaku-detail-upcoming-album-nothing-space-music"
+    },
+    {
+     "title": "〈Astral Echoes〉：等灵感自己来",
+     "text": "先行单曲〈Astral Echoes〉写的是作品诞生的那一刻，也就是灵感悄悄进到脑子里的时候。乐队说，灵感不是追来的，也不是抓来的，要在安静里耐心等它出现。",
+     "year": 2026,
+     "source": "The Line of Best Fit",
+     "person": "",
+     "release": "Nothing Space Music",
+     "url": "https://www.thelineofbestfit.com/news/maya-ongaku-detail-upcoming-album-nothing-space-music"
+    },
+    {
+     "title": "录音、混音、封面都是園田",
+     "text": "按唱片的署名，《Nothing Space Music》的录音和混音由園田努在湘南的 Nothing Space Studio 完成，封面和设计也是他，母带交给 studio MASS 的水野創始。乐器表很长：JUNO-6 和 Moog Grandmother 两台合成器、鼓机 TR-8S、Rhodes 和立式钢琴、单簧管、萨克斯、长笛，还有印度的 esraj 和 tanpura，以及田野录音。",
+     "year": 2026,
+     "source": "Guruguru Brain（Bandcamp）",
+     "person": "園田努",
+     "release": "Nothing Space Music",
+     "url": "https://mayaongakuggb.bandcamp.com/album/nothing-space-music"
+    },
+    {
+     "title": "乐评拿它和谁比",
+     "text": "Beats Per Minute 的乐评说，这张专辑在气质上最接近 Big Thief 的《U.F.O.F.》，也带一点 Air 和 Red House Painters 的影子；如果熟悉日本的民谣运动，五つの赤い風船的《Flight》是更贴切的参照。评论者形容它把迷幻民谣、氛围音乐和少量爵士揉在一起，听起来像漂着。",
+     "year": 2026,
+     "source": "Beats Per Minute",
+     "person": "",
+     "release": "Nothing Space Music",
+     "url": "https://beatsperminute.com/album-review-maya-ongaku-nothing-space-music/"
+    }
+   ],
+   "shows": [
+    {
+     "date": "2026-07-04",
+     "city": "东京",
+     "venue": "LIQUIDROOM",
+     "note": "第一次在这里开专场"
+    },
+    {
+     "date": "2026-07-24",
+     "city": "新潟（苗场）",
+     "venue": "FUJI ROCK FESTIVAL '26",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-09-10",
+     "city": "曼彻斯特",
+     "venue": "YES (Basement)",
+     "note": ""
+    },
+    {
+     "date": "2026-09-11",
+     "city": "伦敦",
+     "venue": "Moth Club",
+     "note": ""
+    },
+    {
+     "date": "2026-09-12",
+     "city": "莱芬厄（比利时）",
+     "venue": "Leffingeleuren",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-09-15",
+     "city": "奈梅亨",
+     "venue": "Merleyn",
+     "note": ""
+    },
+    {
+     "date": "2026-09-16",
+     "city": "慕尼黑",
+     "venue": "Import Export",
+     "note": ""
+    },
+    {
+     "date": "2026-09-17",
+     "city": "弗里堡（瑞士）",
+     "venue": "Le Nouveau Monde",
+     "note": ""
+    },
+    {
+     "date": "2026-09-21",
+     "city": "莱比锡",
+     "venue": "Backstein West",
+     "note": ""
+    },
+    {
+     "date": "2026-09-23",
+     "city": "柏林",
+     "venue": "Gretchen",
+     "note": ""
+    },
+    {
+     "date": "2026-09-24",
+     "city": "汉堡",
+     "venue": "Hafenklang",
+     "note": ""
+    },
+    {
+     "date": "2026-09-26",
+     "city": "阿姆斯特丹",
+     "venue": "Kronkel",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-09-29",
+     "city": "瓦伦西亚",
+     "venue": "16 Toneladas",
+     "note": ""
+    },
+    {
+     "date": "2026-09-30",
+     "city": "马德里",
+     "venue": "Moby Dick Club",
+     "note": ""
+    },
+    {
+     "date": "2026-10-01",
+     "city": "巴塞罗那",
+     "venue": "Sala Upload",
+     "note": ""
+    },
+    {
+     "date": "2026-10-02",
+     "city": "圣塞巴斯蒂安",
+     "venue": "Dabadaba",
+     "note": ""
+    },
+    {
+     "date": "2026-10-05",
+     "city": "波尔图",
+     "venue": "Lovers & Lollypops",
+     "note": ""
+    },
+    {
+     "date": "2026-10-06",
+     "city": "里斯本",
+     "venue": "Galeria Zé dos Bois",
+     "note": ""
+    },
+    {
+     "date": "2026-10-16",
+     "city": "金泽",
+     "venue": "金沢アートグミ",
+     "note": ""
+    },
+    {
+     "date": "2026-10-17",
+     "city": "上田",
+     "venue": "上田映劇",
+     "note": ""
+    },
+    {
+     "date": "2026-10-18",
+     "city": "山梨（北杜）",
+     "venue": "MANGOSTEEN HOKUTO",
+     "note": ""
+    },
+    {
+     "date": "2026-10-30",
+     "city": "东京",
+     "venue": "WWW X",
+     "note": "和カネコアヤノ同台"
+    },
+    {
+     "date": "2026-11-07",
+     "city": "札幌",
+     "venue": "モエレ沼公園 ガラスのピラミッド",
+     "note": ""
+    },
+    {
+     "date": "2026-11-22",
+     "city": "名古屋",
+     "venue": "Live & Lounge Vio",
+     "note": ""
+    },
+    {
+     "date": "2026-11-23",
+     "city": "京都",
+     "venue": "磔磔",
+     "note": ""
+    },
+    {
+     "date": "2026-11-24",
+     "city": "神户",
+     "venue": "",
+     "note": ""
+    },
+    {
+     "date": "2026-11-25",
+     "city": "冈山",
+     "venue": "",
+     "note": ""
+    },
+    {
+     "date": "2026-11-27",
+     "city": "福冈",
+     "venue": "",
+     "note": ""
+    },
+    {
+     "date": "2026-11-28",
+     "city": "熊本",
+     "venue": "NAVARO",
+     "note": ""
+    },
+    {
+     "date": "2026-12-09",
+     "city": "东京",
+     "venue": "恵比寿ザ・ガーデンホール",
+     "note": ""
+    },
+    {
+     "date": "2026-12-17",
+     "city": "台北",
+     "venue": "",
+     "note": ""
+    }
+   ],
+   "shows_checked": "2026-11-19",
+   "shows_source": "Concert Archives、Eventworld、e+，场次不完整，部分场馆未查到",
+   "links": [
+    {
+     "id": "air",
+     "name": "Air",
+     "score": 7,
+     "reasons": [
+      "Beats Per Minute 的乐评说《Nothing Space Music》里有 Air 的影子",
+      "声音上都有 模拟合成器",
+      "气质都偏 松弛、梦幻"
+     ]
+    },
+    {
+     "id": "ogre-you-asshole",
+     "name": "Ogre You Asshole",
+     "score": 6.5,
+     "reasons": [
+      "同样来自日本",
+      "都是 迷幻摇滚",
+      "声音上都有 模拟合成器、重复律动",
+      "气质都偏 松弛",
+      "都用日语演唱"
+     ]
+    },
+    {
+     "id": "yura-yura-teikoku",
+     "name": "ゆらゆら帝国（摇摆帝国）",
+     "score": 5.5,
+     "reasons": [
+      "同样来自日本",
+      "都是 迷幻摇滚",
+      "声音上都有 重复律动",
+      "气质都偏 松弛",
+      "都用日语演唱"
+     ]
+    },
+    {
+     "id": "sun-city-girls",
+     "name": "Sun City Girls",
+     "score": 2,
+     "reasons": [
+      "都是 迷幻摇滚"
+     ]
+    },
+    {
+     "id": "boy-harsher",
+     "name": "Boy Harsher",
+     "score": 2,
+     "reasons": [
+      "声音上都有 鼓机、重复律动"
+     ]
+    }
+   ],
+   "leads": [
+    {
+     "name": "幾何学模様",
+     "why": "厂牌 Guruguru Brain 是他们的成员办的；Tomo Katsurada 做过巡演终场的嘉宾"
+    },
+    {
+     "name": "Mong Tong",
+     "why": "同厂牌的台湾迷幻二人组，2023 年一起巡演欧洲"
+    },
+    {
+     "name": "Big Thief",
+     "why": "同一篇乐评认为气质最接近《U.F.O.F.》"
+    },
+    {
+     "name": "五つの赤い風船",
+     "why": "乐评给出的日本民谣参照：《Flight》"
+    },
+    {
+     "name": "Etran de L'Aïr",
+     "why": "尼日尔的吉他乐队，2025 年北美巡演请 maya ongaku 暖场"
+    },
+    {
+     "name": "カネコアヤノ",
+     "why": "2026 年 10 月在涩谷 WWW X 同台"
+    }
+   ],
+   "timeline": {
+    "left": 89.47,
+    "width": 8.78,
+    "dots": [
+     {
+      "at": 89.47,
+      "year": 2021,
+      "title": "古着店后面的录音室"
+     },
+     {
+      "at": 89.47,
+      "year": 2021,
+      "title": "名字和玛雅文明无关"
+     },
+     {
+      "at": 92.98,
+      "year": 2023,
+      "title": "第一张专辑"
+     },
+     {
+      "at": 92.98,
+      "year": 2023,
+      "title": "和 Mong Tong 一起第一次去欧洲"
+     },
+     {
+      "at": 94.74,
+      "year": 2024,
+      "title": "没有鼓手，就和机器一起即兴"
+     },
+     {
+      "at": 94.74,
+      "year": 2024,
+      "title": "“电子幽灵”指的是什么"
+     },
+     {
+      "at": 96.49,
+      "year": 2025,
+      "title": "在 KEXP 录了一场"
+     },
+     {
+      "at": 96.49,
+      "year": 2025,
+      "title": "第一次自己跑欧洲"
+     },
+     {
+      "at": 96.49,
+      "year": 2025,
+      "title": "《Maybe Psychic》巡演在草月会馆收尾"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "第一次在 LIQUIDROOM 开专场"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "在神社旁边盖了一间录音室"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "〈Astral Echoes〉：等灵感自己来"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "录音、混音、封面都是園田"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "乐评拿它和谁比"
      }
     ]
    }
@@ -5498,6 +6371,13 @@
       "reasons": [
        "都是 迷幻摇滚"
       ]
+     },
+     {
+      "id": "maya-ongaku",
+      "score": 2,
+      "reasons": [
+       "都是 迷幻摇滚"
+      ]
      }
     ]
    },
@@ -5635,6 +6515,17 @@
        "坂本慎太郎 把两边连在一起",
        "同在东京",
        "声音上都有 极简留白",
+       "都用日语演唱"
+      ]
+     },
+     {
+      "id": "maya-ongaku",
+      "score": 5.5,
+      "reasons": [
+       "同样来自日本",
+       "都是 迷幻摇滚",
+       "声音上都有 重复律动",
+       "气质都偏 松弛",
        "都用日语演唱"
       ]
      },
@@ -5947,6 +6838,15 @@
     ],
     "links": [
      {
+      "id": "maya-ongaku",
+      "score": 7,
+      "reasons": [
+       "Beats Per Minute 的乐评说《Nothing Space Music》里有 Air 的影子",
+       "声音上都有 模拟合成器",
+       "气质都偏 松弛、梦幻"
+      ]
+     },
+     {
       "id": "ogre-you-asshole",
       "score": 4,
       "reasons": [
@@ -6129,6 +7029,17 @@
       ]
      },
      {
+      "id": "maya-ongaku",
+      "score": 6.5,
+      "reasons": [
+       "同样来自日本",
+       "都是 迷幻摇滚",
+       "声音上都有 重复律动、模拟合成器",
+       "气质都偏 松弛",
+       "都用日语演唱"
+      ]
+     },
+     {
       "id": "boy-harsher",
       "score": 5,
       "reasons": [
@@ -6273,6 +7184,181 @@
       "reasons": [
        "声音上都有 极简留白、重复律动",
        "都通向 Suicide"
+      ]
+     },
+     {
+      "id": "maya-ongaku",
+      "score": 2,
+      "reasons": [
+       "声音上都有 鼓机、重复律动"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "maya-ongaku",
+    "name": "maya ongaku",
+    "where": "藤泽，日本",
+    "years": "2021 至今",
+    "formed": 2021,
+    "ended": null,
+    "status": "like",
+    "note": "听过《Electronic Phantoms》和《Nothing Space Music》。\n2021 年在江之岛一带的海边小镇结成的三人组：園田努、高野諒大、池田抄英。没有鼓手，吉他、贝斯加上萨克斯和长笛，做一种松弛的迷幻民谣。\n《Electronic Phantoms》请进了合成器和鼓机，想让人跳舞；《Nothing Space Music》又退回到安静里，在自己盖的录音室里录成。",
+    "values": {
+     "country": [
+      "日本"
+     ],
+     "city": [
+      "藤泽"
+     ],
+     "genres": [
+      "迷幻民谣",
+      "迷幻摇滚",
+      "氛围"
+     ],
+     "scenes": [
+      "湘南·江之岛"
+     ],
+     "labels": [
+      "Guruguru Brain",
+      "Bayon Production"
+     ],
+     "members": [
+      "園田努",
+      "高野諒大",
+      "池田抄英"
+     ],
+     "producers": [
+      "園田努"
+     ],
+     "sound": [
+      "模拟合成器",
+      "鼓机",
+      "重复律动",
+      "木管",
+      "田野录音"
+     ],
+     "moods": [
+      "松弛",
+      "冥想",
+      "梦幻"
+     ],
+     "themes": [
+      "自然发生",
+      "寂静",
+      "电子幽灵"
+     ],
+     "languages": [
+      "日语"
+     ]
+    },
+    "counts": {
+     "releases": 5,
+     "people": 4,
+     "stories": 14
+    },
+    "stories": [
+     {
+      "year": 2021,
+      "title": "古着店后面的录音室"
+     },
+     {
+      "year": 2021,
+      "title": "名字和玛雅文明无关"
+     },
+     {
+      "year": 2023,
+      "title": "第一张专辑"
+     },
+     {
+      "year": 2023,
+      "title": "和 Mong Tong 一起第一次去欧洲"
+     },
+     {
+      "year": 2024,
+      "title": "没有鼓手，就和机器一起即兴"
+     },
+     {
+      "year": 2024,
+      "title": "“电子幽灵”指的是什么"
+     },
+     {
+      "year": 2025,
+      "title": "在 KEXP 录了一场"
+     },
+     {
+      "year": 2025,
+      "title": "第一次自己跑欧洲"
+     },
+     {
+      "year": 2025,
+      "title": "《Maybe Psychic》巡演在草月会馆收尾"
+     },
+     {
+      "year": 2026,
+      "title": "第一次在 LIQUIDROOM 开专场"
+     },
+     {
+      "year": 2026,
+      "title": "在神社旁边盖了一间录音室"
+     },
+     {
+      "year": 2026,
+      "title": "〈Astral Echoes〉：等灵感自己来"
+     },
+     {
+      "year": 2026,
+      "title": "录音、混音、封面都是園田"
+     },
+     {
+      "year": 2026,
+      "title": "乐评拿它和谁比"
+     }
+    ],
+    "links": [
+     {
+      "id": "air",
+      "score": 7,
+      "reasons": [
+       "Beats Per Minute 的乐评说《Nothing Space Music》里有 Air 的影子",
+       "声音上都有 模拟合成器",
+       "气质都偏 松弛、梦幻"
+      ]
+     },
+     {
+      "id": "ogre-you-asshole",
+      "score": 6.5,
+      "reasons": [
+       "同样来自日本",
+       "都是 迷幻摇滚",
+       "声音上都有 模拟合成器、重复律动",
+       "气质都偏 松弛",
+       "都用日语演唱"
+      ]
+     },
+     {
+      "id": "yura-yura-teikoku",
+      "score": 5.5,
+      "reasons": [
+       "同样来自日本",
+       "都是 迷幻摇滚",
+       "声音上都有 重复律动",
+       "气质都偏 松弛",
+       "都用日语演唱"
+      ]
+     },
+     {
+      "id": "sun-city-girls",
+      "score": 2,
+      "reasons": [
+       "都是 迷幻摇滚"
+      ]
+     },
+     {
+      "id": "boy-harsher",
+      "score": 2,
+      "reasons": [
+       "声音上都有 鼓机、重复律动"
       ]
      }
     ]
