@@ -1,17 +1,18 @@
 {
  "synced": "2026-11-19",
  "stats": {
-  "bands": 5,
-  "liked": 5,
-  "releases": 69,
-  "heard": 9,
+  "bands": 6,
+  "liked": 6,
+  "releases": 84,
+  "heard": 10,
   "countries": [
    "日本",
+   "法国",
    "美国"
   ],
   "newest": {
-   "name": "Ogre You Asshole",
-   "id": "ogre-you-asshole",
+   "name": "Air",
+   "id": "air",
    "added": "2026-11-19"
   }
  },
@@ -577,6 +578,15 @@
      "reasons": [
       "都是 迷幻摇滚",
       "气质都偏 诡异"
+     ]
+    },
+    {
+     "id": "air",
+     "name": "Air",
+     "score": 2.5,
+     "reasons": [
+      "都用英语演唱",
+      "都通向 Ennio Morricone"
      ]
     },
     {
@@ -2344,6 +2354,16 @@
       "声音上都有 极简留白",
       "都用日语演唱"
      ]
+    },
+    {
+     "id": "air",
+     "name": "Air",
+     "score": 3.5,
+     "reasons": [
+      "都是 电子",
+      "都用英语演唱",
+      "成立时间只差 2 年"
+     ]
     }
    ],
    "leads": [
@@ -2425,6 +2445,1055 @@
       "at": 92.98,
       "year": 2023,
       "title": "《夢中夢》"
+     }
+    ]
+   }
+  },
+  {
+   "id": "air",
+   "name": "Air",
+   "aliases": [
+    "AIR",
+    "Air French Band",
+    "Amour, Imagination, Rêve"
+   ],
+   "country": "法国",
+   "city": "凡尔赛",
+   "where": "凡尔赛，法国",
+   "formed": 1995,
+   "ended": null,
+   "years": "1995 至今",
+   "status": "like",
+   "status_label": "喜欢",
+   "note": "听过《Moon Safari》。\n来自凡尔赛的二人组：Nicolas Godin 和 Jean-Benoît Dunckel。用七十年代的合成器、Rhodes 电钢琴和声码器，做一种慢、软、带点怀旧的电子流行。\n1998 年的首张专辑《Moon Safari》让他们出了名，之后的每一张都故意做得和上一张不一样。",
+   "added": "2026-11-19",
+   "genres": [
+    "电子",
+    "Downtempo",
+    "太空流行",
+    "梦幻流行"
+   ],
+   "dims": [
+    {
+     "key": "genres",
+     "label": "类型",
+     "values": [
+      "电子",
+      "Downtempo",
+      "太空流行",
+      "梦幻流行"
+     ]
+    },
+    {
+     "key": "scenes",
+     "label": "场景与运动",
+     "values": [
+      "French Touch",
+      "凡尔赛"
+     ]
+    },
+    {
+     "key": "labels",
+     "label": "厂牌",
+     "values": [
+      "Source",
+      "Virgin",
+      "Astralwerks",
+      "Parlophone"
+     ]
+    },
+    {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "Nicolas Godin",
+      "Jean-Benoît Dunckel"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "Nigel Godrich",
+      "Tony Hoffer"
+     ]
+    },
+    {
+     "key": "influences",
+     "label": "受谁影响",
+     "values": [
+      "Serge Gainsbourg",
+      "Kraftwerk",
+      "Pink Floyd",
+      "Ennio Morricone",
+      "Michel Legrand"
+     ]
+    },
+    {
+     "key": "sound",
+     "label": "声音",
+     "values": [
+      "模拟合成器",
+      "Rhodes 电钢琴",
+      "声码器",
+      "弦乐编曲"
+     ]
+    },
+    {
+     "key": "moods",
+     "label": "气质",
+     "values": [
+      "松弛",
+      "怀旧",
+      "梦幻"
+     ]
+    },
+    {
+     "key": "themes",
+     "label": "主题与文化关联",
+     "values": [
+      "太空",
+      "七十年代的电视和科幻"
+     ]
+    },
+    {
+     "key": "languages",
+     "label": "语言",
+     "values": [
+      "英语",
+      "法语"
+     ]
+    },
+    {
+     "key": "x:电影配乐",
+     "label": "电影配乐",
+     "values": [
+      "The Virgin Suicides",
+      "Lost in Translation",
+      "Marie Antoinette",
+      "Le Voyage dans la Lune"
+     ]
+    }
+   ],
+   "photo": {
+    "src": "/images/music/e337397efaf2216819069cc232e83cb2.webp",
+    "width": 1200,
+    "height": 708
+   },
+   "photo_credit": "Raph_PH，2024-08-08 哥德堡 Way Out West 音乐节现场，CC BY 2.0，Wikimedia Commons：File:WayOutWestGothenburg080824 (104 of 222) (53915045958).jpg",
+   "heard": 1,
+   "strip": {
+    "first": 1995,
+    "last": 2026,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 53.5,
+      "y": 37,
+      "year": 1997,
+      "title": "Premiers Symptômes",
+      "heard": false
+     },
+     {
+      "x": 73.2,
+      "y": 37,
+      "year": 1998,
+      "title": "Moon Safari",
+      "heard": true
+     },
+     {
+      "x": 112.7,
+      "y": 37,
+      "year": 2000,
+      "title": "The Virgin Suicides",
+      "heard": false
+     },
+     {
+      "x": 132.5,
+      "y": 37,
+      "year": 2001,
+      "title": "10 000 Hz Legend",
+      "heard": false
+     },
+     {
+      "x": 152.2,
+      "y": 37,
+      "year": 2002,
+      "title": "Everybody Hertz",
+      "heard": false
+     },
+     {
+      "x": 171.9,
+      "y": 37,
+      "year": 2003,
+      "title": "City Reading (Tre Storie Western)",
+      "heard": false
+     },
+     {
+      "x": 191.7,
+      "y": 37,
+      "year": 2004,
+      "title": "Talkie Walkie",
+      "heard": false
+     },
+     {
+      "x": 231.2,
+      "y": 37,
+      "year": 2006,
+      "title": "Late Night Tales: Air",
+      "heard": false
+     },
+     {
+      "x": 250.9,
+      "y": 37,
+      "year": 2007,
+      "title": "Pocket Symphony",
+      "heard": false
+     },
+     {
+      "x": 290.4,
+      "y": 37,
+      "year": 2009,
+      "title": "Love 2",
+      "heard": false
+     },
+     {
+      "x": 349.6,
+      "y": 37,
+      "year": 2012,
+      "title": "Le Voyage dans la Lune",
+      "heard": false
+     },
+     {
+      "x": 389.1,
+      "y": 37,
+      "year": 2014,
+      "title": "Music for Museum",
+      "heard": false
+     },
+     {
+      "x": 428.6,
+      "y": 37,
+      "year": 2016,
+      "title": "Twentyears",
+      "heard": false
+     },
+     {
+      "x": 606.3,
+      "y": 37,
+      "year": 2025,
+      "title": "Blue Moon Safari",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2026,
+      "title": "Moon Safari: The Athens Concert",
+      "heard": false
+     }
+    ]
+   },
+   "releases": [
+    {
+     "title": "Premiers Symptômes",
+     "year": 1997,
+     "kind": "EP",
+     "note": "早期单曲的合集，〈Casanova 70〉和〈J'ai dormi sous l'eau〉都在里面。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/974ffad30ec7f1a5ad93dffbbf3bd92b.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 1,
+       "title": "先靠单曲和混音出名"
+      }
+     ]
+    },
+    {
+     "title": "Moon Safari",
+     "year": 1998,
+     "kind": "专辑",
+     "note": "首张专辑。一半是器乐，多用鼓机，Beth Hirsch 唱了两首，三首歌的弦乐在 Abbey Road 录成。",
+     "heard": true,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/e76106a0f3ea1e78de84d48d88913eee.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "La Femme d'argent",
+      "Sexy Boy",
+      "All I Need",
+      "Kelly Watch the Stars",
+      "Talisman",
+      "Remember",
+      "You Make It Easy",
+      "Ce matin là",
+      "New Star in the Sky (Chanson pour Solal)",
+      "Le Voyage de Pénélope"
+     ],
+     "stories": [
+      {
+       "index": 2,
+       "title": "八轨录出来的专辑"
+      },
+      {
+       "index": 3,
+       "title": "在 Abbey Road 录弦乐"
+      },
+      {
+       "index": 4,
+       "title": "住在巴黎的美国互惠生"
+      },
+      {
+       "index": 5,
+       "title": "〈Sexy Boy〉差点没收进专辑"
+      },
+      {
+       "index": 6,
+       "title": "Kelly 是《霹雳娇娃》里的 Kelly"
+      },
+      {
+       "index": 7,
+       "title": "视觉全部交给 Mike Mills"
+      },
+      {
+       "index": 15,
+       "title": "第一次把《Moon Safari》从头演到尾"
+      }
+     ]
+    },
+    {
+     "title": "The Virgin Suicides",
+     "year": 2000,
+     "kind": "原声",
+     "note": "给索菲亚·科波拉第一部长片写的配乐。片尾曲〈Playground Love〉由 Phoenix 的 Thomas Mars 化名 Gordon Tracks 演唱。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/db72d164b6bf022496a3a263d1b49c8b.webp",
+      "width": 400,
+      "height": 397
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 9,
+       "title": "科波拉本来想用整张《Moon Safari》"
+      }
+     ]
+    },
+    {
+     "title": "10 000 Hz Legend",
+     "year": 2001,
+     "kind": "专辑",
+     "note": "曲子更长、更电子，也更暗。Beck 和 Buffalo Daughter 的 suGar Yoshinaga 客串，封面上是纪念碑谷。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/600854d5fbee5f98305491505cacb361.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 10,
+       "title": "不想只做一种气氛的乐队"
+      }
+     ]
+    },
+    {
+     "title": "Everybody Hertz",
+     "year": 2002,
+     "kind": "混音",
+     "note": "《10 000 Hz Legend》的混音集，另收一首〈The Way You Look Tonight〉。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/28d26d3a8d80ebf5673f9752884adeb1.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "City Reading (Tre Storie Western)",
+     "year": 2003,
+     "kind": "专辑",
+     "note": "给意大利作家 Alessandro Baricco 朗读自己的小说《City》配的音乐，先在罗马的剧场演过一次才进棚录音。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/fd39b0f00e1db92f34d26cd232b37a28.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Talkie Walkie",
+     "year": 2004,
+     "kind": "专辑",
+     "note": "Nigel Godrich 制作，回到规整的流行歌结构。〈Alone in Kyoto〉先一步出现在《迷失东京》里。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/5cea06193e37c2c34484e5ab3a517468.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 11,
+       "title": "Godrich 劝他们放下声码器"
+      }
+     ]
+    },
+    {
+     "title": "Late Night Tales: Air",
+     "year": 2006,
+     "kind": "合集",
+     "note": "给 Late Night Tales 系列选曲的一张 DJ 合辑。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/227e48dcc4fd68fd56cfb06c140519f6.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Pocket Symphony",
+     "year": 2007,
+     "kind": "专辑",
+     "note": "受日本影响的一张，Godin 为它学了筝和三味线。Jarvis Cocker 和 Neil Hannon 各唱一首。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/b23e0bc48c2415ec3ac3ca96d16f7058.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 13,
+       "title": "跟冲绳来的师傅学筝和三味线"
+      }
+     ]
+    },
+    {
+     "title": "Love 2",
+     "year": 2009,
+     "kind": "专辑",
+     "note": "在自己的 Atlas Studio 录的第一张，两人自己制作，Joey Waronker 打鼓。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/4d7965a2e554742d37c7b6a196765501.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Le Voyage dans la Lune",
+     "year": 2012,
+     "kind": "原声",
+     "note": "从给梅里爱《月球旅行记》写的配乐发展出来的一张短专辑，全长 31 分钟。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/476dd460229d3f29a21e1530a69d4dae.webp",
+      "width": 400,
+      "height": 394
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Music for Museum",
+     "year": 2014,
+     "kind": "专辑",
+     "note": "里尔美术宫委约的氛围音乐。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/cce552a6524f81482970f75c48f24db6.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Twentyears",
+     "year": 2016,
+     "kind": "精选",
+     "note": "成立二十年的精选集，发行时配合了一轮周年巡演。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/0d0bb6a62157638165efbcbd5ed6c50e.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Blue Moon Safari",
+     "year": 2025,
+     "kind": "混音",
+     "note": "英国制作人 Vegyn 受乐队之托，把整张《Moon Safari》重做了一遍。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/cdd782f9d5264e513ed066400c06a11e.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Moon Safari: The Athens Concert",
+     "year": 2026,
+     "kind": "现场",
+     "note": "乐队的第一张现场专辑，在雅典卫城脚下的希罗德·阿提库斯剧场完整演奏《Moon Safari》。唱片店日发行。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/2141a45e6524e3585b8d799fc2fa18c2.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 17,
+       "title": "第一张现场专辑"
+      }
+     ]
+    }
+   ],
+   "people": [
+    {
+     "name": "Nicolas Godin",
+     "role": "贝斯、吉他、合成器、人声",
+     "years": "1995 至今",
+     "note": "在凡尔赛学的建筑。Air 起初是他一个人用的名字，第一首曲子〈Modulor Mix〉是向勒·柯布西耶致意。2020 年出过个人专辑《Concrete and Glass》。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 0,
+       "title": "Air 起初是一个人"
+      },
+      {
+       "index": 13,
+       "title": "跟冲绳来的师傅学筝和三味线"
+      },
+      {
+       "index": 14,
+       "title": "AIR 到底是不是缩写"
+      }
+     ]
+    },
+    {
+     "name": "Jean-Benoît Dunckel",
+     "role": "键盘、合成器、人声",
+     "years": "1995 至今",
+     "note": "学数学出身，教过物理，也在巴黎拉丁区的酒吧里弹过钢琴。和 Godin 是凡尔赛 Jules-Ferry 中学的同学。2006 年以 Darkel 的名字出过个人专辑。",
+     "projects": [
+      {
+       "name": "Darkel",
+       "id": null
+      }
+     ],
+     "stories": []
+    },
+    {
+     "name": "Beth Hirsch",
+     "role": "客座人声",
+     "years": "1997 到 1998",
+     "note": "美国民谣歌手，当时在巴黎做互惠生。〈All I Need〉和〈You Make It Easy〉由她演唱并作词。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 4,
+       "title": "住在巴黎的美国互惠生"
+      }
+     ]
+    },
+    {
+     "name": "David Whitaker",
+     "role": "弦乐编曲、指挥",
+     "years": "1997",
+     "note": "英国编曲家，和 Serge Gainsbourg、Françoise Hardy 合作过。《Moon Safari》里〈Talisman〉〈You Make It Easy〉〈Ce matin là〉的弦乐出自他手。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 3,
+       "title": "在 Abbey Road 录弦乐"
+      }
+     ]
+    },
+    {
+     "name": "Jean-Jacques Perrey",
+     "role": "共同作曲",
+     "years": "1997",
+     "note": "法国电子音乐的前辈。〈Remember〉的作曲署名里有他，后来还和 Air 合作过〈Cosmic Bird〉。",
+     "projects": [],
+     "stories": []
+    },
+    {
+     "name": "Stéphane “Alf” Briat",
+     "role": "混音师",
+     "years": "1997 起",
+     "note": "混了《Moon Safari》和《The Virgin Suicides》，到《Love 2》又回来合作。〈La Femme d'argent〉里的拍手也有他一份。",
+     "projects": [],
+     "stories": []
+    },
+    {
+     "name": "Mike Mills",
+     "role": "视觉设计、导演",
+     "years": "1998 起",
+     "note": "纽约的平面设计师和导演。《Moon Safari》时期的封面、MV、周边都交给他，1998 年巡演的黑白纪录片《Eating, Sleeping, Waiting and Playing》也是他拍的。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 7,
+       "title": "视觉全部交给 Mike Mills"
+      }
+     ]
+    },
+    {
+     "name": "Sofia Coppola",
+     "role": "电影导演",
+     "years": "1999 起",
+     "note": "《处女之死》《迷失东京》《绝代艳后》三部电影里都有 Air 的音乐。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 9,
+       "title": "科波拉本来想用整张《Moon Safari》"
+      }
+     ]
+    },
+    {
+     "name": "Thomas Mars",
+     "role": "客座人声",
+     "years": "1999",
+     "note": "Phoenix 的主唱，同样来自凡尔赛。化名 Gordon Tracks 给〈Playground Love〉写词、打鼓并演唱。",
+     "projects": [
+      {
+       "name": "Phoenix",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 16,
+       "title": "巴黎奥运闭幕式"
+      }
+     ]
+    },
+    {
+     "name": "Brian Reitzell",
+     "role": "巡演鼓手",
+     "years": "1998 到 2001",
+     "note": "美国鼓手，跟了《Moon Safari》和《10 000 Hz Legend》两轮巡演。科波拉请他监督《处女之死》配乐的录音，他也在其中几首里打鼓。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 8,
+       "title": "带着一支美国乐队上路"
+      }
+     ]
+    },
+    {
+     "name": "Nigel Godrich",
+     "role": "制作人",
+     "years": "2003 到 2007",
+     "note": "制作了《Talkie Walkie》和《Pocket Symphony》，也混了《City Reading》。是他劝两人放下声码器，用本来的嗓音唱。",
+     "projects": [
+      {
+       "name": "Radiohead",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 11,
+       "title": "Godrich 劝他们放下声码器"
+      }
+     ]
+    }
+   ],
+   "stories": [
+    {
+     "title": "Air 起初是一个人",
+     "text": "Godin 和 Dunckel 是凡尔赛 Jules-Ferry 中学的同学，和 Alex Gopher 等人组过一支没留下任何录音的高中乐队 Orange。毕业后 Godin 去学建筑，音乐搁下了。1995 年，在 Source 厂牌工作的发小 Marc Teissier du Cros 催他写歌，他交出一首向勒·柯布西耶致意的器乐〈Modulor〉，署名 Air，被收进当年的 Source Lab 合辑。他不想一个人做下去，才把 Dunckel 拉了进来。",
+     "year": 1995,
+     "source": "Wikipedia（法语）",
+     "person": "Nicolas Godin",
+     "release": "",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "先靠单曲和混音出名",
+     "text": "两人最早的几首曲子是一张张单曲发的，1997 年才合成 EP《Premiers Symptômes》。那时乐队主要靠给别人做混音积累名气，对象包括 Neneh Cherry 和 Depeche Mode。六十年代流行乐的影子、电影感的气氛、对 Moog 的迷恋，这些后来的标志在这张 EP 里已经都有了。",
+     "year": 1997,
+     "source": "Wikipedia（法语）",
+     "person": "",
+     "release": "Premiers Symptômes",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "八轨录出来的专辑",
+     "text": "《Moon Safari》从 1996 年录到 1997 年 8 月，先在 Godin 家里，后来搬到圣诺姆拉布雷泰什高尔夫球场附近一间破旧的录音室，离两人长大的地方很近。整张专辑录在一台八轨的 Fostex D80 上。到巴黎的 Gang 录音室混音时花了十五天，Godin 说巨大的 SSL 调音台上只推起来八个小推子，像个玩笑。他还说两人算不上好的技术员，很多效果是碰巧撞出来的。",
+     "year": 1997,
+     "source": "MusicRadar",
+     "person": "",
+     "release": "Moon Safari",
+     "url": "https://www.musicradar.com/news/airs-Moon-safari-is-25-years-old-the-story-of-the-greatest-chillout-album-ever-made"
+    },
+    {
+     "title": "在 Abbey Road 录弦乐",
+     "text": "十首歌写完之后，乐队请来编曲家 David Whitaker，在 Abbey Road 披头士用过的二号录音室录了一场弦乐。Whitaker 曾为 Serge Gainsbourg 和 Françoise Hardy 编曲，专辑里有三首歌的弦乐由他编写并指挥。",
+     "year": 1997,
+     "source": "Wikipedia（法语）",
+     "person": "David Whitaker",
+     "release": "Moon Safari",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "住在巴黎的美国互惠生",
+     "text": "Beth Hirsch 当时在巴黎做互惠生，自己也写歌，正在录第一张 EP，在录音室里遇到了 Godin。乐队给了她一版很粗糙的伴奏，她很快找到旋律并写好了词，这就是〈All I Need〉。Godin 后来说，她让乐队听起来像太空时代的 Carpenters。",
+     "year": 1997,
+     "source": "MusicRadar",
+     "person": "Beth Hirsch",
+     "release": "Moon Safari",
+     "url": "https://www.musicradar.com/news/airs-Moon-safari-is-25-years-old-the-story-of-the-greatest-chillout-album-ever-made"
+    },
+    {
+     "title": "〈Sexy Boy〉差点没收进专辑",
+     "text": "Godin 说〈Sexy Boy〉险些被拿掉：它有主歌有副歌，节奏也快，和专辑里其他舒缓的曲子放不到一起。结果它成了整张唱片里最红的一首。Dunckel 的解释是，这首歌讲的是男人也想被人看、也在意穿着，在 1998 年这还算个忌讳的话题。",
+     "year": 1998,
+     "source": "Stereogum",
+     "person": "",
+     "release": "Moon Safari",
+     "url": "https://www.stereogum.com/2254698/air-moon-safari-behind-the-scenes/interviews/footnotes-interview/"
+    },
+    {
+     "title": "Kelly 是《霹雳娇娃》里的 Kelly",
+     "text": "〈Kelly Watch the Stars〉里的 Kelly 是美剧《霹雳娇娃》的角色，两人当时认定她是世界上最美的女人。Dunckel 说这首歌的意思很简单：飘在太空里，感觉很好，别忘了自己是谁、想做成什么。",
+     "year": 1998,
+     "source": "Stereogum",
+     "person": "",
+     "release": "Moon Safari",
+     "url": "https://www.stereogum.com/2254698/air-moon-safari-behind-the-scenes/interviews/footnotes-interview/"
+    },
+    {
+     "title": "视觉全部交给 Mike Mills",
+     "text": "专辑封面、单曲封面、MV 和周边，乐队统统交给了纽约的 Mike Mills。Godin 的说法是，他们这边向往美国，Mills 那边向往法国和欧洲，双方在桥中间碰上了。Mills 还跟拍了 1998 年的巡演，剪成 75 分钟的黑白纪录片《Eating, Sleeping, Waiting and Playing》，拍的是巡演路上吃、睡、等这些琐碎的部分。",
+     "year": 1998,
+     "source": "Stereogum",
+     "person": "Mike Mills",
+     "release": "Moon Safari",
+     "url": "https://www.stereogum.com/2254698/air-moon-safari-behind-the-scenes/interviews/footnotes-interview/"
+    },
+    {
+     "title": "带着一支美国乐队上路",
+     "text": "《Moon Safari》的巡演请的是美国乐手：贝斯 Justin Meldal-Johnsen，键盘 Brian Kehew 和 Roger Manning Jr.，鼓手 Brian Reitzell。巡演 10 月 11 日从西雅图开始，11 月 7 日在巴黎的 La Cigale 结束。加州电台 KCRW 请他们做了一场直播演出，此后每张录音室专辑都照例去一次。1999 年 2 月，这张专辑拿到法国音乐胜利奖的年度 techno/dance 专辑。",
+     "year": 1998,
+     "source": "Wikipedia（法语）",
+     "person": "Brian Reitzell",
+     "release": "",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "科波拉本来想用整张《Moon Safari》",
+     "text": "索菲亚·科波拉为第一部长片《处女之死》找到乐队，本意是直接用《Moon Safari》里的曲子。两人提出不如另写一套配乐，并且回到录《Moon Safari》的那间录音室去录。音乐做完后，片方又点名要一首片尾歌。乐队用一个周末请来 Phoenix 的 Thomas Mars，他写了词、打了鼓，化名 Gordon Tracks 唱了〈Playground Love〉。",
+     "year": 1999,
+     "source": "Wikipedia（法语）",
+     "person": "Sofia Coppola",
+     "release": "The Virgin Suicides",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "不想只做一种气氛的乐队",
+     "text": "《Moon Safari》走红之后，乐队被归进 chillout 的格子里。Godin 说这让他们有点恼火，他不想变成只有一种气氛的乐队，所以紧接着的《The Virgin Suicides》和《10 000 Hz Legend》都换成了更暗的做法。后者搬到巴黎第六区的录音室录，请来 Beck 和 Buffalo Daughter 的 suGar Yoshinaga，评价和销量都不如前两张。",
+     "year": 2001,
+     "source": "Stereogum",
+     "person": "",
+     "release": "10 000 Hz Legend",
+     "url": "https://www.stereogum.com/2254698/air-moon-safari-behind-the-scenes/interviews/footnotes-interview/"
+    },
+    {
+     "title": "Godrich 劝他们放下声码器",
+     "text": "《Talkie Walkie》由 Nigel Godrich 制作，他说服两人不用声码器，用本来的嗓音唱。这张专辑的词曲没有任何外援，结构也回到了规整的流行歌。标题是个法语味很重的词：别的语言里都说 walkie-talkie，只有法语把它倒过来说。",
+     "year": 2004,
+     "source": "Wikipedia（法语）",
+     "person": "Nigel Godrich",
+     "release": "Talkie Walkie",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "拿到艺术与文学骑士勋章",
+     "text": "法国文化部长给 Godin 和 Dunckel 授了艺术与文学骑士勋章，同场受勋的还有 Cassius 的 Philippe Zdar 和 Dimitri from Paris。这被看作官方对 French Touch 这一波音乐的承认。Daft Punk 那次不在名单上，到 2010 年才拿到。",
+     "year": 2005,
+     "source": "Wikipedia（法语）",
+     "person": "",
+     "release": "",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "跟冲绳来的师傅学筝和三味线",
+     "text": "为了《Pocket Symphony》，Godin 在巴黎跟一位冲绳出身的日本师傅学了筝和三味线，这位师傅后来出现在〈Once Upon a Time〉的 MV 里。同一年年底，两人拿到了自己录音室的钥匙。它在巴黎第十九区，取名 Atlas Studio，下一张《Love 2》就是在那里录的。",
+     "year": 2007,
+     "source": "Wikipedia（法语）",
+     "person": "Nicolas Godin",
+     "release": "Pocket Symphony",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "AIR 到底是不是缩写",
+     "text": "流传很广的说法是 AIR 代表 Amour、Imagination、Rêve，也就是爱、想象和梦。Godin 在 1998 年接受澳大利亚杂志采访时否认过，说那是别人编的，不过编得挺好。到了 2022 年，他和 Dunckel 在 BBC 的节目里又都说这就是缩写。",
+     "year": 2022,
+     "source": "Wikipedia",
+     "person": "Nicolas Godin",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Air_(French_band)"
+    },
+    {
+     "title": "第一次把《Moon Safari》从头演到尾",
+     "text": "2023 年 12 月，乐队为《Moon Safari》发行二十五年开始巡演，整张专辑按顺序演奏。这是头一回，此前他们从没在现场完整演过它。巡演从欧洲扩展到美洲和其他地方，将近两年里演了 126 场，中间一场是在戴高乐机场一号航站楼的屋顶上。2025 年 12 月 6 日在巴黎大皇宫收尾，同台的是一支交响乐团。",
+     "year": 2023,
+     "source": "Wikipedia（法语）",
+     "person": "",
+     "release": "Moon Safari",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "巴黎奥运闭幕式",
+     "text": "2024 年巴黎奥运会的闭幕式上，Air 和 Phoenix 一起演了〈Playground Love〉。两支乐队都出自凡尔赛，这首歌最初也是他们合作的。",
+     "year": 2024,
+     "source": "Wikipedia（法语）",
+     "person": "Thomas Mars",
+     "release": "",
+     "url": "https://fr.wikipedia.org/wiki/Air_(groupe)"
+    },
+    {
+     "title": "第一张现场专辑",
+     "text": "成军三十多年，乐队才出了第一张现场专辑。它录的是周年巡演中的雅典一场，地点是卫城脚下的古罗马剧场，2026 年 4 月 18 日在唱片店日发行。前一年，乐队还请英国制作人 Vegyn 把整张《Moon Safari》重做成了《Blue Moon Safari》。",
+     "year": 2026,
+     "source": "Clash",
+     "person": "",
+     "release": "Moon Safari: The Athens Concert",
+     "url": "https://www.clashmusic.com/news/air-announce-moon-safari-the-athens-concert-live-album/"
+    }
+   ],
+   "shows": [],
+   "shows_checked": "2026-11-19",
+   "shows_source": "Stereoboard、Hypebot，目前没有公布新的场次",
+   "links": [
+    {
+     "id": "ogre-you-asshole",
+     "name": "Ogre You Asshole",
+     "score": 4,
+     "reasons": [
+      "声音上都有 模拟合成器",
+      "气质都偏 松弛",
+      "都通向 Kraftwerk"
+     ]
+    },
+    {
+     "id": "cornelius",
+     "name": "Cornelius",
+     "score": 3.5,
+     "reasons": [
+      "都是 电子",
+      "都用英语演唱",
+      "成立时间只差 2 年"
+     ]
+    },
+    {
+     "id": "sun-city-girls",
+     "name": "Sun City Girls",
+     "score": 2.5,
+     "reasons": [
+      "都用英语演唱",
+      "都通向 Ennio Morricone"
+     ]
+    }
+   ],
+   "leads": [
+    {
+     "name": "Phoenix",
+     "why": "同样出自凡尔赛。早年在电视上给 Air 伴奏，主唱 Thomas Mars 唱了〈Playground Love〉"
+    },
+    {
+     "name": "Alex Gopher",
+     "why": "高中乐队 Orange 的同伴，后来给 Air 做过混音"
+    },
+    {
+     "name": "Étienne de Crécy",
+     "why": "Godin 最早的〈Modular Mix〉由他制作，French Touch 的代表人物之一"
+    },
+    {
+     "name": "Jean-Jacques Perrey",
+     "why": "法国电子音乐的前辈，〈Remember〉的共同作者"
+    },
+    {
+     "name": "Serge Gainsbourg",
+     "why": "Dunckel 从小听的音乐；给《Moon Safari》编弦乐的 David Whitaker 也为他编过曲"
+    },
+    {
+     "name": "Portishead",
+     "why": "Godin 说听到《Dummy》才觉得“这个我也能做”"
+    },
+    {
+     "name": "Buffalo Daughter",
+     "why": "成员 suGar Yoshinaga 在《10 000 Hz Legend》里客串"
+    },
+    {
+     "name": "Beck",
+     "why": "《10 000 Hz Legend》里的客座"
+    },
+    {
+     "name": "Charlotte Gainsbourg",
+     "why": "2006 年的专辑《5:55》由 Air 参与制作"
+    },
+    {
+     "name": "Vegyn",
+     "why": "重做了整张《Moon Safari》，成了《Blue Moon Safari》"
+    },
+    {
+     "name": "Kraftwerk",
+     "why": "受其影响"
+    },
+    {
+     "name": "Pink Floyd",
+     "why": "受其影响"
+    },
+    {
+     "name": "Ennio Morricone",
+     "why": "受其影响"
+    },
+    {
+     "name": "Michel Legrand",
+     "why": "受其影响"
+    }
+   ],
+   "timeline": {
+    "left": 43.86,
+    "width": 54.39,
+    "dots": [
+     {
+      "at": 43.86,
+      "year": 1995,
+      "title": "Air 起初是一个人"
+     },
+     {
+      "at": 47.37,
+      "year": 1997,
+      "title": "先靠单曲和混音出名"
+     },
+     {
+      "at": 47.37,
+      "year": 1997,
+      "title": "八轨录出来的专辑"
+     },
+     {
+      "at": 47.37,
+      "year": 1997,
+      "title": "在 Abbey Road 录弦乐"
+     },
+     {
+      "at": 47.37,
+      "year": 1997,
+      "title": "住在巴黎的美国互惠生"
+     },
+     {
+      "at": 49.12,
+      "year": 1998,
+      "title": "〈Sexy Boy〉差点没收进专辑"
+     },
+     {
+      "at": 49.12,
+      "year": 1998,
+      "title": "Kelly 是《霹雳娇娃》里的 Kelly"
+     },
+     {
+      "at": 49.12,
+      "year": 1998,
+      "title": "视觉全部交给 Mike Mills"
+     },
+     {
+      "at": 49.12,
+      "year": 1998,
+      "title": "带着一支美国乐队上路"
+     },
+     {
+      "at": 50.88,
+      "year": 1999,
+      "title": "科波拉本来想用整张《Moon Safari》"
+     },
+     {
+      "at": 54.39,
+      "year": 2001,
+      "title": "不想只做一种气氛的乐队"
+     },
+     {
+      "at": 59.65,
+      "year": 2004,
+      "title": "Godrich 劝他们放下声码器"
+     },
+     {
+      "at": 61.4,
+      "year": 2005,
+      "title": "拿到艺术与文学骑士勋章"
+     },
+     {
+      "at": 64.91,
+      "year": 2007,
+      "title": "跟冲绳来的师傅学筝和三味线"
+     },
+     {
+      "at": 91.23,
+      "year": 2022,
+      "title": "AIR 到底是不是缩写"
+     },
+     {
+      "at": 92.98,
+      "year": 2023,
+      "title": "第一次把《Moon Safari》从头演到尾"
+     },
+     {
+      "at": 94.74,
+      "year": 2024,
+      "title": "巴黎奥运闭幕式"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "第一张现场专辑"
      }
     ]
    }
@@ -3291,6 +4360,16 @@
       "声音上都有 重复律动、极简留白",
       "气质都偏 不安",
       "都通向 DAF"
+     ]
+    },
+    {
+     "id": "air",
+     "name": "Air",
+     "score": 4,
+     "reasons": [
+      "声音上都有 模拟合成器",
+      "气质都偏 松弛",
+      "都通向 Kraftwerk"
      ]
     },
     {
@@ -4286,6 +5365,10 @@
     "label": "翻唱过"
    },
    {
+    "key": "x:电影配乐",
+    "label": "电影配乐"
+   },
+   {
     "key": "x:动画",
     "label": "动画"
    }
@@ -4399,6 +5482,14 @@
       "reasons": [
        "都是 迷幻摇滚",
        "气质都偏 诡异"
+      ]
+     },
+     {
+      "id": "air",
+      "score": 2.5,
+      "reasons": [
+       "都用英语演唱",
+       "都通向 Ennio Morricone"
       ]
      },
      {
@@ -4690,6 +5781,196 @@
        "声音上都有 极简留白",
        "都用日语演唱"
       ]
+     },
+     {
+      "id": "air",
+      "score": 3.5,
+      "reasons": [
+       "都是 电子",
+       "都用英语演唱",
+       "成立时间只差 2 年"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "air",
+    "name": "Air",
+    "where": "凡尔赛，法国",
+    "years": "1995 至今",
+    "formed": 1995,
+    "ended": null,
+    "status": "like",
+    "note": "听过《Moon Safari》。\n来自凡尔赛的二人组：Nicolas Godin 和 Jean-Benoît Dunckel。用七十年代的合成器、Rhodes 电钢琴和声码器，做一种慢、软、带点怀旧的电子流行。\n1998 年的首张专辑《Moon Safari》让他们出了名，之后的每一张都故意做得和上一张不一样。",
+    "values": {
+     "country": [
+      "法国"
+     ],
+     "city": [
+      "凡尔赛"
+     ],
+     "genres": [
+      "电子",
+      "Downtempo",
+      "太空流行",
+      "梦幻流行"
+     ],
+     "scenes": [
+      "French Touch",
+      "凡尔赛"
+     ],
+     "labels": [
+      "Source",
+      "Virgin",
+      "Astralwerks",
+      "Parlophone"
+     ],
+     "members": [
+      "Nicolas Godin",
+      "Jean-Benoît Dunckel"
+     ],
+     "producers": [
+      "Nigel Godrich",
+      "Tony Hoffer"
+     ],
+     "influences": [
+      "Serge Gainsbourg",
+      "Kraftwerk",
+      "Pink Floyd",
+      "Ennio Morricone",
+      "Michel Legrand"
+     ],
+     "sound": [
+      "模拟合成器",
+      "Rhodes 电钢琴",
+      "声码器",
+      "弦乐编曲"
+     ],
+     "moods": [
+      "松弛",
+      "怀旧",
+      "梦幻"
+     ],
+     "themes": [
+      "太空",
+      "七十年代的电视和科幻"
+     ],
+     "languages": [
+      "英语",
+      "法语"
+     ],
+     "x:电影配乐": [
+      "The Virgin Suicides",
+      "Lost in Translation",
+      "Marie Antoinette",
+      "Le Voyage dans la Lune"
+     ]
+    },
+    "counts": {
+     "releases": 15,
+     "people": 11,
+     "stories": 18
+    },
+    "stories": [
+     {
+      "year": 1995,
+      "title": "Air 起初是一个人"
+     },
+     {
+      "year": 1997,
+      "title": "先靠单曲和混音出名"
+     },
+     {
+      "year": 1997,
+      "title": "八轨录出来的专辑"
+     },
+     {
+      "year": 1997,
+      "title": "在 Abbey Road 录弦乐"
+     },
+     {
+      "year": 1997,
+      "title": "住在巴黎的美国互惠生"
+     },
+     {
+      "year": 1998,
+      "title": "〈Sexy Boy〉差点没收进专辑"
+     },
+     {
+      "year": 1998,
+      "title": "Kelly 是《霹雳娇娃》里的 Kelly"
+     },
+     {
+      "year": 1998,
+      "title": "视觉全部交给 Mike Mills"
+     },
+     {
+      "year": 1998,
+      "title": "带着一支美国乐队上路"
+     },
+     {
+      "year": 1999,
+      "title": "科波拉本来想用整张《Moon Safari》"
+     },
+     {
+      "year": 2001,
+      "title": "不想只做一种气氛的乐队"
+     },
+     {
+      "year": 2004,
+      "title": "Godrich 劝他们放下声码器"
+     },
+     {
+      "year": 2005,
+      "title": "拿到艺术与文学骑士勋章"
+     },
+     {
+      "year": 2007,
+      "title": "跟冲绳来的师傅学筝和三味线"
+     },
+     {
+      "year": 2022,
+      "title": "AIR 到底是不是缩写"
+     },
+     {
+      "year": 2023,
+      "title": "第一次把《Moon Safari》从头演到尾"
+     },
+     {
+      "year": 2024,
+      "title": "巴黎奥运闭幕式"
+     },
+     {
+      "year": 2026,
+      "title": "第一张现场专辑"
+     }
+    ],
+    "links": [
+     {
+      "id": "ogre-you-asshole",
+      "score": 4,
+      "reasons": [
+       "声音上都有 模拟合成器",
+       "气质都偏 松弛",
+       "都通向 Kraftwerk"
+      ]
+     },
+     {
+      "id": "cornelius",
+      "score": 3.5,
+      "reasons": [
+       "都是 电子",
+       "都用英语演唱",
+       "成立时间只差 2 年"
+      ]
+     },
+     {
+      "id": "sun-city-girls",
+      "score": 2.5,
+      "reasons": [
+       "都用英语演唱",
+       "都通向 Ennio Morricone"
+      ]
      }
     ]
    },
@@ -4854,6 +6135,15 @@
        "声音上都有 重复律动、极简留白",
        "气质都偏 不安",
        "都通向 DAF"
+      ]
+     },
+     {
+      "id": "air",
+      "score": 4,
+      "reasons": [
+       "声音上都有 模拟合成器",
+       "气质都偏 松弛",
+       "都通向 Kraftwerk"
       ]
      },
      {
