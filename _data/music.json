@@ -1,19 +1,19 @@
 {
- "synced": "2026-11-19",
+ "synced": "2026-11-20",
  "stats": {
-  "bands": 7,
-  "liked": 7,
-  "releases": 89,
-  "heard": 12,
+  "bands": 8,
+  "liked": 8,
+  "releases": 96,
+  "heard": 14,
   "countries": [
    "日本",
    "法国",
    "美国"
   ],
   "newest": {
-   "name": "maya ongaku",
-   "id": "maya-ongaku",
-   "added": "2026-11-19"
+   "name": "Television",
+   "id": "television",
+   "added": "2026-11-20"
   }
  },
  "timeline": {
@@ -47,6 +47,926 @@
   ]
  },
  "bands": [
+  {
+   "id": "television",
+   "name": "Television",
+   "aliases": [],
+   "country": "美国",
+   "city": "纽约",
+   "where": "纽约，美国",
+   "formed": 1973,
+   "ended": 2023,
+   "years": "1973–2023",
+   "status": "like",
+   "status_label": "喜欢",
+   "note": "听过 1992 年的同名专辑《Television》。\n1973 年在纽约成立，CBGB 最早的驻场乐队之一。和同时代的朋克乐队一样只用吉他、贝斯和鼓，声音却干净、讲究技术，靠 Tom Verlaine 和 Richard Lloyd 两把吉他互相咬合，还常常把歌拉成很长的即兴。\n1977 年的《Marquee Moon》是代表作；1978 年解散，1992 年重组后出了这张同名专辑，2023 年随着 Verlaine 去世而结束。",
+   "added": "2026-11-20",
+   "genres": [
+    "艺术朋克",
+    "朋克摇滚",
+    "新浪潮"
+   ],
+   "dims": [
+    {
+     "key": "genres",
+     "label": "类型",
+     "values": [
+      "艺术朋克",
+      "朋克摇滚",
+      "新浪潮"
+     ]
+    },
+    {
+     "key": "scenes",
+     "label": "场景与运动",
+     "values": [
+      "CBGB",
+      "纽约朋克"
+     ]
+    },
+    {
+     "key": "labels",
+     "label": "厂牌",
+     "values": [
+      "Ork",
+      "Elektra",
+      "Capitol"
+     ]
+    },
+    {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "Tom Verlaine",
+      "Richard Lloyd",
+      "Fred Smith",
+      "Billy Ficca",
+      "Richard Hell",
+      "Jimmy Rip"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "Tom Verlaine",
+      "Andy Johns",
+      "John Jansen"
+     ]
+    },
+    {
+     "key": "influences",
+     "label": "受谁影响",
+     "values": [
+      "The Velvet Underground",
+      "John Coltrane",
+      "Albert Ayler",
+      "The Rolling Stones",
+      "13th Floor Elevators",
+      "The Yardbirds"
+     ]
+    },
+    {
+     "key": "sound",
+     "label": "声音",
+     "values": [
+      "双吉他交织",
+      "长段即兴",
+      "干净的吉他音色"
+     ]
+    },
+    {
+     "key": "moods",
+     "label": "气质",
+     "values": [
+      "冷峻",
+      "紧绷",
+      "诗意"
+     ]
+    },
+    {
+     "key": "themes",
+     "label": "主题与文化关联",
+     "values": [
+      "下曼哈顿",
+      "法国诗歌"
+     ]
+    },
+    {
+     "key": "languages",
+     "label": "语言",
+     "values": [
+      "英语"
+     ]
+    },
+    {
+     "key": "x:翻唱过",
+     "label": "翻唱过",
+     "values": [
+      "13th Floor Elevators",
+      "Count Five",
+      "The Rolling Stones",
+      "Bob Dylan"
+     ]
+    }
+   ],
+   "photo": {
+    "src": "/images/music/c5e436fc43e0325dc9a0b800612d7573.webp",
+    "width": 834,
+    "height": 602
+   },
+   "photo_credit": "Roberta Bayley 摄，1977 年 Elektra 的宣传照，左起 Billy Ficca、Richard Lloyd、Tom Verlaine、Fred Smith；公有领域，Wikimedia Commons：File:Television, US rock band (1977 Elektra publicity photo).jpg",
+   "heard": 1,
+   "strip": {
+    "first": 1973,
+    "last": 2023,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 38.5,
+      "y": 37,
+      "year": 1975,
+      "title": "Little Johnny Jewel",
+      "heard": false
+     },
+     {
+      "x": 63.0,
+      "y": 37,
+      "year": 1977,
+      "title": "Marquee Moon",
+      "heard": false
+     },
+     {
+      "x": 75.2,
+      "y": 37,
+      "year": 1978,
+      "title": "Adventure",
+      "heard": false
+     },
+     {
+      "x": 124.2,
+      "y": 37,
+      "year": 1982,
+      "title": "The Blow-Up",
+      "heard": false
+     },
+     {
+      "x": 246.6,
+      "y": 37,
+      "year": 1992,
+      "title": "Television",
+      "heard": true
+     },
+     {
+      "x": 381.2,
+      "y": 37,
+      "year": 2003,
+      "title": "Live at the Academy NYC 12.4.92",
+      "heard": false
+     },
+     {
+      "x": 381.2,
+      "y": 27,
+      "year": 2003,
+      "title": "Live at the Old Waldorf",
+      "heard": false
+     }
+    ]
+   },
+   "releases": [
+    {
+     "title": "Little Johnny Jewel",
+     "year": 1975,
+     "kind": "单曲",
+     "note": "第一张唱片，一首歌分成上下两面，由经纪人 Terry Ork 的独立厂牌 Ork Records 发行。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/5a057c50bd6d3fe39488d4a297eb6269.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": [
+      {
+       "index": 5,
+       "title": "第一张单曲差点气走 Lloyd"
+      }
+     ]
+    },
+    {
+     "title": "Marquee Moon",
+     "year": 1977,
+     "kind": "专辑",
+     "note": "首张专辑，乐队在录音棚里同时演奏录成，两把吉他一左一右，不加效果。封面照片出自 Robert Mapplethorpe。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/d825f935288a8dfd2c4076a4077a2bcd.webp",
+      "width": 400,
+      "height": 399
+     },
+     "tracks": [
+      "See No Evil",
+      "Venus",
+      "Friction",
+      "Marquee Moon",
+      "Elevation",
+      "Guiding Light",
+      "Prove It",
+      "Torn Curtain"
+     ],
+     "stories": [
+      {
+       "index": 6,
+       "title": "“这不是地球上的音乐”"
+      },
+      {
+       "index": 7,
+       "title": "鼓手以为那是排练"
+      },
+      {
+       "index": 8,
+       "title": "封面用的是一张复印件"
+      },
+      {
+       "index": 9,
+       "title": "英国比美国买账"
+      }
+     ]
+    },
+    {
+     "title": "Adventure",
+     "year": 1978,
+     "kind": "专辑",
+     "note": "第二张，比首专柔和、沉静。在英国排到第 7 位，发行不到三个月乐队就解散了。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/f94d37265b2d196d4a84999ac1db0534.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "Glory",
+      "Days",
+      "Foxhole",
+      "Careful",
+      "Carried Away",
+      "The Fire",
+      "Ain't That Nothin'",
+      "The Dream's Dream"
+     ],
+     "stories": [
+      {
+       "index": 10,
+       "title": "第二张专辑发行不到三个月就散了"
+      }
+     ]
+    },
+    {
+     "title": "The Blow-Up",
+     "year": 1982,
+     "kind": "现场",
+     "note": "解散之后由 ROIR 发行的现场录音，录自 1978 年。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/185c560bb73a3de6b035e1c1d4c64e10.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Television",
+     "year": 1992,
+     "kind": "专辑",
+     "note": "重组后的第三张，也是最后一张录音室专辑。乐队自己制作，有乐评说它是缩小了尺寸、细节精致的 Television。单曲〈Call Mr. Lee〉让他们第一次登上 Billboard 的榜单。",
+     "heard": true,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/761c189d3897b73e6b3466bf773d446e.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "1880 or So",
+      "Shane, She Wrote This",
+      "In World",
+      "Call Mr. Lee",
+      "Rhyme",
+      "No Glamour for Willi",
+      "Beauty Trip",
+      "The Rocket",
+      "This Tune",
+      "Mars"
+     ],
+     "stories": [
+      {
+       "index": 11,
+       "title": "十二年后重新坐到一起"
+      },
+      {
+       "index": 12,
+       "title": "Verlaine 想换个名字发这张专辑"
+      },
+      {
+       "index": 13,
+       "title": "乐评：听起来谁都不像"
+      },
+      {
+       "index": 14,
+       "title": "第一次重组到此为止"
+      }
+     ]
+    },
+    {
+     "title": "Live at the Academy NYC 12.4.92",
+     "year": 2003,
+     "kind": "现场",
+     "note": "同名专辑巡演期间，1992 年 12 月 4 日在纽约 Academy 的现场。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/c8310f0a837494ee429d25601daaa761.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "Live at the Old Waldorf",
+     "year": 2003,
+     "kind": "现场",
+     "note": "1978 年 6 月 29 日在旧金山 Old Waldorf 的现场，解散前一个月。Rhino Handmade 在 2003 年发行。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/e9f48c7ca359b85f4d0991b427a1f842.webp",
+      "width": 400,
+      "height": 362
+     },
+     "tracks": [],
+     "stories": []
+    }
+   ],
+   "people": [
+    {
+     "name": "Tom Verlaine",
+     "role": "主唱、吉他",
+     "years": "1973 到 2023",
+     "note": "本名 Thomas Miller，艺名取自法国诗人魏尔伦。几乎所有歌都是他写的，弹一把 1958 年的 Fender Jazzmaster。从小学钢琴和萨克斯，先迷上的是 Coltrane 和 Albert Ayler。2023 年 1 月 28 日在曼哈顿去世，73 岁。",
+     "projects": [
+      {
+       "name": "The Neon Boys",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 12,
+       "title": "Verlaine 想换个名字发这张专辑"
+      },
+      {
+       "index": 17,
+       "title": "Verlaine 去世，乐队结束"
+      }
+     ]
+    },
+    {
+     "name": "Richard Lloyd",
+     "role": "吉他",
+     "years": "1973 到 2007",
+     "note": "从匹兹堡来到纽约，经 Terry Ork 介绍入队。弹 1961 年的 Stratocaster，独奏会事先写成谱。2007 年离队，之后做个人专辑，也给 Matthew Sweet 等人录音。2026 年 11 月 7 日因胆管癌去世，75 岁。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 5,
+       "title": "第一张单曲差点气走 Lloyd"
+      },
+      {
+       "index": 10,
+       "title": "第二张专辑发行不到三个月就散了"
+      },
+      {
+       "index": 11,
+       "title": "十二年后重新坐到一起"
+      },
+      {
+       "index": 14,
+       "title": "第一次重组到此为止"
+      },
+      {
+       "index": 18,
+       "title": "Smith 和 Lloyd 在同一年去世"
+      }
+     ]
+    },
+    {
+     "name": "Fred Smith",
+     "role": "贝斯",
+     "years": "1975 到 2023",
+     "note": "1975 年从 Blondie 转来接替 Richard Hell。解散的那些年里，Verlaine 的每一张个人专辑都有他。2026 年 2 月 5 日因癌症去世，77 岁。",
+     "projects": [
+      {
+       "name": "Blondie",
+       "id": null
+      }
+     ],
+     "stories": []
+    },
+    {
+     "name": "Billy Ficca",
+     "role": "鼓",
+     "years": "1973 到 2023",
+     "note": "从 Neon Boys 时期就在的鼓手，是乐队里的爵士迷。1978 年解散后加入了 The Waitresses。",
+     "projects": [
+      {
+       "name": "The Neon Boys",
+       "id": null
+      },
+      {
+       "name": "The Waitresses",
+       "id": null
+      }
+     ],
+     "stories": []
+    },
+    {
+     "name": "Richard Hell",
+     "role": "贝斯、人声",
+     "years": "1973 到 1975",
+     "note": "本名 Richard Meyers，Verlaine 少年时的朋友，乐队的名字是他起的。1975 年离队，先和 Johnny Thunders 组了 The Heartbreakers，后来有了 Richard Hell and the Voidoids。",
+     "projects": [
+      {
+       "name": "The Neon Boys",
+       "id": null
+      },
+      {
+       "name": "The Heartbreakers",
+       "id": null
+      },
+      {
+       "name": "Richard Hell and the Voidoids",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 0,
+       "title": "两个想当诗人的逃学少年"
+      },
+      {
+       "index": 4,
+       "title": "Hell 被要求“别乱动”"
+      }
+     ]
+    },
+    {
+     "name": "Jimmy Rip",
+     "role": "吉他",
+     "years": "2007 到 2023",
+     "note": "原本是 Verlaine 个人专辑里的吉他手。2007 年中央公园那场替生病的 Lloyd 上台，之后正式接替他。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 16,
+       "title": "Lloyd 离开，第四张专辑始终没做完"
+      }
+     ]
+    },
+    {
+     "name": "Terry Ork",
+     "role": "经纪人",
+     "years": "1973 起",
+     "note": "Verlaine 和 Hell 打工的那家书店的经理。把 Lloyd 介绍给乐队，说服 CBGB 给了他们固定的周日场，还用自己的厂牌 Ork Records 出了第一张单曲。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 1,
+       "title": "名字是 Hell 起的"
+      },
+      {
+       "index": 2,
+       "title": "CBGB 的第一个舞台"
+      }
+     ]
+    },
+    {
+     "name": "Andy Johns",
+     "role": "录音师、联合制作",
+     "years": "1976",
+     "note": "《Marquee Moon》的录音师。乐队选他，是因为他给滚石录的《Goats Head Soup》。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 7,
+       "title": "鼓手以为那是排练"
+      }
+     ]
+    },
+    {
+     "name": "Brian Eno",
+     "role": "小样制作人",
+     "years": "1974",
+     "note": "1974 年 12 月替 Island 给乐队录过四首小样，Verlaine 不满意那个声音。",
+     "projects": [
+      {
+       "name": "Roxy Music",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 3,
+       "title": "Eno 录的小样“又冷又脆”"
+      }
+     ]
+    },
+    {
+     "name": "Patti Smith",
+     "role": "早期的推介者",
+     "years": "1974 起",
+     "note": "1974 年就在杂志上写文章称赞 Verlaine 的吉他，1975 年和乐队在 CBGB 联合驻场，又把他们推荐给 Arista。Verlaine 去世的消息是她的女儿公布的。",
+     "projects": [
+      {
+       "name": "Patti Smith Group",
+       "id": null
+      }
+     ],
+     "stories": []
+    }
+   ],
+   "stories": [
+    {
+     "title": "两个想当诗人的逃学少年",
+     "text": "Tom Verlaine 和 Richard Hell 是特拉华州一所学校的同学，两人一起从学校跑掉过。七十年代初他们先后搬到纽约，都想当诗人，还合用“Theresa Stern”这个笔名发表过诗。1972 年，受 New York Dolls 的刺激，他们和鼓手 Billy Ficca 组了 The Neon Boys。乐队想找第二个吉他手，在《村声》上登了广告，来试的人里有后来 Ramones 的 Dee Dee Ramone 和 Blondie 的 Chris Stein，都没成。",
+     "year": 1972,
+     "source": "Wikipedia",
+     "person": "Richard Hell",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "名字是 Hell 起的",
+     "text": "1973 年 3 月，Neon Boys 改名 Television，Richard Lloyd 作为第二把吉他加入。Lloyd 是书店经理 Terry Ork 介绍来的，Ork 当时收留他住在自己那里。名字出自 Hell：既是 tell a vision 的谐音，也有把那个年代最强势的媒体夺回来的意思。",
+     "year": 1973,
+     "source": "Wikipedia",
+     "person": "Terry Ork",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "CBGB 的第一个舞台",
+     "text": "乐队的第一场演出在 1974 年 3 月 2 日。Ork 说服 CBGB 的老板 Hilly Kristal，让他们每周日晚上固定在店里演，据说那里的第一个舞台就是他们自己搭的。早期的拥护者里有 Patti Smith，她在 1974 年的一篇文章里称赞 Verlaine 的吉他；David Bowie 则说这是他在纽约见过的最有原创性的乐队。",
+     "year": 1974,
+     "source": "Wikipedia",
+     "person": "Terry Ork",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Eno 录的小样“又冷又脆”",
+     "text": "1974 年底已经有厂牌感兴趣，乐队却宁可等一份合适的合约，推掉了好几家大厂牌，包括 Island。Brian Eno 在那年 12 月替 Island 给他们录了〈Prove It〉〈Friction〉〈Venus〉〈Marquee Moon〉四首小样，Verlaine 嫌那个声音又冷又脆，没有共鸣，说他们要的是很强的吉他音乐。",
+     "year": 1974,
+     "source": "Wikipedia",
+     "person": "Brian Eno",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Hell 被要求“别乱动”",
+     "text": "起初歌曲由 Hell 和 Verlaine 各写一半。随着另外三人技术越来越好，而 Hell 执意保持不受训练的弹法，裂痕出现了。Verlaine 觉得 Hell 在台上的狂躁抢了歌的风头，据说让他在台上别乱动，有时还拒绝演他写的〈Blank Generation〉。Hell 在 1975 年带着自己的歌离开。接替他的是从 Blondie 请来的 Fred Smith，Lloyd 说 Smith 更稳的弹法给了乐队更扎实的节奏底子。",
+     "year": 1975,
+     "source": "Wikipedia",
+     "person": "Richard Hell",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "第一张单曲差点气走 Lloyd",
+     "text": "1975 年，乐队在 Terry Ork 的独立厂牌上发了第一张七寸单曲〈Little Johnny Jewel〉，一首歌分成上下两面。Lloyd 不同意选这首，他想发〈O Mi Amore〉，一度认真考虑退队，前 Pere Ubu 的吉他手 Peter Laughner 据说还来试过他的位置。这张单曲在地下卖得很好，引来了大厂牌的注意。",
+     "year": 1975,
+     "source": "Wikipedia",
+     "person": "Richard Lloyd",
+     "release": "Little Johnny Jewel",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "“这不是地球上的音乐”",
+     "text": "1976 年 8 月乐队签给 Elektra。Lloyd 说他们还去 Atlantic 试过，老板 Ahmet Ertegun 对他们讲，这不是“地球上的音乐”。Verlaine 一直想自己制作首张专辑，尽管他几乎没有录音经验；Elektra 答应了，条件是找一位有名的录音师。乐队选了 Andy Johns。",
+     "year": 1976,
+     "source": "Wikipedia",
+     "person": "",
+     "release": "Marquee Moon",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "鼓手以为那是排练",
+     "text": "录音前，乐队每天排练四到六个小时，一周六七天，把过去三年写的大部分歌都扔了。1976 年 11 月在曼哈顿的 A & R 录音室开录，大约六个星期，多数歌是四个人同时演奏录下来的。同名曲只录了一遍：Ficca 以为那是排练，Johns 提议再来一次，Verlaine 没同意。Verlaine 的吉他放在左声道，Lloyd 的在右声道，不加效果和压缩。第一次进棚前，Verlaine 还让 Johns 把事先调好的那种 John Bonham 式的大鼓声拆掉了。",
+     "year": 1976,
+     "source": "Wikipedia",
+     "person": "Andy Johns",
+     "release": "Marquee Moon",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "封面用的是一张复印件",
+     "text": "封面照片由 Robert Mapplethorpe 拍摄，他也拍了 Patti Smith 的《Horses》。Lloyd 把乐队最喜欢的那张拿去做彩色复印，结果比起原片，大家更喜欢其中一张颜色不均匀的复印件。",
+     "year": 1977,
+     "source": "Wikipedia",
+     "person": "",
+     "release": "Marquee Moon",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "英国比美国买账",
+     "text": "《Marquee Moon》1977 年 2 月 8 日发行。在英国它排到专辑榜第 28 位，NME 给了两整页的评论，同名曲和〈Prove It〉都进了单曲榜前三十。在美国，厂牌安排他们给 Peter Gabriel 的巡演开场，台下反应冷淡；5 月去英国巡演，由 Blondie 开场，观众很热烈。等他们回到美国，Elektra 已经放弃宣传，这张专辑在美国卖了不到八万张，没进 Billboard 200。",
+     "year": 1977,
+     "source": "Wikipedia",
+     "person": "",
+     "release": "Marquee Moon",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "第二张专辑发行不到三个月就散了",
+     "text": "《Adventure》在 1977 年秋天录制。Lloyd 回忆，这次没有排练好的一批歌，只有〈Foxhole〉和〈Careful〉来自现场曲目，录音过程由 Verlaine 主导。专辑 1978 年 4 月发行，在英国排到第 7 位，在美国没有上榜。艺术上的分歧、卖不动的唱片，再加上 Lloyd 的毒瘾，乐队在 7 月解散。Lloyd 后来说，摆脱了 Verlaine 的控制，他松了一口气。",
+     "year": 1978,
+     "source": "Wikipedia",
+     "person": "Richard Lloyd",
+     "release": "Adventure",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "十二年后重新坐到一起",
+     "text": "解散后的那些年，Verlaine 和 Lloyd 都说过不可能再合作。Lloyd 后来解释，他那么说是为了让人别再催他们重组。两人大约在 1989 年第一次谈起这件事，1990 年 10 月重新谈，12 月四个人开始认真地一起即兴，并且都录了下来。Fred Smith 说，新专辑的不少素材就是从这些即兴里长出来的。",
+     "year": 1990,
+     "source": "Wikipedia",
+     "person": "Richard Lloyd",
+     "release": "Television",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Verlaine 想换个名字发这张专辑",
+     "text": "乐队签给 Capitol，1992 年初进纽约的 Sorcerer Sound 录音，专辑在 9 月 28 日发行。Capitol 让他们自己制作，录音师是从 1984 年起就给 Verlaine 录个人专辑的 Mario Salvati。Verlaine 说他认真考虑过用别的名字发这张专辑，Capitol 不同意。单曲〈Call Mr. Lee〉排到 Billboard Modern Rock 榜第 27 位，这是乐队第一次登上 Billboard 的榜单。",
+     "year": 1992,
+     "source": "Wikipedia",
+     "person": "Tom Verlaine",
+     "release": "Television",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "乐评：听起来谁都不像",
+     "text": "Robert Christgau 说自己更喜欢从前那个更摇滚、更像歌的 Television，但四个老手重新聚起来，做出了一种全新的声音：诙谐、温暖、世故、费解，有爵士味又不像爵士，听起来谁都不像，只有一点点像从前的自己。《滚石》的 David Fricke 说，这十五年等得值。宣传期间，成员们不大愿意谈过去，Verlaine 还对围绕 CBGB 的那些神话不以为然。",
+     "year": 1992,
+     "source": "Wikipedia",
+     "person": "",
+     "release": "Television",
+     "url": "https://en.wikipedia.org/wiki/Television_(Television_album)"
+    },
+    {
+     "title": "第一次重组到此为止",
+     "text": "专辑之后乐队跑了很多场，包括他们在美国规模最大的一次巡演，但重组在 1993 年初就停了。Lloyd 后来说，这本来不是个短期计划，是唱片公司那边散了架才停下来的，他也否认了巡演途中两位吉他手不和的传言。",
+     "year": 1993,
+     "source": "Wikipedia",
+     "person": "Richard Lloyd",
+     "release": "Television",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Yo La Tengo 把他们请了回来",
+     "text": "2001 年，乐队受邀在英国的 All Tomorrow's Parties 音乐节再次同台。Lloyd 说邀请是通过 Yo La Tengo 来的，他们是乐队的朋友，也和这个音乐节有关系。这一次没有再散：他们不做长巡演，只挑着演，同时把新歌掺进曲目里。",
+     "year": 2001,
+     "source": "Wikipedia",
+     "person": "",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Lloyd 离开，第四张专辑始终没做完",
+     "text": "2007 年 Lloyd 宣布，演完夏天中央公园那一场就友好地离开，结果他因病没能上台，替他的是 Jimmy Rip，之后 Rip 正式入队。那年 12 月底，新阵容在曼哈顿录了 14 首器乐，准备做第四张专辑，可 Verlaine 一直没有补上人声和吉他。Rip 说，Verlaine 在 2008 年和他一起叠录过，第二天又全抹掉了。2013 年有人问起，Ficca 说这张专辑也许能在“我们都死掉之前”做完。",
+     "year": 2007,
+     "source": "Wikipedia",
+     "person": "Jimmy Rip",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Verlaine 去世，乐队结束",
+     "text": "2022 年 10 月，乐队原定给 Billy Idol 的英国巡演开场，临近时因病退出。2023 年 1 月 28 日，Verlaine 在曼哈顿去世，73 岁，消息由 Patti Smith 的女儿 Jesse Paris Smith 公布。Lloyd 说两人在那之前已经和好，最后一次见面时还在一起笑。乐队随之解散，那张第四张专辑的 14 首曲子到今天仍然只有器乐。",
+     "year": 2023,
+     "source": "Wikipedia",
+     "person": "Tom Verlaine",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    },
+    {
+     "title": "Smith 和 Lloyd 在同一年去世",
+     "text": "2026 年 1 月，纽约公共表演艺术图书馆宣布收藏了 Verlaine 的档案，里面有歌词草稿、笔记本、书信和几百个小时没发表过的录音。2 月 5 日，贝斯手 Fred Smith 因癌症去世，77 岁。Lloyd 在 3 月确诊胆管癌，11 月 7 日在田纳西州查塔努加的家中去世，75 岁。录《Marquee Moon》的四个人里，如今只有鼓手 Billy Ficca 还在。",
+     "year": 2026,
+     "source": "Wikipedia",
+     "person": "Richard Lloyd",
+     "release": "",
+     "url": "https://en.wikipedia.org/wiki/Television_(band)"
+    }
+   ],
+   "shows": [],
+   "shows_checked": "",
+   "shows_source": "",
+   "links": [
+    {
+     "id": "sun-city-girls",
+     "name": "Sun City Girls",
+     "score": 3.5,
+     "reasons": [
+      "同样来自美国",
+      "都用英语演唱",
+      "都通向 The Velvet Underground"
+     ]
+    },
+    {
+     "id": "boy-harsher",
+     "name": "Boy Harsher",
+     "score": 2.5,
+     "reasons": [
+      "同样来自美国",
+      "气质都偏 冷峻",
+      "都用英语演唱"
+     ]
+    },
+    {
+     "id": "ogre-you-asshole",
+     "name": "Ogre You Asshole",
+     "score": 2,
+     "reasons": [
+      "都通向 Yo La Tengo"
+     ]
+    }
+   ],
+   "leads": [
+    {
+     "name": "Richard Hell and the Voidoids",
+     "why": "Richard Hell 离开之后的乐队，〈Blank Generation〉在那里录了出来"
+    },
+    {
+     "name": "Patti Smith",
+     "why": "最早替他们说话的人，1975 年在 CBGB 联合驻场"
+    },
+    {
+     "name": "Tom Verlaine（个人）",
+     "why": "解散后的个人专辑，Fred Smith 每张都在"
+    },
+    {
+     "name": "Blondie",
+     "why": "Fred Smith 的上一支乐队，1977 年英国巡演的开场"
+    },
+    {
+     "name": "Talking Heads",
+     "why": "同一批 CBGB 乐队，一起出现在纪录片《The Blank Generation》里"
+    },
+    {
+     "name": "Sonic Youth",
+     "why": "Thurston Moore 用 Jazzmaster 据说就是受 Verlaine 的影响"
+    },
+    {
+     "name": "R.E.M.",
+     "why": "受他们吉他写法影响的后辈之一"
+    },
+    {
+     "name": "Yo La Tengo",
+     "why": "乐队的朋友，2001 年把他们请回了舞台"
+    },
+    {
+     "name": "The Velvet Underground",
+     "why": "受其影响"
+    },
+    {
+     "name": "John Coltrane",
+     "why": "受其影响"
+    },
+    {
+     "name": "Albert Ayler",
+     "why": "受其影响"
+    },
+    {
+     "name": "The Rolling Stones",
+     "why": "受其影响"
+    },
+    {
+     "name": "13th Floor Elevators",
+     "why": "受其影响"
+    },
+    {
+     "name": "The Yardbirds",
+     "why": "受其影响"
+    }
+   ],
+   "timeline": {
+    "left": 5.26,
+    "width": 87.72,
+    "dots": [
+     {
+      "at": 3.51,
+      "year": 1972,
+      "title": "两个想当诗人的逃学少年"
+     },
+     {
+      "at": 5.26,
+      "year": 1973,
+      "title": "名字是 Hell 起的"
+     },
+     {
+      "at": 7.02,
+      "year": 1974,
+      "title": "CBGB 的第一个舞台"
+     },
+     {
+      "at": 7.02,
+      "year": 1974,
+      "title": "Eno 录的小样“又冷又脆”"
+     },
+     {
+      "at": 8.77,
+      "year": 1975,
+      "title": "Hell 被要求“别乱动”"
+     },
+     {
+      "at": 8.77,
+      "year": 1975,
+      "title": "第一张单曲差点气走 Lloyd"
+     },
+     {
+      "at": 10.53,
+      "year": 1976,
+      "title": "“这不是地球上的音乐”"
+     },
+     {
+      "at": 10.53,
+      "year": 1976,
+      "title": "鼓手以为那是排练"
+     },
+     {
+      "at": 12.28,
+      "year": 1977,
+      "title": "封面用的是一张复印件"
+     },
+     {
+      "at": 12.28,
+      "year": 1977,
+      "title": "英国比美国买账"
+     },
+     {
+      "at": 14.04,
+      "year": 1978,
+      "title": "第二张专辑发行不到三个月就散了"
+     },
+     {
+      "at": 35.09,
+      "year": 1990,
+      "title": "十二年后重新坐到一起"
+     },
+     {
+      "at": 38.6,
+      "year": 1992,
+      "title": "Verlaine 想换个名字发这张专辑"
+     },
+     {
+      "at": 38.6,
+      "year": 1992,
+      "title": "乐评：听起来谁都不像"
+     },
+     {
+      "at": 40.35,
+      "year": 1993,
+      "title": "第一次重组到此为止"
+     },
+     {
+      "at": 54.39,
+      "year": 2001,
+      "title": "Yo La Tengo 把他们请了回来"
+     },
+     {
+      "at": 64.91,
+      "year": 2007,
+      "title": "Lloyd 离开，第四张专辑始终没做完"
+     },
+     {
+      "at": 92.98,
+      "year": 2023,
+      "title": "Verlaine 去世，乐队结束"
+     },
+     {
+      "at": 98.25,
+      "year": 2026,
+      "title": "Smith 和 Lloyd 在同一年去世"
+     }
+    ]
+   }
+  },
   {
    "id": "sun-city-girls",
    "name": "Sun City Girls",
@@ -571,6 +1491,16 @@
    "shows_checked": "",
    "shows_source": "",
    "links": [
+    {
+     "id": "television",
+     "name": "Television",
+     "score": 3.5,
+     "reasons": [
+      "同样来自美国",
+      "都用英语演唱",
+      "都通向 The Velvet Underground"
+     ]
+    },
     {
      "id": "yura-yura-teikoku",
      "name": "ゆらゆら帝国（摇摆帝国）",
@@ -3649,7 +4579,7 @@
     "height": 600
    },
    "photo_credit": "官方宣传照，摄影者与年份不详，取自 Deezer 艺人页，裁掉了四周的留白；非自由授权",
-   "heard": 2,
+   "heard": 3,
    "strip": {
     "first": 2001,
     "last": 2026,
@@ -3661,7 +4591,7 @@
       "y": 37,
       "year": 2005,
       "title": "OGRE YOU ASSHOLE",
-      "heard": false
+      "heard": true
      },
      {
       "x": 160.9,
@@ -3790,7 +4720,7 @@
      "year": 2005,
      "kind": "专辑",
      "note": "自己的厂牌 OYA 发行的首张专辑。",
-     "heard": false,
+     "heard": true,
      "fav": false,
      "cover": {
       "src": "/images/music/54807f9692788db8e9c4550b18d77c3e.webp",
@@ -4412,6 +5342,14 @@
       "声音上都有 模拟合成器",
       "气质都偏 松弛",
       "都通向 Kraftwerk"
+     ]
+    },
+    {
+     "id": "television",
+     "name": "Television",
+     "score": 2,
+     "reasons": [
+      "都通向 Yo La Tengo"
      ]
     },
     {
@@ -5268,6 +6206,16 @@
      "reasons": [
       "声音上都有 极简留白、重复律动",
       "都通向 Suicide"
+     ]
+    },
+    {
+     "id": "television",
+     "name": "Television",
+     "score": 2.5,
+     "reasons": [
+      "同样来自美国",
+      "气质都偏 冷峻",
+      "都用英语演唱"
      ]
     },
     {
@@ -6230,12 +7178,12 @@
     "label": "怎么认识的"
    },
    {
-    "key": "x:电影参照",
-    "label": "电影参照"
-   },
-   {
     "key": "x:翻唱过",
     "label": "翻唱过"
+   },
+   {
+    "key": "x:电影参照",
+    "label": "电影参照"
    },
    {
     "key": "x:电影配乐",
@@ -6247,6 +7195,192 @@
    }
   ],
   "bands": [
+   {
+    "id": "television",
+    "name": "Television",
+    "where": "纽约，美国",
+    "years": "1973–2023",
+    "formed": 1973,
+    "ended": 2023,
+    "status": "like",
+    "note": "听过 1992 年的同名专辑《Television》。\n1973 年在纽约成立，CBGB 最早的驻场乐队之一。和同时代的朋克乐队一样只用吉他、贝斯和鼓，声音却干净、讲究技术，靠 Tom Verlaine 和 Richard Lloyd 两把吉他互相咬合，还常常把歌拉成很长的即兴。\n1977 年的《Marquee Moon》是代表作；1978 年解散，1992 年重组后出了这张同名专辑，2023 年随着 Verlaine 去世而结束。",
+    "values": {
+     "country": [
+      "美国"
+     ],
+     "city": [
+      "纽约"
+     ],
+     "genres": [
+      "艺术朋克",
+      "朋克摇滚",
+      "新浪潮"
+     ],
+     "scenes": [
+      "CBGB",
+      "纽约朋克"
+     ],
+     "labels": [
+      "Ork",
+      "Elektra",
+      "Capitol"
+     ],
+     "members": [
+      "Tom Verlaine",
+      "Richard Lloyd",
+      "Fred Smith",
+      "Billy Ficca",
+      "Richard Hell",
+      "Jimmy Rip"
+     ],
+     "producers": [
+      "Tom Verlaine",
+      "Andy Johns",
+      "John Jansen"
+     ],
+     "influences": [
+      "The Velvet Underground",
+      "John Coltrane",
+      "Albert Ayler",
+      "The Rolling Stones",
+      "13th Floor Elevators",
+      "The Yardbirds"
+     ],
+     "sound": [
+      "双吉他交织",
+      "长段即兴",
+      "干净的吉他音色"
+     ],
+     "moods": [
+      "冷峻",
+      "紧绷",
+      "诗意"
+     ],
+     "themes": [
+      "下曼哈顿",
+      "法国诗歌"
+     ],
+     "languages": [
+      "英语"
+     ],
+     "x:翻唱过": [
+      "13th Floor Elevators",
+      "Count Five",
+      "The Rolling Stones",
+      "Bob Dylan"
+     ]
+    },
+    "counts": {
+     "releases": 7,
+     "people": 10,
+     "stories": 19
+    },
+    "stories": [
+     {
+      "year": 1972,
+      "title": "两个想当诗人的逃学少年"
+     },
+     {
+      "year": 1973,
+      "title": "名字是 Hell 起的"
+     },
+     {
+      "year": 1974,
+      "title": "CBGB 的第一个舞台"
+     },
+     {
+      "year": 1974,
+      "title": "Eno 录的小样“又冷又脆”"
+     },
+     {
+      "year": 1975,
+      "title": "Hell 被要求“别乱动”"
+     },
+     {
+      "year": 1975,
+      "title": "第一张单曲差点气走 Lloyd"
+     },
+     {
+      "year": 1976,
+      "title": "“这不是地球上的音乐”"
+     },
+     {
+      "year": 1976,
+      "title": "鼓手以为那是排练"
+     },
+     {
+      "year": 1977,
+      "title": "封面用的是一张复印件"
+     },
+     {
+      "year": 1977,
+      "title": "英国比美国买账"
+     },
+     {
+      "year": 1978,
+      "title": "第二张专辑发行不到三个月就散了"
+     },
+     {
+      "year": 1990,
+      "title": "十二年后重新坐到一起"
+     },
+     {
+      "year": 1992,
+      "title": "Verlaine 想换个名字发这张专辑"
+     },
+     {
+      "year": 1992,
+      "title": "乐评：听起来谁都不像"
+     },
+     {
+      "year": 1993,
+      "title": "第一次重组到此为止"
+     },
+     {
+      "year": 2001,
+      "title": "Yo La Tengo 把他们请了回来"
+     },
+     {
+      "year": 2007,
+      "title": "Lloyd 离开，第四张专辑始终没做完"
+     },
+     {
+      "year": 2023,
+      "title": "Verlaine 去世，乐队结束"
+     },
+     {
+      "year": 2026,
+      "title": "Smith 和 Lloyd 在同一年去世"
+     }
+    ],
+    "links": [
+     {
+      "id": "sun-city-girls",
+      "score": 3.5,
+      "reasons": [
+       "同样来自美国",
+       "都用英语演唱",
+       "都通向 The Velvet Underground"
+      ]
+     },
+     {
+      "id": "boy-harsher",
+      "score": 2.5,
+      "reasons": [
+       "同样来自美国",
+       "气质都偏 冷峻",
+       "都用英语演唱"
+      ]
+     },
+     {
+      "id": "ogre-you-asshole",
+      "score": 2,
+      "reasons": [
+       "都通向 Yo La Tengo"
+      ]
+     }
+    ]
+   },
    {
     "id": "sun-city-girls",
     "name": "Sun City Girls",
@@ -6349,6 +7483,15 @@
      }
     ],
     "links": [
+     {
+      "id": "television",
+      "score": 3.5,
+      "reasons": [
+       "同样来自美国",
+       "都用英语演唱",
+       "都通向 The Velvet Underground"
+      ]
+     },
      {
       "id": "yura-yura-teikoku",
       "score": 3,
@@ -7058,6 +8201,13 @@
       ]
      },
      {
+      "id": "television",
+      "score": 2,
+      "reasons": [
+       "都通向 Yo La Tengo"
+      ]
+     },
+     {
       "id": "sun-city-girls",
       "score": 2,
       "reasons": [
@@ -7184,6 +8334,15 @@
       "reasons": [
        "声音上都有 极简留白、重复律动",
        "都通向 Suicide"
+      ]
+     },
+     {
+      "id": "television",
+      "score": 2.5,
+      "reasons": [
+       "同样来自美国",
+       "气质都偏 冷峻",
+       "都用英语演唱"
       ]
      },
      {
