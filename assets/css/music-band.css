@@ -1,0 +1,353 @@
+/* Music page: the page of a single band (header, discography, history, people, live shows).
+   Loaded after music.css, which holds the shared tokens, chips and the index view. */
+
+/* ---- One band ---- */
+
+.music-band { scroll-margin-top: 80px; }
+.music-band + .music-band { margin-top: calc(var(--sec-gap) * 1.5); }
+
+.music-back {
+  margin: 0 0 18px !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+}
+
+.music-band-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  gap: 24px 56px;
+  align-items: start;
+}
+
+.music .music-band-name {
+  margin: 0 0 6px;
+  padding: 0;
+  border: 0;
+  font-family: var(--serif);
+  font-size: clamp(28px, 2vw + 20px, 42px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.music-band-name:focus { outline: none; }
+
+.music-band-where {
+  margin: 0 0 18px !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-band-note {
+  max-width: 62ch;
+  margin: 0 0 22px !important;
+  white-space: pre-line;
+}
+
+.music-dims {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 6px 18px;
+  max-width: 62ch;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.music .music-dims dt,
+.music .music-dims dd { margin: 0; font-size: var(--fs-small); font-weight: 400; }
+
+.music-dims dt { padding-top: 3px; color: var(--ink-faint); }
+
+.music-photo { display: block; margin: 0; }
+
+.music-photo-blank svg { display: block; width: 160px; height: 160px; border-radius: 2px; }
+
+.music-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--wash);
+}
+
+.music-photo figcaption {
+  margin: 8px 0 0;
+  padding: 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.music-band-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 0 56px;
+  margin-top: var(--sec-gap);
+}
+
+.music-sec + .music-sec { margin-top: var(--sec-gap); }
+
+/* Sub-section heading: the site's small-caps rule heading, one level down. */
+.music-h {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.music-h h3 {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.music-h h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  transform: translateY(-3px);
+}
+
+.music-h p {
+  margin: 0 !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+/* ---- Discography ---- */
+
+.music-strip { display: block; width: 100%; max-width: 640px; height: auto; margin-top: 6px; }
+.music-strip-axis { stroke: var(--rule); stroke-width: 1.5; }
+.music-strip-dot { fill: var(--global-bg-color, #fff); stroke: var(--ink-faint); stroke-width: 1.5; }
+.music-strip-dot.is-heard { fill: var(--accent); stroke: var(--accent); }
+.music-strip text { font-family: var(--sans); font-size: 11px; fill: var(--ink-faint); }
+.music-strip-note { margin: 2px 0 6px !important; }
+
+.site .music-slink {
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.music-rels,
+.music-hist,
+.music-people,
+.music-links { margin: 0; padding: 0; list-style: none; }
+
+.music-rel {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 18px;
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.music-cover {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--wash);
+}
+
+.music-cover--blank svg,
+.music-card-blank svg { display: block; width: 100%; height: 100%; border-radius: 2px; }
+
+/* Not heard yet: the cover steps back so the heard ones read first. */
+.music-rel:not(.is-heard) .music-cover { opacity: 0.68; }
+
+.music-rel p { margin: 0 !important; }
+
+.music-rel-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  line-height: 1.45;
+}
+
+.music-rel-title time {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-rel-title strong { font-weight: 600; }
+.music-rel:not(.is-heard) .music-rel-title strong { font-weight: 400; }
+
+.music-tag {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.music-tag--heard { font-weight: 600; color: var(--accent); }
+.music-tag--fav { font-weight: 600; color: var(--star); }
+
+.music-rel-note,
+.music-rel-tracks {
+  max-width: 64ch;
+  margin-top: 3px !important;
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.music-rel-tracks {
+  font-family: var(--sans);
+  font-size: 13px !important;
+  color: var(--ink-faint);
+}
+
+/* ---- History ---- */
+
+.music-hist li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 90px;
+}
+
+/* A story reached from a "故事：" link is marked briefly so the eye finds it. */
+.music-hist li.is-flash { box-shadow: -12px 0 0 -9px var(--accent); background: var(--wash); }
+
+.music-hist time {
+  padding-top: 3px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-hist h4 {
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.music-hist p {
+  max-width: 64ch;
+  margin: 0 0 6px !important;
+  font-size: 16px !important;
+  line-height: 1.75;
+}
+
+.music-src {
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+/* ---- People, connections, leads ---- */
+
+.music-people li,
+.music-links li {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.music-people p,
+.music-links p {
+  margin: 2px 0 0 !important;
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.music-people .music-person { margin: 0 !important; color: var(--ink); }
+
+.music-person span,
+.music-people .music-projects {
+  font-family: var(--sans);
+  font-size: 13px !important;
+  color: var(--ink-faint);
+}
+
+.music-people .music-projects { margin-top: 8px !important; }
+
+/* ---- Live ---- */
+
+.music-shows { margin: 0; padding: 0; list-style: none; }
+
+.music-shows li {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.music-shows time {
+  padding-top: 2px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-shows strong { display: block; font-weight: 600; }
+.music-shows span { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); }
+
+.music-shows-h {
+  margin: 16px 0 2px;
+  font-family: var(--sans);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.music-shows-note { margin: 12px 0 0 !important; line-height: 1.6; }
+
+.music-links a,
+.music-links strong { font-weight: 600; }
+
+/* ---- Tablet ---- */
+
+@media (max-width: 900px) {
+  .music-band-head { grid-template-columns: minmax(0, 1fr); }
+  .music-photo { max-width: 420px; }
+  .music-band-body { grid-template-columns: minmax(0, 1fr); }
+  .music-side { margin-top: var(--sec-gap); }
+}
+
+/* ---- Phone ---- */
+
+@media (max-width: 639px) {
+  .music-rel { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; }
+  .music-cover { width: 56px; height: 56px; }
+  .music-hist li { grid-template-columns: 40px minmax(0, 1fr); gap: 10px; }
+  .music-shows li { grid-template-columns: 84px minmax(0, 1fr); }
+}

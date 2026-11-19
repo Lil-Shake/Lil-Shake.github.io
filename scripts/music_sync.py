@@ -10,7 +10,8 @@ A Claude session exports it first, then runs this script:
     3. python3 scripts/music_sync.py --export <export> --assets <assets>
 
 Writes:
-    _data/music.json              bands, releases, people, stories, connections, timeline positions
+    _data/music.json              `bands` (everything the page prints) and `index` (the slim copy
+                                  the interactive chart, list and panel read)
     images/music/<asset id>.webp  self-hosted photos and covers (files no longer referenced are removed)
 
 Images are converted with Pillow when it is installed, otherwise with the `cwebp` command.
@@ -52,7 +53,13 @@ DIMS = [
     ("languages", "语言", 0.5, False, "都用{}演唱"),
     ("source", "怎么认识的", 1, True, "都是从{}认识的"),
 ]
-SHOWN_DIMS = ["genres", "scenes", "labels", "sound", "moods", "themes", "languages"]
+HIDDEN_DIMS = {"country", "city"}  # already in the "where" line under the name
+FACET_PREFIX = "x:"
+STATUS_LABELS = {"like": "喜欢", "explore": "想了解"}
+STRIP_WIDTH = 640
+STRIP_PAD = 14
+STRIP_BASELINE = 37
+STRIP_STACK_STEP = 10
 FACET_WEIGHT = 1
 PERSON_LINK_SCORE = 4
 LEAD_LINK_SCORE = 4
@@ -124,6 +131,10 @@ def normalize(band_id, raw):
                    for p in dicts(raw.get("people")) if text(p.get("name"))],
         "leads": [{"name": text(l.get("name")), "why": text(l.get("why"))}
                   for l in dicts(raw.get("leads")) if text(l.get("name"))],
+        "shows": sorted(({"date": text(x.get("date")), "city": text(x.get("city")),
+                          "venue": text(x.get("venue")), "note": text(x.get("note"))}
+                         for x in dicts(raw.get("shows")) if text(x.get("date"))), key=lambda x: x["date"]),
+        "shows_checked": text(raw.get("showsChecked")), "shows_source": text(raw.get("showsSource")),
     }
 
 
@@ -318,8 +329,8 @@ def build_timeline(bands, this_year):
         stop = band["ended"] or this_year
         rows[band["id"]] = {
             "left": at(band["formed"]), "width": percent(at(stop) - at(band["formed"])),
-            "dots": [{"at": at(r["year"]), "year": r["year"], "title": r["title"], "heard": r["heard"]}
-                     for r in band["releases"] if r["year"]],
+            "dots": [{"at": at(s["year"]), "year": s["year"], "title": s["title"]}
+                     for s in band["stories"] if s["year"] and start <= s["year"] <= end],
         }
     ticks = [{"year": y, "at": at(y)} for y in range(-(-start // 10) * 10, end + 1, 10)]
     return {"start": start, "end": end, "ticks": ticks}, rows
@@ -331,25 +342,91 @@ def years_text(band):
     return "%d–%d" % (band["formed"], band["ended"]) if band["ended"] else "%d 至今" % band["formed"]
 
 
+def release_strip(band):
+    """Where each release sits on the small year-distribution strip above the discography."""
+    years = [r["year"] for r in band["releases"] if r["year"]]
+    if len(years) < 2:
+        return None
+    first = min([band["formed"] or years[0]] + years)
+    last = max([band["ended"] or 0] + years)
+    stacked, dots = {}, []
+    for release in band["releases"]:
+        if not release["year"]:
+            continue
+        level = stacked.get(release["year"], 0)
+        stacked[release["year"]] = level + 1
+        x = STRIP_PAD + (release["year"] - first) / max(1, last - first) * (STRIP_WIDTH - 2 * STRIP_PAD)
+        dots.append({"x": round(x, 1), "y": STRIP_BASELINE - level * STRIP_STACK_STEP, "year": release["year"],
+                     "title": release["title"], "heard": release["heard"]})
+    return {"first": first, "last": last, "width": STRIP_WIDTH, "pad": STRIP_PAD, "dots": dots}
+
+
+def stories_about(band, field, name):
+    """Stories that name this release or person, as jump targets."""
+    return [{"index": i, "title": s["title"] or str(s["year"] or "") or "一段故事"}
+            for i, s in enumerate(band["stories"]) if s[field] and s[field].lower() == name.lower()]
+
+
+def all_values(band):
+    values = {key: entries for key, entries in band["values"].items() if entries}
+    values.update({FACET_PREFIX + name: entries for name, entries in band["facets"].items()})
+    return values
+
+
+def band_id_by_name(bands):
+    return {name: band["id"] for band in bands for name in names_of(band)}
+
+
 def publish(band, bands, sizes, row):
     values = band["values"]
-    dims = [{"label": label, "values": values[key]} for key, label, _, _, _ in DIMS
-            if key in SHOWN_DIMS and values[key]]
-    dims += [{"label": name, "values": entries} for name, entries in band["facets"].items()]
+    known = band_id_by_name(bands)
+    dims = [{"key": key, "label": label, "values": values[key]} for key, label, _, _, _ in DIMS
+            if key not in HIDDEN_DIMS and values[key]]
+    dims += [{"key": FACET_PREFIX + name, "label": name, "values": entries} for name, entries in band["facets"].items()]
     return {
         "id": band["id"], "name": band["name"], "aliases": band["aliases"],
         "country": "".join(values["country"]), "city": "".join(values["city"]),
         "where": "，".join(values["city"] + values["country"]) or "地区未填",
         "formed": band["formed"], "ended": band["ended"], "years": years_text(band),
-        "status": band["status"], "note": band["note"], "added": band["added"],
+        "status": band["status"], "status_label": STATUS_LABELS[band["status"]],
+        "note": band["note"], "added": band["added"],
         "genres": values["genres"], "dims": dims,
         "photo": picture(band["photo"], sizes), "photo_credit": band["photo_credit"],
         "heard": sum(1 for r in band["releases"] if r["heard"]),
-        "releases": [{**r, "cover": picture(r["cover"], sizes)} for r in band["releases"]],
-        "people": band["people"], "stories": band["stories"],
+        "strip": release_strip(band),
+        "releases": [{**r, "cover": picture(r["cover"], sizes), "stories": stories_about(band, "release", r["title"])}
+                     for r in band["releases"]],
+        "people": [{**p, "stories": stories_about(band, "person", p["name"]),
+                    "projects": [{"name": name, "id": known.get(name.lower())} for name in p["projects"]]}
+                   for p in band["people"]],
+        "stories": band["stories"],
+        "shows": band["shows"], "shows_checked": band["shows_checked"], "shows_source": band["shows_source"],
         "links": connections(band, bands), "leads": outside_leads(band, bands),
         "timeline": row,
     }
+
+
+def index_entry(band, published):
+    """The slim copy of a band that the interactive index needs."""
+    return {
+        "id": band["id"], "name": band["name"], "where": published["where"], "years": published["years"],
+        "formed": band["formed"], "ended": band["ended"], "status": band["status"], "note": band["note"],
+        "values": all_values(band),
+        "counts": {"releases": len(band["releases"]), "people": len(band["people"]), "stories": len(band["stories"])},
+        "stories": [{"year": s["year"], "title": s["title"]} for s in band["stories"] if s["year"]],
+        "links": [{"id": l["id"], "score": l["score"], "reasons": l["reasons"]} for l in published["links"]],
+    }
+
+
+def index_dims(bands):
+    dims = [{"key": key, "label": label} for key, label, _, _, _ in DIMS]
+    seen = set()
+    for band in bands:
+        for name in band["facets"]:
+            if name not in seen:
+                seen.add(name)
+                dims.append({"key": FACET_PREFIX + name, "label": name})
+    return dims
 
 
 def load_export(export_dir):
@@ -398,12 +475,14 @@ def main():
         },
         "timeline": timeline,
         "bands": published,
+        "index": {"dims": index_dims(bands), "bands": [index_entry(b, p) for b, p in zip(bands, published)]},
     }
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
         f.write("\n")
-    print("%d bands, %d releases (%d heard), %d images" % (
-        len(published), data["stats"]["releases"], data["stats"]["heard"], len(sizes)))
+    print("%d bands, %d releases (%d heard), %d shows, %d images" % (
+        len(published), data["stats"]["releases"], data["stats"]["heard"],
+        sum(len(b["shows"]) for b in published), len(sizes)))
     for asset_id in missing:
         print("MISSING", asset_id)
     if missing:

@@ -59,6 +59,7 @@
    "ended": 2007,
    "years": "1979–2007",
    "status": "like",
+   "status_label": "喜欢",
    "note": "听过《Funeral Mariachi》。\n起于亚利桑那州菲尼克斯，九十年代初搬到西雅图。Bishop 兄弟加鼓手 Charles Gocher 的三人阵容维持了二十多年。",
    "added": "2026-11-18",
    "genres": [
@@ -69,6 +70,7 @@
    ],
    "dims": [
     {
+     "key": "genres",
      "label": "类型",
      "values": [
       "实验摇滚",
@@ -78,12 +80,14 @@
      ]
     },
     {
+     "key": "scenes",
      "label": "场景与运动",
      "values": [
       "菲尼克斯八十年代独立场景"
      ]
     },
     {
+     "key": "labels",
      "label": "厂牌",
      "values": [
       "Abduction",
@@ -94,6 +98,23 @@
      ]
     },
     {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "Alan Bishop",
+      "Richard Bishop",
+      "Charles Gocher"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "Alan Bishop"
+     ]
+    },
+    {
+     "key": "sound",
      "label": "声音",
      "values": [
       "世界音乐采撷",
@@ -102,6 +123,7 @@
      ]
     },
     {
+     "key": "moods",
      "label": "气质",
      "values": [
       "诡异",
@@ -110,6 +132,7 @@
      ]
     },
     {
+     "key": "themes",
      "label": "主题与文化关联",
      "values": [
       "莫里康内",
@@ -118,12 +141,14 @@
      ]
     },
     {
+     "key": "languages",
      "label": "语言",
      "values": [
       "英语"
      ]
     },
     {
+     "key": "x:电影参照",
      "label": "电影参照",
      "values": [
       "Maddalena",
@@ -131,6 +156,7 @@
      ]
     },
     {
+     "key": "x:翻唱过",
      "label": "翻唱过",
      "values": [
       "Ennio Morricone"
@@ -144,6 +170,84 @@
    },
    "photo_credit": "摄影者与年份不详，三人合照，取自 Discogs 艺人页（artist/225402）；非自由授权",
    "heard": 1,
+   "strip": {
+    "first": 1979,
+    "last": 2010,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 112.7,
+      "y": 37,
+      "year": 1984,
+      "title": "Sun City Girls",
+      "heard": false
+     },
+     {
+      "x": 152.2,
+      "y": 37,
+      "year": 1986,
+      "title": "Grotto of Miracles",
+      "heard": false
+     },
+     {
+      "x": 171.9,
+      "y": 37,
+      "year": 1987,
+      "title": "Horse Cock Phepner",
+      "heard": false
+     },
+     {
+      "x": 231.2,
+      "y": 37,
+      "year": 1990,
+      "title": "Torch of the Mystics",
+      "heard": false
+     },
+     {
+      "x": 250.9,
+      "y": 37,
+      "year": 1991,
+      "title": "Dawn of the Devi",
+      "heard": false
+     },
+     {
+      "x": 310.1,
+      "y": 37,
+      "year": 1994,
+      "title": "Kaliflower",
+      "heard": false
+     },
+     {
+      "x": 349.6,
+      "y": 37,
+      "year": 1996,
+      "title": "330,003 Crossdressers from Beyond the Rig Veda",
+      "heard": false
+     },
+     {
+      "x": 349.6,
+      "y": 27,
+      "year": 1996,
+      "title": "Dante's Disneyland Inferno",
+      "heard": false
+     },
+     {
+      "x": 586.5,
+      "y": 37,
+      "year": 2008,
+      "title": "Mister Lonely",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2010,
+      "title": "Funeral Mariachi",
+      "heard": true
+     }
+    ]
+   },
    "releases": [
     {
      "title": "Sun City Girls",
@@ -157,7 +261,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Grotto of Miracles",
@@ -171,7 +276,8 @@
       "width": 400,
       "height": 399
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Horse Cock Phepner",
@@ -185,7 +291,8 @@
       "width": 268,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Torch of the Mystics",
@@ -199,7 +306,8 @@
       "width": 381,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Dawn of the Devi",
@@ -213,7 +321,8 @@
       "width": 400,
       "height": 393
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Kaliflower",
@@ -227,7 +336,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "330,003 Crossdressers from Beyond the Rig Veda",
@@ -241,7 +351,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Dante's Disneyland Inferno",
@@ -255,7 +366,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Mister Lonely",
@@ -269,7 +381,13 @@
       "width": 400,
       "height": 397
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 4,
+       "title": "悼念巡演，和一部哈莫尼·科林的电影"
+      }
+     ]
     },
     {
      "title": "Funeral Mariachi",
@@ -295,6 +413,16 @@
       "El Solo",
       "Come Maddalena",
       "Funeral Mariachi"
+     ],
+     "stories": [
+      {
+       "index": 5,
+       "title": "《Funeral Mariachi》：最规整的一张成了告别"
+      },
+      {
+       "index": 6,
+       "title": "〈Come Maddalena〉的来处"
+      }
      ]
     }
    ],
@@ -305,8 +433,20 @@
      "years": "1979 到 2007",
      "note": "《Funeral Mariachi》的制作人。主持厂牌 Sublime Frequencies，另以 Alvarius B 和 Uncle Jim 的名字演出和发行。八十年代初和地下丝绒的鼓手 Maureen Tucker 组过短命的 Paris 1942。",
      "projects": [
-      "Alvarius B",
-      "Paris 1942"
+      {
+       "name": "Alvarius B",
+       "id": null
+      },
+      {
+       "name": "Paris 1942",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 1,
+       "title": "和地下丝绒的鼓手组过乐队"
+      }
      ]
     },
     {
@@ -315,29 +455,41 @@
      "years": "1979 到 2007",
      "note": "Alan 的兄弟。之后以 Sir Richard Bishop 的名字做独奏吉他手。",
      "projects": [
-      "Sir Richard Bishop"
-     ]
+      {
+       "name": "Sir Richard Bishop",
+       "id": null
+      }
+     ],
+     "stories": []
     },
     {
      "name": "Charles Gocher",
      "role": "鼓、打击乐、主唱",
      "years": "1981 到 2007",
      "note": "也是一位电影人。2007 年 2 月 19 日因癌症去世，乐队随之结束。",
-     "projects": []
+     "projects": [],
+     "stories": [
+      {
+       "index": 3,
+       "title": "有人离开，乐队就结束"
+      }
+     ]
     },
     {
      "name": "Eyvind Kang",
      "role": "中提琴",
      "years": "",
      "note": "后期的常客，参与了《Funeral Mariachi》。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "Scott Colburn",
      "role": "录音师",
      "years": "",
      "note": "后期长期合作的录音师，《Funeral Mariachi》的录音师之一。",
-     "projects": []
+     "projects": [],
+     "stories": []
     }
    ],
    "stories": [
@@ -414,6 +566,9 @@
      "url": "https://www.tucsonweekly.com/?p=13371"
     }
    ],
+   "shows": [],
+   "shows_checked": "",
+   "shows_source": "",
    "links": [
     {
      "id": "yura-yura-teikoku",
@@ -464,64 +619,39 @@
     "width": 49.12,
     "dots": [
      {
-      "at": 24.56,
-      "year": 1984,
-      "title": "Sun City Girls",
-      "heard": false
+      "at": 15.79,
+      "year": 1979,
+      "title": "名字来自一个退休社区"
      },
      {
-      "at": 28.07,
-      "year": 1986,
-      "title": "Grotto of Miracles",
-      "heard": false
+      "at": 21.05,
+      "year": 1982,
+      "title": "和地下丝绒的鼓手组过乐队"
      },
      {
-      "at": 29.82,
-      "year": 1987,
-      "title": "Horse Cock Phepner",
-      "heard": false
+      "at": 40.35,
+      "year": 1993,
+      "title": "搬到西雅图，办自己的厂牌"
      },
      {
-      "at": 35.09,
-      "year": 1990,
-      "title": "Torch of the Mystics",
-      "heard": false
-     },
-     {
-      "at": 36.84,
-      "year": 1991,
-      "title": "Dawn of the Devi",
-      "heard": false
-     },
-     {
-      "at": 42.11,
-      "year": 1994,
-      "title": "Kaliflower",
-      "heard": false
-     },
-     {
-      "at": 45.61,
-      "year": 1996,
-      "title": "330,003 Crossdressers from Beyond the Rig Veda",
-      "heard": false
-     },
-     {
-      "at": 45.61,
-      "year": 1996,
-      "title": "Dante's Disneyland Inferno",
-      "heard": false
+      "at": 64.91,
+      "year": 2007,
+      "title": "有人离开，乐队就结束"
      },
      {
       "at": 66.67,
       "year": 2008,
-      "title": "Mister Lonely",
-      "heard": false
+      "title": "悼念巡演，和一部哈莫尼·科林的电影"
      },
      {
       "at": 70.18,
       "year": 2010,
-      "title": "Funeral Mariachi",
-      "heard": true
+      "title": "《Funeral Mariachi》：最规整的一张成了告别"
+     },
+     {
+      "at": 70.18,
+      "year": 2010,
+      "title": "〈Come Maddalena〉的来处"
      }
     ]
    }
@@ -542,6 +672,7 @@
    "ended": 2010,
    "years": "1989–2010",
    "status": "like",
+   "status_label": "喜欢",
    "note": "2026 年 11 月正在听《美しい》，之前听过《空洞です》和《つぎの夜へ》。\n《美しい》是 2007 年 7 月的单曲，体量接近迷你专辑，其中两首后来以专辑版本收进《空洞です》。\n1989 年由坂本慎太郎组建，1997 年柴田一郎加入后定型为三人编制，2010 年以“乐队已经完成”为由解散。",
    "added": "2026-11-18",
    "genres": [
@@ -550,6 +681,7 @@
    ],
    "dims": [
     {
+     "key": "genres",
      "label": "类型",
      "values": [
       "迷幻摇滚",
@@ -557,12 +689,14 @@
      ]
     },
     {
+     "key": "scenes",
      "label": "场景与运动",
      "values": [
       "高円寺地下"
      ]
     },
     {
+     "key": "labels",
      "label": "厂牌",
      "values": [
       "Sony Music Associated Records",
@@ -573,6 +707,23 @@
      ]
     },
     {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "坂本慎太郎",
+      "亀川千代",
+      "柴田一郎"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "石原洋"
+     ]
+    },
+    {
+     "key": "sound",
      "label": "声音",
      "values": [
       "极简留白",
@@ -581,6 +732,7 @@
      ]
     },
     {
+     "key": "moods",
      "label": "气质",
      "values": [
       "虚空",
@@ -589,6 +741,7 @@
      ]
     },
     {
+     "key": "themes",
      "label": "主题与文化关联",
      "values": [
       "日语原创摇滚",
@@ -596,12 +749,14 @@
      ]
     },
     {
+     "key": "languages",
      "label": "语言",
      "values": [
       "日语"
      ]
     },
     {
+     "key": "x:翻唱过",
      "label": "翻唱过",
      "values": [
       "Suicide"
@@ -615,6 +770,147 @@
    },
    "photo_credit": "Penny Camberville，2009-09-16 波士顿 Wilbur Theatre 现场，CC BY 2.0，Wikimedia Commons：File:Yura Yura Teikoku in Boston 2.jpg",
    "heard": 4,
+   "strip": {
+    "first": 1989,
+    "last": 2010,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 101.4,
+      "y": 37,
+      "year": 1992,
+      "title": "ゆらゆら帝国",
+      "heard": false
+     },
+     {
+      "x": 276.3,
+      "y": 37,
+      "year": 1998,
+      "title": "3×3×3",
+      "heard": true
+     },
+     {
+      "x": 276.3,
+      "y": 27,
+      "year": 1998,
+      "title": "発光体",
+      "heard": false
+     },
+     {
+      "x": 305.4,
+      "y": 37,
+      "year": 1999,
+      "title": "ミーのカー",
+      "heard": false
+     },
+     {
+      "x": 305.4,
+      "y": 27,
+      "year": 1999,
+      "title": "太陽の白い粉",
+      "heard": false
+     },
+     {
+      "x": 334.6,
+      "y": 37,
+      "year": 2000,
+      "title": "ゆらゆら帝国で考え中",
+      "heard": false
+     },
+     {
+      "x": 363.7,
+      "y": 37,
+      "year": 2001,
+      "title": "ゆらゆら帝国III",
+      "heard": false
+     },
+     {
+      "x": 422.0,
+      "y": 37,
+      "year": 2003,
+      "title": "ゆらゆら帝国のしびれ",
+      "heard": false
+     },
+     {
+      "x": 422.0,
+      "y": 27,
+      "year": 2003,
+      "title": "ゆらゆら帝国のめまい",
+      "heard": false
+     },
+     {
+      "x": 422.0,
+      "y": 17,
+      "year": 2003,
+      "title": "な・ま・し・び・れ・な・ま・め・ま・い",
+      "heard": false
+     },
+     {
+      "x": 451.1,
+      "y": 37,
+      "year": 2004,
+      "title": "1998-2004",
+      "heard": false
+     },
+     {
+      "x": 480.3,
+      "y": 37,
+      "year": 2005,
+      "title": "Sweet Spot",
+      "heard": false
+     },
+     {
+      "x": 480.3,
+      "y": 27,
+      "year": 2005,
+      "title": "ソフトに死んでいる / フランキー・ティアドロップ",
+      "heard": false
+     },
+     {
+      "x": 509.4,
+      "y": 37,
+      "year": 2006,
+      "title": "つぎの夜へ",
+      "heard": true
+     },
+     {
+      "x": 538.6,
+      "y": 37,
+      "year": 2007,
+      "title": "美しい",
+      "heard": true
+     },
+     {
+      "x": 538.6,
+      "y": 27,
+      "year": 2007,
+      "title": "空洞です",
+      "heard": true
+     },
+     {
+      "x": 567.7,
+      "y": 37,
+      "year": 2008,
+      "title": "REMIX 2005-2008",
+      "heard": false
+     },
+     {
+      "x": 596.9,
+      "y": 37,
+      "year": 2009,
+      "title": "Hollow Me/Beautiful",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2010,
+      "title": "LIVE 2005-2009",
+      "heard": false
+     }
+    ]
+   },
    "releases": [
     {
      "title": "ゆらゆら帝国",
@@ -628,7 +924,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "3×3×3",
@@ -642,7 +939,13 @@
       "width": 357,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 1,
+       "title": "《3×3×3》与 Cornelius 的年度第一"
+      }
+     ]
     },
     {
      "title": "発光体",
@@ -656,7 +959,8 @@
       "width": 400,
       "height": 396
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "ミーのカー",
@@ -670,7 +974,8 @@
       "width": 400,
       "height": 352
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "太陽の白い粉",
@@ -684,7 +989,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "ゆらゆら帝国で考え中",
@@ -698,7 +1004,13 @@
       "width": 384,
       "height": 338
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 2,
+       "title": "一首迷幻摇滚成了综艺片头曲"
+      }
+     ]
     },
     {
      "title": "ゆらゆら帝国III",
@@ -712,7 +1024,8 @@
       "width": 400,
       "height": 340
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "ゆらゆら帝国のしびれ",
@@ -726,7 +1039,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 3,
+       "title": "同一天发行的双生专辑"
+      }
+     ]
     },
     {
      "title": "ゆらゆら帝国のめまい",
@@ -740,7 +1059,8 @@
       "width": 400,
       "height": 353
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "な・ま・し・び・れ・な・ま・め・ま・い",
@@ -754,7 +1074,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "1998-2004",
@@ -768,7 +1089,8 @@
       "width": 388,
       "height": 340
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Sweet Spot",
@@ -782,7 +1104,8 @@
       "width": 400,
       "height": 341
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "ソフトに死んでいる / フランキー・ティアドロップ",
@@ -796,7 +1119,13 @@
       "width": 247,
       "height": 246
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 4,
+       "title": "翻唱 Suicide"
+      }
+     ]
     },
     {
      "title": "つぎの夜へ",
@@ -813,7 +1142,8 @@
      "tracks": [
       "つぎの夜へ",
       "順番には逆らえない"
-     ]
+     ],
+     "stories": []
     },
     {
      "title": "美しい",
@@ -832,6 +1162,12 @@
       "なんとなく夢を",
       "なさけない&はずかしい",
       "船"
+     ],
+     "stories": [
+      {
+       "index": 5,
+       "title": "《美しい》是《空洞です》的前奏"
+      }
      ]
     },
     {
@@ -857,7 +1193,8 @@
       "学校へ行ってきます",
       "ひとりぼっちの人工衛星",
       "空洞です"
-     ]
+     ],
+     "stories": []
     },
     {
      "title": "REMIX 2005-2008",
@@ -871,7 +1208,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Hollow Me/Beautiful",
@@ -885,7 +1223,13 @@
       "width": 400,
       "height": 360
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 6,
+       "title": "DFA 厂牌里最不像 DFA 的一张"
+      }
+     ]
     },
     {
      "title": "LIVE 2005-2009",
@@ -899,7 +1243,8 @@
       "width": 400,
       "height": 397
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     }
    ],
    "people": [
@@ -909,8 +1254,28 @@
      "years": "1989 到 2010",
      "note": "乐队的组建者。解散后在 2011 年发行个人专辑《幻とのつきあい方》，创办了厂牌 zelone records，一直以个人名义发行作品。",
      "projects": [
-      "坂本慎太郎（个人）",
-      "Cornelius"
+      {
+       "name": "坂本慎太郎（个人）",
+       "id": null
+      },
+      {
+       "name": "Cornelius",
+       "id": "cornelius"
+      }
+     ],
+     "stories": [
+      {
+       "index": 8,
+       "title": "解散之后的坂本慎太郎"
+      },
+      {
+       "index": 9,
+       "title": "坂本慎太郎为 Cornelius 写词"
+      },
+      {
+       "index": 11,
+       "title": "水木茂的影子"
+      }
      ]
     },
     {
@@ -919,8 +1284,20 @@
      "years": "到 2010",
      "note": "除坂本之外在队时间最长的成员。2024 年 4 月 7 日去世，终年 54 岁。",
      "projects": [
-      "不失者",
-      "The Stars"
+      {
+       "name": "不失者",
+       "id": null
+      },
+      {
+       "name": "The Stars",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 10,
+       "title": "亀川千代去世"
+      }
      ]
     },
     {
@@ -928,7 +1305,8 @@
      "role": "鼓",
      "years": "1997 到 2010",
      "note": "几任鼓手之后加入，三人阵容自此固定。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "石原洋",
@@ -936,16 +1314,24 @@
      "years": "",
      "note": "White Heaven 的核心人物，长期担任乐队的制作人。",
      "projects": [
-      "White Heaven",
-      "The Stars"
-     ]
+      {
+       "name": "White Heaven",
+       "id": null
+      },
+      {
+       "name": "The Stars",
+       "id": null
+      }
+     ],
+     "stories": []
     },
     {
      "name": "中村宗一郎",
      "role": "录音师",
      "years": "",
      "note": "Peace Music 录音室的主人，《空洞です》在这里录制。",
-     "projects": []
+     "projects": [],
+     "stories": []
     }
    ],
    "stories": [
@@ -1058,6 +1444,9 @@
      "url": "https://kai-you.net/article/82514"
     }
    ],
+   "shows": [],
+   "shows_checked": "",
+   "shows_source": "",
    "links": [
     {
      "id": "ogre-you-asshole",
@@ -1133,118 +1522,59 @@
     "width": 36.85,
     "dots": [
      {
-      "at": 38.6,
-      "year": 1992,
-      "title": "ゆらゆら帝国",
-      "heard": false
+      "at": 33.33,
+      "year": 1989,
+      "title": "以“日语原创摇滚”为名"
      },
      {
       "at": 49.12,
       "year": 1998,
-      "title": "3×3×3",
-      "heard": true
-     },
-     {
-      "at": 49.12,
-      "year": 1998,
-      "title": "発光体",
-      "heard": false
-     },
-     {
-      "at": 50.88,
-      "year": 1999,
-      "title": "ミーのカー",
-      "heard": false
-     },
-     {
-      "at": 50.88,
-      "year": 1999,
-      "title": "太陽の白い粉",
-      "heard": false
+      "title": "《3×3×3》与 Cornelius 的年度第一"
      },
      {
       "at": 52.63,
       "year": 2000,
-      "title": "ゆらゆら帝国で考え中",
-      "heard": false
-     },
-     {
-      "at": 54.39,
-      "year": 2001,
-      "title": "ゆらゆら帝国III",
-      "heard": false
+      "title": "一首迷幻摇滚成了综艺片头曲"
      },
      {
       "at": 57.89,
       "year": 2003,
-      "title": "ゆらゆら帝国のしびれ",
-      "heard": false
-     },
-     {
-      "at": 57.89,
-      "year": 2003,
-      "title": "ゆらゆら帝国のめまい",
-      "heard": false
-     },
-     {
-      "at": 57.89,
-      "year": 2003,
-      "title": "な・ま・し・び・れ・な・ま・め・ま・い",
-      "heard": false
-     },
-     {
-      "at": 59.65,
-      "year": 2004,
-      "title": "1998-2004",
-      "heard": false
+      "title": "同一天发行的双生专辑"
      },
      {
       "at": 61.4,
       "year": 2005,
-      "title": "Sweet Spot",
-      "heard": false
-     },
-     {
-      "at": 61.4,
-      "year": 2005,
-      "title": "ソフトに死んでいる / フランキー・ティアドロップ",
-      "heard": false
-     },
-     {
-      "at": 63.16,
-      "year": 2006,
-      "title": "つぎの夜へ",
-      "heard": true
+      "title": "翻唱 Suicide"
      },
      {
       "at": 64.91,
       "year": 2007,
-      "title": "美しい",
-      "heard": true
-     },
-     {
-      "at": 64.91,
-      "year": 2007,
-      "title": "空洞です",
-      "heard": true
-     },
-     {
-      "at": 66.67,
-      "year": 2008,
-      "title": "REMIX 2005-2008",
-      "heard": false
+      "title": "《美しい》是《空洞です》的前奏"
      },
      {
       "at": 68.42,
       "year": 2009,
-      "title": "Hollow Me/Beautiful",
-      "heard": false
+      "title": "DFA 厂牌里最不像 DFA 的一张"
      },
      {
       "at": 70.18,
       "year": 2010,
-      "title": "LIVE 2005-2009",
-      "heard": false
+      "title": "因为“完成了”而解散"
+     },
+     {
+      "at": 71.93,
+      "year": 2011,
+      "title": "解散之后的坂本慎太郎"
+     },
+     {
+      "at": 82.46,
+      "year": 2017,
+      "title": "坂本慎太郎为 Cornelius 写词"
+     },
+     {
+      "at": 94.74,
+      "year": 2024,
+      "title": "亀川千代去世"
      }
     ]
    }
@@ -1264,6 +1594,7 @@
    "ended": null,
    "years": "1993 至今",
    "status": "like",
+   "status_label": "喜欢",
    "note": "最喜欢的专辑是《Point》。\nCornelius 是小山田圭吾一个人的项目，现场时才有乐队。",
    "added": "2026-11-18",
    "genres": [
@@ -1273,6 +1604,7 @@
    ],
    "dims": [
     {
+     "key": "genres",
      "label": "类型",
      "values": [
       "涩谷系",
@@ -1281,12 +1613,14 @@
      ]
     },
     {
+     "key": "scenes",
      "label": "场景与运动",
      "values": [
       "涩谷系"
      ]
     },
     {
+     "key": "labels",
      "label": "厂牌",
      "values": [
       "Trattoria",
@@ -1296,6 +1630,21 @@
      ]
     },
     {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "小山田圭吾"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "小山田圭吾"
+     ]
+    },
+    {
+     "key": "sound",
      "label": "声音",
      "values": [
       "采样拼贴",
@@ -1305,6 +1654,7 @@
      ]
     },
     {
+     "key": "moods",
      "label": "气质",
      "values": [
       "明亮",
@@ -1312,12 +1662,14 @@
      ]
     },
     {
+     "key": "themes",
      "label": "主题与文化关联",
      "values": [
       "人猿星球"
      ]
     },
     {
+     "key": "languages",
      "label": "语言",
      "values": [
       "日语",
@@ -1325,6 +1677,7 @@
      ]
     },
     {
+     "key": "x:翻唱过",
      "label": "翻唱过",
      "values": [
       "Ary Barroso"
@@ -1338,6 +1691,98 @@
    },
    "photo_credit": "Joi Ito，2007-07-29，CC BY 2.0，Wikimedia Commons：File:Keigo Oyamada aka Cornelius.jpg",
    "heard": 1,
+   "strip": {
+    "first": 1993,
+    "last": 2024,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 33.7,
+      "y": 37,
+      "year": 1994,
+      "title": "The First Question Award",
+      "heard": false
+     },
+     {
+      "x": 53.5,
+      "y": 37,
+      "year": 1995,
+      "title": "69/96",
+      "heard": false
+     },
+     {
+      "x": 73.2,
+      "y": 37,
+      "year": 1996,
+      "title": "96/69",
+      "heard": false
+     },
+     {
+      "x": 93.0,
+      "y": 37,
+      "year": 1997,
+      "title": "Fantasma",
+      "heard": false
+     },
+     {
+      "x": 171.9,
+      "y": 37,
+      "year": 2001,
+      "title": "Point",
+      "heard": true
+     },
+     {
+      "x": 211.4,
+      "y": 37,
+      "year": 2003,
+      "title": "Five Point One",
+      "heard": false
+     },
+     {
+      "x": 270.6,
+      "y": 37,
+      "year": 2006,
+      "title": "Sensuous",
+      "heard": false
+     },
+     {
+      "x": 487.8,
+      "y": 37,
+      "year": 2017,
+      "title": "Mellow Waves",
+      "heard": false
+     },
+     {
+      "x": 507.5,
+      "y": 37,
+      "year": 2018,
+      "title": "Ripple Waves",
+      "heard": false
+     },
+     {
+      "x": 586.5,
+      "y": 37,
+      "year": 2022,
+      "title": "変わる消える (feat. mei ehara)",
+      "heard": false
+     },
+     {
+      "x": 606.3,
+      "y": 37,
+      "year": 2023,
+      "title": "夢中夢 -Dream In Dream-",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2024,
+      "title": "Ethereal Essence",
+      "heard": false
+     }
+    ]
+   },
    "releases": [
     {
      "title": "The First Question Award",
@@ -1351,7 +1796,8 @@
       "width": 400,
       "height": 395
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "69/96",
@@ -1365,7 +1811,8 @@
       "width": 400,
       "height": 396
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "96/69",
@@ -1379,7 +1826,8 @@
       "width": 396,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Fantasma",
@@ -1393,7 +1841,8 @@
       "width": 400,
       "height": 346
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Point",
@@ -1419,6 +1868,12 @@
       "Brazil",
       "Fly",
       "Nowhere"
+     ],
+     "stories": [
+      {
+       "index": 3,
+       "title": "从中目黑到任何地方"
+      }
      ]
     },
     {
@@ -1433,7 +1888,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 4,
+       "title": "每一首歌都有影像"
+      }
+     ]
     },
     {
      "title": "Sensuous",
@@ -1447,7 +1908,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Mellow Waves",
@@ -1461,7 +1923,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 6,
+       "title": "时隔 11 年的《Mellow Waves》"
+      }
+     ]
     },
     {
      "title": "Ripple Waves",
@@ -1475,7 +1943,8 @@
       "width": 400,
       "height": 390
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "変わる消える (feat. mei ehara)",
@@ -1489,7 +1958,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 8,
+       "title": "〈変わる消える〉"
+      }
+     ]
     },
     {
      "title": "夢中夢 -Dream In Dream-",
@@ -1503,7 +1978,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 9,
+       "title": "《夢中夢》"
+      }
+     ]
     },
     {
      "title": "Ethereal Essence",
@@ -1517,7 +1998,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     }
    ],
    "people": [
@@ -1527,11 +2009,24 @@
      "years": "1993 至今",
      "note": "1969 年生于东京世田谷。先和小沢健二组成 Flipper's Guitar，1991 年解散后，1992 年在 Polystar 旗下办起自己的厂牌 Trattoria，随后以 Cornelius 的名字开始个人创作。",
      "projects": [
-      "Flipper's Guitar",
-      "METAFIVE",
-      "Yellow Magic Orchestra",
-      "Plastic Ono Band"
-     ]
+      {
+       "name": "Flipper's Guitar",
+       "id": null
+      },
+      {
+       "name": "METAFIVE",
+       "id": null
+      },
+      {
+       "name": "Yellow Magic Orchestra",
+       "id": null
+      },
+      {
+       "name": "Plastic Ono Band",
+       "id": null
+      }
+     ],
+     "stories": []
     },
     {
      "name": "坂本慎太郎",
@@ -1539,7 +2034,20 @@
      "years": "",
      "note": "长期合作者。为《Mellow Waves》里的〈あなたがいるなら〉和〈未来の人へ〉、单曲〈変わる消える〉以及《夢中夢》写过歌词。",
      "projects": [
-      "ゆらゆら帝国"
+      {
+       "name": "ゆらゆら帝国",
+       "id": "yura-yura-teikoku"
+      }
+     ],
+     "stories": [
+      {
+       "index": 6,
+       "title": "时隔 11 年的《Mellow Waves》"
+      },
+      {
+       "index": 8,
+       "title": "〈変わる消える〉"
+      }
      ]
     },
     {
@@ -1547,21 +2055,24 @@
      "role": "编程、录音",
      "years": "",
      "note": "《Point》的编程和录音。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "辻川幸一郎",
      "role": "影像导演",
      "years": "",
      "note": "《Five Point One》的导演之一，Cornelius 那些和音乐严格同步的影像出自他手。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "北山雅和",
      "role": "封面设计、摄影",
      "years": "",
      "note": "《Point》的封套设计和摄影。",
-     "projects": []
+     "projects": [],
+     "stories": []
     }
    ],
    "stories": [
@@ -1656,6 +2167,160 @@
      "url": "https://codamusic.me/artists/cornelius"
     }
    ],
+   "shows": [
+    {
+     "date": "2026-06-05",
+     "city": "哥本哈根",
+     "venue": "Distortion",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-08-15",
+     "city": "东京（千叶）",
+     "venue": "Summer Sonic",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-08-16",
+     "city": "大阪",
+     "venue": "Summer Sonic",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-09-10",
+     "city": "横滨",
+     "venue": "KT Zepp Yokohama",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-09-12",
+     "city": "广岛",
+     "venue": "Club Quattro",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-09-13",
+     "city": "福冈",
+     "venue": "Zepp Fukuoka",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-09-19",
+     "city": "札幌",
+     "venue": "Zepp Sapporo",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-09-22",
+     "city": "名古屋",
+     "venue": "Zepp Nagoya",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-09-23",
+     "city": "大阪",
+     "venue": "Zepp Namba",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-09-26",
+     "city": "仙台",
+     "venue": "PIT",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-10-02",
+     "city": "东京",
+     "venue": "Zepp Haneda",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-10-03",
+     "city": "东京",
+     "venue": "Zepp Haneda",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2026-10-06",
+     "city": "东京",
+     "venue": "Zepp Shinjuku",
+     "note": "日本巡演"
+    },
+    {
+     "date": "2027-03-25",
+     "city": "费城",
+     "venue": "Ardmore Music Hall",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-03-27",
+     "city": "纽约",
+     "venue": "Irving Plaza",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-03-29",
+     "city": "华盛顿",
+     "venue": "Howard Theatre",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-03-31",
+     "city": "卡伯勒（北卡罗来纳）",
+     "venue": "Cat's Cradle",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-04-02",
+     "city": "诺克斯维尔",
+     "venue": "Big Ears Festival",
+     "note": "音乐节"
+    },
+    {
+     "date": "2027-04-04",
+     "city": "麦迪逊",
+     "venue": "Majestic Theatre",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-04-05",
+     "city": "明尼阿波利斯",
+     "venue": "Fine Line",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-04-07",
+     "city": "芝加哥",
+     "venue": "Thalia Hall",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-04-10",
+     "city": "多伦多",
+     "venue": "The Opera House",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-04-11",
+     "city": "蒙特利尔",
+     "venue": "Théâtre Beanfield",
+     "note": "北美巡演"
+    },
+    {
+     "date": "2027-04-13",
+     "city": "萨默维尔（波士顿）",
+     "venue": "Somerville Theatre",
+     "note": "北美巡演，之后可能还有场次"
+    },
+    {
+     "date": "2027-06-19",
+     "city": "伦敦",
+     "venue": "Barbican Hall",
+     "note": ""
+    }
+   ],
+   "shows_checked": "2026-11-18",
+   "shows_source": "mxdwn、JamBase、Songkick",
    "links": [
     {
      "id": "yura-yura-teikoku",
@@ -1712,76 +2377,54 @@
     "width": 57.9,
     "dots": [
      {
-      "at": 42.11,
-      "year": 1994,
-      "title": "The First Question Award",
-      "heard": false
+      "at": 36.84,
+      "year": 1991,
+      "title": "名字来自《人猿星球》"
      },
      {
-      "at": 43.86,
-      "year": 1995,
-      "title": "69/96",
-      "heard": false
+      "at": 38.6,
+      "year": 1992,
+      "title": "在 Polystar 旗下办厂牌 Trattoria"
      },
      {
-      "at": 45.61,
-      "year": 1996,
-      "title": "96/69",
-      "heard": false
-     },
-     {
-      "at": 47.37,
-      "year": 1997,
-      "title": "Fantasma",
-      "heard": false
+      "at": 49.12,
+      "year": 1998,
+      "title": "把年度第一给了 ゆらゆら帝国"
      },
      {
       "at": 54.39,
       "year": 2001,
-      "title": "Point",
-      "heard": true
+      "title": "从中目黑到任何地方"
      },
      {
       "at": 57.89,
       "year": 2003,
-      "title": "Five Point One",
-      "heard": false
+      "title": "每一首歌都有影像"
      },
      {
-      "at": 63.16,
-      "year": 2006,
-      "title": "Sensuous",
-      "heard": false
+      "at": 75.44,
+      "year": 2013,
+      "title": "给动画和电视做音乐"
      },
      {
       "at": 82.46,
       "year": 2017,
-      "title": "Mellow Waves",
-      "heard": false
+      "title": "时隔 11 年的《Mellow Waves》"
      },
      {
-      "at": 84.21,
-      "year": 2018,
-      "title": "Ripple Waves",
-      "heard": false
+      "at": 89.47,
+      "year": 2021,
+      "title": "东京奥运会开幕式风波"
      },
      {
       "at": 91.23,
       "year": 2022,
-      "title": "変わる消える (feat. mei ehara)",
-      "heard": false
+      "title": "〈変わる消える〉"
      },
      {
       "at": 92.98,
       "year": 2023,
-      "title": "夢中夢 -Dream In Dream-",
-      "heard": false
-     },
-     {
-      "at": 94.74,
-      "year": 2024,
-      "title": "Ethereal Essence",
-      "heard": false
+      "title": "《夢中夢》"
      }
     ]
    }
@@ -1802,6 +2445,7 @@
    "ended": null,
    "years": "2001 至今",
    "status": "like",
+   "status_label": "喜欢",
    "note": "听过《家の外》和《homely》。\n2001 年在长野县结成，一直以原村为据点。早期是受美国独立摇滚影响的双吉他乐队，2011 年的《homely》之后转向极简、柔和的迷幻。\n制作人石原洋和录音师中村宗一郎，正是ゆらゆら帝国用过的那组班底。",
    "added": "2026-11-19",
    "genres": [
@@ -1812,6 +2456,7 @@
    ],
    "dims": [
     {
+     "key": "genres",
      "label": "类型",
      "values": [
       "迷幻摇滚",
@@ -1821,6 +2466,7 @@
      ]
     },
     {
+     "key": "labels",
      "label": "厂牌",
      "values": [
       "OYA",
@@ -1831,6 +2477,32 @@
      ]
     },
     {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "出戸学",
+      "馬渕啓",
+      "勝浦隆嗣",
+      "清水隆史"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "石原洋"
+     ]
+    },
+    {
+     "key": "influences",
+     "label": "受谁影响",
+     "values": [
+      "Modest Mouse",
+      "Can"
+     ]
+    },
+    {
+     "key": "sound",
      "label": "声音",
      "values": [
       "重复律动",
@@ -1840,6 +2512,7 @@
      ]
     },
     {
+     "key": "moods",
      "label": "气质",
      "values": [
       "松弛",
@@ -1848,6 +2521,7 @@
      ]
     },
     {
+     "key": "themes",
      "label": "主题与文化关联",
      "values": [
       "舒适却悲惨的地方",
@@ -1855,12 +2529,14 @@
      ]
     },
     {
+     "key": "languages",
      "label": "语言",
      "values": [
       "日语"
      ]
     },
     {
+     "key": "x:动画",
      "label": "动画",
      "values": [
       "蒼天航路",
@@ -1875,6 +2551,140 @@
    },
    "photo_credit": "官方宣传照，摄影者与年份不详，取自 Deezer 艺人页，裁掉了四周的留白；非自由授权",
    "heard": 2,
+   "strip": {
+    "first": 2001,
+    "last": 2026,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 111.9,
+      "y": 37,
+      "year": 2005,
+      "title": "OGRE YOU ASSHOLE",
+      "heard": false
+     },
+     {
+      "x": 160.9,
+      "y": 37,
+      "year": 2007,
+      "title": "アルファベータ vs. ラムダ",
+      "heard": false
+     },
+     {
+      "x": 185.4,
+      "y": 37,
+      "year": 2008,
+      "title": "しらないあいずしらせる子",
+      "heard": false
+     },
+     {
+      "x": 209.8,
+      "y": 37,
+      "year": 2009,
+      "title": "ピンホール",
+      "heard": false
+     },
+     {
+      "x": 209.8,
+      "y": 27,
+      "year": 2009,
+      "title": "フォグランプ",
+      "heard": false
+     },
+     {
+      "x": 234.3,
+      "y": 37,
+      "year": 2010,
+      "title": "浮かれている人",
+      "heard": false
+     },
+     {
+      "x": 258.8,
+      "y": 37,
+      "year": 2011,
+      "title": "homely",
+      "heard": true
+     },
+     {
+      "x": 283.3,
+      "y": 37,
+      "year": 2012,
+      "title": "100年後",
+      "heard": false
+     },
+     {
+      "x": 307.8,
+      "y": 37,
+      "year": 2013,
+      "title": "confidential",
+      "heard": false
+     },
+     {
+      "x": 332.2,
+      "y": 37,
+      "year": 2014,
+      "title": "ペーパークラフト",
+      "heard": false
+     },
+     {
+      "x": 356.7,
+      "y": 37,
+      "year": 2015,
+      "title": "workshop",
+      "heard": false
+     },
+     {
+      "x": 381.2,
+      "y": 37,
+      "year": 2016,
+      "title": "ハンドルを放す前に",
+      "heard": false
+     },
+     {
+      "x": 405.7,
+      "y": 37,
+      "year": 2017,
+      "title": "workshop 2",
+      "heard": false
+     },
+     {
+      "x": 454.6,
+      "y": 37,
+      "year": 2019,
+      "title": "新しい人",
+      "heard": false
+     },
+     {
+      "x": 479.1,
+      "y": 37,
+      "year": 2020,
+      "title": "workshop 3",
+      "heard": false
+     },
+     {
+      "x": 552.6,
+      "y": 37,
+      "year": 2023,
+      "title": "家の外",
+      "heard": true
+     },
+     {
+      "x": 577.0,
+      "y": 37,
+      "year": 2024,
+      "title": "自然とコンピューター",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2026,
+      "title": "at LIQUIDROOM",
+      "heard": false
+     }
+    ]
+   },
    "releases": [
     {
      "title": "OGRE YOU ASSHOLE",
@@ -1888,7 +2698,8 @@
       "width": 400,
       "height": 397
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "アルファベータ vs. ラムダ",
@@ -1902,7 +2713,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "しらないあいずしらせる子",
@@ -1916,7 +2728,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 1,
+       "title": "石原洋和中村宗一郎加入"
+      }
+     ]
     },
     {
      "title": "ピンホール",
@@ -1930,7 +2748,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 2,
+       "title": "主流出道"
+      }
+     ]
     },
     {
      "title": "フォグランプ",
@@ -1944,7 +2768,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "浮かれている人",
@@ -1958,7 +2783,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "homely",
@@ -1982,6 +2808,16 @@
       "ふたつの段階",
       "マット",
       "羊と人"
+     ],
+     "stories": [
+      {
+       "index": 4,
+       "title": "《homely》：换了一种做法"
+      },
+      {
+       "index": 5,
+       "title": "〈ロープ〉和它的影像"
+      }
      ]
     },
     {
@@ -1996,7 +2832,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "confidential",
@@ -2010,7 +2847,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "ペーパークラフト",
@@ -2024,7 +2862,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 7,
+       "title": "三部曲：舒适却悲惨的地方"
+      }
+     ]
     },
     {
      "title": "workshop",
@@ -2038,7 +2882,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "ハンドルを放す前に",
@@ -2052,7 +2897,17 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 9,
+       "title": "实际上的第一次自己制作"
+      },
+      {
+       "index": 10,
+       "title": "小样被中村打了回来"
+      }
+     ]
     },
     {
      "title": "workshop 2",
@@ -2066,7 +2921,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "新しい人",
@@ -2080,7 +2936,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "workshop 3",
@@ -2094,7 +2951,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "家の外",
@@ -2113,6 +2971,12 @@
       "家の外",
       "ただ立ってる",
       "長い間"
+     ],
+     "stories": [
+      {
+       "index": 11,
+       "title": "《家の外》：合成器回来了"
+      }
      ]
     },
     {
@@ -2127,7 +2991,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 12,
+       "title": "《自然とコンピューター》：完整的不完整"
+      }
+     ]
     },
     {
      "title": "at LIQUIDROOM",
@@ -2141,7 +3011,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     }
    ],
    "people": [
@@ -2150,42 +3021,63 @@
      "role": "主唱、吉他",
      "years": "2001 至今",
      "note": "长野县原村出身，和馬渕啓是高中同学。参与乐队的作曲和作词，单曲〈動物的／人間的〉的封面出自他手。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "馬渕啓",
      "role": "吉他",
      "years": "至今",
      "note": "出戸的高中同学。给动画《Space Dandy》写过一首让出戸想起 Joe Meek 的曲子。",
-     "projects": []
+     "projects": [],
+     "stories": [
+      {
+       "index": 8,
+       "title": "给《Space Dandy》写歌"
+      }
+     ]
     },
     {
      "name": "勝浦隆嗣",
      "role": "鼓",
      "years": "2004 至今",
      "note": "2004 年 9 月因原鼓手西新太养病而来支援，2005 年成为正式成员。从学生时代就迷合成器，现场那台插满跳线的模块合成器是他的。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "清水隆史",
      "role": "贝斯",
      "years": "2011 至今",
      "note": "2011 年 8 月起以支援身份上台，2012 年 11 月成为正式成员。参与创办了长野市的 Neonhall。",
-     "projects": []
+     "projects": [],
+     "stories": [
+      {
+       "index": 6,
+       "title": "发行前后换了贝斯手"
+      }
+     ]
     },
     {
      "name": "平出規人",
      "role": "贝斯（前成员）",
      "years": "到 2011",
      "note": "原村出身，出戸的儿时朋友。2011 年 8 月 5 日的 ROCK IN JAPAN FESTIVAL 之后离队，现在是摄影师。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "西新太",
      "role": "鼓（前成员）",
      "years": "到 2004",
      "note": "最初的鼓手，因病离队，到 2010 年前后一直负责唱片封面等美术。乐队名就是 Modest Mouse 的贝斯手写在他手臂上的。",
-     "projects": []
+     "projects": [],
+     "stories": [
+      {
+       "index": 0,
+       "title": "名字是写在手臂上的"
+      }
+     ]
     },
     {
      "name": "石原洋",
@@ -2193,9 +3085,24 @@
      "years": "2008 到 2015",
      "note": "White Heaven 的核心人物，也是ゆらゆら帝国的制作人。从《しらないあいずしらせる子》开始参与，到《homely》才真正深入。",
      "projects": [
-      "White Heaven",
-      "The Stars",
-      "ゆらゆら帝国"
+      {
+       "name": "White Heaven",
+       "id": null
+      },
+      {
+       "name": "The Stars",
+       "id": null
+      },
+      {
+       "name": "ゆらゆら帝国",
+       "id": "yura-yura-teikoku"
+      }
+     ],
+     "stories": [
+      {
+       "index": 1,
+       "title": "石原洋和中村宗一郎加入"
+      }
      ]
     },
     {
@@ -2204,7 +3111,16 @@
      "years": "2008 至今",
      "note": "和石原洋同时加入。石原离开之后仍然负责录音、混音和母带，《自然とコンピューター》的合成器也是搬进他的录音室录的。",
      "projects": [
-      "ゆらゆら帝国"
+      {
+       "name": "ゆらゆら帝国",
+       "id": "yura-yura-teikoku"
+      }
+     ],
+     "stories": [
+      {
+       "index": 10,
+       "title": "小样被中村打了回来"
+      }
      ]
     }
    ],
@@ -2336,6 +3252,9 @@
      "url": "https://niewmedia.com/en/specials/oyacornelius_edymm_wrsbs/"
     }
    ],
+   "shows": [],
+   "shows_checked": "",
+   "shows_source": "",
    "links": [
     {
      "id": "yura-yura-teikoku",
@@ -2422,112 +3341,74 @@
     "width": 43.86,
     "dots": [
      {
-      "at": 61.4,
-      "year": 2005,
-      "title": "OGRE YOU ASSHOLE",
-      "heard": false
-     },
-     {
-      "at": 64.91,
-      "year": 2007,
-      "title": "アルファベータ vs. ラムダ",
-      "heard": false
+      "at": 54.39,
+      "year": 2001,
+      "title": "名字是写在手臂上的"
      },
      {
       "at": 66.67,
       "year": 2008,
-      "title": "しらないあいずしらせる子",
-      "heard": false
+      "title": "石原洋和中村宗一郎加入"
      },
      {
       "at": 68.42,
       "year": 2009,
-      "title": "ピンホール",
-      "heard": false
-     },
-     {
-      "at": 68.42,
-      "year": 2009,
-      "title": "フォグランプ",
-      "heard": false
+      "title": "主流出道"
      },
      {
       "at": 70.18,
       "year": 2010,
-      "title": "浮かれている人",
-      "heard": false
+      "title": "和 Wolf Parade 跑北美"
      },
      {
       "at": 71.93,
       "year": 2011,
-      "title": "homely",
-      "heard": true
+      "title": "《homely》：换了一种做法"
      },
      {
-      "at": 73.68,
-      "year": 2012,
-      "title": "100年後",
-      "heard": false
+      "at": 71.93,
+      "year": 2011,
+      "title": "〈ロープ〉和它的影像"
      },
      {
-      "at": 75.44,
-      "year": 2013,
-      "title": "confidential",
-      "heard": false
+      "at": 71.93,
+      "year": 2011,
+      "title": "发行前后换了贝斯手"
      },
      {
       "at": 77.19,
       "year": 2014,
-      "title": "ペーパークラフト",
-      "heard": false
+      "title": "三部曲：舒适却悲惨的地方"
      },
      {
-      "at": 78.95,
-      "year": 2015,
-      "title": "workshop",
-      "heard": false
+      "at": 77.19,
+      "year": 2014,
+      "title": "给《Space Dandy》写歌"
      },
      {
       "at": 80.7,
       "year": 2016,
-      "title": "ハンドルを放す前に",
-      "heard": false
+      "title": "实际上的第一次自己制作"
      },
      {
-      "at": 82.46,
-      "year": 2017,
-      "title": "workshop 2",
-      "heard": false
-     },
-     {
-      "at": 85.96,
-      "year": 2019,
-      "title": "新しい人",
-      "heard": false
-     },
-     {
-      "at": 87.72,
-      "year": 2020,
-      "title": "workshop 3",
-      "heard": false
+      "at": 80.7,
+      "year": 2016,
+      "title": "小样被中村打了回来"
      },
      {
       "at": 92.98,
       "year": 2023,
-      "title": "家の外",
-      "heard": true
+      "title": "《家の外》：合成器回来了"
      },
      {
       "at": 94.74,
       "year": 2024,
-      "title": "自然とコンピューター",
-      "heard": false
+      "title": "《自然とコンピューター》：完整的不完整"
      },
      {
-      "at": 98.25,
-      "year": 2026,
-      "title": "at LIQUIDROOM",
-      "heard": false
+      "at": 96.49,
+      "year": 2025,
+      "title": "在原村和 Cornelius 同台"
      }
     ]
    }
@@ -2545,6 +3426,7 @@
    "ended": null,
    "years": "2013 至今",
    "status": "like",
+   "status_label": "喜欢",
    "note": "听过《Careful》。\n2013 年成立于佐治亚州萨凡纳，后来搬到马萨诸塞州北安普敦。两个人都是电影学院出身。",
    "added": "2026-11-18",
    "genres": [
@@ -2555,6 +3437,7 @@
    ],
    "dims": [
     {
+     "key": "genres",
      "label": "类型",
      "values": [
       "暗潮",
@@ -2564,6 +3447,7 @@
      ]
     },
     {
+     "key": "labels",
      "label": "厂牌",
      "values": [
       "Nude Club",
@@ -2573,6 +3457,33 @@
      ]
     },
     {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "Jae Matthews",
+      "Augustus Muller"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "Augustus Muller",
+      "Jordan Romero"
+     ]
+    },
+    {
+     "key": "influences",
+     "label": "受谁影响",
+     "values": [
+      "Suicide",
+      "DAF",
+      "Yello",
+      "Sleep Chamber"
+     ]
+    },
+    {
+     "key": "sound",
      "label": "声音",
      "values": [
       "合成器",
@@ -2582,6 +3493,7 @@
      ]
     },
     {
+     "key": "moods",
      "label": "气质",
      "values": [
       "冷峻",
@@ -2590,6 +3502,7 @@
      ]
     },
     {
+     "key": "themes",
      "label": "主题与文化关联",
      "values": [
       "大卫·林奇",
@@ -2598,12 +3511,14 @@
      ]
     },
     {
+     "key": "languages",
      "label": "语言",
      "values": [
       "英语"
      ]
     },
     {
+     "key": "x:电影参照",
      "label": "电影参照",
      "values": [
       "Lost Highway",
@@ -2619,6 +3534,84 @@
    },
    "photo_credit": "GRIT PHOTOZINE，2014-02-21 现场，CC BY 2.0，Wikimedia Commons：File:Boy Harsher live in 2014 2.jpg",
    "heard": 1,
+   "strip": {
+    "first": 2013,
+    "last": 2026,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 61.1,
+      "y": 37,
+      "year": 2014,
+      "title": "Lesser Man",
+      "heard": false
+     },
+     {
+      "x": 108.2,
+      "y": 37,
+      "year": 2015,
+      "title": "Pain",
+      "heard": false
+     },
+     {
+      "x": 155.2,
+      "y": 37,
+      "year": 2016,
+      "title": "Yr Body Is Nothing",
+      "heard": false
+     },
+     {
+      "x": 202.3,
+      "y": 37,
+      "year": 2017,
+      "title": "Country Girl",
+      "heard": false
+     },
+     {
+      "x": 249.4,
+      "y": 37,
+      "year": 2018,
+      "title": "Pain II",
+      "heard": false
+     },
+     {
+      "x": 296.5,
+      "y": 37,
+      "year": 2019,
+      "title": "Careful",
+      "heard": true
+     },
+     {
+      "x": 296.5,
+      "y": 27,
+      "year": 2019,
+      "title": "Careful Remixes, etc.",
+      "heard": false
+     },
+     {
+      "x": 296.5,
+      "y": 17,
+      "year": 2019,
+      "title": "Country Girl Uncut",
+      "heard": false
+     },
+     {
+      "x": 437.7,
+      "y": 37,
+      "year": 2022,
+      "title": "The Runner (Original Soundtrack)",
+      "heard": false
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2026,
+      "title": "Get Mean",
+      "heard": false
+     }
+    ]
+   },
    "releases": [
     {
      "title": "Lesser Man",
@@ -2632,7 +3625,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 1,
+       "title": "改名，以及〈Pain〉"
+      }
+     ]
     },
     {
      "title": "Pain",
@@ -2646,7 +3645,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Yr Body Is Nothing",
@@ -2660,7 +3660,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Country Girl",
@@ -2674,7 +3675,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Pain II",
@@ -2688,7 +3690,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 2,
+       "title": "自己办厂牌 Nude Club"
+      }
+     ]
     },
     {
      "title": "Careful",
@@ -2713,6 +3721,12 @@
       "Crush",
       "Lost",
       "Careful"
+     ],
+     "stories": [
+      {
+       "index": 3,
+       "title": "《Careful》背后的那段日子"
+      }
      ]
     },
     {
@@ -2727,7 +3741,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "Country Girl Uncut",
@@ -2741,7 +3756,8 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": []
     },
     {
      "title": "The Runner (Original Soundtrack)",
@@ -2755,7 +3771,13 @@
       "width": 400,
       "height": 400
      },
-     "tracks": []
+     "tracks": [],
+     "stories": [
+      {
+       "index": 5,
+       "title": "新歌听起来像配乐，于是拍了一部电影"
+      }
+     ]
     },
     {
      "title": "Get Mean",
@@ -2782,6 +3804,12 @@
       "Pray 4 Me",
       "Falling ~",
       "Bleed"
+     ],
+     "stories": [
+      {
+       "index": 6,
+       "title": "《Get Mean》：一张分手之后的公路专辑"
+      }
      ]
     }
    ],
@@ -2791,7 +3819,13 @@
      "role": "主唱、作词",
      "years": "2013 至今",
      "note": "写小说出身。乐队最早的形态就是她朗读自己的短篇，Muller 现场配乐。执导过〈Country Girl〉的录影带，和 Muller 一起导演了《The Runner》。",
-     "projects": []
+     "projects": [],
+     "stories": [
+      {
+       "index": 3,
+       "title": "《Careful》背后的那段日子"
+      }
+     ]
     },
     {
      "name": "Augustus Muller",
@@ -2799,7 +3833,16 @@
      "years": "2013 至今",
      "note": "大家叫他 Gus。他点名 Sleep Chamber、Suicide、DAF 和 Yello 是乐队早期的音乐影响。2020 年以个人名义发行配乐专辑《Machine Learning Experiments》。",
      "projects": [
-      "Safe Mind"
+      {
+       "name": "Safe Mind",
+       "id": null
+      }
+     ],
+     "stories": [
+      {
+       "index": 4,
+       "title": "Muller 的配乐专辑"
+      }
      ]
     },
     {
@@ -2807,7 +3850,8 @@
      "role": "联合制作",
      "years": "",
      "note": "《Careful》的联合制作人。",
-     "projects": []
+     "projects": [],
+     "stories": []
     },
     {
      "name": "Kris Esfandiari",
@@ -2815,8 +3859,12 @@
      "years": "",
      "note": "King Woman 的主唱。更早出演过〈Motion〉的录影带。",
      "projects": [
-      "King Woman"
-     ]
+      {
+       "name": "King Woman",
+       "id": null
+      }
+     ],
+     "stories": []
     },
     {
      "name": "Cooper B. Handy",
@@ -2824,8 +3872,12 @@
      "years": "",
      "note": "以 Lucy 的名字做音乐，在《The Runner》原声里献声，也出现在片中。",
      "projects": [
-      "Lucy"
-     ]
+      {
+       "name": "Lucy",
+       "id": null
+      }
+     ],
+     "stories": []
     }
    ],
    "stories": [
@@ -2893,6 +3945,190 @@
      "url": "https://www.thefader.com/2026/07/21/boy-harsher-new-album-announcement-get-mean-release-date-artwork-details"
     }
    ],
+   "shows": [
+    {
+     "date": "2026-09-25",
+     "city": "哈德逊（纽约州）",
+     "venue": "Basilica Hudson",
+     "note": "The Heartbreak Tour 首站"
+    },
+    {
+     "date": "2026-09-27",
+     "city": "波士顿",
+     "venue": "Royale",
+     "note": ""
+    },
+    {
+     "date": "2026-09-29",
+     "city": "蒙特利尔",
+     "venue": "M Telus",
+     "note": ""
+    },
+    {
+     "date": "2026-09-30",
+     "city": "多伦多",
+     "venue": "Danforth Music Hall",
+     "note": ""
+    },
+    {
+     "date": "2026-10-01",
+     "city": "底特律",
+     "venue": "Majestic",
+     "note": ""
+    },
+    {
+     "date": "2026-10-09",
+     "city": "波特兰",
+     "venue": "Revolution Hall",
+     "note": ""
+    },
+    {
+     "date": "2026-10-10",
+     "city": "波特兰",
+     "venue": "Revolution Hall",
+     "note": ""
+    },
+    {
+     "date": "2026-10-11",
+     "city": "西雅图",
+     "venue": "The Showbox",
+     "note": ""
+    },
+    {
+     "date": "2026-10-12",
+     "city": "西雅图",
+     "venue": "The Showbox",
+     "note": ""
+    },
+    {
+     "date": "2026-10-13",
+     "city": "温哥华",
+     "venue": "The Pearl",
+     "note": ""
+    },
+    {
+     "date": "2026-10-15",
+     "city": "奥克兰",
+     "venue": "Fox Theater",
+     "note": ""
+    },
+    {
+     "date": "2026-10-16",
+     "city": "洛杉矶",
+     "venue": "Hollywood Palladium",
+     "note": ""
+    },
+    {
+     "date": "2026-10-17",
+     "city": "德尔马",
+     "venue": "The Sound",
+     "note": ""
+    },
+    {
+     "date": "2026-10-18",
+     "city": "圣安娜",
+     "venue": "The Observatory Festival Grounds",
+     "note": "为 Turnstile 暖场"
+    },
+    {
+     "date": "2026-10-20",
+     "city": "拉斯维加斯",
+     "venue": "House of Blues",
+     "note": ""
+    },
+    {
+     "date": "2026-10-21",
+     "city": "菲尼克斯",
+     "venue": "Van Buren",
+     "note": ""
+    },
+    {
+     "date": "2026-10-24",
+     "city": "沃思堡",
+     "venue": "Sick New World",
+     "note": "音乐节"
+    },
+    {
+     "date": "2026-10-26",
+     "city": "新奥尔良",
+     "venue": "Republic",
+     "note": ""
+    },
+    {
+     "date": "2026-10-27",
+     "city": "亚特兰大",
+     "venue": "Variety Playhouse",
+     "note": ""
+    },
+    {
+     "date": "2026-10-28",
+     "city": "阿什维尔",
+     "venue": "The Orange Peel",
+     "note": ""
+    },
+    {
+     "date": "2026-10-30",
+     "city": "华盛顿",
+     "venue": "Howard Theatre",
+     "note": ""
+    },
+    {
+     "date": "2026-11-05",
+     "city": "纽约",
+     "venue": "Knockdown Center",
+     "note": "北美段末场"
+    },
+    {
+     "date": "2026-11-26",
+     "city": "阿姆斯特丹",
+     "venue": "Paradiso",
+     "note": ""
+    },
+    {
+     "date": "2026-11-27",
+     "city": "里尔",
+     "venue": "L'Aéronef",
+     "note": ""
+    },
+    {
+     "date": "2026-11-28",
+     "city": "南特",
+     "venue": "Warehouse",
+     "note": "嘉宾 Choir Boy"
+    },
+    {
+     "date": "2026-11-29",
+     "city": "伦敦",
+     "venue": "Roundhouse",
+     "note": "嘉宾 Choir Boy"
+    },
+    {
+     "date": "2026-12-01",
+     "city": "曼彻斯特",
+     "venue": "O2 Ritz",
+     "note": "嘉宾 Choir Boy"
+    },
+    {
+     "date": "2026-12-02",
+     "city": "格拉斯哥",
+     "venue": "SWG3 TV Studio",
+     "note": "嘉宾 Choir Boy"
+    },
+    {
+     "date": "2026-12-03",
+     "city": "布里斯托",
+     "venue": "Electric Bristol",
+     "note": ""
+    },
+    {
+     "date": "2026-12-04",
+     "city": "安特卫普",
+     "venue": "De Roma",
+     "note": "巡演末场"
+    }
+   ],
+   "shows_checked": "2026-11-18",
+   "shows_source": "Side-Line、Northern Transmissions、JamBase、Stereoboard，场次不完整",
    "links": [
     {
      "id": "ogre-you-asshole",
@@ -2949,67 +4185,808 @@
     "width": 22.81,
     "dots": [
      {
+      "at": 75.44,
+      "year": 2013,
+      "title": "从阁楼里的朗读会开始"
+     },
+     {
       "at": 77.19,
       "year": 2014,
-      "title": "Lesser Man",
-      "heard": false
-     },
-     {
-      "at": 78.95,
-      "year": 2015,
-      "title": "Pain",
-      "heard": false
-     },
-     {
-      "at": 80.7,
-      "year": 2016,
-      "title": "Yr Body Is Nothing",
-      "heard": false
-     },
-     {
-      "at": 82.46,
-      "year": 2017,
-      "title": "Country Girl",
-      "heard": false
+      "title": "改名，以及〈Pain〉"
      },
      {
       "at": 84.21,
       "year": 2018,
-      "title": "Pain II",
-      "heard": false
+      "title": "自己办厂牌 Nude Club"
      },
      {
       "at": 85.96,
       "year": 2019,
-      "title": "Careful",
-      "heard": true
+      "title": "《Careful》背后的那段日子"
      },
      {
-      "at": 85.96,
-      "year": 2019,
-      "title": "Careful Remixes, etc.",
-      "heard": false
-     },
-     {
-      "at": 85.96,
-      "year": 2019,
-      "title": "Country Girl Uncut",
-      "heard": false
+      "at": 87.72,
+      "year": 2020,
+      "title": "Muller 的配乐专辑"
      },
      {
       "at": 91.23,
       "year": 2022,
-      "title": "The Runner (Original Soundtrack)",
-      "heard": false
+      "title": "新歌听起来像配乐，于是拍了一部电影"
      },
      {
       "at": 98.25,
       "year": 2026,
-      "title": "Get Mean",
-      "heard": false
+      "title": "《Get Mean》：一张分手之后的公路专辑"
      }
     ]
    }
   }
- ]
+ ],
+ "index": {
+  "dims": [
+   {
+    "key": "country",
+    "label": "地区"
+   },
+   {
+    "key": "city",
+    "label": "城市"
+   },
+   {
+    "key": "genres",
+    "label": "类型"
+   },
+   {
+    "key": "scenes",
+    "label": "场景与运动"
+   },
+   {
+    "key": "labels",
+    "label": "厂牌"
+   },
+   {
+    "key": "members",
+    "label": "成员"
+   },
+   {
+    "key": "producers",
+    "label": "制作人"
+   },
+   {
+    "key": "influences",
+    "label": "受谁影响"
+   },
+   {
+    "key": "sound",
+    "label": "声音"
+   },
+   {
+    "key": "moods",
+    "label": "气质"
+   },
+   {
+    "key": "themes",
+    "label": "主题与文化关联"
+   },
+   {
+    "key": "languages",
+    "label": "语言"
+   },
+   {
+    "key": "source",
+    "label": "怎么认识的"
+   },
+   {
+    "key": "x:电影参照",
+    "label": "电影参照"
+   },
+   {
+    "key": "x:翻唱过",
+    "label": "翻唱过"
+   },
+   {
+    "key": "x:动画",
+    "label": "动画"
+   }
+  ],
+  "bands": [
+   {
+    "id": "sun-city-girls",
+    "name": "Sun City Girls",
+    "where": "菲尼克斯，美国",
+    "years": "1979–2007",
+    "formed": 1979,
+    "ended": 2007,
+    "status": "like",
+    "note": "听过《Funeral Mariachi》。\n起于亚利桑那州菲尼克斯，九十年代初搬到西雅图。Bishop 兄弟加鼓手 Charles Gocher 的三人阵容维持了二十多年。",
+    "values": {
+     "country": [
+      "美国"
+     ],
+     "city": [
+      "菲尼克斯"
+     ],
+     "genres": [
+      "实验摇滚",
+      "迷幻摇滚",
+      "前卫民谣",
+      "自由即兴"
+     ],
+     "scenes": [
+      "菲尼克斯八十年代独立场景"
+     ],
+     "labels": [
+      "Abduction",
+      "Placebo",
+      "Majora",
+      "Eclipse",
+      "Amarillo"
+     ],
+     "members": [
+      "Alan Bishop",
+      "Richard Bishop",
+      "Charles Gocher"
+     ],
+     "producers": [
+      "Alan Bishop"
+     ],
+     "sound": [
+      "世界音乐采撷",
+      "即兴",
+      "西部片吉他"
+     ],
+     "moods": [
+      "诡异",
+      "哀悼",
+      "戏谑"
+     ],
+     "themes": [
+      "莫里康内",
+      "世界音乐",
+      "仪式与装扮"
+     ],
+     "languages": [
+      "英语"
+     ],
+     "x:电影参照": [
+      "Maddalena",
+      "Mister Lonely"
+     ],
+     "x:翻唱过": [
+      "Ennio Morricone"
+     ]
+    },
+    "counts": {
+     "releases": 10,
+     "people": 5,
+     "stories": 8
+    },
+    "stories": [
+     {
+      "year": 1979,
+      "title": "名字来自一个退休社区"
+     },
+     {
+      "year": 1982,
+      "title": "和地下丝绒的鼓手组过乐队"
+     },
+     {
+      "year": 1993,
+      "title": "搬到西雅图，办自己的厂牌"
+     },
+     {
+      "year": 2007,
+      "title": "有人离开，乐队就结束"
+     },
+     {
+      "year": 2008,
+      "title": "悼念巡演，和一部哈莫尼·科林的电影"
+     },
+     {
+      "year": 2010,
+      "title": "《Funeral Mariachi》：最规整的一张成了告别"
+     },
+     {
+      "year": 2010,
+      "title": "〈Come Maddalena〉的来处"
+     }
+    ],
+    "links": [
+     {
+      "id": "yura-yura-teikoku",
+      "score": 3,
+      "reasons": [
+       "都是 迷幻摇滚",
+       "气质都偏 诡异"
+      ]
+     },
+     {
+      "id": "ogre-you-asshole",
+      "score": 2,
+      "reasons": [
+       "都是 迷幻摇滚"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "yura-yura-teikoku",
+    "name": "ゆらゆら帝国（摇摆帝国）",
+    "where": "东京，日本",
+    "years": "1989–2010",
+    "formed": 1989,
+    "ended": 2010,
+    "status": "like",
+    "note": "2026 年 11 月正在听《美しい》，之前听过《空洞です》和《つぎの夜へ》。\n《美しい》是 2007 年 7 月的单曲，体量接近迷你专辑，其中两首后来以专辑版本收进《空洞です》。\n1989 年由坂本慎太郎组建，1997 年柴田一郎加入后定型为三人编制，2010 年以“乐队已经完成”为由解散。",
+    "values": {
+     "country": [
+      "日本"
+     ],
+     "city": [
+      "东京"
+     ],
+     "genres": [
+      "迷幻摇滚",
+      "车库摇滚"
+     ],
+     "scenes": [
+      "高円寺地下"
+     ],
+     "labels": [
+      "Sony Music Associated Records",
+      "MIDI",
+      "Captain Trip Records",
+      "DFA",
+      "Mesh-Key"
+     ],
+     "members": [
+      "坂本慎太郎",
+      "亀川千代",
+      "柴田一郎"
+     ],
+     "producers": [
+      "石原洋"
+     ],
+     "sound": [
+      "极简留白",
+      "重复律动",
+      "法兹吉他"
+     ],
+     "moods": [
+      "虚空",
+      "松弛",
+      "诡异"
+     ],
+     "themes": [
+      "日语原创摇滚",
+      "水木茂"
+     ],
+     "languages": [
+      "日语"
+     ],
+     "x:翻唱过": [
+      "Suicide"
+     ]
+    },
+    "counts": {
+     "releases": 19,
+     "people": 5,
+     "stories": 12
+    },
+    "stories": [
+     {
+      "year": 1989,
+      "title": "以“日语原创摇滚”为名"
+     },
+     {
+      "year": 1998,
+      "title": "《3×3×3》与 Cornelius 的年度第一"
+     },
+     {
+      "year": 2000,
+      "title": "一首迷幻摇滚成了综艺片头曲"
+     },
+     {
+      "year": 2003,
+      "title": "同一天发行的双生专辑"
+     },
+     {
+      "year": 2005,
+      "title": "翻唱 Suicide"
+     },
+     {
+      "year": 2007,
+      "title": "《美しい》是《空洞です》的前奏"
+     },
+     {
+      "year": 2009,
+      "title": "DFA 厂牌里最不像 DFA 的一张"
+     },
+     {
+      "year": 2010,
+      "title": "因为“完成了”而解散"
+     },
+     {
+      "year": 2011,
+      "title": "解散之后的坂本慎太郎"
+     },
+     {
+      "year": 2017,
+      "title": "坂本慎太郎为 Cornelius 写词"
+     },
+     {
+      "year": 2024,
+      "title": "亀川千代去世"
+     }
+    ],
+    "links": [
+     {
+      "id": "ogre-you-asshole",
+      "score": 22.5,
+      "reasons": [
+       "同一组幕后班底：制作人石原洋，录音师中村宗一郎",
+       "石原洋 把两边连在一起",
+       "同样来自日本",
+       "都是 迷幻摇滚",
+       "同一位制作人 石原洋",
+       "声音上都有 极简留白、重复律动",
+       "气质都偏 松弛",
+       "都用日语演唱",
+       "都通向 坂本慎太郎（个人）、White Heaven、Cornelius"
+      ]
+     },
+     {
+      "id": "cornelius",
+      "score": 12.5,
+      "reasons": [
+       "小山田圭吾把《3×3×3》选为年度第一",
+       "坂本慎太郎 把两边连在一起",
+       "同在东京",
+       "声音上都有 极简留白",
+       "都用日语演唱"
+      ]
+     },
+     {
+      "id": "boy-harsher",
+      "score": 4,
+      "reasons": [
+       "声音上都有 极简留白、重复律动",
+       "都通向 Suicide"
+      ]
+     },
+     {
+      "id": "sun-city-girls",
+      "score": 3,
+      "reasons": [
+       "都是 迷幻摇滚",
+       "气质都偏 诡异"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "cornelius",
+    "name": "Cornelius",
+    "where": "东京，日本",
+    "years": "1993 至今",
+    "formed": 1993,
+    "ended": null,
+    "status": "like",
+    "note": "最喜欢的专辑是《Point》。\nCornelius 是小山田圭吾一个人的项目，现场时才有乐队。",
+    "values": {
+     "country": [
+      "日本"
+     ],
+     "city": [
+      "东京"
+     ],
+     "genres": [
+      "涩谷系",
+      "实验流行",
+      "电子"
+     ],
+     "scenes": [
+      "涩谷系"
+     ],
+     "labels": [
+      "Trattoria",
+      "Polystar",
+      "Matador",
+      "Warner Music Japan"
+     ],
+     "members": [
+      "小山田圭吾"
+     ],
+     "producers": [
+      "小山田圭吾"
+     ],
+     "sound": [
+      "采样拼贴",
+      "自然声",
+      "极简留白",
+      "影像同步"
+     ],
+     "moods": [
+      "明亮",
+      "精密"
+     ],
+     "themes": [
+      "人猿星球"
+     ],
+     "languages": [
+      "日语",
+      "英语"
+     ],
+     "x:翻唱过": [
+      "Ary Barroso"
+     ]
+    },
+    "counts": {
+     "releases": 12,
+     "people": 5,
+     "stories": 10
+    },
+    "stories": [
+     {
+      "year": 1991,
+      "title": "名字来自《人猿星球》"
+     },
+     {
+      "year": 1992,
+      "title": "在 Polystar 旗下办厂牌 Trattoria"
+     },
+     {
+      "year": 1998,
+      "title": "把年度第一给了 ゆらゆら帝国"
+     },
+     {
+      "year": 2001,
+      "title": "从中目黑到任何地方"
+     },
+     {
+      "year": 2003,
+      "title": "每一首歌都有影像"
+     },
+     {
+      "year": 2013,
+      "title": "给动画和电视做音乐"
+     },
+     {
+      "year": 2017,
+      "title": "时隔 11 年的《Mellow Waves》"
+     },
+     {
+      "year": 2021,
+      "title": "东京奥运会开幕式风波"
+     },
+     {
+      "year": 2022,
+      "title": "〈変わる消える〉"
+     },
+     {
+      "year": 2023,
+      "title": "《夢中夢》"
+     }
+    ],
+    "links": [
+     {
+      "id": "yura-yura-teikoku",
+      "score": 12.5,
+      "reasons": [
+       "小山田圭吾把《3×3×3》选为年度第一",
+       "坂本慎太郎 把两边连在一起",
+       "同在东京",
+       "声音上都有 极简留白",
+       "都用日语演唱"
+      ]
+     },
+     {
+      "id": "ogre-you-asshole",
+      "score": 6.5,
+      "reasons": [
+       "2025 年在原村的 DELAY 同台；出戸高中时从 Matador 的合辑里第一次听到他",
+       "同样来自日本",
+       "声音上都有 极简留白",
+       "都用日语演唱"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ogre-you-asshole",
+    "name": "Ogre You Asshole",
+    "where": "长野，日本",
+    "years": "2001 至今",
+    "formed": 2001,
+    "ended": null,
+    "status": "like",
+    "note": "听过《家の外》和《homely》。\n2001 年在长野县结成，一直以原村为据点。早期是受美国独立摇滚影响的双吉他乐队，2011 年的《homely》之后转向极简、柔和的迷幻。\n制作人石原洋和录音师中村宗一郎，正是ゆらゆら帝国用过的那组班底。",
+    "values": {
+     "country": [
+      "日本"
+     ],
+     "city": [
+      "长野"
+     ],
+     "genres": [
+      "迷幻摇滚",
+      "独立摇滚",
+      "Krautrock",
+      "后朋克"
+     ],
+     "labels": [
+      "OYA",
+      "VAP",
+      "P-VINE",
+      "花鏡",
+      "Office Rope"
+     ],
+     "members": [
+      "出戸学",
+      "馬渕啓",
+      "勝浦隆嗣",
+      "清水隆史"
+     ],
+     "producers": [
+      "石原洋"
+     ],
+     "influences": [
+      "Modest Mouse",
+      "Can"
+     ],
+     "sound": [
+      "重复律动",
+      "极简留白",
+      "模拟合成器",
+      "双吉他"
+     ],
+     "moods": [
+      "松弛",
+      "疏离",
+      "不安"
+     ],
+     "themes": [
+      "舒适却悲惨的地方",
+      "人与机器"
+     ],
+     "languages": [
+      "日语"
+     ],
+     "x:动画": [
+      "蒼天航路",
+      "Space Dandy"
+     ]
+    },
+    "counts": {
+     "releases": 18,
+     "people": 8,
+     "stories": 14
+    },
+    "stories": [
+     {
+      "year": 2001,
+      "title": "名字是写在手臂上的"
+     },
+     {
+      "year": 2008,
+      "title": "石原洋和中村宗一郎加入"
+     },
+     {
+      "year": 2009,
+      "title": "主流出道"
+     },
+     {
+      "year": 2010,
+      "title": "和 Wolf Parade 跑北美"
+     },
+     {
+      "year": 2011,
+      "title": "《homely》：换了一种做法"
+     },
+     {
+      "year": 2011,
+      "title": "〈ロープ〉和它的影像"
+     },
+     {
+      "year": 2011,
+      "title": "发行前后换了贝斯手"
+     },
+     {
+      "year": 2014,
+      "title": "三部曲：舒适却悲惨的地方"
+     },
+     {
+      "year": 2014,
+      "title": "给《Space Dandy》写歌"
+     },
+     {
+      "year": 2016,
+      "title": "实际上的第一次自己制作"
+     },
+     {
+      "year": 2016,
+      "title": "小样被中村打了回来"
+     },
+     {
+      "year": 2023,
+      "title": "《家の外》：合成器回来了"
+     },
+     {
+      "year": 2024,
+      "title": "《自然とコンピューター》：完整的不完整"
+     },
+     {
+      "year": 2025,
+      "title": "在原村和 Cornelius 同台"
+     }
+    ],
+    "links": [
+     {
+      "id": "yura-yura-teikoku",
+      "score": 22.5,
+      "reasons": [
+       "同一组幕后班底：制作人石原洋，录音师中村宗一郎",
+       "石原洋 把两边连在一起",
+       "同样来自日本",
+       "都是 迷幻摇滚",
+       "同一位制作人 石原洋",
+       "声音上都有 重复律动、极简留白",
+       "气质都偏 松弛",
+       "都用日语演唱",
+       "都通向 Cornelius、坂本慎太郎（个人）、White Heaven"
+      ]
+     },
+     {
+      "id": "cornelius",
+      "score": 6.5,
+      "reasons": [
+       "2025 年在原村的 DELAY 同台；出戸高中时从 Matador 的合辑里第一次听到他",
+       "同样来自日本",
+       "声音上都有 极简留白",
+       "都用日语演唱"
+      ]
+     },
+     {
+      "id": "boy-harsher",
+      "score": 5,
+      "reasons": [
+       "声音上都有 重复律动、极简留白",
+       "气质都偏 不安",
+       "都通向 DAF"
+      ]
+     },
+     {
+      "id": "sun-city-girls",
+      "score": 2,
+      "reasons": [
+       "都是 迷幻摇滚"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "boy-harsher",
+    "name": "Boy Harsher",
+    "where": "北安普敦，美国",
+    "years": "2013 至今",
+    "formed": 2013,
+    "ended": null,
+    "status": "like",
+    "note": "听过《Careful》。\n2013 年成立于佐治亚州萨凡纳，后来搬到马萨诸塞州北安普敦。两个人都是电影学院出身。",
+    "values": {
+     "country": [
+      "美国"
+     ],
+     "city": [
+      "北安普敦"
+     ],
+     "genres": [
+      "暗潮",
+      "合成器流行",
+      "极简浪潮",
+      "EBM"
+     ],
+     "labels": [
+      "Nude Club",
+      "DKA",
+      "Atlantic",
+      "Sacred Bones"
+     ],
+     "members": [
+      "Jae Matthews",
+      "Augustus Muller"
+     ],
+     "producers": [
+      "Augustus Muller",
+      "Jordan Romero"
+     ],
+     "influences": [
+      "Suicide",
+      "DAF",
+      "Yello",
+      "Sleep Chamber"
+     ],
+     "sound": [
+      "合成器",
+      "鼓机",
+      "极简留白",
+      "重复律动"
+     ],
+     "moods": [
+      "冷峻",
+      "欲望",
+      "不安"
+     ],
+     "themes": [
+      "大卫·林奇",
+      "恐怖片",
+      "公路"
+     ],
+     "languages": [
+      "英语"
+     ],
+     "x:电影参照": [
+      "Lost Highway",
+      "Possession",
+      "Blood Simple"
+     ]
+    },
+    "counts": {
+     "releases": 10,
+     "people": 5,
+     "stories": 7
+    },
+    "stories": [
+     {
+      "year": 2013,
+      "title": "从阁楼里的朗读会开始"
+     },
+     {
+      "year": 2014,
+      "title": "改名，以及〈Pain〉"
+     },
+     {
+      "year": 2018,
+      "title": "自己办厂牌 Nude Club"
+     },
+     {
+      "year": 2019,
+      "title": "《Careful》背后的那段日子"
+     },
+     {
+      "year": 2020,
+      "title": "Muller 的配乐专辑"
+     },
+     {
+      "year": 2022,
+      "title": "新歌听起来像配乐，于是拍了一部电影"
+     },
+     {
+      "year": 2026,
+      "title": "《Get Mean》：一张分手之后的公路专辑"
+     }
+    ],
+    "links": [
+     {
+      "id": "ogre-you-asshole",
+      "score": 5,
+      "reasons": [
+       "声音上都有 极简留白、重复律动",
+       "气质都偏 不安",
+       "都通向 DAF"
+      ]
+     },
+     {
+      "id": "yura-yura-teikoku",
+      "score": 4,
+      "reasons": [
+       "声音上都有 极简留白、重复律动",
+       "都通向 Suicide"
+      ]
+     }
+    ]
+   }
+  ]
+ }
 }
