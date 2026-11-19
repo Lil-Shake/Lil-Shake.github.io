@@ -16,3 +16,6 @@ main:
 
   - title: "Films"
     url: /films/
+
+  - title: "Music"
+    url: /music/

@@ -1,0 +1,572 @@
+/* Music page. Loaded on top of site.css.
+   Class names, ids and data-view are shared with assets/js/music.js. */
+
+.music {
+  --tl-name: 236px;
+  --tl-years: 96px;
+  --tl-row: 38px;
+  --dot: 9px;
+  padding-bottom: 24px;
+}
+
+/* With JS the page shows either the index or one band; without it, everything in order. */
+.music.is-js[data-view="index"] .music-details,
+.music.is-js[data-view="band"] .music-index,
+.music.is-js[data-view="band"] .pg-head,
+.music.is-js[data-view="band"] .music-band:not(.is-open) { display: none; }
+
+.music.is-js[data-view="band"] .music-band { padding-top: 32px; }
+
+/* ---- Overview ---- */
+
+.music-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.music-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 0 20px;
+  border-left: 1px solid var(--rule);
+}
+
+.music-stat:first-child { padding-left: 0; border-left: 0; }
+
+.music-stat span {
+  font-family: var(--sans);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.music-stat strong {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.music-stat strong.music-stat-small {
+  padding: 6px 0 4px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.music-stat em {
+  overflow: hidden;
+  font-family: var(--sans);
+  font-size: var(--fs-small);
+  font-style: normal;
+  color: var(--ink-soft);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- Timeline: one row per band, a bar for its active years, a dot per release ---- */
+
+.music-tl { position: relative; padding-top: 26px; }
+
+.music-tl-ticks {
+  position: absolute;
+  inset: 0 var(--tl-years) 0 var(--tl-name);
+  pointer-events: none;
+}
+
+.music-tl-ticks span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-left: 6px;
+  border-left: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+  color: var(--ink-faint);
+}
+
+.music-tl-rows { position: relative; margin: 0; padding: 0; list-style: none; }
+.music-tl-rows li { margin: 0; }
+
+.site .music-tl-row {
+  display: grid;
+  grid-template-columns: var(--tl-name) minmax(0, 1fr) var(--tl-years);
+  align-items: center;
+  min-height: var(--tl-row);
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.site .music-tl-row:hover,
+.site .music-tl-row:focus-visible { text-decoration: none; }
+
+.music-tl-name {
+  overflow: hidden;
+  padding-right: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.music-tl-row:hover .music-tl-name,
+.music-tl-row:focus-visible .music-tl-name { color: var(--accent); }
+
+.music-tl-years {
+  padding-left: 14px;
+  font-family: var(--sans);
+  font-size: var(--fs-tiny);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.music-tl-track { position: relative; height: var(--tl-row); }
+
+.music-tl-bar {
+  position: absolute;
+  top: 50%;
+  height: 3px;
+  margin-top: -1.5px;
+  background: var(--ink-faint);
+  opacity: 0.55;
+  transition: opacity 160ms ease;
+}
+
+/* Still active: the bar thins out instead of stopping. */
+.music-tl-bar.is-active {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+
+.music-tl-row:hover .music-tl-bar,
+.music-tl-row:focus-visible .music-tl-bar { opacity: 0.9; }
+
+.music-tl-track b {
+  position: absolute;
+  top: 50%;
+  width: var(--dot);
+  height: var(--dot);
+  margin: calc(var(--dot) / -2) 0 0 calc(var(--dot) / -2);
+  border: 1.5px solid var(--ink-faint);
+  border-radius: 50%;
+  background: var(--global-bg-color, #fff);
+}
+
+.music-tl-track b.is-heard {
+  z-index: 1;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.music-tl-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin: 14px 0 0 !important;
+}
+
+.music-key {
+  display: inline-block;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+.music-key--bar { width: 22px; height: 3px; background: var(--ink-faint); opacity: 0.55; }
+
+.music-key--heard,
+.music-key--logged {
+  width: var(--dot);
+  height: var(--dot);
+  border: 1.5px solid var(--ink-faint);
+  border-radius: 50%;
+}
+
+.music-key--heard { border-color: var(--accent); background: var(--accent); }
+
+/* ---- Band cards ---- */
+
+.music-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 36px 32px;
+}
+
+.site .music-card { display: block; color: var(--ink); }
+.site .music-card:hover,
+.site .music-card:focus-visible { text-decoration: none; }
+
+.music-card img,
+.music-card-blank {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--wash);
+  transition: opacity 180ms ease;
+}
+
+.music-card-blank {
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  color: var(--ink-faint);
+}
+
+.music-card:hover img { opacity: 0.85; }
+
+.music-card h3 {
+  margin: 12px 0 2px;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: color 160ms ease;
+}
+
+.music-card:hover h3,
+.music-card:focus-visible h3 { color: var(--accent); }
+
+.music-card p {
+  margin: 0 !important;
+  font-family: var(--sans);
+  font-size: 13px !important;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.music-card .music-card-meta { font-variant-numeric: tabular-nums; }
+.music-card .music-card-heard { margin-top: 6px !important; color: var(--ink-faint); }
+
+/* ---- One band ---- */
+
+.music-band { scroll-margin-top: 80px; }
+.music-band + .music-band { margin-top: calc(var(--sec-gap) * 1.5); }
+
+.music-back {
+  margin: 0 0 18px !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+}
+
+.music-band-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  gap: 24px 56px;
+  align-items: start;
+}
+
+.music .music-band-name {
+  margin: 0 0 6px;
+  padding: 0;
+  border: 0;
+  font-family: var(--serif);
+  font-size: clamp(28px, 2vw + 20px, 42px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.music-band-name:focus { outline: none; }
+
+.music-band-where {
+  margin: 0 0 18px !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-band-note {
+  max-width: 62ch;
+  margin: 0 0 22px !important;
+  white-space: pre-line;
+}
+
+.music-dims {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 6px 18px;
+  max-width: 62ch;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.music .music-dims dt,
+.music .music-dims dd { margin: 0; font-size: inherit; font-weight: 400; }
+
+.music-dims dt { color: var(--ink-faint); }
+.music-dims dd { color: var(--ink-soft); }
+
+.music-photo { display: block; margin: 0; }
+
+.music-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--wash);
+}
+
+.music-photo figcaption {
+  margin: 8px 0 0;
+  padding: 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.music-band-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 0 56px;
+  margin-top: var(--sec-gap);
+}
+
+.music-sec + .music-sec { margin-top: var(--sec-gap); }
+
+/* Sub-section heading: the site's small-caps rule heading, one level down. */
+.music-h {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.music-h h3 {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.music-h h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  transform: translateY(-3px);
+}
+
+.music-h p {
+  margin: 0 !important;
+  font-family: var(--sans);
+  font-size: var(--fs-small) !important;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+/* ---- Discography ---- */
+
+.music-rels,
+.music-hist,
+.music-people,
+.music-links { margin: 0; padding: 0; list-style: none; }
+
+.music-rel {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 18px;
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.music-cover {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--wash);
+}
+
+/* Not heard yet: the cover steps back so the heard ones read first. */
+.music-rel:not(.is-heard) .music-cover { opacity: 0.68; }
+
+.music-rel p { margin: 0 !important; }
+
+.music-rel-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  line-height: 1.45;
+}
+
+.music-rel-title time {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-rel-title strong { font-weight: 600; }
+.music-rel:not(.is-heard) .music-rel-title strong { font-weight: 400; }
+
+.music-tag {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.music-tag--heard { font-weight: 600; color: var(--accent); }
+.music-tag--fav { font-weight: 600; color: var(--star); }
+
+.music-rel-note,
+.music-rel-tracks {
+  max-width: 64ch;
+  margin-top: 3px !important;
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.music-rel-tracks {
+  font-family: var(--sans);
+  font-size: 13px !important;
+  color: var(--ink-faint);
+}
+
+/* ---- History ---- */
+
+.music-hist li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.music-hist time {
+  padding-top: 3px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.music-hist h4 {
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.music-hist p {
+  max-width: 64ch;
+  margin: 0 0 6px !important;
+  font-size: 16px !important;
+  line-height: 1.75;
+}
+
+.music-src {
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+/* ---- People, connections, leads ---- */
+
+.music-people li,
+.music-links li {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.music-people p,
+.music-links p {
+  margin: 2px 0 0 !important;
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.music-people .music-person { margin: 0 !important; color: var(--ink); }
+
+.music-person span,
+.music-people .music-projects {
+  font-family: var(--sans);
+  font-size: 13px !important;
+  color: var(--ink-faint);
+}
+
+.music-links a,
+.music-links strong { font-weight: 600; }
+
+.music-footnote { margin-top: 40px !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .music-tl-name,
+  .music-tl-bar,
+  .music-card img,
+  .music-card h3 { transition: none; }
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 900px) {
+  .music { --tl-name: 176px; --tl-years: 84px; }
+
+  .music-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 20px;
+  }
+
+  .music-stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .music-band-head { grid-template-columns: minmax(0, 1fr); }
+  .music-photo { max-width: 420px; }
+  .music-band-body { grid-template-columns: minmax(0, 1fr); }
+  .music-side { margin-top: var(--sec-gap); }
+}
+
+/* ---- Phone: the name and years sit above the track so the axis keeps its full width ---- */
+
+@media (max-width: 639px) {
+  .music { --tl-name: 0px; --tl-years: 0px; --tl-row: 28px; --dot: 7px; }
+  .music-stat { padding: 0 14px; }
+  .music-stat strong { font-size: 26px; }
+  .music-stat strong.music-stat-small { font-size: 17px; }
+
+  .site .music-tl-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "name years" "track track";
+    padding-top: 8px;
+  }
+
+  .music-tl-name { grid-area: name; font-size: 15px; }
+  .music-tl-years { grid-area: years; }
+  .music-tl-track { grid-area: track; }
+  .music-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
+  .music-card h3 { font-size: 17px; }
+  .music-rel { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; }
+  .music-cover { width: 56px; height: 56px; }
+  .music-hist li { grid-template-columns: 40px minmax(0, 1fr); gap: 10px; }
+}

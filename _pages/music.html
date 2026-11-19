@@ -1,0 +1,235 @@
+---
+layout: single
+permalink: /music/
+title: "Music"
+description: "Bands I listen to, with their records, people and stories, by Xinyao Liao."
+author_profile: false
+---
+
+{% include site-style.html %}
+<link rel="stylesheet" href="/assets/css/music.css">
+
+{% assign music = site.data.music %}
+{% assign stats = music.stats %}
+
+<div class="site music" id="music" data-view="index">
+  <header class="pg-head">
+    <h1>Music</h1>
+    <p class="pg-head__links">
+      <a href="#timeline">Timeline</a>
+      <a href="#bands">Bands</a>
+    </p>
+  </header>
+
+  <div class="music-index">
+    <section class="sec" aria-label="Listening statistics">
+      <div class="music-stats">
+        <div class="music-stat"><span>Bands</span><strong>{{ stats.bands }}</strong><em>{{ stats.liked }} 支喜欢</em></div>
+        <div class="music-stat"><span>Records heard</span><strong>{{ stats.heard }}</strong><em>记录了 {{ stats.releases }} 张发行</em></div>
+        <div class="music-stat"><span>From</span><strong>{{ stats.countries | size }}</strong><em>{{ stats.countries | join: "、" }}</em></div>
+        {% if stats.newest %}
+        <div class="music-stat"><span>Last added</span><strong class="music-stat-small">{{ stats.newest.added }}</strong><em>{{ stats.newest.name }}</em></div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="sec" id="timeline">
+      <div class="sec-head">
+        <h2>Timeline</h2>
+        <p>{{ music.timeline.start }}–{{ music.timeline.end | minus: 1 }}</p>
+      </div>
+      <div class="music-tl">
+        <div class="music-tl-ticks" aria-hidden="true">
+          {% for t in music.timeline.ticks %}<span style="left: {{ t.at }}%">{{ t.year }}</span>{% endfor %}
+        </div>
+        <ol class="music-tl-rows">
+          {% for b in music.bands %}
+          <li>
+            <a class="music-tl-row" href="#band-{{ b.id }}">
+              <span class="music-tl-name">{{ b.name | escape }}</span>
+              <span class="music-tl-track">
+                {% if b.timeline %}
+                <i class="music-tl-bar{% unless b.ended %} is-active{% endunless %}" style="left: {{ b.timeline.left }}%; width: {{ b.timeline.width }}%"></i>
+                {% for d in b.timeline.dots %}<b{% if d.heard %} class="is-heard"{% endif %} style="left: {{ d.at }}%" title="{{ d.year }} {{ d.title | escape }}"></b>{% endfor %}
+                {% endif %}
+              </span>
+              <span class="music-tl-years">{{ b.years }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <p class="note music-tl-legend">
+        <span><i class="music-key music-key--bar"></i>活动年份</span>
+        <span><i class="music-key music-key--heard"></i>听过的发行</span>
+        <span><i class="music-key music-key--logged"></i>记录了、还没听的发行</span>
+      </p>
+    </section>
+
+    <section class="sec" id="bands">
+      <div class="sec-head">
+        <h2>Bands</h2>
+        <p>{{ stats.bands }} bands</p>
+      </div>
+      <div class="music-cards">
+        {% for b in music.bands %}
+        <a class="music-card" href="#band-{{ b.id }}">
+          {% if b.photo %}
+          <img src="{{ b.photo.src }}" alt="" loading="lazy" width="{{ b.photo.width }}" height="{{ b.photo.height }}">
+          {% else %}
+          <span class="music-card-blank" aria-hidden="true">{{ b.name | slice: 0 }}</span>
+          {% endif %}
+          <h3>{{ b.name | escape }}</h3>
+          <p class="music-card-meta">{{ b.where | escape }} · {{ b.years }}</p>
+          <p class="music-card-genres">{{ b.genres | join: " · " | escape }}</p>
+          <p class="music-card-heard">听过 {{ b.heard }} / {{ b.releases | size }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <div class="music-details">
+    {% for b in music.bands %}
+    <article class="music-band" id="band-{{ b.id }}" data-name="{{ b.name | escape }}">
+      <p class="music-back"><a href="#bands">← All bands</a></p>
+
+      <div class="music-band-head">
+        <div>
+          <h2 class="music-band-name" tabindex="-1">{{ b.name | escape }}</h2>
+          <p class="music-band-where">
+            {{ b.where | escape }} · {{ b.years }}{% if b.aliases.size > 0 %} · 也叫 {{ b.aliases | join: "、" | escape }}{% endif %}
+          </p>
+          {% if b.note != "" %}<p class="music-band-note">{{ b.note | escape }}</p>{% endif %}
+          {% if b.dims.size > 0 %}
+          <dl class="music-dims">
+            {% for d in b.dims %}
+            <dt>{{ d.label | escape }}</dt>
+            <dd>{{ d.values | join: " · " | escape }}</dd>
+            {% endfor %}
+          </dl>
+          {% endif %}
+        </div>
+        {% if b.photo %}
+        <figure class="music-photo">
+          <img src="{{ b.photo.src }}" alt="{{ b.name | escape }}" loading="lazy" width="{{ b.photo.width }}" height="{{ b.photo.height }}">
+          {% if b.photo_credit != "" %}<figcaption class="note">{{ b.photo_credit | escape }}</figcaption>{% endif %}
+        </figure>
+        {% endif %}
+      </div>
+
+      <div class="music-band-body">
+        <div class="music-main">
+          <section class="music-sec">
+            <div class="music-h">
+              <h3>Discography</h3>
+              <p>听过 {{ b.heard }} / {{ b.releases | size }}</p>
+            </div>
+            {% if b.releases.size > 0 %}
+            <ol class="music-rels">
+              {% for r in b.releases %}
+              <li class="music-rel{% if r.heard %} is-heard{% endif %}">
+                {% if r.cover %}
+                <img class="music-cover" src="{{ r.cover.src }}" alt="" loading="lazy" width="72" height="72">
+                {% else %}
+                <span class="music-cover music-cover--blank" aria-hidden="true"></span>
+                {% endif %}
+                <div>
+                  <p class="music-rel-title">
+                    {% if r.year %}<time>{{ r.year }}</time>{% endif %}
+                    <strong>{{ r.title | escape }}</strong>
+                    {% if r.kind != "" %}<span class="music-tag">{{ r.kind | escape }}</span>{% endif %}
+                    {% if r.heard %}<span class="music-tag music-tag--heard">听过</span>{% endif %}
+                    {% if r.fav %}<span class="music-tag music-tag--fav">最喜欢</span>{% endif %}
+                  </p>
+                  {% if r.note != "" %}<p class="music-rel-note">{{ r.note | escape }}</p>{% endif %}
+                  {% if r.tracks.size > 0 %}<p class="music-rel-tracks">曲目：{{ r.tracks | join: "、" | escape }}</p>{% endif %}
+                </div>
+              </li>
+              {% endfor %}
+            </ol>
+            {% else %}
+            <p class="note">还没有记录唱片。</p>
+            {% endif %}
+          </section>
+
+          {% if b.stories.size > 0 %}
+          <section class="music-sec">
+            <div class="music-h">
+              <h3>History</h3>
+              <p>{{ b.stories | size }} 条</p>
+            </div>
+            <ol class="music-hist">
+              {% for s in b.stories %}
+              <li>
+                <time>{{ s.year }}</time>
+                <div>
+                  <h4>{{ s.title | default: "一段故事" | escape }}</h4>
+                  <p>{{ s.text | escape }}</p>
+                  {% if s.url != "" %}
+                  <a class="music-src" href="{{ s.url | escape }}" target="_blank" rel="noopener noreferrer">来源：{{ s.source | default: "链接" | escape }}</a>
+                  {% endif %}
+                </div>
+              </li>
+              {% endfor %}
+            </ol>
+          </section>
+          {% endif %}
+        </div>
+
+        <aside class="music-side">
+          {% if b.people.size > 0 %}
+          <section class="music-sec">
+            <div class="music-h"><h3>People</h3></div>
+            <ul class="music-people">
+              {% for p in b.people %}
+              <li>
+                <p class="music-person"><strong>{{ p.name | escape }}</strong>{% if p.role != "" %} <span>{{ p.role | escape }}{% if p.years != "" %}，{{ p.years | escape }}{% endif %}</span>{% endif %}</p>
+                {% if p.note != "" %}<p>{{ p.note | escape }}</p>{% endif %}
+                {% if p.projects.size > 0 %}<p class="music-projects">其他项目：{{ p.projects | join: "、" | escape }}</p>{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+
+          {% if b.links.size > 0 %}
+          <section class="music-sec">
+            <div class="music-h"><h3>Connections</h3></div>
+            <ul class="music-links">
+              {% for l in b.links %}
+              <li>
+                <a href="#band-{{ l.id }}">{{ l.name | escape }}</a>
+                <p>{{ l.reasons | join: "；" | escape }}</p>
+              </li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+
+          {% if b.leads.size > 0 %}
+          <section class="music-sec">
+            <div class="music-h"><h3>Leads</h3><p>顺着可以继续听</p></div>
+            <ul class="music-links">
+              {% for l in b.leads %}
+              <li>
+                <strong>{{ l.name | escape }}</strong>
+                {% if l.why != "" %}<p>{{ l.why | escape }}</p>{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+        </aside>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <p class="note music-footnote">
+    Synced on {{ music.synced }} from my private music index with <code>scripts/music_sync.py</code>.
+    Covers and photos © their respective rights holders.
+  </p>
+</div>
+
+<script src="/assets/js/music.js" defer></script>
