@@ -121,7 +121,7 @@ def normalize(band_id, raw):
         "id": band_id, "name": text(raw.get("name")) or band_id, "aliases": items(raw.get("aliases")),
         "formed": year(raw.get("formedYear")), "ended": year(raw.get("endYear")),
         "status": "like" if raw.get("status") == "like" else "explore",
-        "note": text(raw.get("note")), "added": text(raw.get("addedAt"))[:10],
+        "note": text(raw.get("note")), "added": text(raw.get("addedAt"))[:10], "added_at": text(raw.get("addedAt")),
         "related": items(raw.get("related")), "values": values, "facets": facets,
         "photo": asset(raw.get("photo")), "photo_credit": text(raw.get("photoCredit")),
         "releases": sorted(releases, key=lambda r: r["year"] or 9999),
@@ -462,7 +462,8 @@ def main():
     today = datetime.date.today()
     timeline, rows = build_timeline(bands, today.year)
     published = [publish(b, bands, sizes, rows[b["id"]]) for b in bands]
-    newest = max(published, key=lambda b: b["added"], default=None)
+    # Full timestamp, not the date: two bands added on the same day must not tie.
+    newest = max(bands, key=lambda b: b["added_at"], default=None)
     data = {
         "synced": today.isoformat(),
         "stats": {
