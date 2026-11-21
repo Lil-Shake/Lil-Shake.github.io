@@ -1,19 +1,20 @@
 {
- "synced": "2026-11-20",
+ "synced": "2026-11-21",
  "stats": {
-  "bands": 8,
-  "liked": 8,
-  "releases": 96,
-  "heard": 14,
+  "bands": 9,
+  "liked": 9,
+  "releases": 99,
+  "heard": 18,
   "countries": [
+   "墨西哥",
    "日本",
    "法国",
    "美国"
   ],
   "newest": {
-   "name": "Television",
-   "id": "television",
-   "added": "2026-11-20"
+   "name": "Camedor",
+   "id": "camedor",
+   "added": "2026-11-21"
   }
  },
  "timeline": {
@@ -176,7 +177,7 @@
     "height": 602
    },
    "photo_credit": "Roberta Bayley 摄，1977 年 Elektra 的宣传照，左起 Billy Ficca、Richard Lloyd、Tom Verlaine、Fred Smith；公有领域，Wikimedia Commons：File:Television, US rock band (1977 Elektra publicity photo).jpg",
-   "heard": 1,
+   "heard": 2,
    "strip": {
     "first": 1973,
     "last": 2023,
@@ -195,7 +196,7 @@
       "y": 37,
       "year": 1977,
       "title": "Marquee Moon",
-      "heard": false
+      "heard": true
      },
      {
       "x": 75.2,
@@ -260,7 +261,7 @@
      "year": 1977,
      "kind": "专辑",
      "note": "首张专辑，乐队在录音棚里同时演奏录成，两把吉他一左一右，不加效果。封面照片出自 Robert Mapplethorpe。",
-     "heard": false,
+     "heard": true,
      "fav": false,
      "cover": {
       "src": "/images/music/d825f935288a8dfd2c4076a4077a2bcd.webp",
@@ -1090,7 +1091,7 @@
     "height": 412
    },
    "photo_credit": "摄影者与年份不详，三人合照，取自 Discogs 艺人页（artist/225402）；非自由授权",
-   "heard": 1,
+   "heard": 2,
    "strip": {
     "first": 1979,
     "last": 2010,
@@ -1102,7 +1103,7 @@
       "y": 37,
       "year": 1984,
       "title": "Sun City Girls",
-      "heard": false
+      "heard": true
      },
      {
       "x": 152.2,
@@ -1175,7 +1176,7 @@
      "year": 1984,
      "kind": "专辑",
      "note": "Placebo 发行的首张专辑。",
-     "heard": false,
+     "heard": true,
      "fav": false,
      "cover": {
       "src": "/images/music/be05a9bb47f56d1b897e0a4eeb624979.webp",
@@ -3314,6 +3315,15 @@
       "都用英语演唱",
       "成立时间只差 2 年"
      ]
+    },
+    {
+     "id": "camedor",
+     "name": "Camedor",
+     "score": 3,
+     "reasons": [
+      "都是 电子",
+      "气质都偏 明亮"
+     ]
     }
    ],
    "leads": [
@@ -4300,6 +4310,14 @@
      "reasons": [
       "都用英语演唱",
       "都通向 Ennio Morricone"
+     ]
+    },
+    {
+     "id": "camedor",
+     "name": "Camedor",
+     "score": 2,
+     "reasons": [
+      "都是 电子"
      ]
     }
    ],
@@ -5345,6 +5363,15 @@
      ]
     },
     {
+     "id": "camedor",
+     "name": "Camedor",
+     "score": 3,
+     "reasons": [
+      "都是 Krautrock",
+      "声音上都有 重复律动"
+     ]
+    },
+    {
      "id": "television",
      "name": "Television",
      "score": 2,
@@ -6209,6 +6236,15 @@
      ]
     },
     {
+     "id": "camedor",
+     "name": "Camedor",
+     "score": 3,
+     "reasons": [
+      "声音上都有 合成器、重复律动",
+      "同一年成立"
+     ]
+    },
+    {
      "id": "television",
      "name": "Television",
      "score": 2.5,
@@ -6295,6 +6331,424 @@
       "at": 98.25,
       "year": 2026,
       "title": "《Get Mean》：一张分手之后的公路专辑"
+     }
+    ]
+   }
+  },
+  {
+   "id": "camedor",
+   "name": "Camedor",
+   "aliases": [
+    "José Orozco Mora"
+   ],
+   "country": "墨西哥",
+   "city": "恰帕拉",
+   "where": "恰帕拉，墨西哥",
+   "formed": 2013,
+   "ended": 2019,
+   "years": "2013–2019",
+   "status": "like",
+   "status_label": "喜欢",
+   "note": "听过《Portal》和《En Ut / Alba》。\nCamedor 不是乐队，是墨西哥音乐人 José Orozco Mora 一个人的项目。用合成器做不停往前推的音乐，介于 krautrock 和极简主义之间。\n名下只有三张唱片，2019 年的《Portal》之后他改用本名，做的东西也更偏实验。公开资料很少，这个条目比其他乐队的薄。",
+   "added": "2026-11-21",
+   "genres": [
+    "Krautrock",
+    "极简主义",
+    "电子"
+   ],
+   "dims": [
+    {
+     "key": "genres",
+     "label": "类型",
+     "values": [
+      "Krautrock",
+      "极简主义",
+      "电子"
+     ]
+    },
+    {
+     "key": "labels",
+     "label": "厂牌",
+     "values": [
+      "Debacle Records"
+     ]
+    },
+    {
+     "key": "members",
+     "label": "成员",
+     "values": [
+      "José Orozco Mora"
+     ]
+    },
+    {
+     "key": "producers",
+     "label": "制作人",
+     "values": [
+      "José Orozco Mora"
+     ]
+    },
+    {
+     "key": "influences",
+     "label": "受谁影响",
+     "values": [
+      "Terry Riley"
+     ]
+    },
+    {
+     "key": "sound",
+     "label": "声音",
+     "values": [
+      "合成器",
+      "重复律动"
+     ]
+    },
+    {
+     "key": "moods",
+     "label": "气质",
+     "values": [
+      "明亮",
+      "迷幻"
+     ]
+    },
+    {
+     "key": "x:翻唱过",
+     "label": "翻唱过",
+     "values": [
+      "Terry Riley"
+     ]
+    }
+   ],
+   "photo": {
+    "src": "/images/music/87a561c641404f9b7287e2e428d09b01.webp",
+    "width": 1200,
+    "height": 1045
+   },
+   "photo_credit": "José Orozco Mora，取自 Camedor 的 Bandcamp 页面，摄影者与年份不详；非自由授权",
+   "heard": 2,
+   "strip": {
+    "first": 2013,
+    "last": 2019,
+    "width": 640,
+    "pad": 14,
+    "dots": [
+     {
+      "x": 14.0,
+      "y": 37,
+      "year": 2013,
+      "title": "Wild Shine",
+      "heard": false
+     },
+     {
+      "x": 422.0,
+      "y": 37,
+      "year": 2017,
+      "title": "En Ut / Alba",
+      "heard": true
+     },
+     {
+      "x": 626.0,
+      "y": 37,
+      "year": 2019,
+      "title": "Portal",
+      "heard": true
+     }
+    ]
+   },
+   "releases": [
+    {
+     "title": "Wild Shine",
+     "year": 2013,
+     "kind": "专辑",
+     "note": "用 Camedor 这个名字发的第一张，十首歌，自己发行。除了曲目数和发行年份，我没有查到更多资料。",
+     "heard": false,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/1bf9fb8c168f7792151d2943af9d30cc.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [],
+     "stories": []
+    },
+    {
+     "title": "En Ut / Alba",
+     "year": 2017,
+     "kind": "EP",
+     "note": "西雅图厂牌 Debacle 发行的十二寸，两面各一首，都在十分钟以上。A 面是 Terry Riley〈In C〉的改编，B 面〈Alba〉是原创。",
+     "heard": true,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/277e521d030b2f66c3cb7d4be977058e.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "En Ut (In C)",
+      "Alba"
+     ],
+     "stories": [
+      {
+       "index": 0,
+       "title": "只压了一百张的蓝色透明黑胶"
+      },
+      {
+       "index": 1,
+       "title": "把〈In C〉改成了 krautrock"
+      },
+      {
+       "index": 2,
+       "title": "乐评把它听成一张反对筑墙的唱片"
+      }
+     ]
+    },
+    {
+     "title": "Portal",
+     "year": 2019,
+     "kind": "专辑",
+     "note": "Debacle 发行的长专辑，七首，曲子比上一张短得多。作曲、录音、混音都是 Orozco 一个人，只有最后一首请人打了鼓。",
+     "heard": true,
+     "fav": false,
+     "cover": {
+      "src": "/images/music/363afd681244587d0cff73b382500dd2.webp",
+      "width": 400,
+      "height": 400
+     },
+     "tracks": [
+      "Portal",
+      "Mineral",
+      "Eva",
+      "Balandra",
+      "Energia/Tiempo",
+      "Iris",
+      "Claridad"
+     ],
+     "stories": [
+      {
+       "index": 3,
+       "title": "《Portal》：在恩塞纳达一个人做完"
+      }
+     ]
+    }
+   ],
+   "people": [
+    {
+     "name": "José Orozco Mora",
+     "role": "作曲、演奏、录音、混音",
+     "years": "2013 到 2019",
+     "note": "哈利斯科州恰帕拉人，Camedor 就是他一个人。除了自己的音乐，他也给别人录音、混音和做母带，经手过 Tajak、J. Zunz、Los Kowalski 等人的唱片。2020 年起改用本名发表作品，现居墨西哥城，在墨西哥国立自治大学读音乐技术的硕士。",
+     "projects": [],
+     "stories": [
+      {
+       "index": 3,
+       "title": "《Portal》：在恩塞纳达一个人做完"
+      },
+      {
+       "index": 4,
+       "title": "之后改用本名"
+      },
+      {
+       "index": 5,
+       "title": "从 krautrock 走到五十三平均律"
+      }
+     ]
+    },
+    {
+     "name": "Daniel Duran",
+     "role": "封面设计",
+     "years": "2017 到 2019",
+     "note": "《En Ut / Alba》和《Portal》的封面与设计都由 Daniel Duran 完成。",
+     "projects": [],
+     "stories": []
+    },
+    {
+     "name": "Cooper Crain",
+     "role": "母带",
+     "years": "2017",
+     "note": "《En Ut / Alba》的母带工程师，自己是芝加哥乐队 Bitchin Bajas 和 Cave 的成员。",
+     "projects": [
+      {
+       "name": "Bitchin Bajas",
+       "id": null
+      },
+      {
+       "name": "Cave",
+       "id": null
+      }
+     ],
+     "stories": []
+    },
+    {
+     "name": "Phil Petrocelli",
+     "role": "母带",
+     "years": "2019",
+     "note": "《Portal》的母带在西雅图的 Soultheft Labs 完成。",
+     "projects": [],
+     "stories": []
+    },
+    {
+     "name": "The Obsolete",
+     "role": "鼓",
+     "years": "2019",
+     "note": "《Portal》最后一首〈Claridad〉里的鼓。Orozco 给 Tajak 录《Ciclos》时，也是和 The Obsolete 一起录的。",
+     "projects": [],
+     "stories": []
+    }
+   ],
+   "stories": [
+    {
+     "title": "只压了一百张的蓝色透明黑胶",
+     "text": "《En Ut / Alba》2017 年 2 月 10 日由 Debacle Records 发行，编号 DBL102。实体只做了一百张，透明蓝色的十二寸黑胶，装在丝网印刷的透明塑料封套里。演奏、录音和混音都署 José Orozco Mora，母带是 Cooper Crain。",
+     "year": 2017,
+     "source": "Discogs",
+     "person": "",
+     "release": "En Ut / Alba",
+     "url": "https://www.discogs.com/release/10165165-Camedor-En-Ut-Alba"
+    },
+    {
+     "title": "把〈In C〉改成了 krautrock",
+     "text": "A 面〈En Ut〉是 Terry Riley 1964 年的极简主义名作〈In C〉，标题就是法语里“C 调”的说法。Tiny Mix Tapes 的乐评说 Orozco 的很多东西借自 motorik，也就是 krautrock 那种不停往前的节拍，这一版是把〈In C〉顽皮地改成了一首 kraut 经典。厂牌自己的说法是，这张 EP 摆荡在二十世纪的极简主义和早期德国电子音乐之间。",
+     "year": 2017,
+     "source": "Tiny Mix Tapes",
+     "person": "",
+     "release": "En Ut / Alba",
+     "url": "https://www.tinymixtapes.com/cerberus/camedor-en-utalba"
+    },
+    {
+     "title": "乐评把它听成一张反对筑墙的唱片",
+     "text": "这张 EP 发行时，美国正在谈扩建美墨边境墙。Tiny Mix Tapes 的评论者由此发挥：krautrock 当年出自和战后德国格格不入的年轻人，后来又和柏林墙的倒塌连在一起，而一个墨西哥人现在用同一种音乐回应另一堵墙。评论者形容这两首歌是一股能凿开石头的正面力量。这是评论者的读法，我没有查到 Orozco 本人对此的说法。",
+     "year": 2017,
+     "source": "Tiny Mix Tapes",
+     "person": "",
+     "release": "En Ut / Alba",
+     "url": "https://www.tinymixtapes.com/cerberus/camedor-en-utalba"
+    },
+    {
+     "title": "《Portal》：在恩塞纳达一个人做完",
+     "text": "《Portal》在 2019 年 4 月发行，七首歌，最长的〈Claridad〉七分多钟，其余都在三到六分钟之间。按唱片的署名，作曲、录音和混音都是 Orozco，〈Claridad〉的鼓由 The Obsolete 演奏，母带在西雅图完成，封面仍是 Daniel Duran。厂牌的介绍说，他当时住在下加利福尼亚州的恩塞纳达，专辑就是在那里录的。",
+     "year": 2019,
+     "source": "Camedor（Bandcamp）",
+     "person": "José Orozco Mora",
+     "release": "Portal",
+     "url": "https://camedor.bandcamp.com/album/portal"
+    },
+    {
+     "title": "之后改用本名",
+     "text": "《Portal》之后没有再出现 Camedor 名下的新作。Orozco 在自己的网站上把这两张唱片列在“以前的项目”里，2020 年起用本名发表：先是 Constellation Tatsu 出的卡带《Formas Aparentes》，再是 2023 年 Important Records 旗下 Cassauna 出的《Sucesiones》。他也做声音装置，其中一件用七只吹制玻璃容器里不同的水量，来表现家乡恰帕拉湖二十五年间的水位变化。",
+     "year": 2020,
+     "source": "joseorozcomora.com",
+     "person": "José Orozco Mora",
+     "release": "",
+     "url": "https://joseorozcomora.com/"
+    },
+    {
+     "title": "从 krautrock 走到五十三平均律",
+     "text": "《Sucesiones》是四首为五十三平均律写的习作，也就是把一个八度分成 53 份。这个律制来自他对墨西哥理论家 Augusto Novaro 的研究，Novaro 是微分音和纯律理论的先行者之一。Orozco 特意只用正弦波这样最简单的音色，好让注意力落在频率之间的关系上。和 Camedor 时期相比，这已经是另一种音乐了。",
+     "year": 2023,
+     "source": "Important Records",
+     "person": "José Orozco Mora",
+     "release": "",
+     "url": "https://importantrecords.com/products/jose-orozco-mora"
+    }
+   ],
+   "shows": [],
+   "shows_checked": "",
+   "shows_source": "",
+   "links": [
+    {
+     "id": "cornelius",
+     "name": "Cornelius",
+     "score": 3,
+     "reasons": [
+      "都是 电子",
+      "气质都偏 明亮"
+     ]
+    },
+    {
+     "id": "ogre-you-asshole",
+     "name": "Ogre You Asshole",
+     "score": 3,
+     "reasons": [
+      "都是 Krautrock",
+      "声音上都有 重复律动"
+     ]
+    },
+    {
+     "id": "boy-harsher",
+     "name": "Boy Harsher",
+     "score": 3,
+     "reasons": [
+      "声音上都有 合成器、重复律动",
+      "同一年成立"
+     ]
+    },
+    {
+     "id": "air",
+     "name": "Air",
+     "score": 2,
+     "reasons": [
+      "都是 电子"
+     ]
+    }
+   ],
+   "leads": [
+    {
+     "name": "Terry Riley",
+     "why": "〈En Ut〉改编的就是他的〈In C〉"
+    },
+    {
+     "name": "José Orozco Mora（本名作品）",
+     "why": "Camedor 之后的《Formas Aparentes》和《Sucesiones》，转向调律和纯音"
+    },
+    {
+     "name": "Bitchin Bajas",
+     "why": "给《En Ut / Alba》做母带的 Cooper Crain 的乐队"
+    },
+    {
+     "name": "Tajak",
+     "why": "墨西哥的迷幻乐队，Orozco 给他们录过《Ciclos》"
+    },
+    {
+     "name": "J. Zunz",
+     "why": "Orozco 为《Silente》做了母带"
+    },
+    {
+     "name": "Gnoomes",
+     "why": "俄罗斯乐队，Camedor 给他们的〈Maria〉做过混音版"
+    }
+   ],
+   "timeline": {
+    "left": 75.44,
+    "width": 10.52,
+    "dots": [
+     {
+      "at": 82.46,
+      "year": 2017,
+      "title": "只压了一百张的蓝色透明黑胶"
+     },
+     {
+      "at": 82.46,
+      "year": 2017,
+      "title": "把〈In C〉改成了 krautrock"
+     },
+     {
+      "at": 82.46,
+      "year": 2017,
+      "title": "乐评把它听成一张反对筑墙的唱片"
+     },
+     {
+      "at": 85.96,
+      "year": 2019,
+      "title": "《Portal》：在恩塞纳达一个人做完"
+     },
+     {
+      "at": 87.72,
+      "year": 2020,
+      "title": "之后改用本名"
+     },
+     {
+      "at": 92.98,
+      "year": 2023,
+      "title": "从 krautrock 走到五十三平均律"
      }
     ]
    }
@@ -7824,6 +8278,14 @@
        "都用英语演唱",
        "成立时间只差 2 年"
       ]
+     },
+     {
+      "id": "camedor",
+      "score": 3,
+      "reasons": [
+       "都是 电子",
+       "气质都偏 明亮"
+      ]
      }
     ]
    },
@@ -8014,6 +8476,13 @@
        "都用英语演唱",
        "都通向 Ennio Morricone"
       ]
+     },
+     {
+      "id": "camedor",
+      "score": 2,
+      "reasons": [
+       "都是 电子"
+      ]
      }
     ]
    },
@@ -8201,6 +8670,14 @@
       ]
      },
      {
+      "id": "camedor",
+      "score": 3,
+      "reasons": [
+       "都是 Krautrock",
+       "声音上都有 重复律动"
+      ]
+     },
+     {
       "id": "television",
       "score": 2,
       "reasons": [
@@ -8337,6 +8814,14 @@
       ]
      },
      {
+      "id": "camedor",
+      "score": 3,
+      "reasons": [
+       "声音上都有 合成器、重复律动",
+       "同一年成立"
+      ]
+     },
+     {
       "id": "television",
       "score": 2.5,
       "reasons": [
@@ -8350,6 +8835,116 @@
       "score": 2,
       "reasons": [
        "声音上都有 鼓机、重复律动"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "camedor",
+    "name": "Camedor",
+    "where": "恰帕拉，墨西哥",
+    "years": "2013–2019",
+    "formed": 2013,
+    "ended": 2019,
+    "status": "like",
+    "note": "听过《Portal》和《En Ut / Alba》。\nCamedor 不是乐队，是墨西哥音乐人 José Orozco Mora 一个人的项目。用合成器做不停往前推的音乐，介于 krautrock 和极简主义之间。\n名下只有三张唱片，2019 年的《Portal》之后他改用本名，做的东西也更偏实验。公开资料很少，这个条目比其他乐队的薄。",
+    "values": {
+     "country": [
+      "墨西哥"
+     ],
+     "city": [
+      "恰帕拉"
+     ],
+     "genres": [
+      "Krautrock",
+      "极简主义",
+      "电子"
+     ],
+     "labels": [
+      "Debacle Records"
+     ],
+     "members": [
+      "José Orozco Mora"
+     ],
+     "producers": [
+      "José Orozco Mora"
+     ],
+     "influences": [
+      "Terry Riley"
+     ],
+     "sound": [
+      "合成器",
+      "重复律动"
+     ],
+     "moods": [
+      "明亮",
+      "迷幻"
+     ],
+     "x:翻唱过": [
+      "Terry Riley"
+     ]
+    },
+    "counts": {
+     "releases": 3,
+     "people": 5,
+     "stories": 6
+    },
+    "stories": [
+     {
+      "year": 2017,
+      "title": "只压了一百张的蓝色透明黑胶"
+     },
+     {
+      "year": 2017,
+      "title": "把〈In C〉改成了 krautrock"
+     },
+     {
+      "year": 2017,
+      "title": "乐评把它听成一张反对筑墙的唱片"
+     },
+     {
+      "year": 2019,
+      "title": "《Portal》：在恩塞纳达一个人做完"
+     },
+     {
+      "year": 2020,
+      "title": "之后改用本名"
+     },
+     {
+      "year": 2023,
+      "title": "从 krautrock 走到五十三平均律"
+     }
+    ],
+    "links": [
+     {
+      "id": "cornelius",
+      "score": 3,
+      "reasons": [
+       "都是 电子",
+       "气质都偏 明亮"
+      ]
+     },
+     {
+      "id": "ogre-you-asshole",
+      "score": 3,
+      "reasons": [
+       "都是 Krautrock",
+       "声音上都有 重复律动"
+      ]
+     },
+     {
+      "id": "boy-harsher",
+      "score": 3,
+      "reasons": [
+       "声音上都有 合成器、重复律动",
+       "同一年成立"
+      ]
+     },
+     {
+      "id": "air",
+      "score": 2,
+      "reasons": [
+       "都是 电子"
       ]
      }
     ]
